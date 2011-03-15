@@ -16,6 +16,8 @@
 		4A9703E2132F1EF000EE1263 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A9703E0132F1EF000EE1263 /* MainWindow.xib */; };
 		4A9703E5132F1EF000EE1263 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A9703E4132F1EF000EE1263 /* RootViewController.m */; };
 		4A9703E8132F1EF000EE1263 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A9703E6132F1EF000EE1263 /* RootViewController.xib */; };
+		4A9703F6132F23A400EE1263 /* Exam.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A9703F5132F23A400EE1263 /* Exam.m */; };
+		4A9703F9132F28F400EE1263 /* Problem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A9703F8132F28F400EE1263 /* Problem.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,16 +25,20 @@
 		4A9703CE132F1EF000EE1263 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4A9703D0132F1EF000EE1263 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4A9703D2132F1EF000EE1263 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		4A9703D6132F1EF000EE1263 /* SlideRuleCoach-Info.plist */ = {isa = PBXFileReference; path = "SlideRuleCoach-Info.plist"; sourceTree = "<group>"; };
+		4A9703D6132F1EF000EE1263 /* SlideRuleCoach-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SlideRuleCoach-Info.plist"; sourceTree = "<group>"; };
 		4A9703D8132F1EF000EE1263 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		4A9703DA132F1EF000EE1263 /* SlideRuleCoach-Prefix.pch */ = {isa = PBXFileReference; path = "SlideRuleCoach-Prefix.pch"; sourceTree = "<group>"; };
+		4A9703DA132F1EF000EE1263 /* SlideRuleCoach-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SlideRuleCoach-Prefix.pch"; sourceTree = "<group>"; };
 		4A9703DB132F1EF000EE1263 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		4A9703DD132F1EF000EE1263 /* SlideRuleCoachAppDelegate.h */ = {isa = PBXFileReference; path = SlideRuleCoachAppDelegate.h; sourceTree = "<group>"; };
+		4A9703DD132F1EF000EE1263 /* SlideRuleCoachAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SlideRuleCoachAppDelegate.h; sourceTree = "<group>"; };
 		4A9703DE132F1EF000EE1263 /* SlideRuleCoachAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SlideRuleCoachAppDelegate.m; sourceTree = "<group>"; };
 		4A9703E1132F1EF000EE1263 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
-		4A9703E3132F1EF000EE1263 /* RootViewController.h */ = {isa = PBXFileReference; path = RootViewController.h; sourceTree = "<group>"; };
+		4A9703E3132F1EF000EE1263 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		4A9703E4132F1EF000EE1263 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		4A9703E7132F1EF000EE1263 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/RootViewController.xib; sourceTree = "<group>"; };
+		4A9703F4132F23A400EE1263 /* Exam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Exam.h; sourceTree = "<group>"; };
+		4A9703F5132F23A400EE1263 /* Exam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Exam.m; sourceTree = "<group>"; };
+		4A9703F7132F28F400EE1263 /* Problem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Problem.h; sourceTree = "<group>"; };
+		4A9703F8132F28F400EE1263 /* Problem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Problem.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +92,10 @@
 				4A9703E4132F1EF000EE1263 /* RootViewController.m */,
 				4A9703E6132F1EF000EE1263 /* RootViewController.xib */,
 				4A9703D5132F1EF000EE1263 /* Supporting Files */,
+				4A9703F4132F23A400EE1263 /* Exam.h */,
+				4A9703F5132F23A400EE1263 /* Exam.m */,
+				4A9703F7132F28F400EE1263 /* Problem.h */,
+				4A9703F8132F28F400EE1263 /* Problem.m */,
 			);
 			path = SlideRuleCoach;
 			sourceTree = "<group>";
@@ -164,6 +174,8 @@
 				4A9703DC132F1EF000EE1263 /* main.m in Sources */,
 				4A9703DF132F1EF000EE1263 /* SlideRuleCoachAppDelegate.m in Sources */,
 				4A9703E5132F1EF000EE1263 /* RootViewController.m in Sources */,
+				4A9703F6132F23A400EE1263 /* Exam.m in Sources */,
+				4A9703F9132F28F400EE1263 /* Problem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
