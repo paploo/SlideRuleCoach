@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RootViewController : UITableViewController {
+@class Proctor;
 
+@interface RootViewController : UITableViewController {
+    Proctor *proctor;
 }
 
 

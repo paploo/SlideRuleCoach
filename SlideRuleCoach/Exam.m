@@ -13,24 +13,34 @@
 
 @implementation Exam
 
++ (NSString *)name {
+    return @"Abstract Exam";
+}
+
++ (NSString *)summary {
+    return @"An abstract exam that returns no problems.";
+}
+
 - (id)init {
     if( (self = [super init]) ) {
-        name = @"Abstract Exam";
-        summary = @"An abstract exam that returns no problems.";
         problemGenerator = [[ProblemGenerator alloc] init];
         problems = [[NSMutableArray alloc] initWithCapacity:20];
     }
     return self;
 }
 
-@synthesize name;
-@synthesize summary;
 @synthesize problems;
 @synthesize difficulty;
 @synthesize problemGenerator;
 
 - (Problem *)nextProblem {
-    return [problemGenerator nextWithDifficulty:[self difficulty]];
+    Problem *problem = [problemGenerator nextWithDifficulty:[self difficulty]];
+    [[self problems] addObject:problem];
+    return problem;
+}
+
+- (Problem *)currentProblem {
+    return [[self problems] lastObject];
 }
 
 - (NSNumber *)averageError {
@@ -50,8 +60,6 @@
 }
 
 - (void)dealloc {
-    [name release];
-    [summary release];
     [problems release];
     [problemGenerator release];
     [super dealloc];

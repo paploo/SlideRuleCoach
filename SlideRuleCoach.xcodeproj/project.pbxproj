@@ -19,6 +19,9 @@
 		4A9703E8132F1EF000EE1263 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A9703E6132F1EF000EE1263 /* RootViewController.xib */; };
 		4A9703F6132F23A400EE1263 /* Exam.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A9703F5132F23A400EE1263 /* Exam.m */; };
 		4A9703F9132F28F400EE1263 /* Problem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A9703F8132F28F400EE1263 /* Problem.m */; };
+		4ACBF0EA13306DE50059BF4C /* Proctor.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACBF0E913306DE50059BF4C /* Proctor.m */; };
+		4ACBF0F513307CDE0059BF4C /* ProblemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACBF0F313307CDD0059BF4C /* ProblemViewController.m */; };
+		4ACBF0F613307CDE0059BF4C /* ProblemViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4ACBF0F413307CDD0059BF4C /* ProblemViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +45,11 @@
 		4A9703F5132F23A400EE1263 /* Exam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Exam.m; sourceTree = "<group>"; };
 		4A9703F7132F28F400EE1263 /* Problem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Problem.h; sourceTree = "<group>"; };
 		4A9703F8132F28F400EE1263 /* Problem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Problem.m; sourceTree = "<group>"; };
+		4ACBF0E813306DE50059BF4C /* Proctor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Proctor.h; sourceTree = "<group>"; };
+		4ACBF0E913306DE50059BF4C /* Proctor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Proctor.m; sourceTree = "<group>"; };
+		4ACBF0F213307CDD0059BF4C /* ProblemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProblemViewController.h; sourceTree = "<group>"; };
+		4ACBF0F313307CDD0059BF4C /* ProblemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProblemViewController.m; sourceTree = "<group>"; };
+		4ACBF0F413307CDD0059BF4C /* ProblemViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProblemViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,7 +102,12 @@
 				4A9703E3132F1EF000EE1263 /* RootViewController.h */,
 				4A9703E4132F1EF000EE1263 /* RootViewController.m */,
 				4A9703E6132F1EF000EE1263 /* RootViewController.xib */,
+				4ACBF0F213307CDD0059BF4C /* ProblemViewController.h */,
+				4ACBF0F313307CDD0059BF4C /* ProblemViewController.m */,
+				4ACBF0F413307CDD0059BF4C /* ProblemViewController.xib */,
 				4A9703D5132F1EF000EE1263 /* Supporting Files */,
+				4ACBF0E813306DE50059BF4C /* Proctor.h */,
+				4ACBF0E913306DE50059BF4C /* Proctor.m */,
 				4A9703F4132F23A400EE1263 /* Exam.h */,
 				4A9703F5132F23A400EE1263 /* Exam.m */,
 				4A9703F7132F28F400EE1263 /* Problem.h */,
@@ -166,6 +179,7 @@
 				4A9703D9132F1EF000EE1263 /* InfoPlist.strings in Resources */,
 				4A9703E2132F1EF000EE1263 /* MainWindow.xib in Resources */,
 				4A9703E8132F1EF000EE1263 /* RootViewController.xib in Resources */,
+				4ACBF0F613307CDE0059BF4C /* ProblemViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -182,6 +196,8 @@
 				4A9703F6132F23A400EE1263 /* Exam.m in Sources */,
 				4A9703F9132F28F400EE1263 /* Problem.m in Sources */,
 				4A8FFC30133039D60083C5FA /* ProblemGenerator.m in Sources */,
+				4ACBF0EA13306DE50059BF4C /* Proctor.m in Sources */,
+				4ACBF0F513307CDE0059BF4C /* ProblemViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

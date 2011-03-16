@@ -18,18 +18,17 @@
 // generate problems, and it keeps track of all the
 // problems and can cumulative stats for them.
 @interface Exam : NSObject {
-    NSString *name;
-    NSString *summary;
     NSMutableArray *problems;
     unsigned difficulty;
     ProblemGenerator *problemGenerator;
 }
-@property(nonatomic, retain, readonly) NSString *name;
-@property(nonatomic, retain, readonly) NSString *summary;
++ (NSString *)name;
++ (NSString *)summary;
 @property(nonatomic, retain, readonly) NSMutableArray *problems;
 @property unsigned difficulty;
 @property(nonatomic, retain, readonly) ProblemGenerator *problemGenerator;
 - (Problem *)nextProblem;
+- (Problem *)currentProblem;
 - (NSNumber *)averageError;
 - (NSNumber *)averageScaleReadError;
 @end

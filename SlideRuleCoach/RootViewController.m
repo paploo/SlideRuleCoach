@@ -7,12 +7,17 @@
 //
 
 #import "RootViewController.h"
+#import "ProblemViewController.h"
+#import "Proctor.h"
+#import "Exam.h"
 
 @implementation RootViewController
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    proctor = [[Proctor alloc] init];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -51,7 +56,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 0;
+    return [[proctor examList] count];
 }
 
 // Customize the appearance of table view cells.
@@ -61,10 +66,15 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
+        [cell setAccessoryType:UITableViewCellAccessoryDetailDisclosureButton];
     }
 
     // Configure the cell.
+    NSUInteger index = [indexPath indexAtPosition:0];
+    Class examClass = [proctor examClassAtIndex:index];
+    [[cell textLabel] setText:[examClass name]];
+    [[cell detailTextLabel] setText:[examClass summary]];
     return cell;
 }
 
@@ -109,6 +119,22 @@
 }
 */
 
+- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {
+    NSUInteger index = [indexPath indexAtPosition:0];
+    NSLog(@"didSelectRowAtIndex:%u", index);
+    
+    Class examClass = [proctor examClassAtIndex:index];
+    Exam *exam = [[examClass alloc] init];
+    
+    ProblemViewController *problemViewController = [[ProblemViewController alloc] initWithNibName:@"ProblemViewController" bundle:nil];
+    [problemViewController setExam:exam];
+    
+    [problemViewController setTitle:[examClass name]];
+    
+    [[self navigationController] pushViewController:problemViewController animated:YES];
+    [problemViewController release];
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     /*
@@ -138,6 +164,7 @@
 
 - (void)dealloc
 {
+    [proctor release];
     [super dealloc];
 }
 
