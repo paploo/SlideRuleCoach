@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @class Problem;
+@class ProblemGenerator;
 
 // The base class for all exams.  Each exam selectable
 // from the main menu is its own subclass.  Each subclass,
@@ -21,11 +22,13 @@
     NSString *summary;
     NSMutableArray *problems;
     unsigned difficulty;
+    ProblemGenerator *problemGenerator;
 }
 @property(nonatomic, retain, readonly) NSString *name;
 @property(nonatomic, retain, readonly) NSString *summary;
 @property(nonatomic, retain, readonly) NSMutableArray *problems;
 @property unsigned difficulty;
+@property(nonatomic, retain, readonly) ProblemGenerator *problemGenerator;
 - (Problem *)nextProblem;
 - (NSNumber *)averageError;
 - (NSNumber *)averageScaleReadError;

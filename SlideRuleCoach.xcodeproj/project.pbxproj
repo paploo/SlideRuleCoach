@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A8FFC30133039D60083C5FA /* ProblemGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A8FFC2F133039D60083C5FA /* ProblemGenerator.m */; };
 		4A9703CF132F1EF000EE1263 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A9703CE132F1EF000EE1263 /* UIKit.framework */; };
 		4A9703D1132F1EF000EE1263 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A9703D0132F1EF000EE1263 /* Foundation.framework */; };
 		4A9703D3132F1EF000EE1263 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A9703D2132F1EF000EE1263 /* CoreGraphics.framework */; };
@@ -21,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4A8FFC2E133039D60083C5FA /* ProblemGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProblemGenerator.h; sourceTree = "<group>"; };
+		4A8FFC2F133039D60083C5FA /* ProblemGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProblemGenerator.m; sourceTree = "<group>"; };
 		4A9703CA132F1EF000EE1263 /* SlideRuleCoach.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SlideRuleCoach.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A9703CE132F1EF000EE1263 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4A9703D0132F1EF000EE1263 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -96,6 +99,8 @@
 				4A9703F5132F23A400EE1263 /* Exam.m */,
 				4A9703F7132F28F400EE1263 /* Problem.h */,
 				4A9703F8132F28F400EE1263 /* Problem.m */,
+				4A8FFC2E133039D60083C5FA /* ProblemGenerator.h */,
+				4A8FFC2F133039D60083C5FA /* ProblemGenerator.m */,
 			);
 			path = SlideRuleCoach;
 			sourceTree = "<group>";
@@ -176,6 +181,7 @@
 				4A9703E5132F1EF000EE1263 /* RootViewController.m in Sources */,
 				4A9703F6132F23A400EE1263 /* Exam.m in Sources */,
 				4A9703F9132F28F400EE1263 /* Problem.m in Sources */,
+				4A8FFC30133039D60083C5FA /* ProblemGenerator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,6 +294,7 @@
 				4A9703ED132F1EF000EE1263 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

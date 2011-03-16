@@ -22,7 +22,7 @@
 }
 
 -(id)init {
-    return [self initWithNumeratorText:@"1.0" denominatorText:nil answer:[NSNumber numberWithDouble:1.0] helpText:@"N/A"];
+    return [self initWithNumeratorText:@"1.0" denominatorText:@"1.0" answer:[NSNumber numberWithDouble:1.0] helpText:@"N/A"];
 }
 
 -(id)initWithNumeratorText:(NSString *)num denominatorText:(NSString *)den answer:(NSNumber *)ans helpText:(NSString *)help
@@ -49,6 +49,8 @@
     //Most problems use a simple log10 scale, so the standard is done here.
     //Note that we have to determine which way around the scale is quickest.
     //Also note that this is always positive.
+    //Question: Would it be better to return the whole difference including
+    //number of "revolutions" off?
     return nil;
 }
 

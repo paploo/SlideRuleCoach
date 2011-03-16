@@ -8,6 +8,7 @@
 
 #import "Exam.h"
 #import "Problem.h"
+#import "ProblemGenerator.h"
 
 
 @implementation Exam
@@ -16,6 +17,7 @@
     if( (self = [super init]) ) {
         name = @"Abstract Exam";
         summary = @"An abstract exam that returns no problems.";
+        problemGenerator = [[ProblemGenerator alloc] init];
         problems = [[NSMutableArray alloc] initWithCapacity:20];
     }
     return self;
@@ -25,9 +27,10 @@
 @synthesize summary;
 @synthesize problems;
 @synthesize difficulty;
+@synthesize problemGenerator;
 
 - (Problem *)nextProblem {
-    return nil;
+    return [problemGenerator nextWithDifficulty:[self difficulty]];
 }
 
 - (NSNumber *)averageError {
@@ -50,6 +53,7 @@
     [name release];
     [summary release];
     [problems release];
+    [problemGenerator release];
     [super dealloc];
 }
 
