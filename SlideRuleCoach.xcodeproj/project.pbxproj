@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A0D111C1332C8F900507127 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4A0D111B1332C8F900507127 /* README.txt */; };
 		4A223D92133193BC0014A592 /* NumberFormatterFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A223D91133193BC0014A592 /* NumberFormatterFactory.m */; };
 		4A8FFC30133039D60083C5FA /* ProblemGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A8FFC2F133039D60083C5FA /* ProblemGenerator.m */; };
 		4A9703CF132F1EF000EE1263 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A9703CE132F1EF000EE1263 /* UIKit.framework */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4A0D111B1332C8F900507127 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
 		4A223D90133193BC0014A592 /* NumberFormatterFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NumberFormatterFactory.h; sourceTree = "<group>"; };
 		4A223D91133193BC0014A592 /* NumberFormatterFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NumberFormatterFactory.m; sourceTree = "<group>"; };
 		4A8FFC2E133039D60083C5FA /* ProblemGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProblemGenerator.h; sourceTree = "<group>"; };
@@ -69,6 +71,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4A0D111E1332D28A00507127 /* Exams */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Exams;
+			sourceTree = "<group>";
+		};
+		4A0D111F1332D29800507127 /* Problem Generators */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Problem Generators";
+			sourceTree = "<group>";
+		};
 		4A9703BF132F1EEF00EE1263 = {
 			isa = PBXGroup;
 			children = (
@@ -108,7 +124,6 @@
 				4ACBF0F213307CDD0059BF4C /* ProblemViewController.h */,
 				4ACBF0F313307CDD0059BF4C /* ProblemViewController.m */,
 				4ACBF0F413307CDD0059BF4C /* ProblemViewController.xib */,
-				4A9703D5132F1EF000EE1263 /* Supporting Files */,
 				4ACBF0E813306DE50059BF4C /* Proctor.h */,
 				4ACBF0E913306DE50059BF4C /* Proctor.m */,
 				4A9703F4132F23A400EE1263 /* Exam.h */,
@@ -119,6 +134,9 @@
 				4A8FFC2F133039D60083C5FA /* ProblemGenerator.m */,
 				4A223D90133193BC0014A592 /* NumberFormatterFactory.h */,
 				4A223D91133193BC0014A592 /* NumberFormatterFactory.m */,
+				4A0D111F1332D29800507127 /* Problem Generators */,
+				4A0D111E1332D28A00507127 /* Exams */,
+				4A9703D5132F1EF000EE1263 /* Supporting Files */,
 			);
 			path = SlideRuleCoach;
 			sourceTree = "<group>";
@@ -130,6 +148,7 @@
 				4A9703D7132F1EF000EE1263 /* InfoPlist.strings */,
 				4A9703DA132F1EF000EE1263 /* SlideRuleCoach-Prefix.pch */,
 				4A9703DB132F1EF000EE1263 /* main.m */,
+				4A0D111B1332C8F900507127 /* README.txt */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -185,6 +204,7 @@
 				4A9703E2132F1EF000EE1263 /* MainWindow.xib in Resources */,
 				4A9703E8132F1EF000EE1263 /* RootViewController.xib in Resources */,
 				4ACBF0F613307CDE0059BF4C /* ProblemViewController.xib in Resources */,
+				4A0D111C1332C8F900507127 /* README.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
