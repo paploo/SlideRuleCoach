@@ -10,7 +10,7 @@
 
 @class Exam;
 
-@interface ProblemViewController : UIViewController {
+@interface ProblemViewController : UIViewController <UITextFieldDelegate> {
     Exam *exam;
     
     IBOutlet UILabel *numeratorBox;
@@ -25,10 +25,13 @@
     IBOutlet UILabel *deltaUBox;
     IBOutlet UILabel *avgErrorBox;
     IBOutlet UILabel *avgDeltaUBox;
+    
+    IBOutlet UILabel *problemNumberBox;
 }
 @property(nonatomic, retain) Exam *exam;
 - (IBAction)submitAnswer:(id)sender;
 - (IBAction)gotoNextProblem:(id)sender;
+- (IBAction)showHelp:(id)sender;
 - (void)populateProblem;
 - (void)populateStats;
 @end

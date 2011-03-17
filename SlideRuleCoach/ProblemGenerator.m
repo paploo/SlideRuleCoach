@@ -8,11 +8,26 @@
 
 #import "ProblemGenerator.h"
 #import "Problem.h"
+#import "NumberFormatterFactory.h"
 
 @implementation ProblemGenerator
 
+- (id)init {
+    if( (self = [super init]) ){
+        defaultFormatter = [[NumberFormatterFactory decimalFormatterWithSigFigs:4] retain];
+    }
+    return self;
+}
+
+@synthesize defaultFormatter;
+
 - (Problem *)nextWithDifficulty:(unsigned)difficulty {
     return [Problem ProblemWithNumeratorText:@"1.0" denominatorText:@"1.0" answer:[NSNumber numberWithDouble:1.0] helpText:@"N/A"];
+}
+
+- (void)dealloc {
+    [defaultFormatter release];
+    [super dealloc];
 }
 
 @end

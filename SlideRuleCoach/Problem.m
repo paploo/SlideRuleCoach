@@ -28,10 +28,10 @@
 -(id)initWithNumeratorText:(NSString *)num denominatorText:(NSString *)den answer:(NSNumber *)ans helpText:(NSString *)help
 {
     if( (self = [super init]) ){
-        numeratorText = num;
-        denominatorText = den;
-        answer = ans;
-        helpText = help;
+        numeratorText = [num retain];
+        denominatorText = [den retain];
+        answer = [ans retain];
+        helpText = [help retain];
         
         submittedResult = nil;
     }
@@ -39,10 +39,13 @@
 }
 
 -(NSNumber *)error {
-    if(submittedResult)
-        return [NSNumber numberWithFloat:(([submittedResult floatValue]-[answer floatValue]) / [answer floatValue])];
-    else
+    if(submittedResult) {
+        double error = ([submittedResult doubleValue] / [answer doubleValue]) - 1.0;
+        return [NSNumber numberWithDouble:error];
+    } else {
+        NSLog(@"submittedResult == nil");
         return nil;
+    }
 }
 
 - (NSNumber *)scaleReadError {

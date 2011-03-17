@@ -13,7 +13,7 @@
 
 @implementation Exam
 
-+ (NSString *)name {
++ (NSString *)title {
     return @"Abstract Exam";
 }
 
@@ -33,7 +33,7 @@
 @synthesize difficulty;
 @synthesize problemGenerator;
 
-- (Problem *)nextProblem {
+- (Problem *)generateProblem {
     Problem *problem = [problemGenerator nextWithDifficulty:[self difficulty]];
     [[self problems] addObject:problem];
     return problem;

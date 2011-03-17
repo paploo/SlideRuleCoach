@@ -9,6 +9,7 @@
 #import "ProblemViewController.h"
 #import "Exam.h"
 #import "Problem.h"
+#import "NumberFormatterFactory.h"
 
 
 @implementation ProblemViewController
@@ -17,6 +18,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
+        NSLog(@"init");
         // Custom initialization
     }
     return self;
@@ -26,6 +28,7 @@
 
 - (void)dealloc
 {
+    NSLog(@"dealloc");
     [exam release];
     [numeratorBox release];
     [denominatorBox release];
@@ -36,6 +39,7 @@
     [deltaUBox release];
     [avgErrorBox release];
     [avgDeltaUBox release];
+    [problemNumberBox release];
     [super dealloc];
 }
 
@@ -56,6 +60,11 @@
     
     NSLog(@"viewDidLoad");
     [self populateProblem];
+    if( [[exam currentProblem] submittedResult] ){
+        NSNumberFormatter *formatter = [NumberFormatterFactory percentageFormatter];
+        [answerBox setText:[formatter stringFromNumber:[[exam currentProblem] submittedResult]]];
+        [self populateStats];
+    }
 }
 
 - (void)viewDidUnload
@@ -81,6 +90,8 @@
     avgErrorBox = nil;
     [avgDeltaUBox release];
     avgDeltaUBox = nil;
+    [problemNumberBox release];
+    problemNumberBox = nil;
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -94,10 +105,20 @@
         || (interfaceOrientation == UIInterfaceOrientationLandscapeRight);
 }
 
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+	NSLog(@"textFieldShouldReturn");
+	[textField resignFirstResponder];
+	return YES;
+}
+
 - (IBAction)submitAnswer:(id)sender {
     NSLog(@"submitAnswer");
     
-    NSNumber *result = [NSNumber numberWithDouble:1.1];
+    [answerInput resignFirstResponder];
+    
+    NSNumberFormatter *formatter = [NumberFormatterFactory decimalFormatter];
+    NSNumber *result = [formatter numberFromString:[answerInput text]];
+    
     [[exam currentProblem] setSubmittedResult:result];
     
     [self populateStats];
@@ -105,16 +126,49 @@
 
 - (IBAction)gotoNextProblem:(id)sender {
     NSLog(@"gotoNextProblem");
+    [exam generateProblem];
+    [self populateProblem];
 }
 
-- (void)populateProblem {
+- (IBAction)showHelp:(id)sender {
+    NSLog(@"showHelp");
+}
+
+- (void)populateProblem {    
+    // Populate the problem.
     Problem *problem = [exam currentProblem];
     [numeratorBox setText:[problem numeratorText]];
-    [denominatorBox setText:[problem denominatorText]];
+    
+    if([problem denominatorText]) {
+        [dividerLine setHidden:NO];
+        [denominatorBox setText:[problem denominatorText]];
+    } else {
+        [dividerLine setHidden:YES];
+        [denominatorBox setText:nil];
+    }
+    
+    [problemNumberBox setText:[NSString stringWithFormat:@"%u", [[exam problems] count]]];
+    
+    // Clear the stats.
+    [answerBox setText:nil];
+    [errorBox setText:nil];
+    [deltaUBox setText:nil];
+    [avgErrorBox setText:nil];
+    [avgDeltaUBox setText:nil];
 }
 
 - (void)populateStats {
-    //Problem *problem = [exam currentProblem];
+    Problem *problem = [exam currentProblem];
+    
+    NSNumberFormatter *formatter = [NumberFormatterFactory decimalFormatter];
+    NSNumberFormatter *percentFormatter = [NumberFormatterFactory percentageFormatter];
+    NSNumberFormatter *fixnumFormatter = [NumberFormatterFactory fixnumFormatterWithPlaces:3];
+    
+    [answerBox setText:[formatter stringFromNumber:[problem submittedResult]]];
+    [errorBox setText:[percentFormatter stringFromNumber:[problem error]]];
+    [avgErrorBox setText:[percentFormatter stringFromNumber:[exam averageError]]];
+    [deltaUBox setText:[fixnumFormatter stringFromNumber:[problem scaleReadError]]];
+    [avgDeltaUBox setText:[fixnumFormatter stringFromNumber:[exam averageScaleReadError]]];
 }
 
 @end

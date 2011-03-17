@@ -18,7 +18,7 @@
 
 - (id)init {
     if( (self = [super init]) ){
-        examList = [self buildExamList];
+        examList = [[self buildExamList] retain];
         currentExam = nil;
     }
     return self;
@@ -39,7 +39,7 @@
 }
 
 - (NSArray *)buildExamList {
-    return [[NSArray alloc] initWithObjects:@"Exam", nil];
+    return [[[NSArray alloc] initWithObjects:@"Exam", nil] autorelease];
 }
 
 - (void)dealloc {

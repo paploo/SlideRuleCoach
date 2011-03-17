@@ -73,7 +73,7 @@
     // Configure the cell.
     NSUInteger index = [indexPath indexAtPosition:0];
     Class examClass = [proctor examClassAtIndex:index];
-    [[cell textLabel] setText:[examClass name]];
+    [[cell textLabel] setText:[examClass title]];
     [[cell detailTextLabel] setText:[examClass summary]];
     return cell;
 }
@@ -125,25 +125,25 @@
     
     Class examClass = [proctor examClassAtIndex:index];
     Exam *exam = [[examClass alloc] init];
+    [exam generateProblem];
     
     ProblemViewController *problemViewController = [[ProblemViewController alloc] initWithNibName:@"ProblemViewController" bundle:nil];
     [problemViewController setExam:exam];
     
-    [problemViewController setTitle:[examClass name]];
+    [problemViewController setTitle:[examClass title]];
     
     [[self navigationController] pushViewController:problemViewController animated:YES];
     [problemViewController release];
+    
+    [exam release];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     /*
-    <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-    // ...
-    // Pass the selected object to the new view controller.
-    [self.navigationController pushViewController:detailViewController animated:YES];
-    [detailViewController release];
-	*/
+     This should give details about the exam selected.
+     This should push a different view controller.
+     */
 }
 
 - (void)didReceiveMemoryWarning

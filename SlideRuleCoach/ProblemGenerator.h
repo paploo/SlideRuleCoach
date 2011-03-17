@@ -18,7 +18,8 @@
 //can be used to randomly grab problems from an array
 //of generators set at initialization.
 @interface ProblemGenerator : NSObject {
-    
+    NSNumberFormatter *defaultFormatter;
 }
+@property(nonatomic, retain, readonly) NSNumberFormatter *defaultFormatter;
 - (Problem *)nextWithDifficulty:(unsigned)difficulty;
 @end

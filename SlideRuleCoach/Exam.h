@@ -22,12 +22,12 @@
     unsigned difficulty;
     ProblemGenerator *problemGenerator;
 }
-+ (NSString *)name;
++ (NSString *)title;
 + (NSString *)summary;
 @property(nonatomic, retain, readonly) NSMutableArray *problems;
 @property unsigned difficulty;
 @property(nonatomic, retain, readonly) ProblemGenerator *problemGenerator;
-- (Problem *)nextProblem;
+- (Problem *)generateProblem;
 - (Problem *)currentProblem;
 - (NSNumber *)averageError;
 - (NSNumber *)averageScaleReadError;
