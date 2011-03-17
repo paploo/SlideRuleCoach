@@ -99,16 +99,19 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait)
-        || (interfaceOrientation == UIInterfaceOrientationLandscapeLeft)
-        || (interfaceOrientation == UIInterfaceOrientationLandscapeRight);
+    return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
 	NSLog(@"textFieldShouldReturn");
 	[textField resignFirstResponder];
 	return YES;
+}
+
+- (BOOL)textFieldShouldEndEditing:(UITextField *)textField {
+    [textField resignFirstResponder];
+    [self submitAnswer:textField];
+    return YES;
 }
 
 - (IBAction)submitAnswer:(id)sender {
@@ -147,14 +150,15 @@
         [denominatorBox setText:nil];
     }
     
-    [problemNumberBox setText:[NSString stringWithFormat:@"%u", [[exam problems] count]]];
+    [problemNumberBox setText:[NSString stringWithFormat:@"Problem %u:", [[exam problems] count]]];
     
     // Clear the stats.
-    [answerBox setText:nil];
-    [errorBox setText:nil];
-    [deltaUBox setText:nil];
-    [avgErrorBox setText:nil];
-    [avgDeltaUBox setText:nil];
+    [answerInput setText:nil];
+    [answerBox setText:@"----"];
+    [errorBox setText:@"----"];
+    [deltaUBox setText:@"----"];
+    [avgErrorBox setText:@"----"];
+    [avgDeltaUBox setText:@"----"];
 }
 
 - (void)populateStats {
@@ -164,7 +168,7 @@
     NSNumberFormatter *percentFormatter = [NumberFormatterFactory percentageFormatter];
     NSNumberFormatter *fixnumFormatter = [NumberFormatterFactory fixnumFormatterWithPlaces:3];
     
-    [answerBox setText:[formatter stringFromNumber:[problem submittedResult]]];
+    [answerBox setText:[formatter stringFromNumber:[problem answer]]];
     [errorBox setText:[percentFormatter stringFromNumber:[problem error]]];
     [avgErrorBox setText:[percentFormatter stringFromNumber:[exam averageError]]];
     [deltaUBox setText:[fixnumFormatter stringFromNumber:[problem scaleReadError]]];

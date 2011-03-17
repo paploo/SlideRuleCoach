@@ -46,7 +46,7 @@
 - (NSNumber *)averageError {
     double sum = 0.0;
     for(Problem * problem in problems){
-        sum += abs([[problem error] doubleValue]);
+        sum += fabs([[problem error] doubleValue]);
     }
     return [NSNumber numberWithDouble:(sum/[problems count])];
 }
@@ -54,7 +54,7 @@
 - (NSNumber *)averageScaleReadError {
     double sum = 0.0;
     for(Problem * problem in problems){
-        sum += abs([[problem scaleReadError] doubleValue]);
+        sum += fabs([[problem scaleReadError] doubleValue]);
     }
     return [NSNumber numberWithDouble:(sum/[problems count])];
 }
