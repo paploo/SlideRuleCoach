@@ -32,4 +32,13 @@
     [super dealloc];
 }
 
+- (NSNumber *)scaleReadErrorForProblem:(Problem *)problem {
+    //Most problems use a simple log10 scale, so the standard is done here.
+    //Note that we have to determine which way around the scale is quickest.
+    //Integers show how many revolutions you are off.
+    double uAnswer = log10([[problem answer] doubleValue]);
+    double uSubmitted = log10([[problem submittedResult] doubleValue]);
+    return [NSNumber numberWithDouble:(uSubmitted - uAnswer)];
+}
+
 @end

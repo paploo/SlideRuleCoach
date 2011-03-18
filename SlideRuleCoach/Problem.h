@@ -9,10 +9,13 @@
 #import <Foundation/Foundation.h>
 #import "ProblemDifficulty.h"
 
+@protocol ProblemDelegateMethods;
+
 // Problem is responsible for encapsulating
 // a problem, it's answer, help text for the problem,
 // the submitted result, and the errors.
 @interface Problem : NSObject {
+    id<ProblemDelegateMethods> delegate;
     NSString *helpText;
     ProblemDifficulty difficulty;
     NSString *numeratorText;
@@ -22,6 +25,7 @@
 }
 +(id)ProblemWithNumeratorText:(NSString *)num denominatorText:(NSString *)den answer:(NSNumber *)ans helpText:(NSString *)help difficulty:(ProblemDifficulty)diff;
 -(id)initWithNumeratorText:(NSString *)num denominatorText:(NSString *)den answer:(NSNumber *)ans helpText:(NSString *)help difficulty:(ProblemDifficulty)diff;
+@property(nonatomic, assign) id<ProblemDelegateMethods> delegate;
 @property ProblemDifficulty difficulty;
 @property(nonatomic, retain, readonly) NSString *helpText;
 @property(nonatomic, retain, readonly) NSString *numeratorText;
@@ -30,4 +34,12 @@
 @property(nonatomic, retain) NSNumber *submittedResult;
 - (NSNumber *)error; //The error in percent of misread.
 - (NSNumber *)scaleReadError; //If the scale is 1.0 units long, how far off was I?
+@end
+
+
+@protocol ProblemDelegateMethods <NSObject>
+
+@optional
+- (NSNumber *)scaleReadErrorForProblem:(Problem *)problem;
+
 @end

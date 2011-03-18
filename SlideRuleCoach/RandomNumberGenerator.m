@@ -52,7 +52,7 @@
 }
 
 + (NSNumber *)decimalWithDifficulty:(ProblemDifficulty)difficulty {
-    return [self decimalWithMinPower:0.0 maxPower:1.0 canBeNegative:NO];
+    return [self decimalWithMinPower:-1.0 maxPower:1.0 canBeNegative:NO];
 }
 
 + (NSNumber *)bool {

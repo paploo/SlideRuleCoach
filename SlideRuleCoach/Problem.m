@@ -13,6 +13,7 @@
 
 @implementation Problem
 
+@synthesize delegate;
 @synthesize difficulty;
 @synthesize helpText;
 @synthesize numeratorText;
@@ -50,12 +51,11 @@
 }
 
 - (NSNumber *)scaleReadError {
-    //Most problems use a simple log10 scale, so the standard is done here.
-    //Note that we have to determine which way around the scale is quickest.
-    //Integers show how many revolutions you are off.
-    double uAnswer = log10([[self answer] doubleValue]);
-    double uSubmitted = log10([[self submittedResult] doubleValue]);
-    return [NSNumber numberWithDouble:(uSubmitted - uAnswer)];
+    if( [delegate respondsToSelector:@selector(scaleReadErrorForProblem:)] ) {
+        return [delegate scaleReadErrorForProblem:self];
+    } else {
+        return nil;
+    }
 }
 
 

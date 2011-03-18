@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "ProblemDifficulty.h"
+#import "Problem.h"
 
 @class Problem;
 
@@ -18,7 +19,7 @@
 //generators.  Indeed, a generic RandomProblemGenerator
 //can be used to randomly grab problems from an array
 //of generators set at initialization.
-@interface ProblemGenerator : NSObject {
+@interface ProblemGenerator : NSObject <ProblemDelegateMethods> {
     NSNumberFormatter *defaultFormatter;
 }
 @property(nonatomic, retain, readonly) NSNumberFormatter *defaultFormatter;

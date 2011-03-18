@@ -12,7 +12,7 @@ Todo List:
 [ ] Build out Problem Generators:
     [ ] Basic:
         [+] Multiplication (a*b*c)
-        [ ] Inversion (1/a)
+        [+] Inversion (1/a)
         [ ] Fractions (a*c*e/b*d*f)
         [ ] Ratio-proportions
     [ ] Squares, Cubes and Roots:
@@ -39,7 +39,8 @@ Todo List:
         [ ] Artillary Ranging.
         [ ] RandomProblemGenerator: Initialized with an array of problem generators, and then randomly selects from them.  Weights?
 
-[ ] Build exams
+
+[+] Make calculation of scaleReadError on Problem use a delegate (which would be the generator).
 
 [ ] Break exam list into sections
 

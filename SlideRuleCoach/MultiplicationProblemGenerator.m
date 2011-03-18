@@ -7,7 +7,6 @@
 //
 
 #import "MultiplicationProblemGenerator.h"
-#import "ProblemDifficulty.h"
 #import "Problem.h"
 #import "RandomNumberGenerator.h"
 
@@ -43,6 +42,7 @@
     
     // Create the problem.
     Problem *problem = [[Problem alloc] initWithNumeratorText:numerator denominatorText:nil answer:answer helpText:helpText difficulty:difficulty];
+    [problem setDelegate:self];
     
     // Return.
     return [problem autorelease];

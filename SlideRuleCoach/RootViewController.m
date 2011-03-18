@@ -51,7 +51,7 @@
 // Customize the number of sections in the table view.
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 1;
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -59,9 +59,15 @@
     return [[proctor examList] count];
 }
 
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    return @"Section";
+}
+
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    NSLog(@"indexPath: %@", indexPath);
     static NSString *CellIdentifier = @"Cell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
@@ -71,7 +77,7 @@
     }
 
     // Configure the cell.
-    NSUInteger index = [indexPath indexAtPosition:0];
+    NSUInteger index = [indexPath indexAtPosition:1];
     Class examClass = [proctor examClassAtIndex:index];
     [[cell textLabel] setText:[examClass title]];
     [[cell detailTextLabel] setText:[examClass summary]];
