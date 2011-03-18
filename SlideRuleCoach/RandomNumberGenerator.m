@@ -47,12 +47,12 @@
     if( canBeNeg )
         neg = [[self bool] boolValue];
     
-    NSNumber *rand = [[NSDecimalNumber alloc] initWithMantissa:mantissa exponent:exponent isNegative:neg];
+    NSNumber *rand = [[NSDecimalNumber alloc] initWithMantissa:mantissa exponent:(exponent-3) isNegative:neg];
     return [rand autorelease];
 }
 
 + (NSNumber *)decimalWithDifficulty:(ProblemDifficulty)difficulty {
-    return nil;
+    return [self decimalWithMinPower:0.0 maxPower:1.0 canBeNegative:NO];
 }
 
 + (NSNumber *)bool {

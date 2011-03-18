@@ -124,6 +124,8 @@
     
     [[exam currentProblem] setSubmittedResult:result];
     
+    [answerInput setText:[formatter stringFromNumber:result]]; //Reset it with the interpreted result.
+    
     [self populateStats];
 }
 

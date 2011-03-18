@@ -6,6 +6,8 @@
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
+#import <math.h>
+
 #import "Problem.h"
 
 
@@ -43,7 +45,6 @@
         double error = ([submittedResult doubleValue] / [answer doubleValue]) - 1.0;
         return [NSNumber numberWithDouble:error];
     } else {
-        NSLog(@"submittedResult == nil");
         return nil;
     }
 }
@@ -51,10 +52,10 @@
 - (NSNumber *)scaleReadError {
     //Most problems use a simple log10 scale, so the standard is done here.
     //Note that we have to determine which way around the scale is quickest.
-    //Also note that this is always positive.
-    //Question: Would it be better to return the whole difference including
-    //number of "revolutions" off?
-    return nil;
+    //Integers show how many revolutions you are off.
+    double uAnswer = log10([[self answer] doubleValue]);
+    double uSubmitted = log10([[self submittedResult] doubleValue]);
+    return [NSNumber numberWithDouble:(uSubmitted - uAnswer)];
 }
 
 

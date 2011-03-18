@@ -8,6 +8,7 @@
 
 #import "Proctor.h"
 #import "Exam.h"
+#import "Exams.h"
 
 @interface Proctor (PrivateMethods)
 - (NSArray *)buildExamList;
@@ -37,13 +38,14 @@
 
 - (Exam *)startExamAtIndex:(NSUInteger)index withDifficulty:(ProblemDifficulty)difficulty {
     Class examClass = [self examClassAtIndex:index];
-    Exam *currExam = [[[examClass alloc] initWithDifficulty:difficulty] autorelease];
+    Exam *currExam = [[[examClass alloc] init] autorelease];
+    [currExam setDifficulty:difficulty];
     [self setCurrentExam:currExam];
     return currExam; 
 }
 
 - (NSArray *)buildExamList {
-    return [[[NSArray alloc] initWithObjects:@"Exam", nil] autorelease];
+    return [[[NSArray alloc] initWithObjects:@"MultiplicationExam", nil] autorelease];
 }
 
 - (void)dealloc {

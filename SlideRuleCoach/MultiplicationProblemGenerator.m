@@ -27,7 +27,7 @@
     // Build the string.
     NSMutableArray *termStrings = [[[NSMutableArray alloc] initWithCapacity:termCount] autorelease];
     for(NSNumber *term in terms){
-        [defaultFormatter stringFromNumber:term];
+        [termStrings addObject:[defaultFormatter stringFromNumber:term]];
     }
     NSString *numerator = [termStrings componentsJoinedByString:@" x "];
     

@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "ProblemDifficulty.h"
+#import "ProblemGenerators.h" // Makes it easier to build subclasses.
 
 @class Problem;
 @class ProblemGenerator;
@@ -25,7 +26,7 @@
 }
 + (NSString *)title;
 + (NSString *)summary;
-- (id)initWithDifficulty:(ProblemDifficulty)difficulty;
+// - (id)initWithDifficulty:(ProblemDifficulty)difficulty; // We don't do this so subclasses don't have to define it and call super.
 @property(nonatomic, retain, readonly) NSMutableArray *problems;
 @property ProblemDifficulty difficulty;
 @property(nonatomic, retain, readonly) ProblemGenerator *problemGenerator;

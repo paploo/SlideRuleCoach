@@ -11,7 +11,7 @@ Todo List:
 
 [ ] Build out Problem Generators:
     [ ] Basic:
-        [√] Multiplication (a*b*c)
+        [+] Multiplication (a*b*c)
         [ ] Inversion (1/a)
         [ ] Fractions (a*c*e/b*d*f)
         [ ] Ratio-proportions

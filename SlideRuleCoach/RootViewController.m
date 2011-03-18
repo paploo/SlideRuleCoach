@@ -123,14 +123,13 @@
     NSUInteger index = [indexPath indexAtPosition:0];
     NSLog(@"didSelectRowAtIndex:%u", index);
     
-    Class examClass = [proctor examClassAtIndex:index];
-    Exam *exam = [[examClass alloc] init];
+    Exam *exam = [proctor startExamAtIndex:index];
     [exam generateProblem];
     
     ProblemViewController *problemViewController = [[ProblemViewController alloc] initWithNibName:@"ProblemViewController" bundle:nil];
     [problemViewController setExam:exam];
     
-    [problemViewController setTitle:[examClass title]];
+    [problemViewController setTitle:[[exam class] title]];
     
     [[self navigationController] pushViewController:problemViewController animated:YES];
     [problemViewController release];

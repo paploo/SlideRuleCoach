@@ -6,6 +6,8 @@
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
+#import <math.h>
+
 #import "Exam.h"
 #import "Problem.h"
 #import "ProblemGenerator.h"
@@ -21,17 +23,13 @@
     return @"An abstract exam that returns no problems.";
 }
 
-- (id)initWithDifficulty:(ProblemDifficulty)diff {
-    if( (self = [super init]) ) {
-        problemGenerator = [[ProblemGenerator alloc] init];
-        problems = [[NSMutableArray alloc] initWithCapacity:20];
-        difficulty = diff;
-    }
-    return self; 
-}
-
 - (id)init {
-    return [self initWithDifficulty:NORMAL];
+    if( (self = [super init]) ) {
+        problems = [[NSMutableArray alloc] initWithCapacity:20];
+        difficulty = NORMAL;
+        problemGenerator = nil;
+    }
+    return self;
 }
 
 @synthesize problems;
