@@ -12,9 +12,9 @@
 // so that we have the option of a simple way to find
 // average difficulty.
 typedef enum ProblemDifficulty {
-    INTRODUCTORY = 0,
-    EASY = 1,
-    NORMAL = 2,
-    ADVANCED = 3,
-    MASTER = 4
+    ProblemDifficulyIntroductory = 0,
+    ProblemDifficultyEasy = 1,
+    ProblemDifficultyNormal = 2,
+    ProblemDifficultyAdvanced = 3,
+    ProblemDifficultyMaster = 4
 } ProblemDifficulty;

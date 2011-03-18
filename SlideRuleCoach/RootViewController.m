@@ -51,17 +51,17 @@
 // Customize the number of sections in the table view.
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 2;
+    return [proctor sectionCount];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [[proctor examList] count];
+    return [proctor examCountInSection:section];
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    return @"Section";
+    return [proctor sectionLabel:section];
 }
 
 // Customize the appearance of table view cells.
@@ -77,8 +77,7 @@
     }
 
     // Configure the cell.
-    NSUInteger index = [indexPath indexAtPosition:1];
-    Class examClass = [proctor examClassAtIndex:index];
+    Class examClass = [proctor examClassAtIndexPath:indexPath];
     [[cell textLabel] setText:[examClass title]];
     [[cell detailTextLabel] setText:[examClass summary]];
     return cell;
@@ -126,10 +125,7 @@
 */
 
 - (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {
-    NSUInteger index = [indexPath indexAtPosition:0];
-    NSLog(@"didSelectRowAtIndex:%u", index);
-    
-    Exam *exam = [proctor startExamAtIndex:index];
+    Exam *exam = [proctor startExamAtIndexPath:indexPath];
     [exam generateProblem];
     
     ProblemViewController *problemViewController = [[ProblemViewController alloc] initWithNibName:@"ProblemViewController" bundle:nil];

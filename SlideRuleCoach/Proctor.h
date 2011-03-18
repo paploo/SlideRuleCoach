@@ -14,12 +14,15 @@
 //Proctor's job is to manage the list of available
 //exams, and to instantiate a new exam when necessary.
 @interface Proctor : NSObject {
-    NSArray *examList;
+    NSArray *examRegistry;
     Exam *currentExam;
 }
-@property(nonatomic, retain) NSArray *examList;
+@property(nonatomic, retain) NSArray *examRegistry;
 @property(nonatomic, retain) Exam *currentExam;
-- (Class)examClassAtIndex:(NSUInteger)index;
-- (Exam *)startExamAtIndex:(NSUInteger)index;
-- (Exam *)startExamAtIndex:(NSUInteger)index withDifficulty:(ProblemDifficulty)difficulty;
+- (NSString *)sectionLabel:(NSInteger)section;
+- (NSUInteger)sectionCount;
+- (NSUInteger)examCountInSection:(NSInteger)section;
+- (Class)examClassAtIndexPath:(NSIndexPath *)indexPath;
+- (Exam *)startExamAtIndexPath:(NSIndexPath *)indexPath;
+- (Exam *)startExamAtIndexPath:(NSIndexPath *)indexPath withDifficulty:(ProblemDifficulty)difficulty;
 @end

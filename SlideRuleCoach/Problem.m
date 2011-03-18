@@ -26,7 +26,7 @@
 }
 
 -(id)init {
-    return [self initWithNumeratorText:@"1.0" denominatorText:@"1.0" answer:[NSNumber numberWithDouble:1.0] helpText:@"N/A" difficulty:NORMAL];
+    return [self initWithNumeratorText:@"1.0" denominatorText:@"1.0" answer:[NSNumber numberWithDouble:1.0] helpText:@"N/A" difficulty:ProblemDifficultyNormal];
 }
 
 -(id)initWithNumeratorText:(NSString *)num denominatorText:(NSString *)den answer:(NSNumber *)ans helpText:(NSString *)help difficulty:(ProblemDifficulty)diff {

@@ -11,45 +11,73 @@
 #import "Exams.h"
 
 @interface Proctor (PrivateMethods)
-- (NSArray *)buildExamList;
+- (NSArray *)buildExamRegistry;
 @end
+
+static NSString *ProctorSectionName = @"SectionName";
+static NSString *ProctorSectionExamList = @"SectionExamList";
+static NSInteger ProctorSectionIndexPosition = 0;
+static NSInteger ProctorSectionExamIndexPosition = 1;
 
 
 @implementation Proctor
 
 - (id)init {
     if( (self = [super init]) ){
-        examList = [[self buildExamList] retain];
+        examRegistry = [[self buildExamRegistry] retain];
         currentExam = nil;
     }
     return self;
 }
 
-@synthesize examList;
+@synthesize examRegistry;
 @synthesize currentExam;
 
-- (Class)examClassAtIndex:(NSUInteger)index {
-    return NSClassFromString([examList objectAtIndex:index]);
+- (NSUInteger)sectionCount {
+    return [examRegistry count];
 }
 
-- (Exam *)startExamAtIndex:(NSUInteger)index {
-    return [self startExamAtIndex:index withDifficulty:NORMAL];
+- (NSString *)sectionLabel:(NSInteger)section {
+    NSDictionary *sectionInfo = [examRegistry objectAtIndex:section];
+    return [sectionInfo valueForKey:ProctorSectionName];
 }
 
-- (Exam *)startExamAtIndex:(NSUInteger)index withDifficulty:(ProblemDifficulty)difficulty {
-    Class examClass = [self examClassAtIndex:index];
-    Exam *currExam = [[examClass alloc] init];
-    [currExam setDifficulty:difficulty];
-    [self setCurrentExam:currExam];
-    return [currExam autorelease]; 
+- (NSUInteger)examCountInSection:(NSInteger)section {
+    NSDictionary *sectionInfo = [examRegistry objectAtIndex:section];
+    return [[sectionInfo valueForKey:ProctorSectionExamList] count];
 }
 
-- (NSArray *)buildExamList {
-    return [[[NSArray alloc] initWithObjects:@"MultiplicationExam", nil] autorelease];
+- (Class)examClassAtIndexPath:(NSIndexPath *)indexPath {
+    NSDictionary *sectionInfo = [examRegistry objectAtIndex:[indexPath indexAtPosition:ProctorSectionIndexPosition]];
+    NSArray *examList = [sectionInfo valueForKey:ProctorSectionExamList];
+    NSString *className = [examList objectAtIndex:[indexPath indexAtPosition:ProctorSectionExamIndexPosition]];
+    return NSClassFromString(className);
+}
+
+- (Exam *)startExamAtIndexPath:(NSIndexPath *)indexPath {
+    return [self startExamAtIndexPath:indexPath withDifficulty:ProblemDifficultyNormal];
+}
+
+- (Exam *)startExamAtIndexPath:(NSIndexPath *)indexPath withDifficulty:(ProblemDifficulty)difficulty {
+    Class examClass = [self examClassAtIndexPath:indexPath];
+    Exam *exam = [[examClass alloc] init];
+    [exam setDifficulty:difficulty];
+    [self setCurrentExam:exam];
+    return [exam autorelease];
+}
+
+// [{ProctorSectionName:@"Basic", ProctorExamList:[@"MultiplicationExam"]}]
+- (NSArray *)buildExamRegistry {
+    return [NSArray arrayWithObjects:
+            [NSDictionary dictionaryWithObjectsAndKeys:
+             @"Basic", ProctorSectionName,
+             [NSArray arrayWithObjects:@"MultiplicationExam", nil], ProctorSectionExamList,
+             nil],
+            nil];
 }
 
 - (void)dealloc {
-    [examList release];
+    [examRegistry release];
     [currentExam release];
     [super dealloc];
 }

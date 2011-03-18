@@ -26,7 +26,7 @@
 - (id)init {
     if( (self = [super init]) ) {
         problems = [[NSMutableArray alloc] initWithCapacity:20];
-        difficulty = NORMAL;
+        difficulty = ProblemDifficultyNormal;
         problemGenerator = nil;
     }
     return self;
