@@ -7,3 +7,4 @@
 //
 
 #import "MultiplicationExam.h"
+#import "InversionExam.h"

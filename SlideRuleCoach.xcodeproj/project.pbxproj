@@ -12,6 +12,7 @@
 		4A0D11251332DA7300507127 /* RandomNumberGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0D11241332DA7200507127 /* RandomNumberGenerator.m */; };
 		4A0D112A1332FAE500507127 /* MultiplicationExam.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0D11291332FAE500507127 /* MultiplicationExam.m */; };
 		4A0D112F1333193F00507127 /* InversionProblemGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0D112E1333193F00507127 /* InversionProblemGenerator.m */; };
+		4A0D11321333D16F00507127 /* InversionExam.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0D11311333D16E00507127 /* InversionExam.m */; };
 		4A223D92133193BC0014A592 /* NumberFormatterFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A223D91133193BC0014A592 /* NumberFormatterFactory.m */; };
 		4A8FFC30133039D60083C5FA /* ProblemGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A8FFC2F133039D60083C5FA /* ProblemGenerator.m */; };
 		4A9703CF132F1EF000EE1263 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A9703CE132F1EF000EE1263 /* UIKit.framework */; };
@@ -43,6 +44,8 @@
 		4A0D112C1332FDF500507127 /* Exams.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Exams.h; sourceTree = "<group>"; };
 		4A0D112D1333193F00507127 /* InversionProblemGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InversionProblemGenerator.h; sourceTree = "<group>"; };
 		4A0D112E1333193F00507127 /* InversionProblemGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InversionProblemGenerator.m; sourceTree = "<group>"; };
+		4A0D11301333D16E00507127 /* InversionExam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InversionExam.h; sourceTree = "<group>"; };
+		4A0D11311333D16E00507127 /* InversionExam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InversionExam.m; sourceTree = "<group>"; };
 		4A223D90133193BC0014A592 /* NumberFormatterFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NumberFormatterFactory.h; sourceTree = "<group>"; };
 		4A223D91133193BC0014A592 /* NumberFormatterFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NumberFormatterFactory.m; sourceTree = "<group>"; };
 		4A8FFC2E133039D60083C5FA /* ProblemGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProblemGenerator.h; sourceTree = "<group>"; };
@@ -92,6 +95,8 @@
 				4A0D112C1332FDF500507127 /* Exams.h */,
 				4A0D11281332FAE500507127 /* MultiplicationExam.h */,
 				4A0D11291332FAE500507127 /* MultiplicationExam.m */,
+				4A0D11301333D16E00507127 /* InversionExam.h */,
+				4A0D11311333D16E00507127 /* InversionExam.m */,
 			);
 			name = Exams;
 			sourceTree = "<group>";
@@ -254,6 +259,7 @@
 				4A0D11251332DA7300507127 /* RandomNumberGenerator.m in Sources */,
 				4A0D112A1332FAE500507127 /* MultiplicationExam.m in Sources */,
 				4A0D112F1333193F00507127 /* InversionProblemGenerator.m in Sources */,
+				4A0D11321333D16F00507127 /* InversionExam.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

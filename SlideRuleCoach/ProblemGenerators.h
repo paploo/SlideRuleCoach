@@ -7,3 +7,4 @@
 //
 
 #import "MultiplicationProblemGenerator.h"
+#import "InversionProblemGenerator.h"

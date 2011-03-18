@@ -18,8 +18,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        NSLog(@"init");
-        // Custom initialization
+        //Init
     }
     return self;
 }
@@ -28,7 +27,6 @@
 
 - (void)dealloc
 {
-    NSLog(@"dealloc");
     [exam release];
     [numeratorBox release];
     [denominatorBox release];
@@ -169,7 +167,7 @@
 - (void)populateStats {
     Problem *problem = [exam currentProblem];
     
-    NSNumberFormatter *formatter = [NumberFormatterFactory decimalFormatter];
+    NSNumberFormatter *formatter = [NumberFormatterFactory decimalFormatterWithSigFigs:4];
     NSNumberFormatter *percentFormatter = [NumberFormatterFactory percentageFormatter];
     NSNumberFormatter *fixnumFormatter = [NumberFormatterFactory fixnumFormatterWithPlaces:3];
     

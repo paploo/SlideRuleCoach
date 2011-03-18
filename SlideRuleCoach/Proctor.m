@@ -9,6 +9,7 @@
 #import "Proctor.h"
 #import "Exam.h"
 #import "Exams.h"
+#import "RandomNumberGenerator.h"
 
 @interface Proctor (PrivateMethods)
 - (NSArray *)buildExamRegistry;
@@ -19,11 +20,11 @@ static NSString *ProctorSectionExamList = @"SectionExamList";
 static NSInteger ProctorSectionIndexPosition = 0;
 static NSInteger ProctorSectionExamIndexPosition = 1;
 
-
 @implementation Proctor
 
 - (id)init {
     if( (self = [super init]) ){
+        [RandomNumberGenerator randomize]; //This is a good time to do this.
         examRegistry = [[self buildExamRegistry] retain];
         currentExam = nil;
     }
@@ -71,7 +72,7 @@ static NSInteger ProctorSectionExamIndexPosition = 1;
     return [NSArray arrayWithObjects:
             [NSDictionary dictionaryWithObjectsAndKeys:
              @"Basic", ProctorSectionName,
-             [NSArray arrayWithObjects:@"MultiplicationExam", nil], ProctorSectionExamList,
+             [NSArray arrayWithObjects:@"MultiplicationExam", @"InversionExam", nil], ProctorSectionExamList,
              nil],
             nil];
 }
