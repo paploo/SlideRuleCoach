@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ProblemDifficulty.h"
 
 @class Exam;
 
@@ -20,4 +21,5 @@
 @property(nonatomic, retain) Exam *currentExam;
 - (Class)examClassAtIndex:(NSUInteger)index;
 - (Exam *)startExamAtIndex:(NSUInteger)index;
+- (Exam *)startExamAtIndex:(NSUInteger)index withDifficulty:(ProblemDifficulty)difficulty;
 @end

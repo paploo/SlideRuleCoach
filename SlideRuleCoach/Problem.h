@@ -7,19 +7,22 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ProblemDifficulty.h"
 
 // Problem is responsible for encapsulating
 // a problem, it's answer, help text for the problem,
 // the submitted result, and the errors.
 @interface Problem : NSObject {
     NSString *helpText;
+    ProblemDifficulty difficulty;
     NSString *numeratorText;
     NSString *denominatorText; //nil when there is no denominator.
     NSNumber *answer;
     NSNumber *submittedResult;
 }
-+(id)ProblemWithNumeratorText:(NSString *)num denominatorText:(NSString *)den answer:(NSNumber *)ans helpText:(NSString *)help;
--(id)initWithNumeratorText:(NSString *)num denominatorText:(NSString *)den answer:(NSNumber *)ans helpText:(NSString *)help;
++(id)ProblemWithNumeratorText:(NSString *)num denominatorText:(NSString *)den answer:(NSNumber *)ans helpText:(NSString *)help difficulty:(ProblemDifficulty)diff;
+-(id)initWithNumeratorText:(NSString *)num denominatorText:(NSString *)den answer:(NSNumber *)ans helpText:(NSString *)help difficulty:(ProblemDifficulty)diff;
+@property ProblemDifficulty difficulty;
 @property(nonatomic, retain, readonly) NSString *helpText;
 @property(nonatomic, retain, readonly) NSString *numeratorText;
 @property(nonatomic, retain, readonly) NSString *denominatorText;

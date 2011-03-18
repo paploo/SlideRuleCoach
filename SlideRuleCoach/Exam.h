@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ProblemDifficulty.h"
 
 @class Problem;
 @class ProblemGenerator;
@@ -19,13 +20,14 @@
 // problems and can cumulative stats for them.
 @interface Exam : NSObject {
     NSMutableArray *problems;
-    unsigned difficulty;
+    ProblemDifficulty difficulty;
     ProblemGenerator *problemGenerator;
 }
 + (NSString *)title;
 + (NSString *)summary;
+- (id)initWithDifficulty:(ProblemDifficulty)difficulty;
 @property(nonatomic, retain, readonly) NSMutableArray *problems;
-@property unsigned difficulty;
+@property ProblemDifficulty difficulty;
 @property(nonatomic, retain, readonly) ProblemGenerator *problemGenerator;
 - (Problem *)generateProblem;
 - (Problem *)currentProblem;

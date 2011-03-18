@@ -21,8 +21,8 @@
 
 @synthesize defaultFormatter;
 
-- (Problem *)nextWithDifficulty:(unsigned)difficulty {
-    return [Problem ProblemWithNumeratorText:@"1.0" denominatorText:@"1.0" answer:[NSNumber numberWithDouble:1.0] helpText:@"N/A"];
+- (Problem *)nextWithDifficulty:(ProblemDifficulty)difficulty {
+    return [Problem ProblemWithNumeratorText:@"1.0" denominatorText:@"1.0" answer:[NSNumber numberWithDouble:1.0] helpText:@"N/A" difficulty:difficulty];
 }
 
 - (void)dealloc {

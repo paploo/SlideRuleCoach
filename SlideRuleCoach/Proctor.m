@@ -32,10 +32,14 @@
 }
 
 - (Exam *)startExamAtIndex:(NSUInteger)index {
+    return [self startExamAtIndex:index withDifficulty:NORMAL];
+}
+
+- (Exam *)startExamAtIndex:(NSUInteger)index withDifficulty:(ProblemDifficulty)difficulty {
     Class examClass = [self examClassAtIndex:index];
-    Exam *currExam = [[examClass alloc] init];
+    Exam *currExam = [[[examClass alloc] initWithDifficulty:difficulty] autorelease];
     [self setCurrentExam:currExam];
-    return currExam;
+    return currExam; 
 }
 
 - (NSArray *)buildExamList {

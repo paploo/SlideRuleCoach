@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ProblemDifficulty.h"
 
 @class Problem;
 
@@ -21,5 +22,5 @@
     NSNumberFormatter *defaultFormatter;
 }
 @property(nonatomic, retain, readonly) NSNumberFormatter *defaultFormatter;
-- (Problem *)nextWithDifficulty:(unsigned)difficulty;
+- (Problem *)nextWithDifficulty:(ProblemDifficulty)difficulty;
 @end

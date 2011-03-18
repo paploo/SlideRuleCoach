@@ -21,12 +21,17 @@
     return @"An abstract exam that returns no problems.";
 }
 
-- (id)init {
+- (id)initWithDifficulty:(ProblemDifficulty)diff {
     if( (self = [super init]) ) {
         problemGenerator = [[ProblemGenerator alloc] init];
         problems = [[NSMutableArray alloc] initWithCapacity:20];
+        difficulty = diff;
     }
-    return self;
+    return self; 
+}
+
+- (id)init {
+    return [self initWithDifficulty:NORMAL];
 }
 
 @synthesize problems;

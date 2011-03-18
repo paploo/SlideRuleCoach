@@ -11,7 +11,7 @@ Todo List:
 
 [ ] Build out Problem Generators:
     [ ] Basic:
-        [ ] Multiplication (a*b*c)
+        [√] Multiplication (a*b*c)
         [ ] Inversion (1/a)
         [ ] Fractions (a*c*e/b*d*f)
         [ ] Ratio-proportions
@@ -37,6 +37,7 @@ Todo List:
     [ ] Special:
         [ ] Hyperbolic Trig functions?
         [ ] Artillary Ranging.
+        [ ] RandomProblemGenerator: Initialized with an array of problem generators, and then randomly selects from them.  Weights?
 
 [ ] Build exams
 
@@ -47,7 +48,7 @@ Todo List:
 [ ] Selecting exam gives info about exam.
 
 [ ] Difficulties:
-    [ ] Make generators use difficulty.
+    [+] Make generators use difficulty.
     [ ] Add screen on test start to set difficulty.
 
 [ ] Notepad:
