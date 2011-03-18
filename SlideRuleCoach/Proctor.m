@@ -38,10 +38,10 @@
 
 - (Exam *)startExamAtIndex:(NSUInteger)index withDifficulty:(ProblemDifficulty)difficulty {
     Class examClass = [self examClassAtIndex:index];
-    Exam *currExam = [[[examClass alloc] init] autorelease];
+    Exam *currExam = [[examClass alloc] init];
     [currExam setDifficulty:difficulty];
     [self setCurrentExam:currExam];
-    return currExam; 
+    return [currExam autorelease]; 
 }
 
 - (NSArray *)buildExamList {

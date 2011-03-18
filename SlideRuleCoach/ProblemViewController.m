@@ -122,11 +122,14 @@
     NSNumberFormatter *formatter = [NumberFormatterFactory decimalFormatter];
     NSNumber *result = [formatter numberFromString:[answerInput text]];
     
-    [[exam currentProblem] setSubmittedResult:result];
-    
-    [answerInput setText:[formatter stringFromNumber:result]]; //Reset it with the interpreted result.
-    
-    [self populateStats];
+    if(result) {
+        [[exam currentProblem] setSubmittedResult:result];
+        [answerInput setText:[formatter stringFromNumber:result]]; //Reset it with the interpreted result.
+        [answerInput setTextColor:[UIColor blackColor]];
+        [self populateStats];
+    } else {
+        [answerInput setTextColor:[UIColor colorWithRed:0.8 green:0.0 blue:0.0 alpha:1.0]];
+    }
 }
 
 - (IBAction)gotoNextProblem:(id)sender {

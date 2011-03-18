@@ -16,7 +16,7 @@
 
 - (Problem *)nextWithDifficulty:(ProblemDifficulty)difficulty {
     // How many terms?
-    NSUInteger termCount = 3;
+    NSUInteger termCount = [[RandomNumberGenerator integerWithMin:2 max:4] intValue];
     
     // Generate them.
     NSMutableArray *terms = [[[NSMutableArray alloc] initWithCapacity:termCount] autorelease];

@@ -133,8 +133,6 @@
     
     [[self navigationController] pushViewController:problemViewController animated:YES];
     [problemViewController release];
-    
-    [exam release];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
