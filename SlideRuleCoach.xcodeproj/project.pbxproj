@@ -30,6 +30,8 @@
 		4A9703E8132F1EF000EE1263 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A9703E6132F1EF000EE1263 /* RootViewController.xib */; };
 		4A9703F6132F23A400EE1263 /* Exam.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A9703F5132F23A400EE1263 /* Exam.m */; };
 		4A9703F9132F28F400EE1263 /* Problem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A9703F8132F28F400EE1263 /* Problem.m */; };
+		4ABF5ABE13343FA500DF4D06 /* ProblemHelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ABF5ABC13343FA500DF4D06 /* ProblemHelpViewController.m */; };
+		4ABF5ABF13343FA500DF4D06 /* ProblemHelpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4ABF5ABD13343FA500DF4D06 /* ProblemHelpViewController.xib */; };
 		4ACBF0EA13306DE50059BF4C /* Proctor.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACBF0E913306DE50059BF4C /* Proctor.m */; };
 		4ACBF0F513307CDE0059BF4C /* ProblemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACBF0F313307CDD0059BF4C /* ProblemViewController.m */; };
 		4ACBF0F613307CDE0059BF4C /* ProblemViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4ACBF0F413307CDD0059BF4C /* ProblemViewController.xib */; };
@@ -52,13 +54,13 @@
 		4A0D11311333D16E00507127 /* InversionExam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InversionExam.m; sourceTree = "<group>"; };
 		4A223D90133193BC0014A592 /* NumberFormatterFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NumberFormatterFactory.h; sourceTree = "<group>"; };
 		4A223D91133193BC0014A592 /* NumberFormatterFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NumberFormatterFactory.m; sourceTree = "<group>"; };
-		4A7613ED13341DFC008FCBD1 /* SimpleSquaresProblemGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; path = SimpleSquaresProblemGenerator.h; sourceTree = "<group>"; };
+		4A7613ED13341DFC008FCBD1 /* SimpleSquaresProblemGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleSquaresProblemGenerator.h; sourceTree = "<group>"; };
 		4A7613EE13341DFC008FCBD1 /* SimpleSquaresProblemGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleSquaresProblemGenerator.m; sourceTree = "<group>"; };
 		4A7613F11334249A008FCBD1 /* CompoundFractionsProblemGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompoundFractionsProblemGenerator.h; sourceTree = "<group>"; };
 		4A7613F21334249A008FCBD1 /* CompoundFractionsProblemGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompoundFractionsProblemGenerator.m; sourceTree = "<group>"; };
 		4A7613F713342AF0008FCBD1 /* CompoundFractionsExam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompoundFractionsExam.h; sourceTree = "<group>"; };
 		4A7613F813342AF0008FCBD1 /* CompoundFractionsExam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompoundFractionsExam.m; sourceTree = "<group>"; };
-		4A7613FA13342B27008FCBD1 /* SimpleSquaresExam.h */ = {isa = PBXFileReference; fileEncoding = 4; path = SimpleSquaresExam.h; sourceTree = "<group>"; };
+		4A7613FA13342B27008FCBD1 /* SimpleSquaresExam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleSquaresExam.h; sourceTree = "<group>"; };
 		4A7613FB13342B27008FCBD1 /* SimpleSquaresExam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleSquaresExam.m; sourceTree = "<group>"; };
 		4A8FFC2E133039D60083C5FA /* ProblemGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProblemGenerator.h; sourceTree = "<group>"; };
 		4A8FFC2F133039D60083C5FA /* ProblemGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProblemGenerator.m; sourceTree = "<group>"; };
@@ -80,6 +82,9 @@
 		4A9703F5132F23A400EE1263 /* Exam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Exam.m; sourceTree = "<group>"; };
 		4A9703F7132F28F400EE1263 /* Problem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Problem.h; sourceTree = "<group>"; };
 		4A9703F8132F28F400EE1263 /* Problem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Problem.m; sourceTree = "<group>"; };
+		4ABF5ABB13343FA500DF4D06 /* ProblemHelpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProblemHelpViewController.h; sourceTree = "<group>"; };
+		4ABF5ABC13343FA500DF4D06 /* ProblemHelpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProblemHelpViewController.m; sourceTree = "<group>"; };
+		4ABF5ABD13343FA500DF4D06 /* ProblemHelpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProblemHelpViewController.xib; sourceTree = "<group>"; };
 		4ACBF0E813306DE50059BF4C /* Proctor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Proctor.h; sourceTree = "<group>"; };
 		4ACBF0E913306DE50059BF4C /* Proctor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Proctor.m; sourceTree = "<group>"; };
 		4ACBF0F213307CDD0059BF4C /* ProblemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProblemViewController.h; sourceTree = "<group>"; };
@@ -172,19 +177,10 @@
 				4ACBF0F213307CDD0059BF4C /* ProblemViewController.h */,
 				4ACBF0F313307CDD0059BF4C /* ProblemViewController.m */,
 				4ACBF0F413307CDD0059BF4C /* ProblemViewController.xib */,
-				4ACBF0E813306DE50059BF4C /* Proctor.h */,
-				4ACBF0E913306DE50059BF4C /* Proctor.m */,
-				4A9703F4132F23A400EE1263 /* Exam.h */,
-				4A9703F5132F23A400EE1263 /* Exam.m */,
-				4A9703F7132F28F400EE1263 /* Problem.h */,
-				4A9703F8132F28F400EE1263 /* Problem.m */,
-				4A0D11271332E7CD00507127 /* ProblemDifficulty.h */,
-				4A8FFC2E133039D60083C5FA /* ProblemGenerator.h */,
-				4A8FFC2F133039D60083C5FA /* ProblemGenerator.m */,
-				4A223D90133193BC0014A592 /* NumberFormatterFactory.h */,
-				4A223D91133193BC0014A592 /* NumberFormatterFactory.m */,
-				4A0D11231332DA7200507127 /* RandomNumberGenerator.h */,
-				4A0D11241332DA7200507127 /* RandomNumberGenerator.m */,
+				4ABF5ABB13343FA500DF4D06 /* ProblemHelpViewController.h */,
+				4ABF5ABC13343FA500DF4D06 /* ProblemHelpViewController.m */,
+				4ABF5ABD13343FA500DF4D06 /* ProblemHelpViewController.xib */,
+				4ABF5AB713343EA500DF4D06 /* Core Backend */,
 				4A0D111F1332D29800507127 /* Problem Generators */,
 				4A0D111E1332D28A00507127 /* Exams */,
 				4A9703D5132F1EF000EE1263 /* Supporting Files */,
@@ -202,6 +198,26 @@
 				4A0D111B1332C8F900507127 /* README.txt */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4ABF5AB713343EA500DF4D06 /* Core Backend */ = {
+			isa = PBXGroup;
+			children = (
+				4ACBF0E813306DE50059BF4C /* Proctor.h */,
+				4ACBF0E913306DE50059BF4C /* Proctor.m */,
+				4A9703F4132F23A400EE1263 /* Exam.h */,
+				4A9703F5132F23A400EE1263 /* Exam.m */,
+				4A9703F7132F28F400EE1263 /* Problem.h */,
+				4A9703F8132F28F400EE1263 /* Problem.m */,
+				4A0D11271332E7CD00507127 /* ProblemDifficulty.h */,
+				4A8FFC2E133039D60083C5FA /* ProblemGenerator.h */,
+				4A8FFC2F133039D60083C5FA /* ProblemGenerator.m */,
+				4A223D90133193BC0014A592 /* NumberFormatterFactory.h */,
+				4A223D91133193BC0014A592 /* NumberFormatterFactory.m */,
+				4A0D11231332DA7200507127 /* RandomNumberGenerator.h */,
+				4A0D11241332DA7200507127 /* RandomNumberGenerator.m */,
+			);
+			name = "Core Backend";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,6 +272,7 @@
 				4A9703E8132F1EF000EE1263 /* RootViewController.xib in Resources */,
 				4ACBF0F613307CDE0059BF4C /* ProblemViewController.xib in Resources */,
 				4A0D111C1332C8F900507127 /* README.txt in Resources */,
+				4ABF5ABF13343FA500DF4D06 /* ProblemHelpViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,6 +301,7 @@
 				4A7613F31334249A008FCBD1 /* CompoundFractionsProblemGenerator.m in Sources */,
 				4A7613F913342AF1008FCBD1 /* CompoundFractionsExam.m in Sources */,
 				4A7613FC13342B28008FCBD1 /* SimpleSquaresExam.m in Sources */,
+				4ABF5ABE13343FA500DF4D06 /* ProblemHelpViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

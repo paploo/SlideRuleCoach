@@ -10,6 +10,7 @@
 #import "Exam.h"
 #import "Problem.h"
 #import "NumberFormatterFactory.h"
+#import "ProblemHelpViewController.h"
 
 
 @implementation ProblemViewController
@@ -57,6 +58,7 @@
     // Do any additional setup after loading the view from its nib.
     
     NSLog(@"viewDidLoad");
+    
     [self populateProblem];
     if( [[exam currentProblem] submittedResult] ){
         NSNumberFormatter *formatter = [NumberFormatterFactory percentageFormatter];
@@ -68,8 +70,6 @@
 - (void)viewDidUnload
 {
     NSLog(@"viewDidUnload");
-    //[exam release];
-    //exam = nil;
     [numeratorBox release];
     numeratorBox = nil;
     [denominatorBox release];
@@ -138,6 +138,11 @@
 
 - (IBAction)showHelp:(id)sender {
     NSLog(@"showHelp");
+    
+    ProblemHelpViewController *helpViewController = [[ProblemHelpViewController alloc] initWithNibName:@"ProblemHelpViewController" bundle:nil];
+    [helpViewController setExam:exam];
+    [[self navigationController] pushViewController:helpViewController animated:YES];
+    [helpViewController release];
 }
 
 - (void)populateProblem {    
