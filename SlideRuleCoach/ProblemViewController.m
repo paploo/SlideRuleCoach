@@ -11,6 +11,7 @@
 #import "Problem.h"
 #import "NumberFormatterFactory.h"
 #import "ProblemHelpViewController.h"
+#import "ProblemNotesViewController.h"
 
 
 @implementation ProblemViewController
@@ -108,7 +109,9 @@
 
 - (BOOL)textFieldShouldEndEditing:(UITextField *)textField {
     [textField resignFirstResponder];
-    [self submitAnswer:textField];
+    if( textField == answerInput ){
+        [self submitAnswer:textField];
+    }
     return YES;
 }
 
@@ -143,6 +146,15 @@
     [helpViewController setExam:exam];
     [[self navigationController] pushViewController:helpViewController animated:YES];
     [helpViewController release];
+}
+
+- (IBAction)showNotes:(id)sender {
+    NSLog(@"showNotes");
+    
+    ProblemNotesViewController *notesViewController = [[ProblemNotesViewController alloc] initWithNibName:@"ProblemNotesViewController" bundle:nil];
+    [notesViewController setExam:exam];
+    [[self navigationController] pushViewController:notesViewController animated:YES];
+    [notesViewController release];
 }
 
 - (void)populateProblem {    

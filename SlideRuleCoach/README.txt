@@ -42,15 +42,16 @@ Todo List:
 
 [+] Make calculation of scaleReadError on Problem use a delegate (which would be the generator).
 
-[ ] Break exam list into sections
+[+] Break exam list into sections
 
-[ ] Help button for problems
+[+] Help button for problems
 
-[ ] Selecting exam gives info about exam.
+[ ] Selecting exam gives more info about exam.  (What to show?)
+    [ ] Set the default difficulty for new exams here(?)
 
 [ ] Difficulties:
     [+] Make generators use difficulty.
     [ ] Add screen on test start to set difficulty.
 
-[ ] Notepad:
-    [ ] Add a problem note-pad area where you can see the problem and can make notes about the answer.
+[+] Notepad:
+    [+] Add a problem note-pad area where you can see the problem and can make notes about the answer.

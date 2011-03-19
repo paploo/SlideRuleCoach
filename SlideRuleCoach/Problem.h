@@ -22,6 +22,7 @@
     NSString *denominatorText; //nil when there is no denominator.
     NSNumber *answer;
     NSNumber *submittedResult;
+    NSString *userNotes;
 }
 +(id)ProblemWithNumeratorText:(NSString *)num denominatorText:(NSString *)den answer:(NSNumber *)ans helpText:(NSString *)help difficulty:(ProblemDifficulty)diff;
 -(id)initWithNumeratorText:(NSString *)num denominatorText:(NSString *)den answer:(NSNumber *)ans helpText:(NSString *)help difficulty:(ProblemDifficulty)diff;
@@ -32,6 +33,7 @@
 @property(nonatomic, retain, readonly) NSString *denominatorText;
 @property(nonatomic, retain, readonly) NSNumber *answer;
 @property(nonatomic, retain) NSNumber *submittedResult;
+@property(nonatomic, retain) NSString *userNotes;
 - (NSNumber *)error; //The error in percent of misread.
 - (NSNumber *)scaleReadError; //If the scale is 1.0 units long, how far off was I?
 @end

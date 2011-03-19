@@ -20,6 +20,7 @@
 @synthesize denominatorText;
 @synthesize answer;
 @synthesize submittedResult;
+@synthesize userNotes;
 
 +(id)ProblemWithNumeratorText:(NSString *)num denominatorText:(NSString *)den answer:(NSNumber *)ans helpText:(NSString *)help difficulty:(ProblemDifficulty)diff {
     return [[[self alloc] initWithNumeratorText:num denominatorText:den answer:ans helpText:help difficulty:diff] autorelease];
@@ -65,6 +66,7 @@
     [denominatorText release];
     [answer release];
     [submittedResult release];
+    [userNotes release];
     [super dealloc];
 }
 

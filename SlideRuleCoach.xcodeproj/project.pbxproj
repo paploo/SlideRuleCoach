@@ -32,6 +32,8 @@
 		4A9703F9132F28F400EE1263 /* Problem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A9703F8132F28F400EE1263 /* Problem.m */; };
 		4ABF5ABE13343FA500DF4D06 /* ProblemHelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ABF5ABC13343FA500DF4D06 /* ProblemHelpViewController.m */; };
 		4ABF5ABF13343FA500DF4D06 /* ProblemHelpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4ABF5ABD13343FA500DF4D06 /* ProblemHelpViewController.xib */; };
+		4ABF5AC3133442D600DF4D06 /* ProblemNotesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ABF5AC1133442D500DF4D06 /* ProblemNotesViewController.m */; };
+		4ABF5AC4133442D600DF4D06 /* ProblemNotesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4ABF5AC2133442D500DF4D06 /* ProblemNotesViewController.xib */; };
 		4ACBF0EA13306DE50059BF4C /* Proctor.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACBF0E913306DE50059BF4C /* Proctor.m */; };
 		4ACBF0F513307CDE0059BF4C /* ProblemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACBF0F313307CDD0059BF4C /* ProblemViewController.m */; };
 		4ACBF0F613307CDE0059BF4C /* ProblemViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4ACBF0F413307CDD0059BF4C /* ProblemViewController.xib */; };
@@ -85,6 +87,9 @@
 		4ABF5ABB13343FA500DF4D06 /* ProblemHelpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProblemHelpViewController.h; sourceTree = "<group>"; };
 		4ABF5ABC13343FA500DF4D06 /* ProblemHelpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProblemHelpViewController.m; sourceTree = "<group>"; };
 		4ABF5ABD13343FA500DF4D06 /* ProblemHelpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProblemHelpViewController.xib; sourceTree = "<group>"; };
+		4ABF5AC0133442D500DF4D06 /* ProblemNotesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProblemNotesViewController.h; sourceTree = "<group>"; };
+		4ABF5AC1133442D500DF4D06 /* ProblemNotesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProblemNotesViewController.m; sourceTree = "<group>"; };
+		4ABF5AC2133442D500DF4D06 /* ProblemNotesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProblemNotesViewController.xib; sourceTree = "<group>"; };
 		4ACBF0E813306DE50059BF4C /* Proctor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Proctor.h; sourceTree = "<group>"; };
 		4ACBF0E913306DE50059BF4C /* Proctor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Proctor.m; sourceTree = "<group>"; };
 		4ACBF0F213307CDD0059BF4C /* ProblemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProblemViewController.h; sourceTree = "<group>"; };
@@ -180,6 +185,9 @@
 				4ABF5ABB13343FA500DF4D06 /* ProblemHelpViewController.h */,
 				4ABF5ABC13343FA500DF4D06 /* ProblemHelpViewController.m */,
 				4ABF5ABD13343FA500DF4D06 /* ProblemHelpViewController.xib */,
+				4ABF5AC0133442D500DF4D06 /* ProblemNotesViewController.h */,
+				4ABF5AC1133442D500DF4D06 /* ProblemNotesViewController.m */,
+				4ABF5AC2133442D500DF4D06 /* ProblemNotesViewController.xib */,
 				4ABF5AB713343EA500DF4D06 /* Core Backend */,
 				4A0D111F1332D29800507127 /* Problem Generators */,
 				4A0D111E1332D28A00507127 /* Exams */,
@@ -273,6 +281,7 @@
 				4ACBF0F613307CDE0059BF4C /* ProblemViewController.xib in Resources */,
 				4A0D111C1332C8F900507127 /* README.txt in Resources */,
 				4ABF5ABF13343FA500DF4D06 /* ProblemHelpViewController.xib in Resources */,
+				4ABF5AC4133442D600DF4D06 /* ProblemNotesViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,6 +311,7 @@
 				4A7613F913342AF1008FCBD1 /* CompoundFractionsExam.m in Sources */,
 				4A7613FC13342B28008FCBD1 /* SimpleSquaresExam.m in Sources */,
 				4ABF5ABE13343FA500DF4D06 /* ProblemHelpViewController.m in Sources */,
+				4ABF5AC3133442D600DF4D06 /* ProblemNotesViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

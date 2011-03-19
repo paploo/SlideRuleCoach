@@ -32,6 +32,7 @@
 - (IBAction)submitAnswer:(id)sender;
 - (IBAction)gotoNextProblem:(id)sender;
 - (IBAction)showHelp:(id)sender;
+- (IBAction)showNotes:(id)sender;
 - (void)populateProblem;
 - (void)populateStats;
 @end
