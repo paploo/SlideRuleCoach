@@ -13,5 +13,8 @@
 @interface MultiplicationProblemGenerator : ProblemGenerator {
     
 }
-
+- (NSUInteger)generateTermCountWithDifficulty:(ProblemDifficulty)difficulty;
+- (NSArray *)generateTerms:(NSUInteger)termCount difficulty:(ProblemDifficulty)difficulty;
+- (NSString *)stringFromTerms:(NSArray *)terms;
+- (NSNumber *)productOfTerms:(NSArray *)terms;
 @end

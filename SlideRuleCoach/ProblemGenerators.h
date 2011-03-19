@@ -8,3 +8,6 @@
 
 #import "MultiplicationProblemGenerator.h"
 #import "InversionProblemGenerator.h"
+#import "CompoundFractionsProblemGenerator.h"
+
+#import "SimpleSquaresProblemGenerator.h"

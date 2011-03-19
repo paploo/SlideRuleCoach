@@ -13,10 +13,10 @@ Todo List:
     [ ] Basic:
         [+] Multiplication (a*b*c)
         [+] Inversion (1/a)
-        [ ] Fractions (a*c*e/b*d*f)
+        [+] Fractions (a*c*e/b*d*f)
         [ ] Ratio-proportions
     [ ] Squares, Cubes and Roots:
-        [ ] Squares (b^2)
+        [+] Squares (b^2)
         [ ] Cubes (b^3)
         [ ] Roots (sqrt(b), croot(b))
         [ ] A-B Scales Squares (a*b^2)

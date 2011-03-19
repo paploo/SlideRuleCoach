@@ -8,3 +8,6 @@
 
 #import "MultiplicationExam.h"
 #import "InversionExam.h"
+#import "CompoundFractionsExam.h"
+
+#import "SimpleSquaresExam.h"

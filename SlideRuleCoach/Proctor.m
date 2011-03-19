@@ -71,8 +71,12 @@ static NSInteger ProctorSectionExamIndexPosition = 1;
 - (NSArray *)buildExamRegistry {
     return [NSArray arrayWithObjects:
             [NSDictionary dictionaryWithObjectsAndKeys:
-             @"Basic", ProctorSectionName,
-             [NSArray arrayWithObjects:@"MultiplicationExam", @"InversionExam", nil], ProctorSectionExamList,
+             @"Basic Arithmetic", ProctorSectionName,
+             [NSArray arrayWithObjects:@"MultiplicationExam", @"InversionExam", @"CompoundFractionsExam", nil], ProctorSectionExamList,
+             nil],
+            [NSDictionary dictionaryWithObjectsAndKeys:
+             @"Squares, Cubes and Roots", ProctorSectionName,
+             [NSArray arrayWithObjects:@"SimpleSquaresExam", nil], ProctorSectionExamList,
              nil],
             nil];
 }
