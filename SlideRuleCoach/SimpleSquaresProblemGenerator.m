@@ -21,10 +21,14 @@
     
     NSNumber *answer = [NSNumber numberWithDouble:([x doubleValue]*[x doubleValue])];
     
-    Problem *problem = [[Problem alloc] initWithNumeratorText:numerator denominatorText:nil answer:answer helpText:helpText difficulty:difficulty];
+    Problem *problem = [Problem problem];
     [problem setDelegate:self];
+    [problem setDifficulty:difficulty];
+    [problem setNumeratorText:numerator];
+    [problem setAnswer:answer];
+    [problem setHelpText:helpText];
     
-    return [problem autorelease];
+    return problem;
 }
 
 - (NSNumber *)scaleReadErrorForProblem:(Problem *)problem {

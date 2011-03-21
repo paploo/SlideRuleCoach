@@ -22,9 +22,15 @@
     
     NSString *helpText = @"Slide the cursor over the denominator on C and read off the inverse on CI.";
     
-    Problem *problem = [[Problem alloc] initWithNumeratorText:numerator denominatorText:denominator answer:answer helpText:helpText difficulty:difficulty];
+    Problem *problem = [Problem problem];
     [problem setDelegate:self];
-    return [problem autorelease];
+    [problem setDifficulty:difficulty];
+    [problem setNumeratorText:numerator];
+    [problem setDenominatorText:denominator];
+    [problem setAnswer:answer];
+    [problem setHelpText:helpText];
+    
+    return problem;
 }
 
 - (NSNumber *)scaleReadErrorForProblem:(Problem *)problem {

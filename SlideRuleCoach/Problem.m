@@ -22,27 +22,19 @@
 @synthesize submittedResult;
 @synthesize userNotes;
 
-+(id)ProblemWithNumeratorText:(NSString *)num denominatorText:(NSString *)den answer:(NSNumber *)ans helpText:(NSString *)help difficulty:(ProblemDifficulty)diff {
-    return [[[self alloc] initWithNumeratorText:num denominatorText:den answer:ans helpText:help difficulty:diff] autorelease];
++ (id)problem {
+    return [[[self alloc] init] autorelease];
 }
 
--(id)init {
-    return [self initWithNumeratorText:@"1.0" denominatorText:@"1.0" answer:[NSNumber numberWithDouble:1.0] helpText:@"N/A" difficulty:ProblemDifficultyNormal];
-}
-
--(id)initWithNumeratorText:(NSString *)num denominatorText:(NSString *)den answer:(NSNumber *)ans helpText:(NSString *)help difficulty:(ProblemDifficulty)diff {
+- (id)init {
     if( (self = [super init]) ){
-        numeratorText = [num retain];
-        denominatorText = [den retain];
-        answer = [ans retain];
-        helpText = [help retain];
-        
-        submittedResult = nil;
+        //Let everything init to nil except difficulty, which is a static type.
+        [self setDifficulty:ProblemDifficultyNormal];
     }
     return self;
 }
 
--(NSNumber *)error {
+- (NSNumber *)error {
     if(submittedResult) {
         double error = ([submittedResult doubleValue] / [answer doubleValue]) - 1.0;
         return [NSNumber numberWithDouble:error];
@@ -61,6 +53,7 @@
 
 
 -(void)dealloc {
+    //[delegate release]; //One doesn't retain or release delegates because they don't own them.
     [helpText release];
     [numeratorText release];
     [denominatorText release];

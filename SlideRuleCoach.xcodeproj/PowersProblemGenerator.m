@@ -31,8 +31,10 @@
 @synthesize coefficient;
     
 - (Problem *)nextWithDifficulty:(ProblemDifficulty)difficulty {
+    // Generate the base.
     NSNumber *x = [RandomNumberGenerator decimalWithDifficulty:difficulty];
     
+    // Build the power text.
     NSString *powerText = nil;
     if( [x doubleValue] >= 1.0 || [x doubleValue] <= -1.0 ) {
         powerText = [defaultFormatter stringFromNumber:x];
@@ -42,6 +44,7 @@
         powerText = [NSString stringWithFormat:@"%@(1/%@)", sign, [defaultFormatter stringFromNumber:xi]];
     }
     
+    // Build the numerator text
     NSString *numerator = [NSString stringWithFormat:@"%@ x %@ ^ %@", [defaultFormatter stringFromNumber:coefficient], [defaultFormatter stringFromNumber:x], powerText];
     
     NSString *helpText = @"Find the value on the C scale, read off its appropriate scale.  Some powers on some rules can use the slide to factor in coefficients, such as the A-B scale.";
@@ -49,10 +52,15 @@
     double ans = [coefficient doubleValue] * pow([x doubleValue], [power doubleValue]);
     NSNumber *answer = [NSNumber numberWithDouble:ans];
     
-    Problem *problem = [[Problem alloc] initWithNumeratorText:numerator denominatorText:nil answer:answer helpText:helpText difficulty:difficulty];
-    [problem setDelegate:self];
     
-    return [problem autorelease];
+    Problem *problem = [Problem problem];
+    [problem setDelegate:self];
+    [problem setDifficulty:difficulty];
+    [problem setNumeratorText:numerator];
+    [problem setAnswer:answer];
+    [problem setHelpText:helpText];
+    
+    return problem;
 }
 
 - (NSNumber *)scaleReadErrorForProblem:(Problem *)problem {

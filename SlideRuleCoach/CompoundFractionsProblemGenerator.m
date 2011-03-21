@@ -34,11 +34,16 @@
     NSString *helpText = @"Slide the first denominator value on C over the first numerator value on D; move the cursor over the next numerator on C.  If no denominators, read answer on D, otherwise slide denominator on C under the cursor.  If no more numerators, read the answer on D under the index on C, otherwise repeat cursor move.";
     
     // Create the problem.
-    Problem *problem = [[Problem alloc] initWithNumeratorText:numerator denominatorText:denominator answer:answer helpText:helpText difficulty:difficulty];
+    Problem *problem = [Problem problem];
     [problem setDelegate:self];
+    [problem setDifficulty:difficulty];
+    [problem setNumeratorText:numerator];
+    [problem setDenominatorText:denominator];
+    [problem setAnswer:answer];
+    [problem setHelpText:helpText];
     
     // Return.
-    return [problem autorelease];
+    return problem;
 }
                                
 - (NSUInteger)generateTermCountWithDifficulty:(ProblemDifficulty)difficulty {

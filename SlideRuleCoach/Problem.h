@@ -24,16 +24,20 @@
     NSNumber *submittedResult;
     NSString *userNotes;
 }
-+(id)ProblemWithNumeratorText:(NSString *)num denominatorText:(NSString *)den answer:(NSNumber *)ans helpText:(NSString *)help difficulty:(ProblemDifficulty)diff;
--(id)initWithNumeratorText:(NSString *)num denominatorText:(NSString *)den answer:(NSNumber *)ans helpText:(NSString *)help difficulty:(ProblemDifficulty)diff;
++ (id)problem;
+
+//Creation properties.  These are writable to aid in problem creation.
 @property(nonatomic, assign) id<ProblemDelegateMethods> delegate;
 @property ProblemDifficulty difficulty;
-@property(nonatomic, retain, readonly) NSString *helpText;
-@property(nonatomic, retain, readonly) NSString *numeratorText;
-@property(nonatomic, retain, readonly) NSString *denominatorText;
-@property(nonatomic, retain, readonly) NSNumber *answer;
+@property(nonatomic, retain) NSString *helpText;
+@property(nonatomic, retain) NSString *numeratorText;
+@property(nonatomic, retain) NSString *denominatorText;
+@property(nonatomic, retain) NSNumber *answer;
+
+//Runtime properties.
 @property(nonatomic, retain) NSNumber *submittedResult;
 @property(nonatomic, retain) NSString *userNotes;
+
 - (NSNumber *)error; //The error in percent of misread.
 - (NSNumber *)scaleReadError; //If the scale is 1.0 units long, how far off was I?
 @end

@@ -30,11 +30,15 @@
     NSString *helpText = @"Slide the index on the C scale over value on the D scale.  Find the second value on the C scale and read the answer underneath it on the D scale.";
     
     // Create the problem.
-    Problem *problem = [[Problem alloc] initWithNumeratorText:numerator denominatorText:nil answer:answer helpText:helpText difficulty:difficulty];
+    Problem *problem = [Problem problem];
     [problem setDelegate:self];
+    [problem setDifficulty:difficulty];
+    [problem setNumeratorText:numerator];
+    [problem setAnswer:answer];
+    [problem setHelpText:helpText];
     
     // Return.
-    return [problem autorelease];
+    return problem;
 }
 
 - (NSUInteger)generateTermCountWithDifficulty:(ProblemDifficulty)difficulty {
