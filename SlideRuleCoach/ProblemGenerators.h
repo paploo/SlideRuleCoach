@@ -10,4 +10,4 @@
 #import "InversionProblemGenerator.h"
 #import "CompoundFractionsProblemGenerator.h"
 
-#import "SimpleSquaresProblemGenerator.h"
+#import "PowersProblemGenerator.h"

@@ -20,4 +20,5 @@
 - (id)initWithPower:(NSNumber *)p coefficient:(NSNumber *)c;
 @property(nonatomic, retain) NSNumber *power;
 @property(nonatomic, retain) NSNumber *coefficient;
+- (NSString *)buildHelpText;
 @end

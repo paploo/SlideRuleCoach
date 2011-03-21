@@ -36,18 +36,22 @@
     
     // Build the power text.
     NSString *powerText = nil;
-    if( [x doubleValue] >= 1.0 || [x doubleValue] <= -1.0 ) {
-        powerText = [defaultFormatter stringFromNumber:x];
+    if( [power doubleValue] >= 1.0 || [power doubleValue] <= -1.0 ) {
+        powerText = [defaultFormatter stringFromNumber:power];
     } else {
-        NSNumber *xi = [NSNumber numberWithDouble:(1.0/[x doubleValue])];
-        NSString *sign = ([x doubleValue]>=0) ? @"" : @"-";
-        powerText = [NSString stringWithFormat:@"%@(1/%@)", sign, [defaultFormatter stringFromNumber:xi]];
+        NSNumber *pi = [NSNumber numberWithDouble:(1.0/[power doubleValue])];
+        NSString *sign = ([power doubleValue]>=0) ? @"" : @"-";
+        powerText = [NSString stringWithFormat:@"%@(1/%@)", sign, [defaultFormatter stringFromNumber:pi]];
     }
     
     // Build the numerator text
-    NSString *numerator = [NSString stringWithFormat:@"%@ x %@ ^ %@", [defaultFormatter stringFromNumber:coefficient], [defaultFormatter stringFromNumber:x], powerText];
+    NSString *numerator = nil;
+    if( [coefficient doubleValue] == 1.0 )
+        numerator = [NSString stringWithFormat:@"%@ ^ %@", [defaultFormatter stringFromNumber:x], powerText];
+    else
+        numerator = [NSString stringWithFormat:@"%@ x %@ ^ %@", [defaultFormatter stringFromNumber:coefficient], [defaultFormatter stringFromNumber:x], powerText];
     
-    NSString *helpText = @"Find the value on the C scale, read off its appropriate scale.  Some powers on some rules can use the slide to factor in coefficients, such as the A-B scale.";
+    NSString *helpText = [self buildHelpText];
     
     double ans = [coefficient doubleValue] * pow([x doubleValue], [power doubleValue]);
     NSNumber *answer = [NSNumber numberWithDouble:ans];
@@ -67,6 +71,28 @@
     //TODO: This may be incorrect for negative powers.  It depends on how you do it.
     double readError = [[super scaleReadErrorForProblem:problem] doubleValue];
     return [NSNumber numberWithDouble:(readError / [power doubleValue])];
+}
+
+- (NSString *)buildHelpText {    
+    //To deal with rounding errors, we first multiply the double value by 1E6 and convert to int.
+    int magnifier = 1000000;
+    int magnifiedPower = (int)((double)magnifier * [power doubleValue]);
+    int cube = magnifier * 3;
+    int square = magnifier * 2;
+    int sqrt = (int)(magnifier * 0.5);
+    int cbroot = (int)(magnifier * (1.0/3.0));
+    
+#warning Help text not completed.
+    if(magnifiedPower == cube)
+        return @"TODO: Cube Help";
+    else if(magnifiedPower == square)
+        return @"TODO: Square Help";
+    else if(magnifiedPower == sqrt)
+        return @"TODO: Sqrt Help";
+    else if(magnifiedPower == cbroot)
+        return @"TODO: Cube Root Help";
+    else
+        return @"Find the value on the C scale, read off its appropriate scale.  Some powers on some rules can use the slide to factor in coefficients, such as the A-B scale.";
 }
 
 - (void)dealloc {

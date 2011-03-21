@@ -21,7 +21,7 @@
 
 - (id)init {
     if( (self = [super init]) ) {
-        problemGenerator = [[SimpleSquaresProblemGenerator alloc] init];
+        problemGenerator = [[PowersProblemGenerator alloc] initWithPower:[NSNumber numberWithInt:2]];
     }
     return self;
 }

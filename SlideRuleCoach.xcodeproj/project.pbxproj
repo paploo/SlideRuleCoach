@@ -14,7 +14,6 @@
 		4A0D112F1333193F00507127 /* InversionProblemGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0D112E1333193F00507127 /* InversionProblemGenerator.m */; };
 		4A0D11321333D16F00507127 /* InversionExam.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0D11311333D16E00507127 /* InversionExam.m */; };
 		4A223D92133193BC0014A592 /* NumberFormatterFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A223D91133193BC0014A592 /* NumberFormatterFactory.m */; };
-		4A7613EF13341DFC008FCBD1 /* SimpleSquaresProblemGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A7613EE13341DFC008FCBD1 /* SimpleSquaresProblemGenerator.m */; };
 		4A7613F31334249A008FCBD1 /* CompoundFractionsProblemGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A7613F21334249A008FCBD1 /* CompoundFractionsProblemGenerator.m */; };
 		4A7613F913342AF1008FCBD1 /* CompoundFractionsExam.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A7613F813342AF0008FCBD1 /* CompoundFractionsExam.m */; };
 		4A7613FC13342B28008FCBD1 /* SimpleSquaresExam.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A7613FB13342B27008FCBD1 /* SimpleSquaresExam.m */; };
@@ -57,15 +56,13 @@
 		4A0D11311333D16E00507127 /* InversionExam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InversionExam.m; sourceTree = "<group>"; };
 		4A223D90133193BC0014A592 /* NumberFormatterFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NumberFormatterFactory.h; sourceTree = "<group>"; };
 		4A223D91133193BC0014A592 /* NumberFormatterFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NumberFormatterFactory.m; sourceTree = "<group>"; };
-		4A7613ED13341DFC008FCBD1 /* SimpleSquaresProblemGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleSquaresProblemGenerator.h; sourceTree = "<group>"; };
-		4A7613EE13341DFC008FCBD1 /* SimpleSquaresProblemGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleSquaresProblemGenerator.m; sourceTree = "<group>"; };
 		4A7613F11334249A008FCBD1 /* CompoundFractionsProblemGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompoundFractionsProblemGenerator.h; sourceTree = "<group>"; };
 		4A7613F21334249A008FCBD1 /* CompoundFractionsProblemGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompoundFractionsProblemGenerator.m; sourceTree = "<group>"; };
 		4A7613F713342AF0008FCBD1 /* CompoundFractionsExam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompoundFractionsExam.h; sourceTree = "<group>"; };
 		4A7613F813342AF0008FCBD1 /* CompoundFractionsExam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompoundFractionsExam.m; sourceTree = "<group>"; };
 		4A7613FA13342B27008FCBD1 /* SimpleSquaresExam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleSquaresExam.h; sourceTree = "<group>"; };
 		4A7613FB13342B27008FCBD1 /* SimpleSquaresExam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleSquaresExam.m; sourceTree = "<group>"; };
-		4A8452471337034E00D97967 /* PowersProblemGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; name = PowersProblemGenerator.h; path = SlideRuleCoach.xcodeproj/PowersProblemGenerator.h; sourceTree = SOURCE_ROOT; };
+		4A8452471337034E00D97967 /* PowersProblemGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PowersProblemGenerator.h; path = SlideRuleCoach.xcodeproj/PowersProblemGenerator.h; sourceTree = SOURCE_ROOT; };
 		4A8452481337034E00D97967 /* PowersProblemGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PowersProblemGenerator.m; path = SlideRuleCoach.xcodeproj/PowersProblemGenerator.m; sourceTree = SOURCE_ROOT; };
 		4A8FFC2E133039D60083C5FA /* ProblemGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProblemGenerator.h; sourceTree = "<group>"; };
 		4A8FFC2F133039D60083C5FA /* ProblemGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProblemGenerator.m; sourceTree = "<group>"; };
@@ -140,8 +137,6 @@
 				4A0D112E1333193F00507127 /* InversionProblemGenerator.m */,
 				4A7613F11334249A008FCBD1 /* CompoundFractionsProblemGenerator.h */,
 				4A7613F21334249A008FCBD1 /* CompoundFractionsProblemGenerator.m */,
-				4A7613ED13341DFC008FCBD1 /* SimpleSquaresProblemGenerator.h */,
-				4A7613EE13341DFC008FCBD1 /* SimpleSquaresProblemGenerator.m */,
 				4A8452471337034E00D97967 /* PowersProblemGenerator.h */,
 				4A8452481337034E00D97967 /* PowersProblemGenerator.m */,
 			);
@@ -311,7 +306,6 @@
 				4A0D112A1332FAE500507127 /* MultiplicationExam.m in Sources */,
 				4A0D112F1333193F00507127 /* InversionProblemGenerator.m in Sources */,
 				4A0D11321333D16F00507127 /* InversionExam.m in Sources */,
-				4A7613EF13341DFC008FCBD1 /* SimpleSquaresProblemGenerator.m in Sources */,
 				4A7613F31334249A008FCBD1 /* CompoundFractionsProblemGenerator.m in Sources */,
 				4A7613F913342AF1008FCBD1 /* CompoundFractionsExam.m in Sources */,
 				4A7613FC13342B28008FCBD1 /* SimpleSquaresExam.m in Sources */,
