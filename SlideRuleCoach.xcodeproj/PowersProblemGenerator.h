@@ -9,6 +9,9 @@
 #import <Foundation/Foundation.h>
 #import "ProblemGenerator.h"
 
+//This is intended only for powers that relate to a scale
+//like A, K, sqrt, and cube root.  For exponents and logs,
+//use different problem generators.
 @interface PowersProblemGenerator : ProblemGenerator {
     NSNumber *power;
     NSNumber *coefficient;
