@@ -28,7 +28,6 @@
 }
 
 - (NSNumber *)scaleReadErrorForProblem:(Problem *)problem {
-    //Since CI goes backwards, we need to take the negative.
     double readError = [[super scaleReadErrorForProblem:problem] doubleValue];
     return [NSNumber numberWithDouble:(readError / 2.0)];
 }

@@ -46,6 +46,9 @@ Todo List:
 
 [+] Help button for problems
 
+[ ] Make problems mutable to more easily build them in steps.
+[ ] Add numerator exponent and denominator exponent and display numerator with a concat for now.
+
 [ ] Selecting exam gives more info about exam.  (What to show?)
     [ ] Set the default difficulty for new exams here(?)
 

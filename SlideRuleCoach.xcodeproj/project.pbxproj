@@ -18,6 +18,7 @@
 		4A7613F31334249A008FCBD1 /* CompoundFractionsProblemGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A7613F21334249A008FCBD1 /* CompoundFractionsProblemGenerator.m */; };
 		4A7613F913342AF1008FCBD1 /* CompoundFractionsExam.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A7613F813342AF0008FCBD1 /* CompoundFractionsExam.m */; };
 		4A7613FC13342B28008FCBD1 /* SimpleSquaresExam.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A7613FB13342B27008FCBD1 /* SimpleSquaresExam.m */; };
+		4A8452491337034E00D97967 /* PowersProblemGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A8452481337034E00D97967 /* PowersProblemGenerator.m */; };
 		4A8FFC30133039D60083C5FA /* ProblemGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A8FFC2F133039D60083C5FA /* ProblemGenerator.m */; };
 		4A9703CF132F1EF000EE1263 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A9703CE132F1EF000EE1263 /* UIKit.framework */; };
 		4A9703D1132F1EF000EE1263 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A9703D0132F1EF000EE1263 /* Foundation.framework */; };
@@ -64,6 +65,8 @@
 		4A7613F813342AF0008FCBD1 /* CompoundFractionsExam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompoundFractionsExam.m; sourceTree = "<group>"; };
 		4A7613FA13342B27008FCBD1 /* SimpleSquaresExam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleSquaresExam.h; sourceTree = "<group>"; };
 		4A7613FB13342B27008FCBD1 /* SimpleSquaresExam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleSquaresExam.m; sourceTree = "<group>"; };
+		4A8452471337034E00D97967 /* PowersProblemGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; name = PowersProblemGenerator.h; path = SlideRuleCoach.xcodeproj/PowersProblemGenerator.h; sourceTree = SOURCE_ROOT; };
+		4A8452481337034E00D97967 /* PowersProblemGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PowersProblemGenerator.m; path = SlideRuleCoach.xcodeproj/PowersProblemGenerator.m; sourceTree = SOURCE_ROOT; };
 		4A8FFC2E133039D60083C5FA /* ProblemGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProblemGenerator.h; sourceTree = "<group>"; };
 		4A8FFC2F133039D60083C5FA /* ProblemGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProblemGenerator.m; sourceTree = "<group>"; };
 		4A9703CA132F1EF000EE1263 /* SlideRuleCoach.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SlideRuleCoach.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -139,6 +142,8 @@
 				4A7613F21334249A008FCBD1 /* CompoundFractionsProblemGenerator.m */,
 				4A7613ED13341DFC008FCBD1 /* SimpleSquaresProblemGenerator.h */,
 				4A7613EE13341DFC008FCBD1 /* SimpleSquaresProblemGenerator.m */,
+				4A8452471337034E00D97967 /* PowersProblemGenerator.h */,
+				4A8452481337034E00D97967 /* PowersProblemGenerator.m */,
 			);
 			name = "Problem Generators";
 			sourceTree = "<group>";
@@ -312,6 +317,7 @@
 				4A7613FC13342B28008FCBD1 /* SimpleSquaresExam.m in Sources */,
 				4ABF5ABE13343FA500DF4D06 /* ProblemHelpViewController.m in Sources */,
 				4ABF5AC3133442D600DF4D06 /* ProblemNotesViewController.m in Sources */,
+				4A8452491337034E00D97967 /* PowersProblemGenerator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
