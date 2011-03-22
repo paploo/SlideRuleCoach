@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4A0D111C1332C8F900507127 /* README in Resources */ = {isa = PBXBuildFile; fileRef = 4A0D111B1332C8F900507127 /* README */; };
 		4A0D11221332D33500507127 /* MultiplicationProblemGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0D11211332D33500507127 /* MultiplicationProblemGenerator.m */; };
 		4A0D11251332DA7300507127 /* RandomNumberGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0D11241332DA7200507127 /* RandomNumberGenerator.m */; };
 		4A0D112A1332FAE500507127 /* MultiplicationExam.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0D11291332FAE500507127 /* MultiplicationExam.m */; };
@@ -43,13 +42,13 @@
 		4ABF5ABF13343FA500DF4D06 /* ProblemHelpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4ABF5ABD13343FA500DF4D06 /* ProblemHelpViewController.xib */; };
 		4ABF5AC3133442D600DF4D06 /* ProblemNotesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ABF5AC1133442D500DF4D06 /* ProblemNotesViewController.m */; };
 		4ABF5AC4133442D600DF4D06 /* ProblemNotesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4ABF5AC2133442D500DF4D06 /* ProblemNotesViewController.xib */; };
+		4AC6A539133886CA00978A21 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4AC6A538133886CA00978A21 /* README.txt */; };
 		4ACBF0EA13306DE50059BF4C /* Proctor.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACBF0E913306DE50059BF4C /* Proctor.m */; };
 		4ACBF0F513307CDE0059BF4C /* ProblemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACBF0F313307CDD0059BF4C /* ProblemViewController.m */; };
 		4ACBF0F613307CDE0059BF4C /* ProblemViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4ACBF0F413307CDD0059BF4C /* ProblemViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4A0D111B1332C8F900507127 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
 		4A0D11201332D33500507127 /* MultiplicationProblemGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiplicationProblemGenerator.h; sourceTree = "<group>"; };
 		4A0D11211332D33500507127 /* MultiplicationProblemGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiplicationProblemGenerator.m; sourceTree = "<group>"; };
 		4A0D11231332DA7200507127 /* RandomNumberGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RandomNumberGenerator.h; sourceTree = "<group>"; };
@@ -109,6 +108,7 @@
 		4ABF5AC0133442D500DF4D06 /* ProblemNotesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProblemNotesViewController.h; sourceTree = "<group>"; };
 		4ABF5AC1133442D500DF4D06 /* ProblemNotesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProblemNotesViewController.m; sourceTree = "<group>"; };
 		4ABF5AC2133442D500DF4D06 /* ProblemNotesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProblemNotesViewController.xib; sourceTree = "<group>"; };
+		4AC6A538133886CA00978A21 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = SOURCE_ROOT; };
 		4ACBF0E813306DE50059BF4C /* Proctor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Proctor.h; sourceTree = "<group>"; };
 		4ACBF0E913306DE50059BF4C /* Proctor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Proctor.m; sourceTree = "<group>"; };
 		4ACBF0F213307CDD0059BF4C /* ProblemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProblemViewController.h; sourceTree = "<group>"; };
@@ -232,7 +232,7 @@
 				4A9703D7132F1EF000EE1263 /* InfoPlist.strings */,
 				4A9703DA132F1EF000EE1263 /* SlideRuleCoach-Prefix.pch */,
 				4A9703DB132F1EF000EE1263 /* main.m */,
-				4A0D111B1332C8F900507127 /* README */,
+				4AC6A538133886CA00978A21 /* README.txt */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -308,7 +308,6 @@
 				4A9703E2132F1EF000EE1263 /* MainWindow.xib in Resources */,
 				4A9703E8132F1EF000EE1263 /* RootViewController.xib in Resources */,
 				4ACBF0F613307CDE0059BF4C /* ProblemViewController.xib in Resources */,
-				4A0D111C1332C8F900507127 /* README in Resources */,
 				4ABF5ABF13343FA500DF4D06 /* ProblemHelpViewController.xib in Resources */,
 				4ABF5AC4133442D600DF4D06 /* ProblemNotesViewController.xib in Resources */,
 				4A86669613384D7B00845A5A /* Default.png in Resources */,
@@ -319,6 +318,7 @@
 				4A425BC213384F7A00A89F74 /* Icon-Small@2x.png in Resources */,
 				4A425BC313384F7A00A89F74 /* iTunesArtwork in Resources */,
 				4AB240921338634F0032EB2A /* PreferencesViewController.xib in Resources */,
+				4AC6A539133886CA00978A21 /* README.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
