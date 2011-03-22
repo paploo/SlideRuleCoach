@@ -118,4 +118,11 @@
     return nil;
 }
 
+# pragma mark - Actions
+
+- (IBAction)gotoHomePage:(id)sender {
+    NSURL *homepageURL = [NSURL URLWithString:@"http://www.github.com/paploo/SlideRuleCoach"];
+    [[UIApplication sharedApplication] openURL:homepageURL];
+}
+
 @end

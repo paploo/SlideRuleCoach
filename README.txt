@@ -47,10 +47,10 @@ Todo List:
         [ ] Roots (sqrt(b), croot(b))
         [ ] A-B Scales Squares (a*b^2)
     [ ] Powers and Logs:
-        [ ] log10(x)
         [ ] 10^x
-        [ ] logn(x)
+        [ ] log10(x)
         [ ] x^n
+        [ ] logn(x) [Note: need to build custom random number for difficulty implementations to keep in range; use same one for exponents.]
     [ ] Trig:
         [ ] x degrees in radians
         [ ] x radians in degrees
@@ -79,10 +79,9 @@ Todo List:
     [-] Make superscripts using a formatted string
     [-] italisize function names.
 
-[ ] Make an info button on main screen top-bar to get info and set prefs in future.
+[+] Make an info button on main screen top-bar to get info and set prefs in future.
 
-
-[ ] Selecting exam gives more info about exam.  (What to show?)
+[ ] Don't allow selection of exams.
 
 [ ] Difficulties:
     [+] Make generators use difficulty.
@@ -90,5 +89,6 @@ Todo List:
     [+] Save difficulty in preference file.
     [ ] Fill out random number generator's difficulty settings.
 
-[+] Notepad:
+[ ] Notepad:
     [+] Add a problem note-pad area where you can see the problem and can make notes about the answer.
+    [ ] Change notepad keyboard to numbers with symbols, since that is what is needed 99% of the time for a scratch pad.

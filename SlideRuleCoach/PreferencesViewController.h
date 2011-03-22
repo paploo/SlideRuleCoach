@@ -13,6 +13,7 @@
     NSArray *difficultyNames;
     NSArray *difficultyValues;
     IBOutlet UITableView *preferenceTableView;
+    UIButton *gotoHomePage;
 }
-
+- (IBAction)gotoHomePage:(id)sender;
 @end
