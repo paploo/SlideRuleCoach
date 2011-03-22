@@ -177,7 +177,7 @@
 
 - (UINavigationItem *)navigationItem {
     UINavigationItem *navItem = [super navigationItem];
-    UIBarButtonItem *infoButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Prefs" style:UIBarButtonItemStyleBordered target:self action:@selector(infoButtonPressed:)];
+    UIBarButtonItem *infoButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Preferences" style:UIBarButtonItemStyleBordered target:self action:@selector(infoButtonPressed:)];
     [navItem setRightBarButtonItem:infoButtonItem];
     [infoButtonItem release];
     return navItem;
