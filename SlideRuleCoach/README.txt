@@ -48,9 +48,10 @@ Todo List:
 
 [+] Make problems mutable to more easily build them in steps.
 
-[ ] Make superscripts using a formatted string
-
-[ ] italisize function names.
+[-] Formatting
+    NOTE: Cannot use NSAttributedStrings in UIKit?  May need custom view to draw pieces!
+    [-] Make superscripts using a formatted string
+    [-] italisize function names.
 
 [ ] Make an info button on main screen top-bar to get info and set prefs in future.
 

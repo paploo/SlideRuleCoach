@@ -8,8 +8,10 @@
 
 #import "RootViewController.h"
 #import "ProblemViewController.h"
+#import "PreferencesViewController.h"
 #import "Proctor.h"
 #import "Exam.h"
+#import "ProblemDifficulty.h"
 
 @implementation RootViewController
 
@@ -18,6 +20,9 @@
     [super viewDidLoad];
     
     proctor = [[Proctor alloc] init];
+    
+    NSDictionary *defaults = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInt:ProblemDifficultyNormal], @"difficulty", nil];
+    [[NSUserDefaults standardUserDefaults] registerDefaults:defaults];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -165,6 +170,23 @@
 {
     [proctor release];
     [super dealloc];
+}
+
+#pragma mark - Other Methods
+
+- (UINavigationItem *)navigationItem {
+    UINavigationItem *navItem = [super navigationItem];
+    UIBarButtonItem *infoButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Prefs" style:UIBarButtonItemStyleBordered target:self action:@selector(infoButtonPressed:)];
+    [navItem setRightBarButtonItem:infoButtonItem];
+    [infoButtonItem release];
+    return navItem;
+}
+
+- (void)infoButtonPressed:(id)sender {
+    NSLog(@"infoButtonPressed");
+    PreferencesViewController *preferencesViewController = [[PreferencesViewController alloc] initWithNibName:@"PreferencesViewController" bundle:nil];
+    [[self navigationController] pushViewController:preferencesViewController animated:YES];
+    [preferencesViewController release];
 }
 
 @end

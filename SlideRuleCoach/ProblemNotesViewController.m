@@ -77,7 +77,7 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-/* Uncomment if you want to override the NavigationItem when pushed.
+/* Uncomment if you want to override the NavigationItem when pushed instead of just when the keyboard shows.
 - (UINavigationItem *)navigationItem {
     UINavigationItem *navItem = [super navigationItem];
     [navItem setRightBarButtonItem:notesEditDoneButtonItem];
