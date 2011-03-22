@@ -14,10 +14,17 @@
 		4A0D112F1333193F00507127 /* InversionProblemGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0D112E1333193F00507127 /* InversionProblemGenerator.m */; };
 		4A0D11321333D16F00507127 /* InversionExam.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0D11311333D16E00507127 /* InversionExam.m */; };
 		4A223D92133193BC0014A592 /* NumberFormatterFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A223D91133193BC0014A592 /* NumberFormatterFactory.m */; };
+		4A425BBB13384F0000A89F74 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A425BBA13384F0000A89F74 /* Icon.png */; };
+		4A425BBD13384F0800A89F74 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A425BBC13384F0800A89F74 /* Icon@2x.png */; };
+		4A425BC113384F7A00A89F74 /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A425BBE13384F7A00A89F74 /* Icon-Small.png */; };
+		4A425BC213384F7A00A89F74 /* Icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A425BBF13384F7A00A89F74 /* Icon-Small@2x.png */; };
+		4A425BC313384F7A00A89F74 /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = 4A425BC013384F7A00A89F74 /* iTunesArtwork */; };
 		4A7613F31334249A008FCBD1 /* CompoundFractionsProblemGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A7613F21334249A008FCBD1 /* CompoundFractionsProblemGenerator.m */; };
 		4A7613F913342AF1008FCBD1 /* CompoundFractionsExam.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A7613F813342AF0008FCBD1 /* CompoundFractionsExam.m */; };
 		4A7613FC13342B28008FCBD1 /* SimpleSquaresExam.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A7613FB13342B27008FCBD1 /* SimpleSquaresExam.m */; };
 		4A8452491337034E00D97967 /* PowersProblemGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A8452481337034E00D97967 /* PowersProblemGenerator.m */; };
+		4A86669613384D7B00845A5A /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A86669513384D7B00845A5A /* Default.png */; };
+		4A86669913384D9200845A5A /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A86669813384D9200845A5A /* Default@2x.png */; };
 		4A8FFC30133039D60083C5FA /* ProblemGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A8FFC2F133039D60083C5FA /* ProblemGenerator.m */; };
 		4A9703CF132F1EF000EE1263 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A9703CE132F1EF000EE1263 /* UIKit.framework */; };
 		4A9703D1132F1EF000EE1263 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A9703D0132F1EF000EE1263 /* Foundation.framework */; };
@@ -56,6 +63,11 @@
 		4A0D11311333D16E00507127 /* InversionExam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InversionExam.m; sourceTree = "<group>"; };
 		4A223D90133193BC0014A592 /* NumberFormatterFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NumberFormatterFactory.h; sourceTree = "<group>"; };
 		4A223D91133193BC0014A592 /* NumberFormatterFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NumberFormatterFactory.m; sourceTree = "<group>"; };
+		4A425BBA13384F0000A89F74 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = ../Icon.png; sourceTree = "<group>"; };
+		4A425BBC13384F0800A89F74 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "../Icon@2x.png"; sourceTree = "<group>"; };
+		4A425BBE13384F7A00A89F74 /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small.png"; sourceTree = "<group>"; };
+		4A425BBF13384F7A00A89F74 /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small@2x.png"; sourceTree = "<group>"; };
+		4A425BC013384F7A00A89F74 /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; path = iTunesArtwork; sourceTree = "<group>"; };
 		4A7613F11334249A008FCBD1 /* CompoundFractionsProblemGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompoundFractionsProblemGenerator.h; sourceTree = "<group>"; };
 		4A7613F21334249A008FCBD1 /* CompoundFractionsProblemGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompoundFractionsProblemGenerator.m; sourceTree = "<group>"; };
 		4A7613F713342AF0008FCBD1 /* CompoundFractionsExam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompoundFractionsExam.h; sourceTree = "<group>"; };
@@ -64,6 +76,8 @@
 		4A7613FB13342B27008FCBD1 /* SimpleSquaresExam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleSquaresExam.m; sourceTree = "<group>"; };
 		4A8452471337034E00D97967 /* PowersProblemGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PowersProblemGenerator.h; path = SlideRuleCoach.xcodeproj/PowersProblemGenerator.h; sourceTree = SOURCE_ROOT; };
 		4A8452481337034E00D97967 /* PowersProblemGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PowersProblemGenerator.m; path = SlideRuleCoach.xcodeproj/PowersProblemGenerator.m; sourceTree = SOURCE_ROOT; };
+		4A86669513384D7B00845A5A /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../Default.png; sourceTree = "<group>"; };
+		4A86669813384D9200845A5A /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../Default@2x.png"; sourceTree = "<group>"; };
 		4A8FFC2E133039D60083C5FA /* ProblemGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProblemGenerator.h; sourceTree = "<group>"; };
 		4A8FFC2F133039D60083C5FA /* ProblemGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProblemGenerator.m; sourceTree = "<group>"; };
 		4A9703CA132F1EF000EE1263 /* SlideRuleCoach.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SlideRuleCoach.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -199,6 +213,13 @@
 		4A9703D5132F1EF000EE1263 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4A425BBC13384F0800A89F74 /* Icon@2x.png */,
+				4A425BBA13384F0000A89F74 /* Icon.png */,
+				4A86669513384D7B00845A5A /* Default.png */,
+				4A86669813384D9200845A5A /* Default@2x.png */,
+				4A425BBE13384F7A00A89F74 /* Icon-Small.png */,
+				4A425BBF13384F7A00A89F74 /* Icon-Small@2x.png */,
+				4A425BC013384F7A00A89F74 /* iTunesArtwork */,
 				4A9703D6132F1EF000EE1263 /* SlideRuleCoach-Info.plist */,
 				4A9703D7132F1EF000EE1263 /* InfoPlist.strings */,
 				4A9703DA132F1EF000EE1263 /* SlideRuleCoach-Prefix.pch */,
@@ -282,6 +303,13 @@
 				4A0D111C1332C8F900507127 /* README.txt in Resources */,
 				4ABF5ABF13343FA500DF4D06 /* ProblemHelpViewController.xib in Resources */,
 				4ABF5AC4133442D600DF4D06 /* ProblemNotesViewController.xib in Resources */,
+				4A86669613384D7B00845A5A /* Default.png in Resources */,
+				4A86669913384D9200845A5A /* Default@2x.png in Resources */,
+				4A425BBB13384F0000A89F74 /* Icon.png in Resources */,
+				4A425BBD13384F0800A89F74 /* Icon@2x.png in Resources */,
+				4A425BC113384F7A00A89F74 /* Icon-Small.png in Resources */,
+				4A425BC213384F7A00A89F74 /* Icon-Small@2x.png in Resources */,
+				4A425BC313384F7A00A89F74 /* iTunesArtwork in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,7 +7,7 @@ Overview:
 A simple iPhone application to generate problems to practice using a slide rule.
 
 Todo List:
-[ ] Add License test to all files.
+[ ] Add License text to all files.
 
 [ ] Build out Problem Generators:
     [ ] Basic:
@@ -46,15 +46,22 @@ Todo List:
 
 [+] Help button for problems
 
-[ ] Make problems mutable to more easily build them in steps.
-[ ] Add numerator exponent and denominator exponent and display numerator with a concat for now.
+[+] Make problems mutable to more easily build them in steps.
 
-[ ] Selecting exam gives more info about exam.  (What to show?)
-    [ ] Set the default difficulty for new exams here(?)
+[ ] Make superscripts using a formatted string
+
+[ ] italisize function names.
+
+[ ] Make an info button on main screen top-bar to get info and set prefs in future.
+
+
+[ ] Selecting exam gives more info about exam.  (What to show?)
 
 [ ] Difficulties:
     [+] Make generators use difficulty.
-    [ ] Add screen on test start to set difficulty.
+    [ ] Set difficulty in info screen.
+    [ ] Save difficulty in preference file.
+    [ ] Fill out random number generator's difficulty settings.
 
 [+] Notepad:
     [+] Add a problem note-pad area where you can see the problem and can make notes about the answer.
