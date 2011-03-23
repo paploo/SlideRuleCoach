@@ -1,28 +1,28 @@
 //
-//  SquaresExam.m
+//  CubesExam.m
 //  SlideRuleCoach
 //
 //  Created by Jeff Reinecke on 3/22/11.
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
-#import "SquaresExam.h"
+#import "CubesExam.h"
 
 
-@implementation SquaresExam
+@implementation CubesExam
 
 +(NSString *)title {
-    return @"Squares";
+    return @"Cubes";
 }
 
 + (NSString *)summary {
-    return @"Squares, sometimes multiplied by a coefficient";
+    return @"Cubes, sometimes multiplied by a coefficient";
 }
 
 - (id)init {
     if( (self = [super init]) ) {
-        ProblemGenerator *simpleGen = [[PowersProblemGenerator alloc] initWithPower:[NSNumber numberWithInt:2]];
-        ProblemGenerator *GenWithCoeff = [[PowersProblemGenerator alloc] initWithPower:[NSNumber numberWithInt:2] hasCoefficient:YES];
+        ProblemGenerator *simpleGen = [[PowersProblemGenerator alloc] initWithPower:[NSNumber numberWithInt:3]];
+        ProblemGenerator *GenWithCoeff = [[PowersProblemGenerator alloc] initWithPower:[NSNumber numberWithInt:3] hasCoefficient:YES];
         NSArray *generators = [NSArray arrayWithObjects:simpleGen, GenWithCoeff, nil];
         [simpleGen release];
         [GenWithCoeff release];

@@ -11,3 +11,6 @@
 #import "CompoundFractionsExam.h"
 
 #import "SquaresExam.h"
+#import "SqrtExam.h"
+#import "CubesExam.h"
+#import "CubeRootExam.h"

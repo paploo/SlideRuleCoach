@@ -76,6 +76,7 @@
 
 - (NSNumber *)scaleReadErrorForProblem:(Problem *)problem {
     //TODO: This may be incorrect for negative powers.  It depends on how you do it.
+    //TODO: How do we take into account the coefficient, or do we just ignore it since we can't separate it out?
     double readError = [[super scaleReadErrorForProblem:problem] doubleValue];
     return [NSNumber numberWithDouble:(readError / [power doubleValue])];
 }
