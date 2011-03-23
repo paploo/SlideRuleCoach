@@ -14,11 +14,11 @@
 //use different problem generators.
 @interface PowersProblemGenerator : ProblemGenerator {
     NSNumber *power;
-    NSNumber *coefficient;
+    BOOL hasCoefficient;
 }
 - (id)initWithPower:(NSNumber *)p;
-- (id)initWithPower:(NSNumber *)p coefficient:(NSNumber *)c;
+- (id)initWithPower:(NSNumber *)p hasCoefficient:(BOOL)c;
 @property(nonatomic, retain) NSNumber *power;
-@property(nonatomic, retain) NSNumber *coefficient;
+@property BOOL hasCoefficient;
 - (NSString *)buildHelpText;
 @end

@@ -46,6 +46,8 @@
 		4ACBF0EA13306DE50059BF4C /* Proctor.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACBF0E913306DE50059BF4C /* Proctor.m */; };
 		4ACBF0F513307CDE0059BF4C /* ProblemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACBF0F313307CDD0059BF4C /* ProblemViewController.m */; };
 		4ACBF0F613307CDE0059BF4C /* ProblemViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4ACBF0F413307CDD0059BF4C /* ProblemViewController.xib */; };
+		4ACD6EEC13397AEF00CFE881 /* SquaresWithCoefficients.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACD6EEB13397AEF00CFE881 /* SquaresWithCoefficients.m */; };
+		4ACD6EF0133997DB00CFE881 /* SquareRootsWithCoefficients.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACD6EEF133997DA00CFE881 /* SquareRootsWithCoefficients.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -114,6 +116,10 @@
 		4ACBF0F213307CDD0059BF4C /* ProblemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProblemViewController.h; sourceTree = "<group>"; };
 		4ACBF0F313307CDD0059BF4C /* ProblemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProblemViewController.m; sourceTree = "<group>"; };
 		4ACBF0F413307CDD0059BF4C /* ProblemViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProblemViewController.xib; sourceTree = "<group>"; };
+		4ACD6EEA13397AEF00CFE881 /* SquaresWithCoefficients.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SquaresWithCoefficients.h; sourceTree = "<group>"; };
+		4ACD6EEB13397AEF00CFE881 /* SquaresWithCoefficients.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SquaresWithCoefficients.m; sourceTree = "<group>"; };
+		4ACD6EEE133997DA00CFE881 /* SquareRootsWithCoefficients.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SquareRootsWithCoefficients.h; sourceTree = "<group>"; };
+		4ACD6EEF133997DA00CFE881 /* SquareRootsWithCoefficients.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SquareRootsWithCoefficients.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +148,10 @@
 				4A7613F813342AF0008FCBD1 /* CompoundFractionsExam.m */,
 				4A7613FA13342B27008FCBD1 /* SimpleSquaresExam.h */,
 				4A7613FB13342B27008FCBD1 /* SimpleSquaresExam.m */,
+				4ACD6EEA13397AEF00CFE881 /* SquaresWithCoefficients.h */,
+				4ACD6EEB13397AEF00CFE881 /* SquaresWithCoefficients.m */,
+				4ACD6EEE133997DA00CFE881 /* SquareRootsWithCoefficients.h */,
+				4ACD6EEF133997DA00CFE881 /* SquareRootsWithCoefficients.m */,
 			);
 			name = Exams;
 			sourceTree = "<group>";
@@ -350,6 +360,8 @@
 				4ABF5AC3133442D600DF4D06 /* ProblemNotesViewController.m in Sources */,
 				4A8452491337034E00D97967 /* PowersProblemGenerator.m in Sources */,
 				4AB240911338634F0032EB2A /* PreferencesViewController.m in Sources */,
+				4ACD6EEC13397AEF00CFE881 /* SquaresWithCoefficients.m in Sources */,
+				4ACD6EF0133997DB00CFE881 /* SquareRootsWithCoefficients.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

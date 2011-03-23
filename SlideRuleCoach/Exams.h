@@ -11,3 +11,4 @@
 #import "CompoundFractionsExam.h"
 
 #import "SimpleSquaresExam.h"
+#import "SquaresWithCoefficients.h"

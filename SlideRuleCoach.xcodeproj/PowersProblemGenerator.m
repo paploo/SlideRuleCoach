@@ -16,23 +16,30 @@
 }
 
 - (id)initWithPower:(NSNumber *)p {
-    return [self initWithPower:p coefficient:[NSNumber numberWithInt:1]];
+    return [self initWithPower:p hasCoefficient:NO];
 }
 
-- (id)initWithPower:(NSNumber *)p coefficient:(NSNumber *)c {
+- (id)initWithPower:(NSNumber *)p coefficient:(BOOL)c {
     if( (self = [super init]) ){
         [self setPower:p];
-        [self setCoefficient:c];
+        [self setHasCoefficient:c];
     }
     return self;
 }
 
 @synthesize power;
-@synthesize coefficient;
+@synthesize hasCoefficient;
     
 - (Problem *)nextWithDifficulty:(ProblemDifficulty)difficulty {
     // Generate the base.
     NSNumber *x = [RandomNumberGenerator decimalWithDifficulty:difficulty];
+    
+    // Generate the coeff.
+    NSNumber *coefficient = nil;
+    if(hasCoefficient)
+        coefficient = [RandomNumberGenerator decimalWithDifficulty:difficulty];
+    else
+        coefficient = [NSNumber numberWithDouble:1.0];
     
     // Build the power text.
     NSString *powerText = nil;
@@ -46,7 +53,7 @@
     
     // Build the numerator text
     NSString *numerator = nil;
-    if( [coefficient doubleValue] == 1.0 )
+    if( hasCoefficient )
         numerator = [NSString stringWithFormat:@"%@ ^ %@", [defaultFormatter stringFromNumber:x], powerText];
     else
         numerator = [NSString stringWithFormat:@"%@ x %@ ^ %@", [defaultFormatter stringFromNumber:coefficient], [defaultFormatter stringFromNumber:x], powerText];
@@ -82,22 +89,20 @@
     int sqrt = (int)(magnifier * 0.5);
     int cbroot = (int)(magnifier * (1.0/3.0));
     
-#warning Help text not completed.
     if(magnifiedPower == cube)
-        return @"TODO: Cube Help";
+        return @"Find the value on the D scale, and read its cube off of the K scale.  If there is a coefficient, record the answer and multiply normally.\n\nAlternative Method:\nIf you have a cube-root scale, then find the value on the cube-root scale and read off the answer from the D scale.  If there is a coefficient, slide the index of the C scale over the cube found on the D scale, and multiply normally.";
     else if(magnifiedPower == square)
-        return @"TODO: Square Help";
+        return @"Find the value on the C scale, and read the square off of the B scale.  If there is a coefficient, slide the index of C over the base value on D, then read the answer on A over the coefficient on B.\n\nAlternative Method:\nIf you have a square-root scale, then find the value on the square-root scale and read off the answer from the D scale.  If there is a coefficient, slide the index of the C scale over the square found on the D scale and multiply normally.";
     else if(magnifiedPower == sqrt)
-        return @"TODO: Sqrt Help";
+        return @"Find the value on the A scale, and read off the square root on the D scale.  If there is a coefficient, slide the index of C over the found root on D, and multiply normally.\n\nAlternative Method:\nIf you hae a square root scale, then find the value on the D scale and read off the answer from the root scale.  If there is a coefficient, write down the value of the root and multiply normaly.";
     else if(magnifiedPower == cbroot)
-        return @"TODO: Cube Root Help";
+        return @"Find the value on the K scale and read off the cube root on the D scale.  If there is a coefficient, slide the index of C over the root found on D, and multiply normally.\n\nAlternative Method:\nIf you have a cube root scale, then find the value on the D scale and read off the answer from the root scale.  If there is a coefficeint, write down the value of the root and multiply normally.";
     else
         return @"Find the value on the C scale, read off its appropriate scale.  Some powers on some rules can use the slide to factor in coefficients, such as the A-B scale.";
 }
 
 - (void)dealloc {
     [power release];
-    [coefficient release];
     [super dealloc];
 }
     

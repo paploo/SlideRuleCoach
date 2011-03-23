@@ -43,9 +43,9 @@ Todo List:
         [ ] Ratio-proportions
     [ ] Squares, Cubes and Roots:
         [+] Squares (b^2)
-        [ ] Cubes (b^3)
-        [ ] Roots (sqrt(b), croot(b))
-        [ ] A-B Scales Squares (a*b^2)
+        [+] Cubes (b^3)
+        [+] Roots (sqrt(b), croot(b))
+        [+] A-B Scales Squares (a*b^2)
     [ ] Powers and Logs:
         [ ] 10^x
         [ ] log10(x)

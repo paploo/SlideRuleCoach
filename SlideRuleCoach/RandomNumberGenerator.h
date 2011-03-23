@@ -22,4 +22,6 @@
 + (NSNumber *)decimalWithDifficulty:(ProblemDifficulty)difficulty;
 + (NSNumber *)bool;
 + (NSNumber *)boolWithProbability:(double)prob;
++ (id)randomElementFromArray:(NSArray *)array;
++ (id)randomElementFromArray:(NSArray *)array WithWeights:(NSArray *)weights;
 @end

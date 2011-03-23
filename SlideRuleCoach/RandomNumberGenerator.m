@@ -67,4 +67,43 @@
         return [NSNumber numberWithBool:NO];
 }
 
++ (id)randomElementFromArray:(NSArray *)array {
+    NSUInteger randomIndex = (NSUInteger)(random() % [array count]);
+    return [array objectAtIndex:randomIndex];
+}
+
++ (id)randomElementFromArray:(NSArray *)array WithWeights:(NSArray *)weights {
+    // First, we need to find the sum of all the weights.
+    double weightSum = 0.0;
+    for(NSNumber *weight in weights)
+        weightSum += [weight doubleValue];
+    
+    // Make sure this is non-zero; otherwise return nil.
+    if(weightSum <= 0.0)
+        return nil;
+    
+    // Now we need to build a normalized cumulative total of the weights.
+    NSMutableArray *cumulativeWeights = [NSMutableArray arrayWithCapacity:[weights count]];
+    double accumulatedTotal = 0.0;
+    for(NSNumber *weight in weights) {
+        accumulatedTotal += ([weight doubleValue]/weightSum) + accumulatedTotal;
+        [cumulativeWeights addObject:[NSNumber numberWithDouble:accumulatedTotal]];
+    }
+    
+    // Now we can generate a random decimal between 0 and 1.
+    NSNumber *randomDecimal = [self decimal];
+    
+    // Loop over the array, trying each index, until we find a value greater than or equal to the random number.
+    NSUInteger index=0;
+    while(index < [cumulativeWeights count]) {
+        if( [randomDecimal doubleValue] >= [[cumulativeWeights objectAtIndex:index] doubleValue] )
+            break;
+        
+        index++;
+    }
+    
+    // Return the element found at that index.
+    return [array objectAtIndex:index];
+}
+
 @end
