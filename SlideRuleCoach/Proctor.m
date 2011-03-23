@@ -78,6 +78,10 @@ static NSInteger ProctorSectionExamIndexPosition = 1;
              @"Squares, Cubes and Roots", ProctorSectionName,
              [NSArray arrayWithObjects:@"SquaresExam", @"SqrtExam", @"CubesExam", @"CubeRootExam", nil], ProctorSectionExamList,
              nil],
+            [NSDictionary dictionaryWithObjectsAndKeys:
+             @"Exponents and Logs", ProctorSectionName,
+             [NSArray arrayWithObjects:@"CommonExponentsExam", nil], ProctorSectionExamList,
+             nil],
             nil];
 }
 

@@ -14,3 +14,5 @@
 #import "SqrtExam.h"
 #import "CubesExam.h"
 #import "CubeRootExam.h"
+
+#import "CommonExponentsExam.h"

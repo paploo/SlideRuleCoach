@@ -37,7 +37,13 @@
     //Note that we have to determine which way around the scale is quickest.
     //Integers show how many revolutions you are off.
     double uAnswer = log10([[problem answer] doubleValue]);
-    double uSubmitted = log10([[problem submittedResult] doubleValue]);
+    
+    double uSubmitted = 0.0;
+    if( [problem submittedResult] )
+        uSubmitted = log10([[problem submittedResult] doubleValue]);
+    else
+        uSubmitted = 0.0;
+    
     return [NSNumber numberWithDouble:(uSubmitted - uAnswer)];
 }
 

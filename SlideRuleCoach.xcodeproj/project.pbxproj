@@ -50,6 +50,8 @@
 		4ACD6EFC1339A39400CFE881 /* CubesExam.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACD6EFB1339A39300CFE881 /* CubesExam.m */; };
 		4ACD6EFF1339A3EA00CFE881 /* CubeRootExam.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACD6EFE1339A3E800CFE881 /* CubeRootExam.m */; };
 		4ACD6F021339A71A00CFE881 /* PowersProblemGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACD6F011339A71A00CFE881 /* PowersProblemGenerator.m */; };
+		4ACD6F051339B42400CFE881 /* CommonExpProblemGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACD6F041339B42200CFE881 /* CommonExpProblemGenerator.m */; };
+		4ACD6F081339B7C300CFE881 /* CommonExponentsExam.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACD6F071339B7BF00CFE881 /* CommonExponentsExam.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -126,6 +128,10 @@
 		4ACD6EFE1339A3E800CFE881 /* CubeRootExam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CubeRootExam.m; sourceTree = "<group>"; };
 		4ACD6F001339A71A00CFE881 /* PowersProblemGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PowersProblemGenerator.h; sourceTree = "<group>"; };
 		4ACD6F011339A71A00CFE881 /* PowersProblemGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PowersProblemGenerator.m; sourceTree = "<group>"; };
+		4ACD6F031339B42100CFE881 /* CommonExpProblemGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonExpProblemGenerator.h; sourceTree = "<group>"; };
+		4ACD6F041339B42200CFE881 /* CommonExpProblemGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonExpProblemGenerator.m; sourceTree = "<group>"; };
+		4ACD6F061339B7BE00CFE881 /* CommonExponentsExam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonExponentsExam.h; sourceTree = "<group>"; };
+		4ACD6F071339B7BF00CFE881 /* CommonExponentsExam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonExponentsExam.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +166,8 @@
 				4ACD6EFB1339A39300CFE881 /* CubesExam.m */,
 				4ACD6EFD1339A3E700CFE881 /* CubeRootExam.h */,
 				4ACD6EFE1339A3E800CFE881 /* CubeRootExam.m */,
+				4ACD6F061339B7BE00CFE881 /* CommonExponentsExam.h */,
+				4ACD6F071339B7BF00CFE881 /* CommonExponentsExam.m */,
 			);
 			name = Exams;
 			sourceTree = "<group>";
@@ -178,6 +186,8 @@
 				4A7613F21334249A008FCBD1 /* CompoundFractionsProblemGenerator.m */,
 				4ACD6F001339A71A00CFE881 /* PowersProblemGenerator.h */,
 				4ACD6F011339A71A00CFE881 /* PowersProblemGenerator.m */,
+				4ACD6F031339B42100CFE881 /* CommonExpProblemGenerator.h */,
+				4ACD6F041339B42200CFE881 /* CommonExpProblemGenerator.m */,
 			);
 			name = "Problem Generators";
 			sourceTree = "<group>";
@@ -374,6 +384,8 @@
 				4ACD6EFC1339A39400CFE881 /* CubesExam.m in Sources */,
 				4ACD6EFF1339A3EA00CFE881 /* CubeRootExam.m in Sources */,
 				4ACD6F021339A71A00CFE881 /* PowersProblemGenerator.m in Sources */,
+				4ACD6F051339B42400CFE881 /* CommonExpProblemGenerator.m in Sources */,
+				4ACD6F081339B7C300CFE881 /* CommonExponentsExam.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

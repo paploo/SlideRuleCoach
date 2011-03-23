@@ -13,3 +13,5 @@
 #import "CompoundFractionsProblemGenerator.h"
 
 #import "PowersProblemGenerator.h"
+
+#import "CommonExpProblemGenerator.h"
