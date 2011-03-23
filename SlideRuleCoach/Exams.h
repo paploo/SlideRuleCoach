@@ -10,5 +10,4 @@
 #import "InversionExam.h"
 #import "CompoundFractionsExam.h"
 
-#import "SimpleSquaresExam.h"
-#import "SquaresWithCoefficients.h"
+#import "SquaresExam.h"

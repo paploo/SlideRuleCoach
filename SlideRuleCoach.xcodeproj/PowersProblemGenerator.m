@@ -19,7 +19,7 @@
     return [self initWithPower:p hasCoefficient:NO];
 }
 
-- (id)initWithPower:(NSNumber *)p coefficient:(BOOL)c {
+- (id)initWithPower:(NSNumber *)p hasCoefficient:(BOOL)c {
     if( (self = [super init]) ){
         [self setPower:p];
         [self setHasCoefficient:c];
@@ -54,9 +54,9 @@
     // Build the numerator text
     NSString *numerator = nil;
     if( hasCoefficient )
-        numerator = [NSString stringWithFormat:@"%@ ^ %@", [defaultFormatter stringFromNumber:x], powerText];
-    else
         numerator = [NSString stringWithFormat:@"%@ x %@ ^ %@", [defaultFormatter stringFromNumber:coefficient], [defaultFormatter stringFromNumber:x], powerText];
+    else
+        numerator = [NSString stringWithFormat:@"%@ ^ %@", [defaultFormatter stringFromNumber:x], powerText];
     
     NSString *helpText = [self buildHelpText];
     

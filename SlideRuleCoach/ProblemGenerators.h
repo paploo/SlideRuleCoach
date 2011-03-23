@@ -6,6 +6,8 @@
 //  Copyright 2011 Jeffrey C Reinecke. Released under the BSD license.
 //
 
+#import "RandomProblemGenerator.h"
+
 #import "MultiplicationProblemGenerator.h"
 #import "InversionProblemGenerator.h"
 #import "CompoundFractionsProblemGenerator.h"
