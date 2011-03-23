@@ -83,12 +83,12 @@ Todo List:
 
 [+] Don't allow selection of exams.
 
-[ ] Difficulties:
+[+] Difficulties:
     [+] Make generators use difficulty.
     [+] Set difficulty in info screen.
     [+] Save difficulty in preference file.
-    [ ] Fill out random number generator's difficulty settings.
+    [+] Fill out random number generator's difficulty settings.
 
-[ ] Notepad:
+[+] Notepad:
     [+] Add a problem note-pad area where you can see the problem and can make notes about the answer.
-    [ ] Change notepad keyboard to numbers with symbols, since that is what is needed 99% of the time for a scratch pad.
+    [+] Change notepad keyboard to numbers with symbols, since that is what is needed 99% of the time for a scratch pad.

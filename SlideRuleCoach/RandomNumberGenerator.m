@@ -52,7 +52,27 @@
 }
 
 + (NSNumber *)decimalWithDifficulty:(ProblemDifficulty)difficulty {
-    return [self decimalWithMinPower:-1.0 maxPower:1.0 canBeNegative:NO];
+    NSNumber *rand;
+    
+    switch(difficulty) {
+        case ProblemDifficultyIntroductory:
+            rand = [self decimalWithMinPower:0.0 maxPower:0.0 canBeNegative:NO];
+            break;
+        case ProblemDifficultyEasy:
+            rand = [self decimalWithMinPower:0.0 maxPower:1.0 canBeNegative:NO];
+            break;
+        case ProblemDifficultyNormal:
+            rand = [self decimalWithMinPower:-1.0 maxPower:1.0 canBeNegative:NO];
+            break;
+        case ProblemDifficultyAdvanced:
+            rand = [self decimalWithMinPower:-3.0 maxPower:3.0 canBeNegative:NO];
+            break;
+        case ProblemDifficultyMaster:
+            rand = [self decimalWithMinPower:-6.0 maxPower:6.0 canBeNegative:NO];
+            break;
+    }
+    
+    return rand;
 }
 
 + (NSNumber *)bool {
