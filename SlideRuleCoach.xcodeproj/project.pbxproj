@@ -20,7 +20,6 @@
 		4A425BC313384F7A00A89F74 /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = 4A425BC013384F7A00A89F74 /* iTunesArtwork */; };
 		4A7613F31334249A008FCBD1 /* CompoundFractionsProblemGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A7613F21334249A008FCBD1 /* CompoundFractionsProblemGenerator.m */; };
 		4A7613F913342AF1008FCBD1 /* CompoundFractionsExam.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A7613F813342AF0008FCBD1 /* CompoundFractionsExam.m */; };
-		4A8452491337034E00D97967 /* PowersProblemGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A8452481337034E00D97967 /* PowersProblemGenerator.m */; };
 		4A86669613384D7B00845A5A /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A86669513384D7B00845A5A /* Default.png */; };
 		4A86669913384D9200845A5A /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A86669813384D9200845A5A /* Default@2x.png */; };
 		4A8FFC30133039D60083C5FA /* ProblemGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A8FFC2F133039D60083C5FA /* ProblemGenerator.m */; };
@@ -50,6 +49,7 @@
 		4ACD6EF91339A10F00CFE881 /* SqrtExam.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACD6EF81339A10E00CFE881 /* SqrtExam.m */; };
 		4ACD6EFC1339A39400CFE881 /* CubesExam.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACD6EFB1339A39300CFE881 /* CubesExam.m */; };
 		4ACD6EFF1339A3EA00CFE881 /* CubeRootExam.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACD6EFE1339A3E800CFE881 /* CubeRootExam.m */; };
+		4ACD6F021339A71A00CFE881 /* PowersProblemGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACD6F011339A71A00CFE881 /* PowersProblemGenerator.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,8 +77,6 @@
 		4A7613F21334249A008FCBD1 /* CompoundFractionsProblemGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompoundFractionsProblemGenerator.m; sourceTree = "<group>"; };
 		4A7613F713342AF0008FCBD1 /* CompoundFractionsExam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompoundFractionsExam.h; sourceTree = "<group>"; };
 		4A7613F813342AF0008FCBD1 /* CompoundFractionsExam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompoundFractionsExam.m; sourceTree = "<group>"; };
-		4A8452471337034E00D97967 /* PowersProblemGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PowersProblemGenerator.h; path = SlideRuleCoach.xcodeproj/PowersProblemGenerator.h; sourceTree = SOURCE_ROOT; };
-		4A8452481337034E00D97967 /* PowersProblemGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PowersProblemGenerator.m; path = SlideRuleCoach.xcodeproj/PowersProblemGenerator.m; sourceTree = SOURCE_ROOT; };
 		4A86669513384D7B00845A5A /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../Default.png; sourceTree = "<group>"; };
 		4A86669813384D9200845A5A /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../Default@2x.png"; sourceTree = "<group>"; };
 		4A8FFC2E133039D60083C5FA /* ProblemGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProblemGenerator.h; sourceTree = "<group>"; };
@@ -126,6 +124,8 @@
 		4ACD6EFB1339A39300CFE881 /* CubesExam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CubesExam.m; sourceTree = "<group>"; };
 		4ACD6EFD1339A3E700CFE881 /* CubeRootExam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CubeRootExam.h; sourceTree = "<group>"; };
 		4ACD6EFE1339A3E800CFE881 /* CubeRootExam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CubeRootExam.m; sourceTree = "<group>"; };
+		4ACD6F001339A71A00CFE881 /* PowersProblemGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PowersProblemGenerator.h; sourceTree = "<group>"; };
+		4ACD6F011339A71A00CFE881 /* PowersProblemGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PowersProblemGenerator.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,16 +168,16 @@
 			isa = PBXGroup;
 			children = (
 				4A0D112B1332FDD900507127 /* ProblemGenerators.h */,
+				4ACD6EF113399ABD00CFE881 /* RandomProblemGenerator.h */,
+				4ACD6EF213399ABD00CFE881 /* RandomProblemGenerator.m */,
 				4A0D11201332D33500507127 /* MultiplicationProblemGenerator.h */,
 				4A0D11211332D33500507127 /* MultiplicationProblemGenerator.m */,
 				4A0D112D1333193F00507127 /* InversionProblemGenerator.h */,
 				4A0D112E1333193F00507127 /* InversionProblemGenerator.m */,
 				4A7613F11334249A008FCBD1 /* CompoundFractionsProblemGenerator.h */,
 				4A7613F21334249A008FCBD1 /* CompoundFractionsProblemGenerator.m */,
-				4A8452471337034E00D97967 /* PowersProblemGenerator.h */,
-				4A8452481337034E00D97967 /* PowersProblemGenerator.m */,
-				4ACD6EF113399ABD00CFE881 /* RandomProblemGenerator.h */,
-				4ACD6EF213399ABD00CFE881 /* RandomProblemGenerator.m */,
+				4ACD6F001339A71A00CFE881 /* PowersProblemGenerator.h */,
+				4ACD6F011339A71A00CFE881 /* PowersProblemGenerator.m */,
 			);
 			name = "Problem Generators";
 			sourceTree = "<group>";
@@ -367,13 +367,13 @@
 				4A7613F913342AF1008FCBD1 /* CompoundFractionsExam.m in Sources */,
 				4ABF5ABE13343FA500DF4D06 /* ProblemHelpViewController.m in Sources */,
 				4ABF5AC3133442D600DF4D06 /* ProblemNotesViewController.m in Sources */,
-				4A8452491337034E00D97967 /* PowersProblemGenerator.m in Sources */,
 				4AB240911338634F0032EB2A /* PreferencesViewController.m in Sources */,
 				4ACD6EF313399ABD00CFE881 /* RandomProblemGenerator.m in Sources */,
 				4ACD6EF613399D3E00CFE881 /* SquaresExam.m in Sources */,
 				4ACD6EF91339A10F00CFE881 /* SqrtExam.m in Sources */,
 				4ACD6EFC1339A39400CFE881 /* CubesExam.m in Sources */,
 				4ACD6EFF1339A3EA00CFE881 /* CubeRootExam.m in Sources */,
+				4ACD6F021339A71A00CFE881 /* PowersProblemGenerator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
