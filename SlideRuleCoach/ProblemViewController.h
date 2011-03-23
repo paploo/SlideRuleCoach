@@ -13,6 +13,8 @@
 @interface ProblemViewController : UIViewController <UITextFieldDelegate> {
     Exam *exam;
     
+    CGRect numeratorBoxDefaultFrame;
+    
     IBOutlet UILabel *numeratorBox;
     IBOutlet UILabel *denominatorBox;
     IBOutlet UILabel *dividerLine;

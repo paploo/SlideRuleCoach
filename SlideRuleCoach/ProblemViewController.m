@@ -60,6 +60,8 @@
     
     NSLog(@"viewDidLoad");
     
+    numeratorBoxDefaultFrame = [numeratorBox frame];
+    
     [self populateProblem];
     if( [[exam currentProblem] submittedResult] ){
         NSNumberFormatter *formatter = [NumberFormatterFactory percentageFormatter];
@@ -165,9 +167,12 @@
     if([problem denominatorText]) {
         [dividerLine setHidden:NO];
         [denominatorBox setText:[problem denominatorText]];
+        [numeratorBox setFrame:numeratorBoxDefaultFrame];
     } else {
         [dividerLine setHidden:YES];
         [denominatorBox setText:nil];
+        CGRect shiftedFrame = CGRectOffset(numeratorBoxDefaultFrame, 0.0, 11.0);
+        [numeratorBox setFrame:shiftedFrame];
     }
     
     [problemNumberBox setText:[NSString stringWithFormat:@"Problem %u:", [[exam problems] count]]];
