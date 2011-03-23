@@ -81,7 +81,7 @@ Todo List:
 
 [+] Make an info button on main screen top-bar to get info and set prefs in future.
 
-[ ] Don't allow selection of exams.
+[+] Don't allow selection of exams.
 
 [ ] Difficulties:
     [+] Make generators use difficulty.

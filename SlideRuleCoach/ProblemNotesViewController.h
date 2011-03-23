@@ -11,14 +11,17 @@
 
 @interface ProblemNotesViewController : UIViewController <UITextViewDelegate> {
     Exam *exam;
+    
     UIBarButtonItem *notesEditDoneButtonItem;
+    
+    CGRect numeratorBoxDefaultFrame;
+    CGRect defaultNotesFrame;
     
     IBOutlet UILabel *numeratorBox;
     IBOutlet UILabel *denominatorBox;
     IBOutlet UILabel *dividerLine;
     
     IBOutlet UITextView *notesTextView;
-    CGRect defaultNotesFrame;
 }
 @property(nonatomic, retain) Exam *exam;
 - (IBAction)endNotesEditing:(id)sender;

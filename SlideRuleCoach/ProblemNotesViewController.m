@@ -52,7 +52,9 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWasShown:) name:UIKeyboardDidShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillBeHidden:) name:UIKeyboardWillHideNotification object:nil];
     
+    numeratorBoxDefaultFrame = [numeratorBox frame];
     defaultNotesFrame = [notesTextView frame];
+    
     [self setupView];
 }
 
@@ -138,9 +140,12 @@
     if([problem denominatorText]) {
         [dividerLine setHidden:NO];
         [denominatorBox setText:[problem denominatorText]];
+        [numeratorBox setFrame:numeratorBoxDefaultFrame];
     } else {
         [dividerLine setHidden:YES];
         [denominatorBox setText:nil];
+        CGRect shiftedFrame = CGRectOffset(numeratorBoxDefaultFrame, 0.0, 11.0);
+        [numeratorBox setFrame:shiftedFrame];
     }
 }
 
