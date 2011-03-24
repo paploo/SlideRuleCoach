@@ -80,7 +80,7 @@ static NSInteger ProctorSectionExamIndexPosition = 1;
              nil],
             [NSDictionary dictionaryWithObjectsAndKeys:
              @"Exponents and Logs", ProctorSectionName,
-             [NSArray arrayWithObjects:@"CommonExponentsExam", nil], ProctorSectionExamList,
+             [NSArray arrayWithObjects:@"CommonExponentsExam", @"CommonLogExam", nil], ProctorSectionExamList,
              nil],
             nil];
 }

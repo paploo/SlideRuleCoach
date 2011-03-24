@@ -31,6 +31,7 @@
 }
 
 - (NSNumber *)scaleReadErrorForProblem:(Problem *)problem {
+    // The standard difference of the log seems to give the desired output.
     return [super scaleReadErrorForProblem:problem];
 }
 

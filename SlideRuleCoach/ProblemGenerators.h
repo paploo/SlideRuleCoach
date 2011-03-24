@@ -15,3 +15,4 @@
 #import "PowersProblemGenerator.h"
 
 #import "CommonExpProblemGenerator.h"
+#import "CommonLogProblemGenerator.h"

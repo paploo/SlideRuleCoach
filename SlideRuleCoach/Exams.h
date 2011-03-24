@@ -16,3 +16,4 @@
 #import "CubeRootExam.h"
 
 #import "CommonExponentsExam.h"
+#import "CommonLogExam.h"

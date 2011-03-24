@@ -33,16 +33,11 @@
 }
 
 - (NSNumber *)scaleReadErrorForProblem:(Problem *)problem {
-    //Most problems use a simple log10 scale, so the standard is done here.
-    //Note that we have to determine which way around the scale is quickest.
-    //Integers show how many revolutions you are off.
+    //Most problems use a simple log10 scale or can derive their answer from it,
+    //so this common routine is done here.
     double uAnswer = log10([[problem answer] doubleValue]);
     
-    double uSubmitted = 0.0;
-    if( [problem submittedResult] )
-        uSubmitted = log10([[problem submittedResult] doubleValue]);
-    else
-        uSubmitted = 0.0;
+    double uSubmitted = [problem submittedResult] ? log10([[problem submittedResult] doubleValue]) : 0.0;
     
     return [NSNumber numberWithDouble:(uSubmitted - uAnswer)];
 }

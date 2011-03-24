@@ -13,6 +13,8 @@
 		4A0D112F1333193F00507127 /* InversionProblemGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0D112E1333193F00507127 /* InversionProblemGenerator.m */; };
 		4A0D11321333D16F00507127 /* InversionExam.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0D11311333D16E00507127 /* InversionExam.m */; };
 		4A223D92133193BC0014A592 /* NumberFormatterFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A223D91133193BC0014A592 /* NumberFormatterFactory.m */; };
+		4A2E8F81133ACD8300EA0414 /* CommonLogProblemGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A2E8F80133ACD8300EA0414 /* CommonLogProblemGenerator.m */; };
+		4A2E8F85133ACF8F00EA0414 /* CommonLogExam.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A2E8F84133ACF8F00EA0414 /* CommonLogExam.m */; };
 		4A425BBB13384F0000A89F74 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A425BBA13384F0000A89F74 /* Icon.png */; };
 		4A425BBD13384F0800A89F74 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A425BBC13384F0800A89F74 /* Icon@2x.png */; };
 		4A425BC113384F7A00A89F74 /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A425BBE13384F7A00A89F74 /* Icon-Small.png */; };
@@ -70,6 +72,10 @@
 		4A0D11311333D16E00507127 /* InversionExam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InversionExam.m; sourceTree = "<group>"; };
 		4A223D90133193BC0014A592 /* NumberFormatterFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NumberFormatterFactory.h; sourceTree = "<group>"; };
 		4A223D91133193BC0014A592 /* NumberFormatterFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NumberFormatterFactory.m; sourceTree = "<group>"; };
+		4A2E8F7F133ACD8300EA0414 /* CommonLogProblemGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonLogProblemGenerator.h; sourceTree = "<group>"; };
+		4A2E8F80133ACD8300EA0414 /* CommonLogProblemGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonLogProblemGenerator.m; sourceTree = "<group>"; };
+		4A2E8F83133ACF8F00EA0414 /* CommonLogExam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonLogExam.h; sourceTree = "<group>"; };
+		4A2E8F84133ACF8F00EA0414 /* CommonLogExam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonLogExam.m; sourceTree = "<group>"; };
 		4A425BBA13384F0000A89F74 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = ../Icon.png; sourceTree = "<group>"; };
 		4A425BBC13384F0800A89F74 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "../Icon@2x.png"; sourceTree = "<group>"; };
 		4A425BBE13384F7A00A89F74 /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small.png"; sourceTree = "<group>"; };
@@ -168,6 +174,8 @@
 				4ACD6EFE1339A3E800CFE881 /* CubeRootExam.m */,
 				4ACD6F061339B7BE00CFE881 /* CommonExponentsExam.h */,
 				4ACD6F071339B7BF00CFE881 /* CommonExponentsExam.m */,
+				4A2E8F83133ACF8F00EA0414 /* CommonLogExam.h */,
+				4A2E8F84133ACF8F00EA0414 /* CommonLogExam.m */,
 			);
 			name = Exams;
 			sourceTree = "<group>";
@@ -188,6 +196,8 @@
 				4ACD6F011339A71A00CFE881 /* PowersProblemGenerator.m */,
 				4ACD6F031339B42100CFE881 /* CommonExpProblemGenerator.h */,
 				4ACD6F041339B42200CFE881 /* CommonExpProblemGenerator.m */,
+				4A2E8F7F133ACD8300EA0414 /* CommonLogProblemGenerator.h */,
+				4A2E8F80133ACD8300EA0414 /* CommonLogProblemGenerator.m */,
 			);
 			name = "Problem Generators";
 			sourceTree = "<group>";
@@ -386,6 +396,8 @@
 				4ACD6F021339A71A00CFE881 /* PowersProblemGenerator.m in Sources */,
 				4ACD6F051339B42400CFE881 /* CommonExpProblemGenerator.m in Sources */,
 				4ACD6F081339B7C300CFE881 /* CommonExponentsExam.m in Sources */,
+				4A2E8F81133ACD8300EA0414 /* CommonLogProblemGenerator.m in Sources */,
+				4A2E8F85133ACF8F00EA0414 /* CommonLogExam.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
