@@ -6,10 +6,20 @@
 //  Copyright 2011 Jeffrey C Reinecke. Released under the BSD license.
 //
 
-#import "stdlib.h"
+#import <stdlib.h>
+#import <math.h>
 
 #import "RandomNumberGenerator.h"
 
+// These are used to build the LL scale ranges.
+#define LL0 1.0010005001667083416680557539930583115630762005807014602285
+#define LL1 1.0100501670841680575421654569028600338073622015242925151644
+#define LL2 1.1051709180756476248117078264902466682245471947375187187928
+#define LL3 2.7182818284590452353602874713526624977572470936999595749669
+#define LL4 22026.465794806716516957900645284244366353512618556781074235
+
+// This is used for easier difficulties of LL scale problems.
+const double commonBases[] = {1/M_E, 0.5, M_E, 2.0, 8.0, 10.0};
 
 @implementation RandomNumberGenerator
 
@@ -124,6 +134,82 @@
     
     // Return the element found at that index.
     return [array objectAtIndex:index];
+}
+
++ (NSNumber *)logScaleValueForDifficulty:(ProblemDifficulty)difficulty {
+    double logScaleValue; //This is always greater than 1.0
+    BOOL canBeInverted; //This gives a chance for it to be inverted.
+    
+    switch (difficulty) {
+        case ProblemDifficultyIntroductory:
+            logScaleValue = [[RandomNumberGenerator decimalWithMin:LL3 max:LL4] doubleValue];
+            canBeInverted = NO;
+            break;
+            
+        case ProblemDifficultyEasy:
+            logScaleValue = [[RandomNumberGenerator decimalWithMin:LL3 max:LL4] doubleValue];
+            canBeInverted = YES;
+            break;
+            
+        case ProblemDifficultyNormal:
+            logScaleValue = [[RandomNumberGenerator decimalWithMin:LL2 max:LL4] doubleValue];
+            canBeInverted = YES;
+            break;
+            
+        case ProblemDifficultyAdvanced:
+            logScaleValue = [[RandomNumberGenerator decimalWithMin:LL1 max:LL4] doubleValue];
+            canBeInverted = YES;
+            break;
+            
+        case ProblemDifficultyMaster:
+            logScaleValue = [[RandomNumberGenerator decimalWithMin:LL0 max:LL4] doubleValue];
+            canBeInverted = YES;
+            break;
+    }
+    
+    if( canBeInverted )
+        logScaleValue = [RandomNumberGenerator bool] ? logScaleValue : 1.0/logScaleValue;
+    
+    return [NSNumber numberWithDouble:logScaleValue];
+}
+
++ (NSNumber *)logBaseForDifficulty:(ProblemDifficulty)difficulty {
+    double base; //This is always greater than 1.0
+    BOOL canBeInverted; //This gives a chance for it to be inverted.
+    
+    NSUInteger commonBaseLen = (sizeof(commonBases)/sizeof(double));
+    
+    switch (difficulty) {
+        case ProblemDifficultyIntroductory:
+            base = commonBases[random() % commonBaseLen];
+            canBeInverted = NO;
+            break;
+            
+        case ProblemDifficultyEasy:
+            base = commonBases[random() % commonBaseLen];
+            canBeInverted = NO;
+            break;
+            
+        case ProblemDifficultyNormal:
+            base = [[RandomNumberGenerator decimalWithMin:LL2 max:LL4] doubleValue];
+            canBeInverted = YES;
+            break;
+            
+        case ProblemDifficultyAdvanced:
+            base = [[RandomNumberGenerator decimalWithMin:LL1 max:LL4] doubleValue];
+            canBeInverted = YES;
+            break;
+            
+        case ProblemDifficultyMaster:
+            base = [[RandomNumberGenerator decimalWithMin:LL0 max:LL4] doubleValue];
+            canBeInverted = YES;
+            break;
+    }
+    
+    if( canBeInverted )
+        base = [RandomNumberGenerator bool] ? base : 1.0/base;
+    
+    return [NSNumber numberWithDouble:base];
 }
 
 @end

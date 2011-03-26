@@ -41,15 +41,15 @@ Todo List:
         [+] Inversion (1/a)
         [+] Fractions (a*c*e/b*d*f)
         [ ] Ratio-proportions
-    [ ] Squares, Cubes and Roots:
+    [+] Squares, Cubes and Roots:
         [+] Squares (b^2)
         [+] Cubes (b^3)
         [+] Roots (sqrt(b), croot(b))
         [+] A-B Scales Squares (a*b^2)
-    [ ] Powers and Logs:
-        [ ] 10^x
-        [ ] log10(x)
-        [ ] x^n
+    [+] Powers and Logs:
+        [+] 10^x
+        [+] log10(x)
+        [+] x^n
         [ ] logn(x) [Note: need to build custom random number for difficulty implementations to keep in range; use same one for exponents.]
     [ ] Trig:
         [ ] x degrees in radians
@@ -66,29 +66,10 @@ Todo List:
         [ ] RandomProblemGenerator: Initialized with an array of problem generators, and then randomly selects from them.  Weights?
 
 
-[+] Make calculation of scaleReadError on Problem use a delegate (which would be the generator).
+[ ] Problem Timer
+    [ ] Record timer data.
+    [ ] Show running timer before submitting.
+    [ ] Show average time.
 
-[+] Break exam list into sections
-
-[+] Help button for problems
-
-[+] Make problems mutable to more easily build them in steps.
-
-[-] Formatting
-    NOTE: Cannot use NSAttributedStrings in UIKit?  May need custom view to draw pieces!
-    [-] Make superscripts using a formatted string
-    [-] italisize function names.
-
-[+] Make an info button on main screen top-bar to get info and set prefs in future.
-
-[+] Don't allow selection of exams.
-
-[+] Difficulties:
-    [+] Make generators use difficulty.
-    [+] Set difficulty in info screen.
-    [+] Save difficulty in preference file.
-    [+] Fill out random number generator's difficulty settings.
-
-[+] Notepad:
-    [+] Add a problem note-pad area where you can see the problem and can make notes about the answer.
-    [+] Change notepad keyboard to numbers with symbols, since that is what is needed 99% of the time for a scratch pad.
+[ ] Problem Formatting
+    [ ] Replace the equation display with a UIWebView.
