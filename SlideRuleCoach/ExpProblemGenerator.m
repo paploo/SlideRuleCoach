@@ -17,6 +17,7 @@
     NSNumber *value = [RandomNumberGenerator logScaleValueForDifficulty:difficulty];
     NSNumber *base = [RandomNumberGenerator logBaseForDifficulty:difficulty];
     NSNumber *power = [NSNumber numberWithDouble:(log([value doubleValue]) / log([base doubleValue]))];
+    NSLog(@"%f ^ %f = %f", [base doubleValue], [power doubleValue], [value doubleValue]);
     
     NSNumber *answer = value;
     

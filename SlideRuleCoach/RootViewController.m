@@ -72,7 +72,6 @@
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"indexPath: %@", indexPath);
     static NSString *CellIdentifier = @"Cell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
@@ -188,7 +187,6 @@
 }
 
 - (void)infoButtonPressed:(id)sender {
-    NSLog(@"infoButtonPressed");
     PreferencesViewController *preferencesViewController = [[PreferencesViewController alloc] initWithNibName:@"PreferencesViewController" bundle:nil];
     [[self navigationController] pushViewController:preferencesViewController animated:YES];
     [preferencesViewController release];

@@ -137,35 +137,38 @@ const double commonBases[] = {1/M_E, 0.5, M_E, 2.0, 8.0, 10.0};
 }
 
 + (NSNumber *)logScaleValueForDifficulty:(ProblemDifficulty)difficulty {
-    double logScaleValue; //This is always greater than 1.0
-    BOOL canBeInverted; //This gives a chance for it to be inverted.
+    // To generate evenly across a scale, we generate a u for the scale.
+    double uScale; // LL3 runs from 0.0 to 1.0
+    BOOL canBeInverted;//This gives a chance for it to be inverted.
     
     switch (difficulty) {
         case ProblemDifficultyIntroductory:
-            logScaleValue = [[RandomNumberGenerator decimalWithMin:LL3 max:LL4] doubleValue];
+            uScale = [[RandomNumberGenerator decimalWithMin:0.0 max:1.0] doubleValue];
             canBeInverted = NO;
             break;
             
         case ProblemDifficultyEasy:
-            logScaleValue = [[RandomNumberGenerator decimalWithMin:LL3 max:LL4] doubleValue];
+            uScale = [[RandomNumberGenerator decimalWithMin:0.0 max:1.0] doubleValue];
             canBeInverted = YES;
             break;
             
         case ProblemDifficultyNormal:
-            logScaleValue = [[RandomNumberGenerator decimalWithMin:LL2 max:LL4] doubleValue];
+            uScale = [[RandomNumberGenerator decimalWithMin:-1.0 max:1.0] doubleValue];
             canBeInverted = YES;
             break;
             
         case ProblemDifficultyAdvanced:
-            logScaleValue = [[RandomNumberGenerator decimalWithMin:LL1 max:LL4] doubleValue];
+            uScale = [[RandomNumberGenerator decimalWithMin:-2.0 max:1.0] doubleValue];
             canBeInverted = YES;
             break;
             
         case ProblemDifficultyMaster:
-            logScaleValue = [[RandomNumberGenerator decimalWithMin:LL0 max:LL4] doubleValue];
+            uScale = [[RandomNumberGenerator decimalWithMin:-3.0 max:1.0] doubleValue];
             canBeInverted = YES;
             break;
     }
+    
+    double logScaleValue = exp(pow(10.0, uScale)); //Convert back from u to number on LL scale.
     
     if( canBeInverted )
         logScaleValue = [RandomNumberGenerator bool] ? logScaleValue : 1.0/logScaleValue;
@@ -174,37 +177,40 @@ const double commonBases[] = {1/M_E, 0.5, M_E, 2.0, 8.0, 10.0};
 }
 
 + (NSNumber *)logBaseForDifficulty:(ProblemDifficulty)difficulty {
-    double base; //This is always greater than 1.0
+    // To generate evenly across a scale, we generate a u for the scale.
+    double uScale; // LL3 runs from 0.0 to 1.0
     BOOL canBeInverted; //This gives a chance for it to be inverted.
     
     NSUInteger commonBaseLen = (sizeof(commonBases)/sizeof(double));
     
     switch (difficulty) {
         case ProblemDifficultyIntroductory:
-            base = commonBases[random() % commonBaseLen];
+            uScale = log10(log( commonBases[random() % commonBaseLen] ));
             canBeInverted = NO;
             break;
             
         case ProblemDifficultyEasy:
-            base = commonBases[random() % commonBaseLen];
+            uScale = log10(log( commonBases[random() % commonBaseLen] ));
             canBeInverted = NO;
             break;
             
         case ProblemDifficultyNormal:
-            base = [[RandomNumberGenerator decimalWithMin:LL2 max:LL4] doubleValue];
+            uScale = [[RandomNumberGenerator decimalWithMin:-1.0 max:1.0] doubleValue];
             canBeInverted = YES;
             break;
             
         case ProblemDifficultyAdvanced:
-            base = [[RandomNumberGenerator decimalWithMin:LL1 max:LL4] doubleValue];
+            uScale = [[RandomNumberGenerator decimalWithMin:-2.0 max:1.0] doubleValue];
             canBeInverted = YES;
             break;
             
         case ProblemDifficultyMaster:
-            base = [[RandomNumberGenerator decimalWithMin:LL0 max:LL4] doubleValue];
+            uScale = [[RandomNumberGenerator decimalWithMin:-3.0 max:1.0] doubleValue];
             canBeInverted = YES;
             break;
     }
+    
+    double base = exp(pow(10.0, uScale)); //Convert back from u to number on LL scale.
     
     if( canBeInverted )
         base = [RandomNumberGenerator bool] ? base : 1.0/base;

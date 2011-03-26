@@ -58,8 +58,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    NSLog(@"viewDidLoad");
-    
     numeratorBoxDefaultFrame = [numeratorBox frame];
     
     [self populateProblem];
@@ -72,7 +70,6 @@
 
 - (void)viewDidUnload
 {
-    NSLog(@"viewDidUnload");
     [numeratorBox release];
     numeratorBox = nil;
     [denominatorBox release];
@@ -104,7 +101,6 @@
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
-	NSLog(@"textFieldShouldReturn");
 	[textField resignFirstResponder];
 	return YES;
 }
@@ -118,8 +114,6 @@
 }
 
 - (IBAction)submitAnswer:(id)sender {
-    NSLog(@"submitAnswer");
-    
     [answerInput resignFirstResponder];
     
     NSNumberFormatter *formatter = [NumberFormatterFactory decimalFormatter];
@@ -136,14 +130,11 @@
 }
 
 - (IBAction)gotoNextProblem:(id)sender {
-    NSLog(@"gotoNextProblem");
     [exam generateProblem];
     [self populateProblem];
 }
 
 - (IBAction)showHelp:(id)sender {
-    NSLog(@"showHelp");
-    
     ProblemHelpViewController *helpViewController = [[ProblemHelpViewController alloc] initWithNibName:@"ProblemHelpViewController" bundle:nil];
     [helpViewController setExam:exam];
     [[self navigationController] pushViewController:helpViewController animated:YES];
@@ -151,8 +142,6 @@
 }
 
 - (IBAction)showNotes:(id)sender {
-    NSLog(@"showNotes");
-    
     ProblemNotesViewController *notesViewController = [[ProblemNotesViewController alloc] initWithNibName:@"ProblemNotesViewController" bundle:nil];
     [notesViewController setExam:exam];
     [[self navigationController] pushViewController:notesViewController animated:YES];
