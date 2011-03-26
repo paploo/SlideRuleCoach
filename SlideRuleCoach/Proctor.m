@@ -69,20 +69,27 @@ static NSInteger ProctorSectionExamIndexPosition = 1;
 
 // [{ProctorSectionName:@"Basic", ProctorExamList:[@"MultiplicationExam"]}]
 - (NSArray *)buildExamRegistry {
-    return [NSArray arrayWithObjects:
-            [NSDictionary dictionaryWithObjectsAndKeys:
-             @"Basic Arithmetic", ProctorSectionName,
-             [NSArray arrayWithObjects:@"MultiplicationExam", @"InversionExam", @"CompoundFractionsExam", nil], ProctorSectionExamList,
-             nil],
-            [NSDictionary dictionaryWithObjectsAndKeys:
-             @"Squares, Cubes and Roots", ProctorSectionName,
-             [NSArray arrayWithObjects:@"SquaresExam", @"SqrtExam", @"CubesExam", @"CubeRootExam", nil], ProctorSectionExamList,
-             nil],
-            [NSDictionary dictionaryWithObjectsAndKeys:
-             @"Exponents and Logs", ProctorSectionName,
-             [NSArray arrayWithObjects:@"CommonExponentsExam", @"CommonLogExam", nil], ProctorSectionExamList,
-             nil],
-            nil];
+    NSMutableArray *registry = [NSMutableArray array];
+    
+    NSMutableDictionary *basicArithmeticRegistry = [NSMutableDictionary dictionary];
+    [basicArithmeticRegistry setObject:@"BasicArithmetic" forKey:ProctorSectionName];
+    NSArray *basicArithmeticExams = [NSArray arrayWithObjects:@"MultiplicationExam", @"InversionExam", @"CompoundFractionsExam", nil];
+    [basicArithmeticRegistry setObject:basicArithmeticExams forKey:ProctorSectionExamList];
+    [registry addObject:basicArithmeticRegistry];
+    
+    NSMutableDictionary *basicPowersRegistry = [NSMutableDictionary dictionary];
+    [basicPowersRegistry setObject:@"Squares, Cubes and Roots" forKey:ProctorSectionName];
+    NSArray *basicPowersExams = [NSArray arrayWithObjects:@"SquaresExam", @"SqrtExam", @"CubesExam", @"CubeRootExam", nil];
+    [basicPowersRegistry setObject:basicPowersExams forKey:ProctorSectionExamList];
+    [registry addObject:basicPowersRegistry];
+    
+    NSMutableDictionary *expRegistry = [NSMutableDictionary dictionary];
+    [expRegistry setObject:@"Exponents and Logs" forKey:ProctorSectionName];
+    NSArray *expExams = [NSArray arrayWithObjects:@"CommonExponentsExam", @"CommonLogExam", @"ExponentsExam", @"LogExam", nil];
+    [expRegistry setObject:expExams forKey:ProctorSectionExamList];
+    [registry addObject:expRegistry];
+    
+    return registry;
 }
 
 - (void)dealloc {

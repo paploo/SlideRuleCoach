@@ -55,6 +55,9 @@
 		4ACD6F051339B42400CFE881 /* CommonExpProblemGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACD6F041339B42200CFE881 /* CommonExpProblemGenerator.m */; };
 		4ACD6F081339B7C300CFE881 /* CommonExponentsExam.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACD6F071339B7BF00CFE881 /* CommonExponentsExam.m */; };
 		4ADE1391133D7BC6004FFD3C /* ExpProblemGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ADE1390133D7BC6004FFD3C /* ExpProblemGenerator.m */; };
+		4ADE1395133DB49C004FFD3C /* LogProblemGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ADE1394133DB49C004FFD3C /* LogProblemGenerator.m */; };
+		4ADE1398133DB54C004FFD3C /* ExponentsExam.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ADE1397133DB54C004FFD3C /* ExponentsExam.m */; };
+		4ADE139B133DB55B004FFD3C /* LogExam.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ADE139A133DB55B004FFD3C /* LogExam.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -141,6 +144,12 @@
 		4ACD6F071339B7BF00CFE881 /* CommonExponentsExam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonExponentsExam.m; sourceTree = "<group>"; };
 		4ADE138F133D7BC6004FFD3C /* ExpProblemGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpProblemGenerator.h; sourceTree = "<group>"; };
 		4ADE1390133D7BC6004FFD3C /* ExpProblemGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpProblemGenerator.m; sourceTree = "<group>"; };
+		4ADE1393133DB49C004FFD3C /* LogProblemGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogProblemGenerator.h; sourceTree = "<group>"; };
+		4ADE1394133DB49C004FFD3C /* LogProblemGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogProblemGenerator.m; sourceTree = "<group>"; };
+		4ADE1396133DB54C004FFD3C /* ExponentsExam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExponentsExam.h; sourceTree = "<group>"; };
+		4ADE1397133DB54C004FFD3C /* ExponentsExam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExponentsExam.m; sourceTree = "<group>"; };
+		4ADE1399133DB55B004FFD3C /* LogExam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogExam.h; sourceTree = "<group>"; };
+		4ADE139A133DB55B004FFD3C /* LogExam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogExam.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +188,10 @@
 				4ACD6F071339B7BF00CFE881 /* CommonExponentsExam.m */,
 				4A2E8F83133ACF8F00EA0414 /* CommonLogExam.h */,
 				4A2E8F84133ACF8F00EA0414 /* CommonLogExam.m */,
+				4ADE1396133DB54C004FFD3C /* ExponentsExam.h */,
+				4ADE1397133DB54C004FFD3C /* ExponentsExam.m */,
+				4ADE1399133DB55B004FFD3C /* LogExam.h */,
+				4ADE139A133DB55B004FFD3C /* LogExam.m */,
 			);
 			name = Exams;
 			sourceTree = "<group>";
@@ -203,6 +216,8 @@
 				4A2E8F80133ACD8300EA0414 /* CommonLogProblemGenerator.m */,
 				4ADE138F133D7BC6004FFD3C /* ExpProblemGenerator.h */,
 				4ADE1390133D7BC6004FFD3C /* ExpProblemGenerator.m */,
+				4ADE1393133DB49C004FFD3C /* LogProblemGenerator.h */,
+				4ADE1394133DB49C004FFD3C /* LogProblemGenerator.m */,
 			);
 			name = "Problem Generators";
 			sourceTree = "<group>";
@@ -404,6 +419,9 @@
 				4A2E8F81133ACD8300EA0414 /* CommonLogProblemGenerator.m in Sources */,
 				4A2E8F85133ACF8F00EA0414 /* CommonLogExam.m in Sources */,
 				4ADE1391133D7BC6004FFD3C /* ExpProblemGenerator.m in Sources */,
+				4ADE1395133DB49C004FFD3C /* LogProblemGenerator.m in Sources */,
+				4ADE1398133DB54C004FFD3C /* ExponentsExam.m in Sources */,
+				4ADE139B133DB55B004FFD3C /* LogExam.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -478,7 +496,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SlideRuleCoach/SlideRuleCoach-Prefix.pch";
 				INFOPLIST_FILE = "SlideRuleCoach/SlideRuleCoach-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -492,7 +510,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SlideRuleCoach/SlideRuleCoach-Prefix.pch";
 				INFOPLIST_FILE = "SlideRuleCoach/SlideRuleCoach-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;

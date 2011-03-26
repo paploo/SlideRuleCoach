@@ -16,3 +16,5 @@
 
 #import "CommonExpProblemGenerator.h"
 #import "CommonLogProblemGenerator.h"
+#import "ExpProblemGenerator.h"
+#import "LogProblemGenerator.h"

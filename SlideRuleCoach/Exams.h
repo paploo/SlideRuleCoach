@@ -17,3 +17,5 @@
 
 #import "CommonExponentsExam.h"
 #import "CommonLogExam.h"
+#import "ExponentsExam.h"
+#import "LogExam.h"

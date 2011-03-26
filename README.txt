@@ -50,7 +50,7 @@ Todo List:
         [+] 10^x
         [+] log10(x)
         [+] x^n
-        [ ] logn(x) [Note: need to build custom random number for difficulty implementations to keep in range; use same one for exponents.]
+        [+] logn(x) [Note: need to build custom random number for difficulty implementations to keep in range; use same one for exponents.]
     [ ] Trig:
         [ ] x degrees in radians
         [ ] x radians in degrees
@@ -65,6 +65,8 @@ Todo List:
         [ ] Artillary Ranging.
         [ ] RandomProblemGenerator: Initialized with an array of problem generators, and then randomly selects from them.  Weights?
 
+
+[ ] Exp/Logs: LL scale random values are too evenly distributed.  Need to evenly distribute along the scale, not the range!
 
 [ ] Problem Timer
     [ ] Record timer data.
