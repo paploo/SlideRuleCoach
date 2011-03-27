@@ -86,6 +86,7 @@
 		4A425BBE13384F7A00A89F74 /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small.png"; sourceTree = "<group>"; };
 		4A425BBF13384F7A00A89F74 /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small@2x.png"; sourceTree = "<group>"; };
 		4A425BC013384F7A00A89F74 /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; path = iTunesArtwork; sourceTree = "<group>"; };
+		4A645E65133FD95E0086A258 /* Trig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Trig.h; sourceTree = "<group>"; };
 		4A7613F11334249A008FCBD1 /* CompoundFractionsProblemGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompoundFractionsProblemGenerator.h; sourceTree = "<group>"; };
 		4A7613F21334249A008FCBD1 /* CompoundFractionsProblemGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompoundFractionsProblemGenerator.m; sourceTree = "<group>"; };
 		4A7613F713342AF0008FCBD1 /* CompoundFractionsExam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompoundFractionsExam.h; sourceTree = "<group>"; };
@@ -318,6 +319,7 @@
 				4A0D11241332DA7200507127 /* RandomNumberGenerator.m */,
 				4AC469E5133EE06300DC1A69 /* ScaleParameterizer.h */,
 				4AC469E6133EE06300DC1A69 /* ScaleParameterizer.m */,
+				4A645E65133FD95E0086A258 /* Trig.h */,
 			);
 			name = "Core Backend";
 			sourceTree = "<group>";
