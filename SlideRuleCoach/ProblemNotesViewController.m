@@ -90,7 +90,6 @@
 #pragma mark - TextView Delegate Methods
 
 - (BOOL)textViewShouldEndEditing:(UITextView *)textView {
-    NSLog(@"textViewShouldEndEditing");
     [textView resignFirstResponder];
     if(textView == notesTextView)
         [self endNotesEditing:textView];
@@ -98,7 +97,6 @@
 }
 
 - (void)keyboardWasShown:(NSNotification *)aNote {
-    NSLog(@"keyboardWasShown");
     [[self navigationItem] setRightBarButtonItem:notesEditDoneButtonItem animated:YES];
     
     //Now we need to resize the text field and scroll to the selected text.
@@ -112,7 +110,6 @@
 }
 
 - (void)keyboardWillBeHidden:(NSNotification *)aNote {
-    NSLog(@"keyboardWillBeHidden");
     [[self navigationItem] setRightBarButtonItem:nil animated:YES];
     
     //Now we need to size back to the default
@@ -122,7 +119,6 @@
 #pragma mark - Actions
 
 - (IBAction)endNotesEditing:(id)sender {
-    NSLog(@"endNotesEditing");
     if([notesTextView isFirstResponder])
         [notesTextView resignFirstResponder];
     Problem *problem = [exam currentProblem];

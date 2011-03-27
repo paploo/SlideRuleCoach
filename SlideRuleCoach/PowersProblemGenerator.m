@@ -8,6 +8,7 @@
 
 #import "PowersProblemGenerator.h"
 #import "RandomNumberGenerator.h"
+#import "ScaleParameterizer.h"
 
 @implementation PowersProblemGenerator
 
@@ -77,8 +78,15 @@
 - (NSNumber *)scaleReadErrorForProblem:(Problem *)problem {
     //TODO: This may be incorrect for negative powers.  It depends on how you do it.
     //TODO: How do we take into account the coefficient, or do we just ignore it since we can't separate it out?
-    double readError = [[super scaleReadErrorForProblem:problem] doubleValue];
-    return [NSNumber numberWithDouble:(readError / [power doubleValue])];
+    
+    //double readError = [[super scaleReadErrorForProblem:problem] doubleValue];
+    //return [NSNumber numberWithDouble:(readError / [power doubleValue])];
+    
+    double uAnswer = [ScaleParameterizer powerScaleParameterForValue:[[problem answer] doubleValue] power:[power doubleValue]];
+    
+    double uSubmitted = [problem submittedResult] ? [ScaleParameterizer powerScaleParameterForValue:[[problem submittedResult] doubleValue] power:[power doubleValue]] : 0.0;
+    
+    return [NSNumber numberWithDouble:(uAnswer - uSubmitted)];
 }
 
 - (NSString *)buildHelpText {    

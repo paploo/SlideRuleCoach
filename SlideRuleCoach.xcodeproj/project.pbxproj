@@ -42,6 +42,7 @@
 		4ABF5ABF13343FA500DF4D06 /* ProblemHelpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4ABF5ABD13343FA500DF4D06 /* ProblemHelpViewController.xib */; };
 		4ABF5AC3133442D600DF4D06 /* ProblemNotesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ABF5AC1133442D500DF4D06 /* ProblemNotesViewController.m */; };
 		4ABF5AC4133442D600DF4D06 /* ProblemNotesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4ABF5AC2133442D500DF4D06 /* ProblemNotesViewController.xib */; };
+		4AC469E7133EE06300DC1A69 /* ScaleParameterizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AC469E6133EE06300DC1A69 /* ScaleParameterizer.m */; };
 		4AC6A539133886CA00978A21 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4AC6A538133886CA00978A21 /* README.txt */; };
 		4ACBF0EA13306DE50059BF4C /* Proctor.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACBF0E913306DE50059BF4C /* Proctor.m */; };
 		4ACBF0F513307CDE0059BF4C /* ProblemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACBF0F313307CDD0059BF4C /* ProblemViewController.m */; };
@@ -120,6 +121,8 @@
 		4ABF5AC0133442D500DF4D06 /* ProblemNotesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProblemNotesViewController.h; sourceTree = "<group>"; };
 		4ABF5AC1133442D500DF4D06 /* ProblemNotesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProblemNotesViewController.m; sourceTree = "<group>"; };
 		4ABF5AC2133442D500DF4D06 /* ProblemNotesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProblemNotesViewController.xib; sourceTree = "<group>"; };
+		4AC469E5133EE06300DC1A69 /* ScaleParameterizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScaleParameterizer.h; sourceTree = "<group>"; };
+		4AC469E6133EE06300DC1A69 /* ScaleParameterizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScaleParameterizer.m; sourceTree = "<group>"; };
 		4AC6A538133886CA00978A21 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = SOURCE_ROOT; };
 		4ACBF0E813306DE50059BF4C /* Proctor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Proctor.h; sourceTree = "<group>"; };
 		4ACBF0E913306DE50059BF4C /* Proctor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Proctor.m; sourceTree = "<group>"; };
@@ -313,6 +316,8 @@
 				4A223D91133193BC0014A592 /* NumberFormatterFactory.m */,
 				4A0D11231332DA7200507127 /* RandomNumberGenerator.h */,
 				4A0D11241332DA7200507127 /* RandomNumberGenerator.m */,
+				4AC469E5133EE06300DC1A69 /* ScaleParameterizer.h */,
+				4AC469E6133EE06300DC1A69 /* ScaleParameterizer.m */,
 			);
 			name = "Core Backend";
 			sourceTree = "<group>";
@@ -422,6 +427,7 @@
 				4ADE1395133DB49C004FFD3C /* LogProblemGenerator.m in Sources */,
 				4ADE1398133DB54C004FFD3C /* ExponentsExam.m in Sources */,
 				4ADE139B133DB55B004FFD3C /* LogExam.m in Sources */,
+				4AC469E7133EE06300DC1A69 /* ScaleParameterizer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

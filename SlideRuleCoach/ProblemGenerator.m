@@ -11,6 +11,7 @@
 #import "ProblemGenerator.h"
 #import "Problem.h"
 #import "NumberFormatterFactory.h"
+#import "ScaleParameterizer.h"
 
 @implementation ProblemGenerator
 
@@ -35,9 +36,9 @@
 - (NSNumber *)scaleReadErrorForProblem:(Problem *)problem {
     //Most problems use a simple log10 scale or can derive their answer from it,
     //so this common routine is done here.
-    double uAnswer = log10([[problem answer] doubleValue]);
+    double uAnswer = [ScaleParameterizer mainScaleParameterForValue:[[problem answer] doubleValue]];
     
-    double uSubmitted = [problem submittedResult] ? log10([[problem submittedResult] doubleValue]) : 0.0;
+    double uSubmitted = [problem submittedResult] ? [ScaleParameterizer mainScaleParameterForValue:[[problem submittedResult] doubleValue]] : 0.0;
     
     return [NSNumber numberWithDouble:(uSubmitted - uAnswer)];
 }

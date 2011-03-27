@@ -79,7 +79,6 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"indexPath: %@", indexPath);
     static NSString *CellIdentifier = @"Cell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
@@ -104,7 +103,6 @@
 # pragma mark - Table View Delegate Methods
 
 - (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"Selected %@", indexPath);
     
     // Save difficulty
     if([indexPath indexAtPosition:0] == 0 ) {

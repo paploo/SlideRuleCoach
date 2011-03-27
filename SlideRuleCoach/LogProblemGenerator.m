@@ -8,6 +8,7 @@
 
 #import "LogProblemGenerator.h"
 #import "RandomNumberGenerator.h"
+#import "ScaleParameterizer.h"
 
 
 @implementation LogProblemGenerator
@@ -37,11 +38,9 @@
 }
 
 - (NSNumber *)scaleReadErrorForProblem:(Problem *)problem {
-    double uAnswer = log10(log([[problem answer] doubleValue]));
+    double uAnswer = [ScaleParameterizer logLogScaleParameterForValue:[[problem answer] doubleValue]];
     
-    double uSubmitted = 0.0;
-    if( [problem submittedResult] )
-        uSubmitted = log10(log([[problem submittedResult] doubleValue]));
+    double uSubmitted = [problem submittedResult] ? [ScaleParameterizer logLogScaleParameterForValue:[[problem submittedResult] doubleValue]] : 0.0;
     
     return [NSNumber numberWithDouble:(uSubmitted - uAnswer)];
 }

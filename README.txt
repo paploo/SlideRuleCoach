@@ -66,7 +66,21 @@ Todo List:
         [ ] RandomProblemGenerator: Initialized with an array of problem generators, and then randomly selects from them.  Weights?
 
 
-[ ] Exp/Logs: LL scale random values are too evenly distributed.  Need to evenly distribute along the scale, not the range!
+[ ] ScaleConverter: Class methods for paramaterization of scales and back.
+    [ ] mainScaleValueForParameter:
+    [ ] mainScaleParameterForValue:
+    [ ] powerScaleValueForParameter:power: //Delegate to main scale value, used for A,B,K.
+    [ ] powerSvaleParameterForValue:power: //Delegate to main scale value, used for A,B,K.
+    [ ] logScaleValueForParameter: //L scale
+    [ ] logScaleValueForParameter: //L scale
+    [ ] logLogScaleValueForParameter: //LL scale
+    [ ] logLogScaleParameterForValue: //LL scale
+    [ ] sinScaleValueForParameter:
+    [ ] sinScaleParameterForValue:
+    [ ] cosScaleValueForParameter: //Delegate to sin scale
+    [ ] cosScaleParameterForValue: //Delegate to sin scale
+    [ ] tanScaleValueForParameter:
+    [ ] tanScaleParameterForValue:
 
 [ ] Problem Timer
     [ ] Record timer data.

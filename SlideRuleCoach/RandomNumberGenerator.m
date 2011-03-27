@@ -11,6 +11,8 @@
 
 #import "RandomNumberGenerator.h"
 
+#import "ScaleParameterizer.h"
+
 // These are used to build the LL scale ranges.
 #define LL0 1.0010005001667083416680557539930583115630762005807014602285
 #define LL1 1.0100501670841680575421654569028600338073622015242925151644
@@ -168,7 +170,7 @@ const double commonBases[] = {1/M_E, 0.5, M_E, 2.0, 8.0, 10.0};
             break;
     }
     
-    double logScaleValue = exp(pow(10.0, uScale)); //Convert back from u to number on LL scale.
+    double logScaleValue = [ScaleParameterizer logLogScaleValueForParameter:uScale];
     
     if( canBeInverted )
         logScaleValue = [RandomNumberGenerator bool] ? logScaleValue : 1.0/logScaleValue;
@@ -185,12 +187,12 @@ const double commonBases[] = {1/M_E, 0.5, M_E, 2.0, 8.0, 10.0};
     
     switch (difficulty) {
         case ProblemDifficultyIntroductory:
-            uScale = log10(log( commonBases[random() % commonBaseLen] ));
+            uScale = [ScaleParameterizer logLogScaleParameterForValue:(commonBases[random() % commonBaseLen])];
             canBeInverted = NO;
             break;
             
         case ProblemDifficultyEasy:
-            uScale = log10(log( commonBases[random() % commonBaseLen] ));
+            uScale = [ScaleParameterizer logLogScaleParameterForValue:(commonBases[random() % commonBaseLen])];
             canBeInverted = NO;
             break;
             
@@ -210,7 +212,7 @@ const double commonBases[] = {1/M_E, 0.5, M_E, 2.0, 8.0, 10.0};
             break;
     }
     
-    double base = exp(pow(10.0, uScale)); //Convert back from u to number on LL scale.
+    double base = [ScaleParameterizer logLogScaleValueForParameter:uScale];
     
     if( canBeInverted )
         base = [RandomNumberGenerator bool] ? base : 1.0/base;
