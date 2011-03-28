@@ -10,7 +10,6 @@
 
 #import "ProblemDifficulty.h"
 
-// For consistency return NSNumber subclasses.
 @interface RandomNumberGenerator : NSObject {
     
 }
@@ -20,12 +19,15 @@
 + (NSNumber *)decimalWithMin:(double)min max:(double)max;
 + (NSNumber *)decimalWithMinPower:(NSInteger)min maxPower:(NSInteger)max canBeNegative:(BOOL)canBeNeg;
 + (NSNumber *)decimalWithDifficulty:(ProblemDifficulty)difficulty;
-+ (NSNumber *)bool;
-+ (NSNumber *)boolWithProbability:(double)prob;
++ (BOOL)bool;
++ (BOOL)boolWithProbability:(double)prob;
 + (id)randomElementFromArray:(NSArray *)array;
 + (id)randomElementFromArray:(NSArray *)array WithWeights:(NSArray *)weights;
 
 // These are specialty to problems using the LL scales:
 + (NSNumber *)logScaleValueForDifficulty:(ProblemDifficulty)difficulty;
 + (NSNumber *)logBaseForDifficulty:(ProblemDifficulty)difficulty;
+
+// These are specialty to problems using trig angles:
++ (NSNumber *)angleInDegreesForDifficulty:(ProblemDifficulty)difficulty;
 @end

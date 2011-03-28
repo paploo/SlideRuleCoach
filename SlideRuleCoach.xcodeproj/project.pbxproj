@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A002151134024A000D2F17E /* AngleConversionProblemGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A002150134024A000D2F17E /* AngleConversionProblemGenerator.m */; };
 		4A0D11221332D33500507127 /* MultiplicationProblemGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0D11211332D33500507127 /* MultiplicationProblemGenerator.m */; };
 		4A0D11251332DA7300507127 /* RandomNumberGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0D11241332DA7200507127 /* RandomNumberGenerator.m */; };
 		4A0D112A1332FAE500507127 /* MultiplicationExam.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0D11291332FAE500507127 /* MultiplicationExam.m */; };
@@ -62,6 +63,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4A00214F134024A000D2F17E /* AngleConversionProblemGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AngleConversionProblemGenerator.h; sourceTree = "<group>"; };
+		4A002150134024A000D2F17E /* AngleConversionProblemGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AngleConversionProblemGenerator.m; sourceTree = "<group>"; };
 		4A0D11201332D33500507127 /* MultiplicationProblemGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiplicationProblemGenerator.h; sourceTree = "<group>"; };
 		4A0D11211332D33500507127 /* MultiplicationProblemGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiplicationProblemGenerator.m; sourceTree = "<group>"; };
 		4A0D11231332DA7200507127 /* RandomNumberGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RandomNumberGenerator.h; sourceTree = "<group>"; };
@@ -222,6 +225,8 @@
 				4ADE1390133D7BC6004FFD3C /* ExpProblemGenerator.m */,
 				4ADE1393133DB49C004FFD3C /* LogProblemGenerator.h */,
 				4ADE1394133DB49C004FFD3C /* LogProblemGenerator.m */,
+				4A00214F134024A000D2F17E /* AngleConversionProblemGenerator.h */,
+				4A002150134024A000D2F17E /* AngleConversionProblemGenerator.m */,
 			);
 			name = "Problem Generators";
 			sourceTree = "<group>";
@@ -430,6 +435,7 @@
 				4ADE1398133DB54C004FFD3C /* ExponentsExam.m in Sources */,
 				4ADE139B133DB55B004FFD3C /* LogExam.m in Sources */,
 				4AC469E7133EE06300DC1A69 /* ScaleParameterizer.m in Sources */,
+				4A002151134024A000D2F17E /* AngleConversionProblemGenerator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

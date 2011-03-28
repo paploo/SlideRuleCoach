@@ -10,15 +10,8 @@
 #import <math.h>
 
 #import "RandomNumberGenerator.h"
-
 #import "ScaleParameterizer.h"
-
-// These are used to build the LL scale ranges.
-#define LL0 1.0010005001667083416680557539930583115630762005807014602285
-#define LL1 1.0100501670841680575421654569028600338073622015242925151644
-#define LL2 1.1051709180756476248117078264902466682245471947375187187928
-#define LL3 2.7182818284590452353602874713526624977572470936999595749669
-#define LL4 22026.465794806716516957900645284244366353512618556781074235
+#import "trig.h"
 
 // This is used for easier difficulties of LL scale problems.
 const double commonBases[] = {1/M_E, 0.5, M_E, 2.0, 8.0, 10.0};
@@ -87,16 +80,16 @@ const double commonBases[] = {1/M_E, 0.5, M_E, 2.0, 8.0, 10.0};
     return rand;
 }
 
-+ (NSNumber *)bool {
++ (BOOL)bool {
     return [self boolWithProbability:0.50];
 }
 
-+ (NSNumber *)boolWithProbability:(double)prob {
++ (BOOL)boolWithProbability:(double)prob {
     double result = [[self decimal] doubleValue];
     if( result < prob )
-        return [NSNumber numberWithBool:YES];
+        return YES;
     else
-        return [NSNumber numberWithBool:NO];
+        return NO;
 }
 
 + (id)randomElementFromArray:(NSArray *)array {
@@ -218,6 +211,72 @@ const double commonBases[] = {1/M_E, 0.5, M_E, 2.0, 8.0, 10.0};
         base = [RandomNumberGenerator bool] ? base : 1.0/base;
     
     return [NSNumber numberWithDouble:base];
+}
+
++ (NSNumber *)angleInDegreesForDifficulty:(ProblemDifficulty)difficulty {
+    // When the ST scale is involved, we need to even up the chance.
+    double maxAngle = 90.0;
+    BOOL includeSTScale = YES;
+    BOOL useOtherQuadrants = NO;
+    
+    switch(difficulty) {
+        case ProblemDifficultyIntroductory:
+            maxAngle = 45.0; // For Tan problems.
+            includeSTScale = NO;
+            break;
+            
+        case ProblemDifficultyEasy:
+            includeSTScale = NO;
+            break;
+            
+        case ProblemDifficultyNormal:
+            break;
+            
+        case ProblemDifficultyAdvanced:
+            includeSTScale = NO;
+            useOtherQuadrants = YES;
+            break;
+            
+        case ProblemDifficultyMaster:
+            useOtherQuadrants = YES;
+            break;
+    }
+    
+    // Should se use the ST scale?
+    BOOL useSTScale = includeSTScale ? [self boolWithProbability:0.25] : NO;
+    
+    // Generate the random number for the interval [0-90]
+    NSNumber *rand = nil;
+    if(useSTScale)
+        rand = [self decimalWithMin:ONE_HUNDRETH_RADIAN_IN_DEGREE max:ONE_TENTH_RADIAN_IN_DEGREE];
+    else
+        rand = [self decimalWithMin:ONE_TENTH_RADIAN_IN_DEGREE max:maxAngle];
+    
+    //Now convert to another quadrant if necessary
+    if( useOtherQuadrants ) {
+        NSInteger quadrant = [[self integerWithMin:0 max:3] intValue];
+        switch(quadrant) {
+            case 0:
+                // (0, 90]
+                rand = rand;
+                break;
+            case 1:
+                // [90, 180)
+                rand = [NSNumber numberWithDouble:((90.0 - [rand doubleValue]) + 90.0)];
+                break;
+            case 2:
+                rand = [NSNumber numberWithDouble:([rand doubleValue] + 180.0)];
+                // (180, 270]
+                break;
+            case 3:
+                rand = [NSNumber numberWithDouble:((90.0 - [rand doubleValue]) + 270.0)];
+                // [270, 360)
+                break;
+        }
+    }
+    
+    // Now we can return.
+    return rand;
 }
 
 @end
