@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4A002151134024A000D2F17E /* AngleConversionProblemGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A002150134024A000D2F17E /* AngleConversionProblemGenerator.m */; };
+		4A0021551340337700D2F17E /* AngleConversionExam.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0021541340337700D2F17E /* AngleConversionExam.m */; };
 		4A0D11221332D33500507127 /* MultiplicationProblemGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0D11211332D33500507127 /* MultiplicationProblemGenerator.m */; };
 		4A0D11251332DA7300507127 /* RandomNumberGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0D11241332DA7200507127 /* RandomNumberGenerator.m */; };
 		4A0D112A1332FAE500507127 /* MultiplicationExam.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0D11291332FAE500507127 /* MultiplicationExam.m */; };
@@ -65,6 +66,8 @@
 /* Begin PBXFileReference section */
 		4A00214F134024A000D2F17E /* AngleConversionProblemGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AngleConversionProblemGenerator.h; sourceTree = "<group>"; };
 		4A002150134024A000D2F17E /* AngleConversionProblemGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AngleConversionProblemGenerator.m; sourceTree = "<group>"; };
+		4A0021531340337700D2F17E /* AngleConversionExam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AngleConversionExam.h; sourceTree = "<group>"; };
+		4A0021541340337700D2F17E /* AngleConversionExam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AngleConversionExam.m; sourceTree = "<group>"; };
 		4A0D11201332D33500507127 /* MultiplicationProblemGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiplicationProblemGenerator.h; sourceTree = "<group>"; };
 		4A0D11211332D33500507127 /* MultiplicationProblemGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiplicationProblemGenerator.m; sourceTree = "<group>"; };
 		4A0D11231332DA7200507127 /* RandomNumberGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RandomNumberGenerator.h; sourceTree = "<group>"; };
@@ -199,6 +202,8 @@
 				4ADE1397133DB54C004FFD3C /* ExponentsExam.m */,
 				4ADE1399133DB55B004FFD3C /* LogExam.h */,
 				4ADE139A133DB55B004FFD3C /* LogExam.m */,
+				4A0021531340337700D2F17E /* AngleConversionExam.h */,
+				4A0021541340337700D2F17E /* AngleConversionExam.m */,
 			);
 			name = Exams;
 			sourceTree = "<group>";
@@ -436,6 +441,7 @@
 				4ADE139B133DB55B004FFD3C /* LogExam.m in Sources */,
 				4AC469E7133EE06300DC1A69 /* ScaleParameterizer.m in Sources */,
 				4A002151134024A000D2F17E /* AngleConversionProblemGenerator.m in Sources */,
+				4A0021551340337700D2F17E /* AngleConversionExam.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

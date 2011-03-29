@@ -26,10 +26,10 @@
     NSString *numerator = nil;
     if( isDegreesToRadians ) {
         answer = radians;
-        numerator = [NSString stringWithFormat:@"%@° in radians."];
+        numerator = [NSString stringWithFormat:@"%@° in radians.", [defaultFormatter stringFromNumber:degrees]];
     } else {
         answer = degrees;
-        numerator = [NSString stringWithFormat:@"%@ rads in degrees."];
+        numerator = [NSString stringWithFormat:@"%@ rads in degrees.", [defaultFormatter stringFromNumber:radians]];
     }
     
     // Get the help text.

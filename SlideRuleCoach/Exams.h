@@ -19,3 +19,5 @@
 #import "CommonLogExam.h"
 #import "ExponentsExam.h"
 #import "LogExam.h"
+
+#import "AngleConversionExam.h"

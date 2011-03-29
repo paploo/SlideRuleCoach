@@ -18,3 +18,5 @@
 #import "CommonLogProblemGenerator.h"
 #import "ExpProblemGenerator.h"
 #import "LogProblemGenerator.h"
+
+#import "AngleConversionProblemGenerator.h"

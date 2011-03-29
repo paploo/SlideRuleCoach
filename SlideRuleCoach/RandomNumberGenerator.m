@@ -50,7 +50,7 @@ const double commonBases[] = {1/M_E, 0.5, M_E, 2.0, 8.0, 10.0};
     NSInteger exponent = [[self integerWithMin:min max:max] intValue];
     BOOL neg = NO;
     if( canBeNeg )
-        neg = [[self bool] boolValue];
+        neg = [self bool];
     
     NSNumber *rand = [[NSDecimalNumber alloc] initWithMantissa:mantissa exponent:(exponent-3) isNegative:neg];
     return [rand autorelease];

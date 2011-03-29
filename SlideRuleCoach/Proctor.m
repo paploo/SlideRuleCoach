@@ -89,6 +89,12 @@ static NSInteger ProctorSectionExamIndexPosition = 1;
     [expRegistry setObject:expExams forKey:ProctorSectionExamList];
     [registry addObject:expRegistry];
     
+    NSMutableDictionary *trigRegistry = [NSMutableDictionary dictionary];
+    [trigRegistry setObject:@"Trigonometry" forKey:ProctorSectionName];
+    NSArray *trigExams = [NSArray arrayWithObjects:@"AngleConversionExam", nil];
+    [trigRegistry setObject:trigExams forKey:ProctorSectionExamList];
+    [registry addObject:trigRegistry];
+    
     return registry;
 }
 
