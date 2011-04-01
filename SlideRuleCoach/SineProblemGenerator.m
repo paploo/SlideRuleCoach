@@ -3,7 +3,7 @@
 //  SlideRuleCoach
 //
 //  Created by Jeff Reinecke on 3/28/11.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2011, Jeffrey C. Reinecke, All rights reserved.
 //
 
 #import "SineProblemGenerator.h"

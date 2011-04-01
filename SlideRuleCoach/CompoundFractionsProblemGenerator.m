@@ -3,7 +3,7 @@
 //  SlideRuleCoach
 //
 //  Created by Jeff Reinecke on 3/18/11.
-//  Copyright 2011 Jeffrey C Reinecke. Released under the BSD license.
+//  Copyright (c) 2011, Jeffrey C. Reinecke, All rights reserved.
 //
 
 #import "CompoundFractionsProblemGenerator.h"

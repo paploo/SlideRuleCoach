@@ -3,7 +3,7 @@
 //  SlideRuleCoach
 //
 //  Created by Jeff Reinecke on 3/27/11.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2011, Jeffrey C. Reinecke, All rights reserved.
 //
 
 #import "AngleConversionProblemGenerator.h"

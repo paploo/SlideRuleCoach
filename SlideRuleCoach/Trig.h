@@ -3,7 +3,7 @@
 //  SlideRuleCoach
 //
 //  Created by Jeff Reinecke on 3/27/11.
-//  Copyright 2011 Jeffrey C Reinecke. Released under the BSD license.
+//  Copyright (c) 2011, Jeffrey C. Reinecke, All rights reserved.
 //
 
 #define RADIAN_TO_DEGREE 57.295779513082320876798154814105170332405472466564321549160
