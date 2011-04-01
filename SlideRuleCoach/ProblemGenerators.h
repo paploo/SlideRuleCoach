@@ -22,3 +22,4 @@
 #import "AngleConversionProblemGenerator.h"
 #import "SineProblemGenerator.h"
 #import "CosineProblemGenerator.h"
+#import "TangentProblemGenerator.h"

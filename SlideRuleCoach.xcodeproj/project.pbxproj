@@ -18,6 +18,7 @@
 		4A2E8F81133ACD8300EA0414 /* CommonLogProblemGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A2E8F80133ACD8300EA0414 /* CommonLogProblemGenerator.m */; };
 		4A2E8F85133ACF8F00EA0414 /* CommonLogExam.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A2E8F84133ACF8F00EA0414 /* CommonLogExam.m */; };
 		4A30F59F13455A0C00E4FA62 /* CosineProblemGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A30F59E13455A0C00E4FA62 /* CosineProblemGenerator.m */; };
+		4A30F5A213455E1E00E4FA62 /* TangentProblemGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A30F5A113455E1E00E4FA62 /* TangentProblemGenerator.m */; };
 		4A425BBB13384F0000A89F74 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A425BBA13384F0000A89F74 /* Icon.png */; };
 		4A425BBD13384F0800A89F74 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A425BBC13384F0800A89F74 /* Icon@2x.png */; };
 		4A425BC113384F7A00A89F74 /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A425BBE13384F7A00A89F74 /* Icon-Small.png */; };
@@ -92,6 +93,8 @@
 		4A2E8F84133ACF8F00EA0414 /* CommonLogExam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonLogExam.m; sourceTree = "<group>"; };
 		4A30F59D13455A0C00E4FA62 /* CosineProblemGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CosineProblemGenerator.h; sourceTree = "<group>"; };
 		4A30F59E13455A0C00E4FA62 /* CosineProblemGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CosineProblemGenerator.m; sourceTree = "<group>"; };
+		4A30F5A013455E1E00E4FA62 /* TangentProblemGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TangentProblemGenerator.h; sourceTree = "<group>"; };
+		4A30F5A113455E1E00E4FA62 /* TangentProblemGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TangentProblemGenerator.m; sourceTree = "<group>"; };
 		4A425BBA13384F0000A89F74 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = ../Icon.png; sourceTree = "<group>"; };
 		4A425BBC13384F0800A89F74 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "../Icon@2x.png"; sourceTree = "<group>"; };
 		4A425BBE13384F7A00A89F74 /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small.png"; sourceTree = "<group>"; };
@@ -247,6 +250,8 @@
 				4A43BA8413418F6800516B0D /* SineProblemGenerator.m */,
 				4A30F59D13455A0C00E4FA62 /* CosineProblemGenerator.h */,
 				4A30F59E13455A0C00E4FA62 /* CosineProblemGenerator.m */,
+				4A30F5A013455E1E00E4FA62 /* TangentProblemGenerator.h */,
+				4A30F5A113455E1E00E4FA62 /* TangentProblemGenerator.m */,
 			);
 			name = "Problem Generators";
 			sourceTree = "<group>";
@@ -460,6 +465,7 @@
 				4A43BA8513418F6800516B0D /* SineProblemGenerator.m in Sources */,
 				4A43BA89134190FB00516B0D /* TrigonometricFunctionsExam.m in Sources */,
 				4A30F59F13455A0C00E4FA62 /* CosineProblemGenerator.m in Sources */,
+				4A30F5A213455E1E00E4FA62 /* TangentProblemGenerator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

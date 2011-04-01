@@ -24,6 +24,7 @@
         NSMutableArray *generators = [NSMutableArray arrayWithCapacity:3];
         [generators addObject:[[[SineProblemGenerator alloc] init] autorelease]];
         [generators addObject:[[[CosineProblemGenerator alloc] init] autorelease]];
+        [generators addObject:[[[TangentProblemGenerator alloc] init] autorelease]];
         
         problemGenerator = [[RandomProblemGenerator alloc] initWIthProblemGenerators:generators];
     }
