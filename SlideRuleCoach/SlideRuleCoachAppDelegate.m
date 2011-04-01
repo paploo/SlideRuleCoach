@@ -19,7 +19,10 @@
 {
     // Override point for customization after application launch.
     // Add the navigation controller's view to the window and display.
-    self.window.rootViewController = self.navigationController;
+    if( [self.window respondsToSelector:@selector(setRootViewController:)] )
+        self.window.rootViewController = self.navigationController; // This is the preferred method starting with iOS 4.
+    else
+        [self.window addSubview:(self.navigationController.view)]; // This is iOS 3 compatible.
     [self.window makeKeyAndVisible];
     return YES;
 }

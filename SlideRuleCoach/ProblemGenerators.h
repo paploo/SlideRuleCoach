@@ -20,3 +20,4 @@
 #import "LogProblemGenerator.h"
 
 #import "AngleConversionProblemGenerator.h"
+#import "SineProblemGenerator.h"

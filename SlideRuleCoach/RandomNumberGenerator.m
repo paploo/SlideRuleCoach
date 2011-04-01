@@ -243,7 +243,7 @@ const double commonBases[] = {1/M_E, 0.5, M_E, 2.0, 8.0, 10.0};
     }
     
     // Should se use the ST scale?
-    BOOL useSTScale = includeSTScale ? [self boolWithProbability:0.25] : NO;
+    BOOL useSTScale = includeSTScale ? [self boolWithProbability:0.3333] : NO;
     
     // Generate the random number for the interval [0-90]
     NSNumber *rand = nil;

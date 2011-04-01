@@ -19,7 +19,7 @@
 
 // C or D scale
 + (double)mainScaleParameterForValue:(double)v {
-    return log10(v);
+    return log10(fabs(v));
 }
 
 // A/B, K, or root scales
@@ -49,7 +49,7 @@
 
 // LL scale
 + (double)logLogScaleParameterForValue:(double)v {
-    return log10(log(v));
+    return log10(log(fabs(v)));
 }
 
 // S and ST scale.
@@ -69,7 +69,7 @@
 // S and ST scale.
 + (double)sinScaleParameterForValue:(double)v {
     //First get the value (which is in degrees) into the appropriate range (0-90)
-    double value = asin(abs(sin(v*DEGREE_TO_RADIAN))) * RADIAN_TO_DEGREE;
+    double value = asin(fabs(sin(v*DEGREE_TO_RADIAN))) * RADIAN_TO_DEGREE;
     
     //Now we can calculate the paramaterized value.
     if( (value > 0.0) && (value <= ONE_TENTH_RADIAN_IN_DEGREE) ) {
@@ -113,7 +113,7 @@
 // The T scale folds on top of itself for values over 45 degrees.
 + (double)tanScaleParameterForValue:(double)v {
     //First get the value (which is in degrees) into the appropriate range (0-90)
-    double value = atan(abs(tan(v*DEGREE_TO_RADIAN))) * RADIAN_TO_DEGREE;
+    double value = atan(fabs(tan(v*DEGREE_TO_RADIAN))) * RADIAN_TO_DEGREE;
     
     //Now we can calculate the paramaterized value.
     if( (value > 0.0) && (value <= ONE_TENTH_RADIAN_IN_DEGREE) ) {

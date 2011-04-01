@@ -22,6 +22,8 @@
 		4A425BC113384F7A00A89F74 /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A425BBE13384F7A00A89F74 /* Icon-Small.png */; };
 		4A425BC213384F7A00A89F74 /* Icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A425BBF13384F7A00A89F74 /* Icon-Small@2x.png */; };
 		4A425BC313384F7A00A89F74 /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = 4A425BC013384F7A00A89F74 /* iTunesArtwork */; };
+		4A43BA8513418F6800516B0D /* SineProblemGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A43BA8413418F6800516B0D /* SineProblemGenerator.m */; };
+		4A43BA89134190FB00516B0D /* TrigonometricFunctionsExam.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A43BA88134190FB00516B0D /* TrigonometricFunctionsExam.m */; };
 		4A7613F31334249A008FCBD1 /* CompoundFractionsProblemGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A7613F21334249A008FCBD1 /* CompoundFractionsProblemGenerator.m */; };
 		4A7613F913342AF1008FCBD1 /* CompoundFractionsExam.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A7613F813342AF0008FCBD1 /* CompoundFractionsExam.m */; };
 		4A86669613384D7B00845A5A /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A86669513384D7B00845A5A /* Default.png */; };
@@ -92,6 +94,10 @@
 		4A425BBE13384F7A00A89F74 /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small.png"; sourceTree = "<group>"; };
 		4A425BBF13384F7A00A89F74 /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small@2x.png"; sourceTree = "<group>"; };
 		4A425BC013384F7A00A89F74 /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; path = iTunesArtwork; sourceTree = "<group>"; };
+		4A43BA8313418F6800516B0D /* SineProblemGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SineProblemGenerator.h; sourceTree = "<group>"; };
+		4A43BA8413418F6800516B0D /* SineProblemGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SineProblemGenerator.m; sourceTree = "<group>"; };
+		4A43BA87134190FB00516B0D /* TrigonometricFunctionsExam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrigonometricFunctionsExam.h; sourceTree = "<group>"; };
+		4A43BA88134190FB00516B0D /* TrigonometricFunctionsExam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrigonometricFunctionsExam.m; sourceTree = "<group>"; };
 		4A645E65133FD95E0086A258 /* Trig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Trig.h; sourceTree = "<group>"; };
 		4A7613F11334249A008FCBD1 /* CompoundFractionsProblemGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompoundFractionsProblemGenerator.h; sourceTree = "<group>"; };
 		4A7613F21334249A008FCBD1 /* CompoundFractionsProblemGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompoundFractionsProblemGenerator.m; sourceTree = "<group>"; };
@@ -204,6 +210,8 @@
 				4ADE139A133DB55B004FFD3C /* LogExam.m */,
 				4A0021531340337700D2F17E /* AngleConversionExam.h */,
 				4A0021541340337700D2F17E /* AngleConversionExam.m */,
+				4A43BA87134190FB00516B0D /* TrigonometricFunctionsExam.h */,
+				4A43BA88134190FB00516B0D /* TrigonometricFunctionsExam.m */,
 			);
 			name = Exams;
 			sourceTree = "<group>";
@@ -232,6 +240,8 @@
 				4ADE1394133DB49C004FFD3C /* LogProblemGenerator.m */,
 				4A00214F134024A000D2F17E /* AngleConversionProblemGenerator.h */,
 				4A002150134024A000D2F17E /* AngleConversionProblemGenerator.m */,
+				4A43BA8313418F6800516B0D /* SineProblemGenerator.h */,
+				4A43BA8413418F6800516B0D /* SineProblemGenerator.m */,
 			);
 			name = "Problem Generators";
 			sourceTree = "<group>";
@@ -442,6 +452,8 @@
 				4AC469E7133EE06300DC1A69 /* ScaleParameterizer.m in Sources */,
 				4A002151134024A000D2F17E /* AngleConversionProblemGenerator.m in Sources */,
 				4A0021551340337700D2F17E /* AngleConversionExam.m in Sources */,
+				4A43BA8513418F6800516B0D /* SineProblemGenerator.m in Sources */,
+				4A43BA89134190FB00516B0D /* TrigonometricFunctionsExam.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -516,8 +528,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SlideRuleCoach/SlideRuleCoach-Prefix.pch";
 				INFOPLIST_FILE = "SlideRuleCoach/SlideRuleCoach-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -530,8 +543,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SlideRuleCoach/SlideRuleCoach-Prefix.pch";
 				INFOPLIST_FILE = "SlideRuleCoach/SlideRuleCoach-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
 			};

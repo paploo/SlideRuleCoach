@@ -21,3 +21,4 @@
 #import "LogExam.h"
 
 #import "AngleConversionExam.h"
+#import "TrigonometricFunctionsExam.h"
