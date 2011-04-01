@@ -253,6 +253,7 @@ const double commonBases[] = {1/M_E, 0.5, M_E, 2.0, 8.0, 10.0};
         rand = [self decimalWithMin:ONE_TENTH_RADIAN_IN_DEGREE max:maxAngle];
     
     //Now convert to another quadrant if necessary
+    double a;
     if( useOtherQuadrants ) {
         NSInteger quadrant = [[self integerWithMin:0 max:3] intValue];
         switch(quadrant) {
@@ -262,15 +263,18 @@ const double commonBases[] = {1/M_E, 0.5, M_E, 2.0, 8.0, 10.0};
                 break;
             case 1:
                 // [90, 180)
-                rand = [NSNumber numberWithDouble:((90.0 - [rand doubleValue]) + 90.0)];
+                a = (90.0 - [rand doubleValue]) + 90.0;
+                rand = [NSNumber numberWithDouble:a];
                 break;
             case 2:
-                rand = [NSNumber numberWithDouble:([rand doubleValue] + 180.0)];
                 // (180, 270]
+                a = ([rand doubleValue] + 180.0);
+                rand = [NSNumber numberWithDouble:(a - 360.0)];
                 break;
             case 3:
-                rand = [NSNumber numberWithDouble:((90.0 - [rand doubleValue]) + 270.0)];
                 // [270, 360)
+                a = (90.0 - [rand doubleValue]) + 270.0;
+                rand = [NSNumber numberWithDouble:(a - 360.0)];
                 break;
         }
     }

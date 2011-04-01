@@ -16,7 +16,7 @@
 }
 
 + (NSString *)summary {
-    return @"Two to four term multiplication";
+    return @"Two to four term multiplication.";
 }
 
 - (id)init {

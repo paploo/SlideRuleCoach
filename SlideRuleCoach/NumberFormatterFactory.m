@@ -14,12 +14,14 @@
 + (NSNumberFormatter *)decimalFormatter {
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
     [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
+    [formatter setNotANumberSymbol:@"N/A"];
     return [formatter autorelease];
 }
 
 + (NSNumberFormatter *)percentageFormatter {
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
     [formatter setNumberStyle:NSNumberFormatterPercentStyle];
+    [formatter setNotANumberSymbol:@"N/A"];
     [formatter setUsesSignificantDigits:YES];
     [formatter setMaximumSignificantDigits:2];
     return [formatter autorelease]; 
@@ -28,6 +30,7 @@
 + (NSNumberFormatter *)decimalFormatterWithSigFigs:(NSUInteger)sigfigs {
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
     [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
+    [formatter setNotANumberSymbol:@"N/A"];
     [formatter setUsesSignificantDigits:YES];
     [formatter setMaximumSignificantDigits:sigfigs];
     return [formatter autorelease]; 
@@ -36,6 +39,7 @@
 + (NSNumberFormatter *)fixnumFormatterWithPlaces:(NSUInteger)places {
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
     [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
+    [formatter setNotANumberSymbol:@"N/A"];
     [formatter setMaximumFractionDigits:places];
     [formatter setMinimumFractionDigits:places];
     return [formatter autorelease];

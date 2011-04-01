@@ -16,7 +16,7 @@
 }
 
 + (NSString *)summary {
-    return @"Convert to and from radians";
+    return @"Convert to and from radians.";
 }
 
 - (id)init {

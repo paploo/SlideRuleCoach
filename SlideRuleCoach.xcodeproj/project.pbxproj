@@ -19,6 +19,7 @@
 		4A2E8F85133ACF8F00EA0414 /* CommonLogExam.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A2E8F84133ACF8F00EA0414 /* CommonLogExam.m */; };
 		4A30F59F13455A0C00E4FA62 /* CosineProblemGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A30F59E13455A0C00E4FA62 /* CosineProblemGenerator.m */; };
 		4A30F5A213455E1E00E4FA62 /* TangentProblemGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A30F5A113455E1E00E4FA62 /* TangentProblemGenerator.m */; };
+		4A30F5A5134575CA00E4FA62 /* ArcSineProblemGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A30F5A4134575CA00E4FA62 /* ArcSineProblemGenerator.m */; };
 		4A425BBB13384F0000A89F74 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A425BBA13384F0000A89F74 /* Icon.png */; };
 		4A425BBD13384F0800A89F74 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A425BBC13384F0800A89F74 /* Icon@2x.png */; };
 		4A425BC113384F7A00A89F74 /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A425BBE13384F7A00A89F74 /* Icon-Small.png */; };
@@ -49,6 +50,7 @@
 		4ABF5AC3133442D600DF4D06 /* ProblemNotesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ABF5AC1133442D500DF4D06 /* ProblemNotesViewController.m */; };
 		4ABF5AC4133442D600DF4D06 /* ProblemNotesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4ABF5AC2133442D500DF4D06 /* ProblemNotesViewController.xib */; };
 		4AC469E7133EE06300DC1A69 /* ScaleParameterizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AC469E6133EE06300DC1A69 /* ScaleParameterizer.m */; };
+		4AC5E90E1346922000DDDF8E /* InverseTrigonometricFunctionsExam.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AC5E90D1346922000DDDF8E /* InverseTrigonometricFunctionsExam.m */; };
 		4AC6A539133886CA00978A21 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4AC6A538133886CA00978A21 /* README.txt */; };
 		4ACBF0EA13306DE50059BF4C /* Proctor.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACBF0E913306DE50059BF4C /* Proctor.m */; };
 		4ACBF0F513307CDE0059BF4C /* ProblemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACBF0F313307CDD0059BF4C /* ProblemViewController.m */; };
@@ -95,6 +97,8 @@
 		4A30F59E13455A0C00E4FA62 /* CosineProblemGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CosineProblemGenerator.m; sourceTree = "<group>"; };
 		4A30F5A013455E1E00E4FA62 /* TangentProblemGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TangentProblemGenerator.h; sourceTree = "<group>"; };
 		4A30F5A113455E1E00E4FA62 /* TangentProblemGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TangentProblemGenerator.m; sourceTree = "<group>"; };
+		4A30F5A3134575CA00E4FA62 /* ArcSineProblemGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArcSineProblemGenerator.h; sourceTree = "<group>"; };
+		4A30F5A4134575CA00E4FA62 /* ArcSineProblemGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArcSineProblemGenerator.m; sourceTree = "<group>"; };
 		4A425BBA13384F0000A89F74 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = ../Icon.png; sourceTree = "<group>"; };
 		4A425BBC13384F0800A89F74 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "../Icon@2x.png"; sourceTree = "<group>"; };
 		4A425BBE13384F7A00A89F74 /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small.png"; sourceTree = "<group>"; };
@@ -142,6 +146,8 @@
 		4ABF5AC2133442D500DF4D06 /* ProblemNotesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProblemNotesViewController.xib; sourceTree = "<group>"; };
 		4AC469E5133EE06300DC1A69 /* ScaleParameterizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScaleParameterizer.h; sourceTree = "<group>"; };
 		4AC469E6133EE06300DC1A69 /* ScaleParameterizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScaleParameterizer.m; sourceTree = "<group>"; };
+		4AC5E90C1346922000DDDF8E /* InverseTrigonometricFunctionsExam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InverseTrigonometricFunctionsExam.h; sourceTree = "<group>"; };
+		4AC5E90D1346922000DDDF8E /* InverseTrigonometricFunctionsExam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InverseTrigonometricFunctionsExam.m; sourceTree = "<group>"; };
 		4AC6A538133886CA00978A21 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = SOURCE_ROOT; };
 		4ACBF0E813306DE50059BF4C /* Proctor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Proctor.h; sourceTree = "<group>"; };
 		4ACBF0E913306DE50059BF4C /* Proctor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Proctor.m; sourceTree = "<group>"; };
@@ -218,6 +224,8 @@
 				4A0021541340337700D2F17E /* AngleConversionExam.m */,
 				4A43BA87134190FB00516B0D /* TrigonometricFunctionsExam.h */,
 				4A43BA88134190FB00516B0D /* TrigonometricFunctionsExam.m */,
+				4AC5E90C1346922000DDDF8E /* InverseTrigonometricFunctionsExam.h */,
+				4AC5E90D1346922000DDDF8E /* InverseTrigonometricFunctionsExam.m */,
 			);
 			name = Exams;
 			sourceTree = "<group>";
@@ -252,6 +260,8 @@
 				4A30F59E13455A0C00E4FA62 /* CosineProblemGenerator.m */,
 				4A30F5A013455E1E00E4FA62 /* TangentProblemGenerator.h */,
 				4A30F5A113455E1E00E4FA62 /* TangentProblemGenerator.m */,
+				4A30F5A3134575CA00E4FA62 /* ArcSineProblemGenerator.h */,
+				4A30F5A4134575CA00E4FA62 /* ArcSineProblemGenerator.m */,
 			);
 			name = "Problem Generators";
 			sourceTree = "<group>";
@@ -466,6 +476,8 @@
 				4A43BA89134190FB00516B0D /* TrigonometricFunctionsExam.m in Sources */,
 				4A30F59F13455A0C00E4FA62 /* CosineProblemGenerator.m in Sources */,
 				4A30F5A213455E1E00E4FA62 /* TangentProblemGenerator.m in Sources */,
+				4A30F5A5134575CA00E4FA62 /* ArcSineProblemGenerator.m in Sources */,
+				4AC5E90E1346922000DDDF8E /* InverseTrigonometricFunctionsExam.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

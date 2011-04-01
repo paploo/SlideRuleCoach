@@ -16,7 +16,7 @@
 }
 
 + (NSString *)summary {
-    return @"Squares, sometimes multiplied by a coefficient";
+    return @"Squares, sometimes multiplied by a coefficient.";
 }
 
 - (id)init {

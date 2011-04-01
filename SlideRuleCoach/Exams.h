@@ -22,3 +22,4 @@
 
 #import "AngleConversionExam.h"
 #import "TrigonometricFunctionsExam.h"
+#import "InverseTrigonometricFunctionsExam.h"

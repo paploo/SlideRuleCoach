@@ -78,8 +78,10 @@
         double s = sin(value*DEGREE_TO_RADIAN);
         return [self mainScaleParameterForValue:(s*10.0)];
     } else {
-        NSException *e = [NSException exceptionWithName:NSInvalidArgumentException reason:[NSString stringWithFormat:@"Cannot calculate sin scale parameter for angle %f", v] userInfo:nil];
-        [e raise];
+        return NAN;
+        //Erroring is unacceptable because the angle can from from user input!
+        //NSException *e = [NSException exceptionWithName:NSInvalidArgumentException reason:[NSString stringWithFormat:@"Cannot calculate sin scale parameter for angle %f", v] userInfo:nil];
+        //[e raise];
     }
     
     return 0.0; // This is to silence the compiler warnings.
@@ -102,8 +104,10 @@
         double t = [self mainScaleValueForParameter:u] / 10.0;
         return atan(t) * DEGREE_TO_RADIAN;
     } else {
-        NSException *e = [NSException exceptionWithName:NSInvalidArgumentException reason:[NSString stringWithFormat:@"Cannot calculate sin scale angle for parameter %f", u] userInfo:nil];
-        [e raise]; 
+        return NAN;
+        //Erroring is unacceptable because the angle can from from user input!
+        //NSException *e = [NSException exceptionWithName:NSInvalidArgumentException reason:[NSString stringWithFormat:@"Cannot calculate sin scale angle for parameter %f", u] userInfo:nil];
+        //[e raise]; 
     }
             
     return 0.0;
@@ -124,8 +128,10 @@
     } else if( (value >= 45.0) && (value < 90.0) ) {
         return [self tanScaleParameterForValue:(90.0 - v)];
     } else {
-        NSException *e = [NSException exceptionWithName:NSInvalidArgumentException reason:[NSString stringWithFormat:@"Cannot calculate tan scale parameter for angle %f", v] userInfo:nil];
-        [e raise];
+        return NAN;
+        //Erroring is unacceptable because the angle can from from user input!
+        //NSException *e = [NSException exceptionWithName:NSInvalidArgumentException reason:[NSString stringWithFormat:@"Cannot calculate tan scale parameter for angle %f", v] userInfo:nil];
+        //[e raise];
     }
     
     return 0.0; // This is to silence the compiler warnings.
