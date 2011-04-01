@@ -23,6 +23,7 @@
     if( (self = [super init]) ) {
         NSMutableArray *generators = [NSMutableArray arrayWithCapacity:3];
         [generators addObject:[[[SineProblemGenerator alloc] init] autorelease]];
+        [generators addObject:[[[CosineProblemGenerator alloc] init] autorelease]];
         
         problemGenerator = [[RandomProblemGenerator alloc] initWIthProblemGenerators:generators];
     }

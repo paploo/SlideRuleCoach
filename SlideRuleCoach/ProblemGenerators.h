@@ -21,3 +21,4 @@
 
 #import "AngleConversionProblemGenerator.h"
 #import "SineProblemGenerator.h"
+#import "CosineProblemGenerator.h"
