@@ -21,12 +21,10 @@
 
 - (id)init {
     if( (self = [super init]) ) {
-        NSMutableArray *generators = [[NSMutableArray alloc] initWithCapacity:3];
-        [generators addObject:[[SineProblemGenerator alloc] init]];
+        NSMutableArray *generators = [NSMutableArray arrayWithCapacity:3];
+        [generators addObject:[[[SineProblemGenerator alloc] init] autorelease]];
         
         problemGenerator = [[RandomProblemGenerator alloc] initWIthProblemGenerators:generators];
-        
-        [generators release];
     }
     return self;
 }

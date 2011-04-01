@@ -258,7 +258,7 @@ const double commonBases[] = {1/M_E, 0.5, M_E, 2.0, 8.0, 10.0};
         switch(quadrant) {
             case 0:
                 // (0, 90]
-                rand = rand;
+                //rand = rand; //No need to waste cycles.
                 break;
             case 1:
                 // [90, 180)

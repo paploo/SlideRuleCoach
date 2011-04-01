@@ -14,6 +14,8 @@
     NSArray *difficultyValues;
     IBOutlet UITableView *preferenceTableView;
     UIButton *gotoHomePage;
+    IBOutlet UILabel *versionLabel;
 }
 - (IBAction)gotoHomePage:(id)sender;
+- (NSString *)versionInfoString;
 @end

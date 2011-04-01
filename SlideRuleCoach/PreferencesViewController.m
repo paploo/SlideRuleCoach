@@ -29,6 +29,7 @@
     [difficultyNames release];
     [difficultyValues release];
     [preferenceTableView release];
+    [versionLabel release];
     [super dealloc];
 }
 
@@ -46,12 +47,15 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    [versionLabel setText:[self versionInfoString]];
 }
 
 - (void)viewDidUnload
 {
     [preferenceTableView release];
     preferenceTableView = nil;
+    [versionLabel release];
+    versionLabel = nil;
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -121,6 +125,14 @@
 - (IBAction)gotoHomePage:(id)sender {
     NSURL *homepageURL = [NSURL URLWithString:@"http://www.github.com/paploo/SlideRuleCoach"];
     [[UIApplication sharedApplication] openURL:homepageURL];
+}
+
+# pragma mark - Other
+
+- (NSString *)versionInfoString {
+    NSDictionary *bundleDict = [[NSBundle mainBundle] infoDictionary];
+    NSString *versionText = [NSString stringWithFormat:@"Version %@ (%s %s)", [bundleDict objectForKey:@"CFBundleVersion"], __DATE__, __TIME__];
+    return versionText;
 }
 
 @end
