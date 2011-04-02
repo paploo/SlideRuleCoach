@@ -116,7 +116,7 @@
 - (IBAction)submitAnswer:(id)sender {
     [answerInput resignFirstResponder];
     
-    NSNumberFormatter *formatter = [NumberFormatterFactory decimalFormatter];
+    NSNumberFormatter *formatter = [NumberFormatterFactory decimalFormatterWithSigFigs:4];
     NSNumber *result = [formatter numberFromString:[answerInput text]];
     
     if(result) {
@@ -180,12 +180,12 @@
     
     NSNumberFormatter *formatter = [NumberFormatterFactory decimalFormatterWithSigFigs:4];
     NSNumberFormatter *percentFormatter = [NumberFormatterFactory percentageFormatter];
-    NSNumberFormatter *fixnumFormatter = [NumberFormatterFactory fixnumFormatterWithPlaces:3];
+    NSNumberFormatter *fixnumFormatter = [NumberFormatterFactory fixnumFormatterWithPlaces:4];
     
     [answerBox setText:[formatter stringFromNumber:[problem answer]]];
     [errorBox setText:[percentFormatter stringFromNumber:[problem error]]];
-    [avgErrorBox setText:[percentFormatter stringFromNumber:[exam averageError]]];
     [deltaUBox setText:[fixnumFormatter stringFromNumber:[problem scaleReadError]]];
+    [avgErrorBox setText:[percentFormatter stringFromNumber:[exam averageError]]];
     [avgDeltaUBox setText:[fixnumFormatter stringFromNumber:[exam averageScaleReadError]]];
 }
 

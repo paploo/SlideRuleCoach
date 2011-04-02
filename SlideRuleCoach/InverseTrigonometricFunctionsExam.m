@@ -23,8 +23,8 @@
     if( (self = [super init]) ) {
         NSMutableArray *generators = [NSMutableArray arrayWithCapacity:3];
         [generators addObject:[[[ArcSineProblemGenerator alloc] init] autorelease]];
-        //[generators addObject:[[[ArcCosineProblemGenerator alloc] init] autorelease]];
-        //[generators addObject:[[[ArcTangentProblemGenerator alloc] init] autorelease]];
+        [generators addObject:[[[ArcCosineProblemGenerator alloc] init] autorelease]];
+        [generators addObject:[[[ArcTangentProblemGenerator alloc] init] autorelease]];
         
         problemGenerator = [[RandomProblemGenerator alloc] initWIthProblemGenerators:generators];
     }

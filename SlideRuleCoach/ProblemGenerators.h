@@ -24,3 +24,5 @@
 #import "CosineProblemGenerator.h"
 #import "TangentProblemGenerator.h"
 #import "ArcSineProblemGenerator.h"
+#import "ArcCosineProblemGenerator.h"
+#import "ArcTangentProblemGenerator.h"
