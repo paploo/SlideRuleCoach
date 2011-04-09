@@ -21,5 +21,6 @@
 #import "LogExam.h"
 
 #import "AngleConversionExam.h"
+#import "ArcMinuteConversionExam.h"
 #import "TrigonometricFunctionsExam.h"
 #import "InverseTrigonometricFunctionsExam.h"

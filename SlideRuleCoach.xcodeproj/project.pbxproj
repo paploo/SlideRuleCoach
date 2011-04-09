@@ -53,6 +53,8 @@
 		4AC5E90E1346922000DDDF8E /* InverseTrigonometricFunctionsExam.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AC5E90D1346922000DDDF8E /* InverseTrigonometricFunctionsExam.m */; };
 		4AC5E9121346D67000DDDF8E /* ArcCosineProblemGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AC5E9111346D67000DDDF8E /* ArcCosineProblemGenerator.m */; };
 		4AC5E9151346D72600DDDF8E /* ArcTangentProblemGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AC5E9141346D72600DDDF8E /* ArcTangentProblemGenerator.m */; };
+		4AC5E9181350060600DDDF8E /* ArcMinuteConversionProblemGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AC5E9171350060500DDDF8E /* ArcMinuteConversionProblemGenerator.m */; };
+		4AC5E91B1350088600DDDF8E /* ArcMinuteConversionExam.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AC5E91A1350088500DDDF8E /* ArcMinuteConversionExam.m */; };
 		4AC6A539133886CA00978A21 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4AC6A538133886CA00978A21 /* README.txt */; };
 		4ACBF0EA13306DE50059BF4C /* Proctor.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACBF0E913306DE50059BF4C /* Proctor.m */; };
 		4ACBF0F513307CDE0059BF4C /* ProblemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACBF0F313307CDD0059BF4C /* ProblemViewController.m */; };
@@ -154,6 +156,10 @@
 		4AC5E9111346D67000DDDF8E /* ArcCosineProblemGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArcCosineProblemGenerator.m; sourceTree = "<group>"; };
 		4AC5E9131346D72600DDDF8E /* ArcTangentProblemGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArcTangentProblemGenerator.h; sourceTree = "<group>"; };
 		4AC5E9141346D72600DDDF8E /* ArcTangentProblemGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArcTangentProblemGenerator.m; sourceTree = "<group>"; };
+		4AC5E9161350060400DDDF8E /* ArcMinuteConversionProblemGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArcMinuteConversionProblemGenerator.h; sourceTree = "<group>"; };
+		4AC5E9171350060500DDDF8E /* ArcMinuteConversionProblemGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArcMinuteConversionProblemGenerator.m; sourceTree = "<group>"; };
+		4AC5E9191350088500DDDF8E /* ArcMinuteConversionExam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArcMinuteConversionExam.h; sourceTree = "<group>"; };
+		4AC5E91A1350088500DDDF8E /* ArcMinuteConversionExam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArcMinuteConversionExam.m; sourceTree = "<group>"; };
 		4AC6A538133886CA00978A21 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = SOURCE_ROOT; };
 		4ACBF0E813306DE50059BF4C /* Proctor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Proctor.h; sourceTree = "<group>"; };
 		4ACBF0E913306DE50059BF4C /* Proctor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Proctor.m; sourceTree = "<group>"; };
@@ -228,6 +234,8 @@
 				4ADE139A133DB55B004FFD3C /* LogExam.m */,
 				4A0021531340337700D2F17E /* AngleConversionExam.h */,
 				4A0021541340337700D2F17E /* AngleConversionExam.m */,
+				4AC5E9191350088500DDDF8E /* ArcMinuteConversionExam.h */,
+				4AC5E91A1350088500DDDF8E /* ArcMinuteConversionExam.m */,
 				4A43BA87134190FB00516B0D /* TrigonometricFunctionsExam.h */,
 				4A43BA88134190FB00516B0D /* TrigonometricFunctionsExam.m */,
 				4AC5E90C1346922000DDDF8E /* InverseTrigonometricFunctionsExam.h */,
@@ -260,6 +268,8 @@
 				4ADE1394133DB49C004FFD3C /* LogProblemGenerator.m */,
 				4A00214F134024A000D2F17E /* AngleConversionProblemGenerator.h */,
 				4A002150134024A000D2F17E /* AngleConversionProblemGenerator.m */,
+				4AC5E9161350060400DDDF8E /* ArcMinuteConversionProblemGenerator.h */,
+				4AC5E9171350060500DDDF8E /* ArcMinuteConversionProblemGenerator.m */,
 				4A43BA8313418F6800516B0D /* SineProblemGenerator.h */,
 				4A43BA8413418F6800516B0D /* SineProblemGenerator.m */,
 				4A30F59D13455A0C00E4FA62 /* CosineProblemGenerator.h */,
@@ -490,6 +500,8 @@
 				4AC5E90E1346922000DDDF8E /* InverseTrigonometricFunctionsExam.m in Sources */,
 				4AC5E9121346D67000DDDF8E /* ArcCosineProblemGenerator.m in Sources */,
 				4AC5E9151346D72600DDDF8E /* ArcTangentProblemGenerator.m in Sources */,
+				4AC5E9181350060600DDDF8E /* ArcMinuteConversionProblemGenerator.m in Sources */,
+				4AC5E91B1350088600DDDF8E /* ArcMinuteConversionExam.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

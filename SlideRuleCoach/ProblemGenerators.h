@@ -20,6 +20,7 @@
 #import "LogProblemGenerator.h"
 
 #import "AngleConversionProblemGenerator.h"
+#import "ArcMinuteConversionProblemGenerator.h"
 #import "SineProblemGenerator.h"
 #import "CosineProblemGenerator.h"
 #import "TangentProblemGenerator.h"
