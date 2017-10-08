@@ -21,7 +21,7 @@
 }
 
 - (id)initWIthProblemGenerators:(NSArray *)generators weights:w {
-    if( (self == [super init]) ){
+    if( self == [super init] ){
         problemGenerators = [generators retain];
         weights = [w retain];
     }

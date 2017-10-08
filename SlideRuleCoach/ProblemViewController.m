@@ -164,7 +164,7 @@
         [numeratorBox setFrame:shiftedFrame];
     }
     
-    [problemNumberBox setText:[NSString stringWithFormat:@"Problem %u:", [[exam problems] count]]];
+    [problemNumberBox setText:[NSString stringWithFormat:@"Problem %lu:", (unsigned long)[[exam problems] count]]];
     
     // Clear the stats.
     [answerInput setText:nil];

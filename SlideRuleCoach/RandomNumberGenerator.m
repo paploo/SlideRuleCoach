@@ -11,7 +11,7 @@
 
 #import "RandomNumberGenerator.h"
 #import "ScaleParameterizer.h"
-#import "trig.h"
+#import "Trig.h"
 
 // This is used for easier difficulties of LL scale problems.
 const double commonBases[] = {1/M_E, 0.5, M_E, 2.0, 8.0, 10.0};
@@ -22,7 +22,7 @@ const double commonBases[] = {1/M_E, 0.5, M_E, 2.0, 8.0, 10.0};
     // Calling both is probably redundant.
     //srandom(time(NULL));
     srandomdev();
-    srand(time(NULL));
+    srand((unsigned)time(NULL));
 }
 
 + (NSNumber *)integerWithMin:(NSInteger)min max:(NSInteger)max {
