@@ -50,6 +50,7 @@
 		4ABF5AC3133442D600DF4D06 /* ProblemNotesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ABF5AC1133442D500DF4D06 /* ProblemNotesViewController.m */; };
 		4ABF5AC4133442D600DF4D06 /* ProblemNotesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4ABF5AC2133442D500DF4D06 /* ProblemNotesViewController.xib */; };
 		4AC2AA251F8ACC6700F32062 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AC2AA241F8ACC6700F32062 /* Default-568h@2x.png */; };
+		4AC2AA271F8B21A200F32062 /* Icon-120.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AC2AA261F8B219B00F32062 /* Icon-120.png */; };
 		4AC469E7133EE06300DC1A69 /* ScaleParameterizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AC469E6133EE06300DC1A69 /* ScaleParameterizer.m */; };
 		4AC5E90E1346922000DDDF8E /* InverseTrigonometricFunctionsExam.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AC5E90D1346922000DDDF8E /* InverseTrigonometricFunctionsExam.m */; };
 		4AC5E9121346D67000DDDF8E /* ArcCosineProblemGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AC5E9111346D67000DDDF8E /* ArcCosineProblemGenerator.m */; };
@@ -150,6 +151,7 @@
 		4ABF5AC1133442D500DF4D06 /* ProblemNotesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProblemNotesViewController.m; sourceTree = "<group>"; };
 		4ABF5AC2133442D500DF4D06 /* ProblemNotesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProblemNotesViewController.xib; sourceTree = "<group>"; };
 		4AC2AA241F8ACC6700F32062 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		4AC2AA261F8B219B00F32062 /* Icon-120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-120.png"; path = "../Icon-120.png"; sourceTree = "<group>"; };
 		4AC469E5133EE06300DC1A69 /* ScaleParameterizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScaleParameterizer.h; sourceTree = "<group>"; };
 		4AC469E6133EE06300DC1A69 /* ScaleParameterizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScaleParameterizer.m; sourceTree = "<group>"; };
 		4AC5E90C1346922000DDDF8E /* InverseTrigonometricFunctionsExam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InverseTrigonometricFunctionsExam.h; sourceTree = "<group>"; };
@@ -350,6 +352,7 @@
 			children = (
 				4A425BBC13384F0800A89F74 /* Icon@2x.png */,
 				4A425BBA13384F0000A89F74 /* Icon.png */,
+				4AC2AA261F8B219B00F32062 /* Icon-120.png */,
 				4A86669513384D7B00845A5A /* Default.png */,
 				4A86669813384D9200845A5A /* Default@2x.png */,
 				4A425BBE13384F7A00A89F74 /* Icon-Small.png */,
@@ -451,6 +454,7 @@
 				4A86669613384D7B00845A5A /* Default.png in Resources */,
 				4A86669913384D9200845A5A /* Default@2x.png in Resources */,
 				4A425BBB13384F0000A89F74 /* Icon.png in Resources */,
+				4AC2AA271F8B21A200F32062 /* Icon-120.png in Resources */,
 				4A425BBD13384F0800A89F74 /* Icon@2x.png in Resources */,
 				4A425BC113384F7A00A89F74 /* Icon-Small.png in Resources */,
 				4A425BC213384F7A00A89F74 /* Icon-Small@2x.png in Resources */,

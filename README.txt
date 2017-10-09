@@ -1,5 +1,5 @@
 SlideRuleCoach
-Copyright (c) 2011, Jeffrey C. Reinecke
+Copyright (c) 2011,2017 Jeffrey C. Reinecke
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
