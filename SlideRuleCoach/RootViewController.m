@@ -129,7 +129,7 @@
 */
 
 - (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {
-    ProblemDifficulty difficulty = [[NSUserDefaults standardUserDefaults] integerForKey:@"difficulty"];
+    ProblemDifficulty difficulty = (int)[[NSUserDefaults standardUserDefaults] integerForKey:@"difficulty"];
     Exam *exam = [proctor startExamAtIndexPath:indexPath withDifficulty:difficulty];
     [exam generateProblem];
     
