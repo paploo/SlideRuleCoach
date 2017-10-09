@@ -32,6 +32,7 @@
 		4A86669613384D7B00845A5A /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A86669513384D7B00845A5A /* Default.png */; };
 		4A86669913384D9200845A5A /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A86669813384D9200845A5A /* Default@2x.png */; };
 		4A8E3E2B1F8B26CC00EED376 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A8E3E2A1F8B26CC00EED376 /* Images.xcassets */; };
+		4A8E3E2F1F8B35C700EED376 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A8E3E2E1F8B35C700EED376 /* Launch Screen.storyboard */; };
 		4A8FFC30133039D60083C5FA /* ProblemGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A8FFC2F133039D60083C5FA /* ProblemGenerator.m */; };
 		4A9703CF132F1EF000EE1263 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A9703CE132F1EF000EE1263 /* UIKit.framework */; };
 		4A9703D1132F1EF000EE1263 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A9703D0132F1EF000EE1263 /* Foundation.framework */; };
@@ -123,6 +124,7 @@
 		4A86669513384D7B00845A5A /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../Default.png; sourceTree = "<group>"; };
 		4A86669813384D9200845A5A /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../Default@2x.png"; sourceTree = "<group>"; };
 		4A8E3E2A1F8B26CC00EED376 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = RuleCoach/Images.xcassets; sourceTree = "<group>"; };
+		4A8E3E2E1F8B35C700EED376 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		4A8FFC2E133039D60083C5FA /* ProblemGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProblemGenerator.h; sourceTree = "<group>"; };
 		4A8FFC2F133039D60083C5FA /* ProblemGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProblemGenerator.m; sourceTree = "<group>"; };
 		4A9703CA132F1EF000EE1263 /* RuleCoach.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RuleCoach.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -346,6 +348,7 @@
 				4A0D111F1332D29800507127 /* Problem Generators */,
 				4A0D111E1332D28A00507127 /* Exams */,
 				4A9703D5132F1EF000EE1263 /* Supporting Files */,
+				4A8E3E2E1F8B35C700EED376 /* Launch Screen.storyboard */,
 			);
 			path = SlideRuleCoach;
 			sourceTree = "<group>";
@@ -456,6 +459,7 @@
 				4ABF5AC4133442D600DF4D06 /* ProblemNotesViewController.xib in Resources */,
 				4A86669613384D7B00845A5A /* Default.png in Resources */,
 				4A86669913384D9200845A5A /* Default@2x.png in Resources */,
+				4A8E3E2F1F8B35C700EED376 /* Launch Screen.storyboard in Resources */,
 				4A425BBB13384F0000A89F74 /* Icon.png in Resources */,
 				4A8E3E2B1F8B26CC00EED376 /* Images.xcassets in Resources */,
 				4AC2AA271F8B21A200F32062 /* Icon-120.png in Resources */,
