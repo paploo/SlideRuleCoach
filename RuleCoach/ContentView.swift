@@ -14,7 +14,7 @@ struct ContentView: View {
     @State var selectedSheetItem: MainNavItem = .about
     
     enum MainNavItem {
-        case settings, about, examInfo(exam: String) //TODO be an actual exam.
+        case settings, about
     }
     
     private var settingsButton: some View {
@@ -36,16 +36,7 @@ struct ContentView: View {
                 .imageScale(.large)
         }
     }
-    
-    private func examInfoButton(_ exam: String) -> some View {
-        Button(action: {
-            self.selectedSheetItem = MainNavItem.examInfo(exam: exam)
-            self.showSheet.toggle()
-        } ) {
-            Image(systemName: "info.circle")
-                .imageScale(.large)
-        }
-    }
+
     
     private var sheetContents: some View {
         switch self.selectedSheetItem {
@@ -53,8 +44,6 @@ struct ContentView: View {
             return Text("Settings")
         case .about:
             return Text("About")
-        case .examInfo(let exam):
-            return Text(exam)
         }
     }
     
@@ -69,7 +58,6 @@ struct ContentView: View {
                 }
             }
             Spacer()
-//            examInfoButton(exam) //Having a button in the row doesn't work!
         }
         
     }
@@ -78,14 +66,13 @@ struct ContentView: View {
         NavigationView {
             List {
                 Section(header: Text("Group 1").bold()) {
-                    Text("Alpha")
+                    examRow("Alpha")
                     examRow("Beta")
                 }
                 
                 Section(header: Text("Group 2").bold()) {
                     Text("Alpha")
                     Text("Beta")
-                    examInfoButton("asdf")
                 }
             }
             .listStyle(GroupedListStyle())
