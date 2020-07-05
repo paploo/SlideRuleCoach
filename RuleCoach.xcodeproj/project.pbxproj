@@ -15,6 +15,9 @@
 		4A59075624B161BC003FFBB2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A59075424B161BC003FFBB2 /* LaunchScreen.storyboard */; };
 		4A59076124B161BC003FFBB2 /* RuleCoachTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A59076024B161BC003FFBB2 /* RuleCoachTests.swift */; };
 		4A59076C24B161BC003FFBB2 /* RuleCoachUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A59076B24B161BC003FFBB2 /* RuleCoachUITests.swift */; };
+		4A59077B24B2775B003FFBB2 /* Proctor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A59077A24B2775B003FFBB2 /* Proctor.swift */; };
+		4A59077D24B297B5003FFBB2 /* Exam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A59077C24B297B5003FFBB2 /* Exam.swift */; };
+		4A59077F24B297CB003FFBB2 /* Problem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A59077E24B297CB003FFBB2 /* Problem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		4A59076724B161BC003FFBB2 /* RuleCoachUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RuleCoachUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A59076B24B161BC003FFBB2 /* RuleCoachUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuleCoachUITests.swift; sourceTree = "<group>"; };
 		4A59076D24B161BC003FFBB2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4A59077A24B2775B003FFBB2 /* Proctor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Proctor.swift; sourceTree = "<group>"; };
+		4A59077C24B297B5003FFBB2 /* Exam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exam.swift; sourceTree = "<group>"; };
+		4A59077E24B297CB003FFBB2 /* Problem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Problem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +146,9 @@
 		4A59077924B26895003FFBB2 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				4A59077A24B2775B003FFBB2 /* Proctor.swift */,
+				4A59077C24B297B5003FFBB2 /* Exam.swift */,
+				4A59077E24B297CB003FFBB2 /* Problem.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -276,6 +285,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A59074A24B161BB003FFBB2 /* AppDelegate.swift in Sources */,
+				4A59077F24B297CB003FFBB2 /* Problem.swift in Sources */,
+				4A59077D24B297B5003FFBB2 /* Exam.swift in Sources */,
+				4A59077B24B2775B003FFBB2 /* Proctor.swift in Sources */,
 				4A59074C24B161BB003FFBB2 /* SceneDelegate.swift in Sources */,
 				4A59074E24B161BB003FFBB2 /* ContentView.swift in Sources */,
 			);
