@@ -58,12 +58,28 @@ struct ContentView: View {
         }
     }
     
+    private func examRow(_ exam: String) -> some View {
+        HStack {
+            NavigationLink(destination: Text("Detail \(exam)")) {
+                VStack(alignment: .leading) {
+                    Text("Exam Title")
+                    Text("exam short description")
+                        .font(.caption)
+                        .foregroundColor(.gray)
+                }
+            }
+            Spacer()
+//            examInfoButton(exam) //Having a button in the row doesn't work!
+        }
+        
+    }
+    
     var body: some View {
         NavigationView {
             List {
                 Section(header: Text("Group 1").bold()) {
                     Text("Alpha")
-                    Text("Beta")
+                    examRow("Beta")
                 }
                 
                 Section(header: Text("Group 2").bold()) {
