@@ -11,30 +11,50 @@ import SwiftUI
 struct ContentView: View {
     
     @State var showSheet: Bool = false
-    @State var selectedMainNavItem: MainNavItem = .about
+    @State var selectedSheetItem: MainNavItem = .about
     
-//    private var prefsButton: some View {
-//        Button(action: { self.showSettings.toggle()} ) {
-//        Image(systemName: "gear")
-//            .imageScale(.large)
-//            .padding()
-//        }
-//    }
-//
-//    private var helpButton: some View {
-//        Button(action: { self.showHelp.toggle()} ) {
-//        Image(systemName: "questionmark.circle")
-//            .imageScale(.large)
-//            .padding()
-//        }
-//    }
+    enum MainNavItem {
+        case settings, about, examInfo(exam: String) //TODO be an actual exam.
+    }
+    
+    private var settingsButton: some View {
+        Button(action: {
+            self.selectedSheetItem = MainNavItem.settings
+            self.showSheet.toggle()
+        } ) {
+            Image(systemName: "gear")
+                .imageScale(.large)
+        }
+    }
+    
+    private var aboutButton: some View {
+        Button(action: {
+            self.selectedSheetItem = MainNavItem.about
+            self.showSheet.toggle()
+        } ) {
+            Image(systemName: "info.circle")
+                .imageScale(.large)
+        }
+    }
+    
+    private func examInfoButton(_ exam: String) -> some View {
+        Button(action: {
+            self.selectedSheetItem = MainNavItem.examInfo(exam: exam)
+            self.showSheet.toggle()
+        } ) {
+            Image(systemName: "info.circle")
+                .imageScale(.large)
+        }
+    }
     
     private var sheetContents: some View {
-        switch self.selectedMainNavItem {
+        switch self.selectedSheetItem {
         case .settings:
             return Text("Settings")
         case .about:
             return Text("About")
+        case .examInfo(let exam):
+            return Text(exam)
         }
     }
     
@@ -49,68 +69,19 @@ struct ContentView: View {
                 Section(header: Text("Group 2").bold()) {
                     Text("Alpha")
                     Text("Beta")
-                    Image(systemName: "info.circle")
-                    Image(systemName: "questionmark.circle")
+                    examInfoButton("asdf")
                 }
             }
             .listStyle(GroupedListStyle())
             .navigationBarTitle(Text("Exams"))
-            .navigationBarItems(trailing:
-                MainNavItemButtons(
-                    showSheet: $showSheet,
-                    selectedMainNavItem: $selectedMainNavItem
-                )
-            )
-//            .navigationBarItems(trailing: helpButton)
-//                .sheet(isPresented: $showHelp) {
-//                    Text("Help")
-//                }
-//            .navigationBarItems(trailing: prefsButton)
+            .navigationBarItems(leading: aboutButton, trailing: settingsButton)
             .sheet(isPresented: $showSheet) {
                 self.sheetContents
             }
         }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
     
-}
-
-struct MainNavItemButtons: View {
-    
-    @Binding var showSheet: Bool
-    @Binding var selectedMainNavItem: MainNavItem
-    
-    private var settingsButton: some View {
-        Button(action: {
-            self.selectedMainNavItem = MainNavItem.settings
-            self.showSheet.toggle()
-        } ) {
-        Image(systemName: "gear")
-            .imageScale(.large)
-        }
-    }
-    
-    private var aboutButton: some View {
-        Button(action: {
-            self.selectedMainNavItem = MainNavItem.about
-            self.showSheet.toggle()
-        } ) {
-        Image(systemName: "questionmark.circle")
-            .imageScale(.large)
-        }
-    }
-    
-    var body: some View {
-        HStack() {
-            aboutButton
-            Spacer().frame(width: 20.0)
-            settingsButton
-        }.padding()
-    }
-    
-}
-
-enum MainNavItem {
-    case settings, about
 }
 
 struct ContentView_Previews: PreviewProvider {
