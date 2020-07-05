@@ -106,6 +106,7 @@
 				4A59075424B161BC003FFBB2 /* LaunchScreen.storyboard */,
 				4A59075724B161BC003FFBB2 /* Info.plist */,
 				4A59075124B161BC003FFBB2 /* Preview Content */,
+				4A59077924B26895003FFBB2 /* Core */,
 			);
 			path = RuleCoach;
 			sourceTree = "<group>";
@@ -134,6 +135,13 @@
 				4A59076D24B161BC003FFBB2 /* Info.plist */,
 			);
 			path = RuleCoachUITests;
+			sourceTree = "<group>";
+		};
+		4A59077924B26895003FFBB2 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Core;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
