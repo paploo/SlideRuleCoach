@@ -49,6 +49,9 @@ struct ExamList: View {
         }
     }
     
+    //TODO: Maybe just make this go to the exam definition;
+    //let that class lazily create the exam for the definition if
+    //none exists already (removing an old one if it isn't right)
     private func examRow(_ examDefinition: ExamDefinition) -> some View {
         HStack {
             NavigationLink(destination: Text("Detail: \(examDefinition.name)")) {
@@ -74,7 +77,6 @@ struct ExamList: View {
                 ForEach(proctor.examRegistry.examGroups) { group in
                     Section(header: Text(group.name).font(.headline)) {
                         ForEach(group.examDefinitions) { def in
-                            //Text(def.name)
                             self.examRow(def)
                         }
                     }
