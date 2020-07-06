@@ -8,15 +8,22 @@
 
 import Foundation
 
-struct ExamGroup : Equatable, Hashable {
+struct ExamDefinition: Identifiable {
+    var id: String
     var name: String
-}
-
-struct ExamDefinition {
-    var name: String
-    var description: String
+    var descriptionText: String
     var infoText: String
     var problemGenerator: ProblemGenerator
+}
+
+extension ExamDefinition: Equatable, Hashable {
+    static func == (lhs: ExamDefinition, rhs: ExamDefinition) -> Bool {
+        lhs.id == rhs.id
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
 }
 
 class Exam : ObservableObject {

@@ -18,6 +18,8 @@
 		4A59077B24B2775B003FFBB2 /* Proctor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A59077A24B2775B003FFBB2 /* Proctor.swift */; };
 		4A59077D24B297B5003FFBB2 /* Exam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A59077C24B297B5003FFBB2 /* Exam.swift */; };
 		4A59077F24B297CB003FFBB2 /* Problem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A59077E24B297CB003FFBB2 /* Problem.swift */; };
+		4A59078224B2A43F003FFBB2 /* TestExam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A59078124B2A43F003FFBB2 /* TestExam.swift */; };
+		4A59078524B2AADD003FFBB2 /* ExamList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A59078424B2AADD003FFBB2 /* ExamList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,8 @@
 		4A59077A24B2775B003FFBB2 /* Proctor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Proctor.swift; sourceTree = "<group>"; };
 		4A59077C24B297B5003FFBB2 /* Exam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exam.swift; sourceTree = "<group>"; };
 		4A59077E24B297CB003FFBB2 /* Problem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Problem.swift; sourceTree = "<group>"; };
+		4A59078124B2A43F003FFBB2 /* TestExam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestExam.swift; sourceTree = "<group>"; };
+		4A59078424B2AADD003FFBB2 /* ExamList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,8 +115,10 @@
 				4A59074F24B161BC003FFBB2 /* Assets.xcassets */,
 				4A59075424B161BC003FFBB2 /* LaunchScreen.storyboard */,
 				4A59075724B161BC003FFBB2 /* Info.plist */,
+				4A59078324B2AABE003FFBB2 /* Views */,
 				4A59075124B161BC003FFBB2 /* Preview Content */,
 				4A59077924B26895003FFBB2 /* Core */,
+				4A59078024B2A414003FFBB2 /* Exams */,
 			);
 			path = RuleCoach;
 			sourceTree = "<group>";
@@ -121,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				4A59075224B161BC003FFBB2 /* Preview Assets.xcassets */,
+				4A59078424B2AADD003FFBB2 /* ExamList.swift */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -151,6 +158,21 @@
 				4A59077E24B297CB003FFBB2 /* Problem.swift */,
 			);
 			path = Core;
+			sourceTree = "<group>";
+		};
+		4A59078024B2A414003FFBB2 /* Exams */ = {
+			isa = PBXGroup;
+			children = (
+				4A59078124B2A43F003FFBB2 /* TestExam.swift */,
+			);
+			path = Exams;
+			sourceTree = "<group>";
+		};
+		4A59078324B2AABE003FFBB2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -284,6 +306,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A59078524B2AADD003FFBB2 /* ExamList.swift in Sources */,
+				4A59078224B2A43F003FFBB2 /* TestExam.swift in Sources */,
 				4A59074A24B161BB003FFBB2 /* AppDelegate.swift in Sources */,
 				4A59077F24B297CB003FFBB2 /* Problem.swift in Sources */,
 				4A59077D24B297B5003FFBB2 /* Exam.swift in Sources */,
