@@ -20,6 +20,7 @@
 		4A59077F24B297CB003FFBB2 /* Problem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A59077E24B297CB003FFBB2 /* Problem.swift */; };
 		4A59078224B2A43F003FFBB2 /* TestExam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A59078124B2A43F003FFBB2 /* TestExam.swift */; };
 		4A59078524B2AADD003FFBB2 /* ExamList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A59078424B2AADD003FFBB2 /* ExamList.swift */; };
+		4A59078724B2CCFC003FFBB2 /* ExamRegistry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A59078624B2CCFC003FFBB2 /* ExamRegistry.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		4A59077E24B297CB003FFBB2 /* Problem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Problem.swift; sourceTree = "<group>"; };
 		4A59078124B2A43F003FFBB2 /* TestExam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestExam.swift; sourceTree = "<group>"; };
 		4A59078424B2AADD003FFBB2 /* ExamList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamList.swift; sourceTree = "<group>"; };
+		4A59078624B2CCFC003FFBB2 /* ExamRegistry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamRegistry.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,7 +129,6 @@
 			isa = PBXGroup;
 			children = (
 				4A59075224B161BC003FFBB2 /* Preview Assets.xcassets */,
-				4A59078424B2AADD003FFBB2 /* ExamList.swift */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -163,6 +164,7 @@
 		4A59078024B2A414003FFBB2 /* Exams */ = {
 			isa = PBXGroup;
 			children = (
+				4A59078624B2CCFC003FFBB2 /* ExamRegistry.swift */,
 				4A59078124B2A43F003FFBB2 /* TestExam.swift */,
 			);
 			path = Exams;
@@ -171,6 +173,7 @@
 		4A59078324B2AABE003FFBB2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				4A59078424B2AADD003FFBB2 /* ExamList.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -310,6 +313,7 @@
 				4A59078224B2A43F003FFBB2 /* TestExam.swift in Sources */,
 				4A59074A24B161BB003FFBB2 /* AppDelegate.swift in Sources */,
 				4A59077F24B297CB003FFBB2 /* Problem.swift in Sources */,
+				4A59078724B2CCFC003FFBB2 /* ExamRegistry.swift in Sources */,
 				4A59077D24B297B5003FFBB2 /* Exam.swift in Sources */,
 				4A59077B24B2775B003FFBB2 /* Proctor.swift in Sources */,
 				4A59074C24B161BB003FFBB2 /* SceneDelegate.swift in Sources */,

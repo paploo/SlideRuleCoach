@@ -59,7 +59,7 @@ struct ExamList: View {
                         .foregroundColor(.gray)
                 }
                 Spacer()
-                if(examDefinition != proctor.currentExam?.definition) {
+                if(examDefinition == proctor.currentExam?.definition) {
                     Image(systemName: "stopwatch")
                         .foregroundColor(.blue)
                 }
@@ -68,12 +68,10 @@ struct ExamList: View {
         
     }
     
-    var x: Int { proctor.examRegistry.examGroups.count }
-    
     var body: some View {
         NavigationView {
             List {
-                ForEach(proctor.examRegistry.examGroups, id: \.name) { group in
+                ForEach(proctor.examRegistry.examGroups) { group in
                     Section(header: Text(group.name).font(.headline)) {
                         ForEach(group.examDefinitions) { def in
                             //Text(def.name)

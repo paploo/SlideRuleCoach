@@ -20,7 +20,7 @@ extension ExamDefinition: Equatable, Hashable {
     static func == (lhs: ExamDefinition, rhs: ExamDefinition) -> Bool {
         lhs.id == rhs.id
     }
-    
+
     func hash(into hasher: inout Hasher) {
         hasher.combine(id)
     }
@@ -28,35 +28,36 @@ extension ExamDefinition: Equatable, Hashable {
 
 class Exam : ObservableObject {
     var definition: ExamDefinition
-    var difficulty: ProblemDifficulty
     
     @Published var workedProblems: [WorkedProblem] = []
     
-    @Published var currentProblem: Problem
+    @Published var currentProblem: Problem? = nil
     @Published var submittedAnswer: Double? = nil
     
-    init(definition: ExamDefinition, difficulty: ProblemDifficulty) {
+    init(_ definition: ExamDefinition) {
         self.definition = definition
-        self.difficulty = difficulty
-        
-        //Set first problem.
-        currentProblem = definition.problemGenerator.generateProblem(difficulty: difficulty)
     }
     
     func nextProblemAllowed() -> Bool {
         submittedAnswer == nil
     }
     
-    func nextProblem() -> Problem {
-        if let currAns = submittedAnswer {
-            //If we have an answer, put into the history and advance the problem,
-            workedProblems.append(WorkedProblem(problem: currentProblem, answer: currAns))
+    func nextProblem(difficulty: ProblemDifficulty) -> Problem {
+        //Ensure we have a problem
+        var prob = currentProblem ?? definition.problemGenerator.generateProblem(difficulty: difficulty)
+        
+        //If we have an answer, we can record as a worked problem
+        if let ans = submittedAnswer {
+            workedProblems.append(
+                .init(problem: prob, answer: ans)
+            )
+            prob = definition.problemGenerator.generateProblem(difficulty: difficulty)
             submittedAnswer = nil
-            currentProblem = definition.problemGenerator.generateProblem(difficulty: difficulty)
-        } else {
-            //Else, don't let them advance.
         }
-        return currentProblem
+        
+        //Now we can make assignments and return.
+        currentProblem = prob
+        return prob
     }
     
 }

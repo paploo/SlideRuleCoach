@@ -20,21 +20,10 @@ final class Proctor: ObservableObject {
 
 struct ExamRegistry {
     var examGroups: [ExamGroup]
-    
-    static let testRegistry = ExamRegistry(examGroups: [
-        ExamGroup.testGroup
-    ])
 }
 
-struct ExamGroup {
+struct ExamGroup: Identifiable, Equatable, Hashable {
+    var id: String
     var name: String
     var examDefinitions: [ExamDefinition]
-    
-    static let testGroup = ExamGroup(
-        name: "Test Group",
-        examDefinitions: [
-            TestExam.definition,
-            TestExam.definition
-        ]
-    )
 }
