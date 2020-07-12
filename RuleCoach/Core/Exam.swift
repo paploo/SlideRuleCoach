@@ -31,11 +31,12 @@ class Exam : ObservableObject {
     
     @Published var workedProblems: [WorkedProblem] = []
     
-    @Published var currentProblem: Problem? = nil
+    @Published var currentProblem: Problem
     @Published var submittedAnswer: Double? = nil
     
-    init(_ definition: ExamDefinition) {
+    init(_ definition: ExamDefinition, firstProblemDifficulty: ProblemDifficulty) {
         self.definition = definition
+        self.currentProblem = definition.problemGenerator.generateProblem(difficulty: firstProblemDifficulty)
     }
     
     func nextProblemAllowed() -> Bool {
@@ -43,21 +44,16 @@ class Exam : ObservableObject {
     }
     
     func nextProblem(difficulty: ProblemDifficulty) -> Problem {
-        //Ensure we have a problem
-        var prob = currentProblem ?? definition.problemGenerator.generateProblem(difficulty: difficulty)
-        
         //If we have an answer, we can record as a worked problem
         if let ans = submittedAnswer {
             workedProblems.append(
-                .init(problem: prob, answer: ans)
+                .init(problem: currentProblem, answer: ans)
             )
-            prob = definition.problemGenerator.generateProblem(difficulty: difficulty)
+            currentProblem = definition.problemGenerator.generateProblem(difficulty: difficulty)
             submittedAnswer = nil
         }
         
-        //Now we can make assignments and return.
-        currentProblem = prob
-        return prob
+        return currentProblem
     }
     
 }

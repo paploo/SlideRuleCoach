@@ -22,8 +22,8 @@ extension ExamGroup {
         id: "TEST",
         name: "Test Group",
         examDefinitions: [
-            TestExam.definition,
-            TestExam.definition
+            TestExamFactory.definition(name: "Alpha", expectedAnswer: 10.0),
+            TestExamFactory.definition(name: "Beta", expectedAnswer: 100.0)
         ]
     )
     

@@ -16,6 +16,14 @@ final class Proctor: ObservableObject {
     init(examRegistry: ExamRegistry) {
         self.examRegistry = examRegistry
     }
+    
+    //This gets the current exam for a given exam definition
+    func currentExamFor(definition: ExamDefinition) -> Exam {
+        if (currentExam?.definition != definition) {
+            currentExam = Exam(definition, firstProblemDifficulty: difficulty)
+        }
+        return currentExam!
+    }
 }
 
 struct ExamRegistry {

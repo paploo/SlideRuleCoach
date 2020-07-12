@@ -54,7 +54,9 @@ struct ExamList: View {
     //none exists already (removing an old one if it isn't right)
     private func examRow(_ examDefinition: ExamDefinition) -> some View {
         HStack {
-            NavigationLink(destination: Text("Detail: \(examDefinition.name)")) {
+            NavigationLink(
+                destination: ExamView(examDefinition: examDefinition)
+            ) {
                 VStack(alignment: .leading) {
                     Text(examDefinition.name)
                     Text(examDefinition.descriptionText)
@@ -86,7 +88,7 @@ struct ExamList: View {
             .navigationBarTitle(Text("Exams"))
             .navigationBarItems(leading: aboutButton, trailing: settingsButton)
             .sheet(isPresented: $showSheet) {
-                self.sheetContents
+                self.sheetContents.environmentObject(self.proctor)
             }
         }
         .navigationViewStyle(StackNavigationViewStyle())

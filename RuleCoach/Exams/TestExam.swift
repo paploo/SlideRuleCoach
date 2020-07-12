@@ -8,19 +8,27 @@
 
 import Foundation
 
-class TestExam: Exam {
+class TestExamFactory {
     
-    static let definition: ExamDefinition = .init(
-        id: "TEST",
-        name: "Test Exam",
-        descriptionText: "Test if this even works!",
-        infoText: "Problems in this test require doing nothing and everything, because this is just a test.",
-        problemGenerator: TestExamProblemGenerator()
-    )
+    static func definition(name: String, expectedAnswer: Double) -> ExamDefinition {
+        .init(
+            id: "TEST-\(expectedAnswer.description)",
+            name: name,
+            descriptionText: "Test if this even works!",
+            infoText: "Problems in this test require doing nothing and everything, because this is just a     test.",
+            problemGenerator: TestExamProblemGenerator(expectedAnswer: expectedAnswer)
+        )
+    }
     
 }
 
 class TestExamProblemGenerator: ProblemGenerator {
+    
+    var expectedAnswer: Double //Stand-in value
+    
+    init(expectedAnswer: Double) {
+        self.expectedAnswer = expectedAnswer
+    }
     
     //TODO: Put in a library of these?
     class DirectScaleParameterizer: ScaleParameterizer {
@@ -35,9 +43,15 @@ class TestExamProblemGenerator: ProblemGenerator {
     
     func generateProblem(difficulty: ProblemDifficulty) -> Problem {
         .init(
-            expectedAnswer: 3,
-            questionText: "three",
+            expectedAnswer: getAndIncrAnswer(),
+            questionText: "What is the answer for difficulty \(difficulty)",
             scaleParameterizer: DirectScaleParameterizer()
         )
+    }
+    
+    private func getAndIncrAnswer() -> Double {
+        let prevAns = expectedAnswer
+        expectedAnswer += 1.0
+        return prevAns
     }
 }
