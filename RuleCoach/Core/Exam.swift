@@ -26,36 +26,44 @@ extension ExamDefinition: Equatable, Hashable {
     }
 }
 
+//TODO: Set a target length, like 20 problems? UI can choosse to enforce.
 struct Exam {
     var definition: ExamDefinition
     var problemDifficulty: ProblemDifficulty
+    var maxProblemCount: Int = 20
     
     var workedProblems: [WorkedProblem] = []
     
     var currentProblem: Problem
-    var submittedAnswer: Double? = nil
     
     init(_ definition: ExamDefinition, difficulty: ProblemDifficulty) {
         self.definition = definition
         self.problemDifficulty = difficulty
-        self.currentProblem = definition.problemGenerator.generateProblem(difficulty: problemDifficulty)
-    }
-    
-    func nextProblemAllowed() -> Bool {
-        submittedAnswer == nil
-    }
-    
-    mutating func nextProblem() -> Problem {
-        //If we have an answer, we can record as a worked problem
-        if let ans = submittedAnswer {
-            workedProblems.append(
-                .init(problem: currentProblem, answer: ans)
-            )
-            currentProblem = definition.problemGenerator.generateProblem(difficulty: problemDifficulty)
-            submittedAnswer = nil
-        }
         
-        return currentProblem
+        currentProblem = definition.problemGenerator.generateProblem(
+            difficulty: problemDifficulty
+        )
+    }
+    
+    func problemCount() -> Int {
+        workedProblems.count
+    }
+    
+    func isCompleted() -> Bool {
+        problemCount() >= maxProblemCount
+    }
+    
+    mutating func submitAnswer(submittedAnswer: Double) {
+        //We don't actually enfroce the max length here.
+        //UIs are free to let things go indefinitely, or stop.
+        
+        workedProblems.append(
+            .init(problem: currentProblem, submittedAnswer: submittedAnswer)
+        )
+        
+        currentProblem = definition.problemGenerator.generateProblem(
+            difficulty: problemDifficulty
+        )
     }
     
 }

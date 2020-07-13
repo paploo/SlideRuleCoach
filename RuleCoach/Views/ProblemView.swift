@@ -17,7 +17,7 @@ struct ProblemView : View {
     var inputNumberFormatter: NumberFormatter {
         let nf = NumberFormatter()
         nf.numberStyle = .decimal
-        //nf.maximumSignificantDigits(6)
+        nf.maximumSignificantDigits = 6
         return nf
     }
     
@@ -29,16 +29,25 @@ struct ProblemView : View {
             //Text(exam.wrappedValue)
             //Text(exam.currentProblem.expectedAnswer)
             Text(exam.currentProblem.expectedAnswer.wrappedValue.description)
-            Text(exam.submittedAnswer.wrappedValue?.description ?? "None")
+            //Text(exam.submittedAnswer.wrappedValue?.description ?? "None")
+            Text(submittedAnswer?.description ?? "None")
+            
             TextField("Answer", value: $submittedAnswer, formatter: inputNumberFormatter)
-            Button(action: {
-                self.exam.submittedAnswer.wrappedValue = Double.random(in: 0.0..<10.0)
-                let p = self.exam.wrappedValue.nextProblem()
-                print(p)
-                print(self.exam)
-            }) {
-                Text("Submit")
+            
+            if(submittedAnswer == nil) {
+                Button(action: {}) {
+                    Text("Submit Answer")
+                        .foregroundColor(.gray)
+                }
+            } else {
+                Button(action: {
+                    self.exam.wrappedValue.submitAnswer(submittedAnswer: self.submittedAnswer ?? 0.0)
+                    self.submittedAnswer = nil
+                }) {
+                    Text("Submit Answer")
+                }
             }
+            
         }
     }
     

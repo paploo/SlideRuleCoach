@@ -15,19 +15,13 @@ struct StartExamView : View {
     
     @State var selectedDifficulty: ProblemDifficulty = .normal
     
-    func formElem<V: View>(_ label: String, body: () -> V) -> some View {
-        HStack {
-            Text(label).bold()
-            Spacer()
-            body()
-        }
-    }
-    
     var body: some View {
         Form {
             //Text(currentExam.wrappedValue.debugDescription)
             Section {
-                formElem("Exam") { Text(examDefinition.name) }
+                Text("Exam").bold()
+                Spacer()
+                Text(examDefinition.name)
             }
             
             Section {
