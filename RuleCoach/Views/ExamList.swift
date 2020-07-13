@@ -58,7 +58,10 @@ struct ExamList: View {
     private func examRow(_ examDefinition: ExamDefinition) -> some View {
         HStack {
             NavigationLink(
-                destination: ExamView(examDefinition: examDefinition, examBinding: $currentExam)
+                destination: ExamView(
+                    selectedExamDefinition: examDefinition,
+                    currentExam: $currentExam
+                )
             ) {
                 VStack(alignment: .leading) {
                     Text(examDefinition.name)

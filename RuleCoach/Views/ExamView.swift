@@ -10,47 +10,75 @@ import SwiftUI
 
 struct ExamView: View {
     
-    //This is the exam definition selected for the view
-    var examDefinition: ExamDefinition
+    //This is the exam definition selected for the view.
+    var selectedExamDefinition: ExamDefinition
     
     //This is a binding to the current exam.
-    var examBinding: Binding<Exam?>
+    var currentExam: Binding<Exam?>
+    
+    @State var showSheet: Bool = false
 
-    func barItems() -> some View {
-        HStack {
+    func navBarItems() -> some View {
+        Button(action: {self.showSheet.toggle()}) {
             Image(systemName: "info.circle").imageScale(.large)
-            Image(systemName: "clock").imageScale(.large)
         }
     }
     
     var body: some View {
         VStack(alignment: .leading) {
-            if examBinding.wrappedValue == nil || (examBinding.wrappedValue?.definition != examDefinition){
-                StartExamView(examDefinition: examDefinition, exam: examBinding)
+            if currentExam.wrappedValue == nil || (currentExam.wrappedValue?.definition != selectedExamDefinition){
+                StartExamView(examDefinition: selectedExamDefinition, currentExam: currentExam)
             } else {
-                ProblemView(exam: Binding(examBinding)!)
+                TabView {
+                    ProblemView(exam: Binding(currentExam)!).tabItem {
+                        Image(systemName: "square.and.pencil").imageScale(.large)
+                        Text("Problem")
+                    }
+                    
+                    ProblemHistoryView(exam: Binding(currentExam)!).tabItem {
+                        Image(systemName: "clock").imageScale(.large)
+                        Text("History")
+                    }
+                }.animation(nil)
             }
         }
-        .navigationBarTitle(Text(examDefinition.name), displayMode: .inline)
-        .navigationBarItems(trailing: barItems())
+        .navigationBarTitle(Text(selectedExamDefinition.name), displayMode: .inline)
+        .navigationBarItems(trailing: navBarItems())
+        .sheet(isPresented: $showSheet) {
+            ExamHelpView(examDefinition: self.selectedExamDefinition)
+        }
     }
 }
 
-struct StartExamView : View {
+struct ExamHelpView : View {
     var examDefinition: ExamDefinition
-    var exam: Binding<Exam?>
     
     var body: some View {
         VStack {
-            Text(exam.wrappedValue.debugDescription)
+            Text(self.examDefinition.infoText)
+        }
+    }
+    
+}
+
+struct StartExamView : View {
+    
+    var examDefinition: ExamDefinition
+    var currentExam: Binding<Exam?>
+    
+    var body: some View {
+        VStack {
+            Text(currentExam.wrappedValue.debugDescription)
             Button(action: {
-                self.exam.wrappedValue = Exam(self.examDefinition, difficulty: .easy)
+                self.currentExam.wrappedValue = Exam(self.examDefinition, difficulty: .easy)
             }) { Text("Start") }
         }
     }
+    
 }
 
 struct ProblemView : View {
+    
     var exam: Binding<Exam>
     
     var body: some View {
@@ -71,6 +99,19 @@ struct ProblemView : View {
             }
         }
     }
+    
+}
+
+struct ProblemHistoryView : View {
+    
+    var exam: Binding<Exam>
+    
+    var body: some View {
+        List {
+            Text("a")
+            Text("b")
+        }
+    }
 }
 
 struct ExamView_Previews: PreviewProvider {
@@ -84,20 +125,23 @@ struct ExamView_Previews: PreviewProvider {
         
         return Group {
             NavigationView {
-                ExamView(examDefinition: examDef, examBinding: .constant(nil))
-            }
-            
-            NavigationView {
                 ExamView(
-                    examDefinition: examDef,
-                    examBinding: .constant(exam)
+                    selectedExamDefinition: examDef,
+                    currentExam: .constant(nil)
                 )
             }
             
             NavigationView {
                 ExamView(
-                    examDefinition: TestExamFactory.definition(name: "Test Exam 2", expectedAnswer: 100.0),
-                    examBinding: .constant(exam))
+                    selectedExamDefinition: examDef,
+                    currentExam: .constant(exam)
+                )
+            }
+            
+            NavigationView {
+                ExamView(
+                    selectedExamDefinition: TestExamFactory.definition(name: "Test Exam 2", expectedAnswer: 100.0),
+                    currentExam: .constant(exam))
             }
         }
     }
