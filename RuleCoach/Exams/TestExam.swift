@@ -20,6 +20,10 @@ class TestExamFactory {
         )
     }
     
+    static func defaultDefinition() -> ExamDefinition {
+        definition(name: "Default Definition", expectedAnswer: 1.0)
+    }
+    
 }
 
 class TestExamProblemGenerator: ProblemGenerator {

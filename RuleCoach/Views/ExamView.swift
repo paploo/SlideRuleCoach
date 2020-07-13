@@ -10,42 +10,69 @@ import SwiftUI
 
 struct ExamView: View {
     
-    @State var examDefinition: ExamDefinition
+    //This is the exam definition selected for the view
+    var examDefinition: ExamDefinition
     
-    @EnvironmentObject var proctor: Proctor
-    
-    @State private var currentProblem: Problem? = nil
-    @State var foo: Bool = false
-    
-    private var exam: Exam {
-        let e = proctor.currentExamFor(definition: examDefinition)
-        currentProblem = e.currentProblem
-        return e
+    //This is a binding to the current exam.
+    var examBinding: Binding<Exam?>
+
+    func barItems() -> some View {
+        HStack {
+            Image(systemName: "info.circle").imageScale(.large)
+            Image(systemName: "clock").imageScale(.large)
+        }
     }
     
     var body: some View {
-        print("Draw")
-        return NavigationView {
-            VStack(alignment: .leading) {
-                Text(foo.description) //Redraw happens only when state is used directly it seems.
-                Text(exam.currentProblem.questionText ?? "No Question")
-                Text(exam.currentProblem.expectedAnswer.description)
-                Button(action: {
-                    self.exam.submittedAnswer = 3.14
-                    self.currentProblem = self.exam.nextProblem(difficulty: self.proctor.difficulty)
-                    self.foo.toggle()
-                    print(self.exam.currentProblem.expectedAnswer)
-                    print(self.proctor.currentExam?.currentProblem.expectedAnswer ?? "No Answer")
-                    print(self.currentProblem?.expectedAnswer ?? "No Answer")
-                }) {
-                    Text("Next Problem")
-                }
+        //            examBinding.wrappedValue == nil
+        //                ? ViewBuilder.buildEither(first: StartExamView(examDefinition: examDefinition, exam: examBinding))
+        //                : ViewBuilder.buildEither(second: ProblemView(exam: Binding(examBinding)!))
+
+        VStack(alignment: .leading) {
+            if examBinding.wrappedValue == nil || (examBinding.wrappedValue?.definition != examDefinition){
+                StartExamView(examDefinition: examDefinition, exam: examBinding)
+            } else {
+                ProblemView(exam: Binding(examBinding)!)
             }
-            .navigationBarTitle(Text(exam.definition.name), displayMode: .inline)
-            .navigationBarItems(
-                leading: Image(systemName: "info.circle"),
-                trailing: Image(systemName: "gear")
-            )
+        }
+        .navigationBarTitle(Text(examDefinition.name), displayMode: .inline)
+        .navigationBarItems(trailing: barItems())
+    }
+}
+
+struct StartExamView : View {
+    var examDefinition: ExamDefinition
+    var exam: Binding<Exam?>
+    
+    var body: some View {
+        VStack {
+            Text(exam.wrappedValue.debugDescription)
+            Button(action: {
+                self.exam.wrappedValue = Exam(self.examDefinition, difficulty: .easy)
+            }) { Text("Start") }
+        }
+    }
+}
+
+struct ProblemView : View {
+    var exam: Binding<Exam>
+    
+    var body: some View {
+        VStack {
+            Text("Problem")
+            Text(exam.currentProblem.wrappedValue.questionText ?? "No Numerator")
+            //Text(exam.wrappedValue)
+            //Text(exam.currentProblem.expectedAnswer)
+            Text(exam.currentProblem.expectedAnswer.wrappedValue.description)
+            Text(exam.submittedAnswer.wrappedValue?.description ?? "None")
+            Button(action: {
+                self.exam.submittedAnswer.wrappedValue = Double.random(in: 0.0..<10.0)
+                let p = self.exam.wrappedValue.nextProblem()
+                print(p)
+                print(self.exam)
+            }) {
+                Text("Submit")
+            }
         }
     }
 }
@@ -53,14 +80,29 @@ struct ExamView: View {
 struct ExamView_Previews: PreviewProvider {
     
     static var previews: some View {
-        let proctor = Proctor(examRegistry: ExamRegistry.testRegistry)
+        let examDef = TestExamFactory.definition(name: "Test Exam", expectedAnswer: 10.0)
         let exam = Exam(
-            TestExamFactory.definition(name: "Test Exam", expectedAnswer: 3.0),
-            firstProblemDifficulty: .easy
+            examDef,
+            difficulty: .easy
         )
-        proctor.currentExam = exam
         
-        return ExamView(examDefinition: exam.definition)
-            .environmentObject(proctor)
+        return Group {
+            NavigationView {
+                ExamView(examDefinition: examDef, examBinding: .constant(nil))
+            }
+            
+            NavigationView {
+                ExamView(
+                    examDefinition: examDef,
+                    examBinding: .constant(exam)
+                )
+            }
+            
+            NavigationView {
+                ExamView(
+                    examDefinition: TestExamFactory.definition(name: "Test Exam 2", expectedAnswer: 100.0),
+                    examBinding: .constant(exam))
+            }
+        }
     }
 }

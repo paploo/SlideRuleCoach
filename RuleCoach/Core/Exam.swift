@@ -26,30 +26,32 @@ extension ExamDefinition: Equatable, Hashable {
     }
 }
 
-class Exam : ObservableObject {
+struct Exam {
     var definition: ExamDefinition
+    var problemDifficulty: ProblemDifficulty
     
-    @Published var workedProblems: [WorkedProblem] = []
+    var workedProblems: [WorkedProblem] = []
     
-    @Published var currentProblem: Problem
-    @Published var submittedAnswer: Double? = nil
+    var currentProblem: Problem
+    var submittedAnswer: Double? = nil
     
-    init(_ definition: ExamDefinition, firstProblemDifficulty: ProblemDifficulty) {
+    init(_ definition: ExamDefinition, difficulty: ProblemDifficulty) {
         self.definition = definition
-        self.currentProblem = definition.problemGenerator.generateProblem(difficulty: firstProblemDifficulty)
+        self.problemDifficulty = difficulty
+        self.currentProblem = definition.problemGenerator.generateProblem(difficulty: problemDifficulty)
     }
     
     func nextProblemAllowed() -> Bool {
         submittedAnswer == nil
     }
     
-    func nextProblem(difficulty: ProblemDifficulty) -> Problem {
+    mutating func nextProblem() -> Problem {
         //If we have an answer, we can record as a worked problem
         if let ans = submittedAnswer {
             workedProblems.append(
                 .init(problem: currentProblem, answer: ans)
             )
-            currentProblem = definition.problemGenerator.generateProblem(difficulty: difficulty)
+            currentProblem = definition.problemGenerator.generateProblem(difficulty: problemDifficulty)
             submittedAnswer = nil
         }
         

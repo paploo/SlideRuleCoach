@@ -10,14 +10,27 @@ import SwiftUI
 
 struct ContentView: View {
     
+    @State var exam: Exam? = nil
+    
+    var examDefinition: ExamDefinition
+    
     var body: some View {
-        ExamList()
+        //ExamList(examRegistry: ExamRegistry.testRegistry)
+        
+        NavigationView {
+            NavigationLink(destination:
+                    Text("asdf")
+                        .navigationBarTitle(Text("Title"))
+                .navigationBarItems(trailing: Text("M"))
+            ) { Text("Foo") }
+            .navigationBarTitle(Text("Title"))
+        }
     }
     
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(examDefinition: TestExamFactory.defaultDefinition())
     }
 }

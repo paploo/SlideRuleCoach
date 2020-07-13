@@ -10,7 +10,10 @@ import SwiftUI
 
 struct ExamList: View {
     
-    @EnvironmentObject var proctor: Proctor
+    @State var examRegistry: ExamRegistry
+    
+    //@State var currentExamDefinition: ExamDefinition? = nil
+    @State var currentExam: Exam? = nil
     
     @State var showSheet: Bool = false
     @State var selectedSheetItem: MainNavItem = .about
@@ -55,7 +58,7 @@ struct ExamList: View {
     private func examRow(_ examDefinition: ExamDefinition) -> some View {
         HStack {
             NavigationLink(
-                destination: ExamView(examDefinition: examDefinition)
+                destination: ExamView(examDefinition: examDefinition, examBinding: $currentExam)
             ) {
                 VStack(alignment: .leading) {
                     Text(examDefinition.name)
@@ -64,7 +67,7 @@ struct ExamList: View {
                         .foregroundColor(.gray)
                 }
                 Spacer()
-                if(examDefinition == proctor.currentExam?.definition) {
+                if(examDefinition == currentExam?.definition) {
                     Image(systemName: "stopwatch")
                         .foregroundColor(.blue)
                 }
@@ -76,7 +79,7 @@ struct ExamList: View {
     var body: some View {
         NavigationView {
             List {
-                ForEach(proctor.examRegistry.examGroups) { group in
+                ForEach(examRegistry.examGroups) { group in
                     Section(header: Text(group.name).font(.headline)) {
                         ForEach(group.examDefinitions) { def in
                             self.examRow(def)
@@ -88,7 +91,8 @@ struct ExamList: View {
             .navigationBarTitle(Text("Exams"))
             .navigationBarItems(leading: aboutButton, trailing: settingsButton)
             .sheet(isPresented: $showSheet) {
-                self.sheetContents.environmentObject(self.proctor)
+                //TODO: Make this do something.
+                self.sheetContents
             }
         }
         .navigationViewStyle(StackNavigationViewStyle())
@@ -98,7 +102,6 @@ struct ExamList: View {
 
 struct ExamList_Previews: PreviewProvider {
     static var previews: some View {
-        ExamList()
-            .environmentObject(Proctor(examRegistry: ExamRegistry.testRegistry))
+        ExamList(examRegistry: ExamRegistry.testRegistry)
     }
 }
