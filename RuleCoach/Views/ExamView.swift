@@ -24,10 +24,6 @@ struct ExamView: View {
     }
     
     var body: some View {
-        //            examBinding.wrappedValue == nil
-        //                ? ViewBuilder.buildEither(first: StartExamView(examDefinition: examDefinition, exam: examBinding))
-        //                : ViewBuilder.buildEither(second: ProblemView(exam: Binding(examBinding)!))
-
         VStack(alignment: .leading) {
             if examBinding.wrappedValue == nil || (examBinding.wrappedValue?.definition != examDefinition){
                 StartExamView(examDefinition: examDefinition, exam: examBinding)
