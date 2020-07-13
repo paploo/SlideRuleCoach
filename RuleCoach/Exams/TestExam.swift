@@ -15,7 +15,7 @@ class TestExamFactory {
             id: "TEST-\(expectedAnswer.description)",
             name: name,
             descriptionText: "Test if this even works!",
-            infoText: "Problems in this test require doing nothing and everything, because this is just a     test.",
+            infoText: "Problems in this test require doing nothing and everything, because this is just a test.",
             problemGenerator: TestExamProblemGenerator(expectedAnswer: expectedAnswer)
         )
     }

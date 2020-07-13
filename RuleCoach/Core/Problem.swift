@@ -17,8 +17,12 @@ protocol ProblemGenerator {
     func generateProblem(difficulty: ProblemDifficulty) -> Problem
 }
 
-enum ProblemDifficulty {
-    case introductory, easy, normal, advanced, master
+enum ProblemDifficulty: String, CaseIterable {
+    case introductory = "Introductory"
+    case easy = "Easy"
+    case normal = "Normal"
+    case advanced = "Advanced"
+    case master = "Master"
 }
 
 enum ProblemDisplayType {
