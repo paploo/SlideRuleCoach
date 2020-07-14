@@ -57,3 +57,8 @@ protocol ScaleParameterizer {
     func parameterize(value: Double) -> Double
     func valuize(u: Double) -> Double
 }
+
+class UnityScaleParameterizer: ScaleParameterizer {
+    func parameterize(value: Double) -> Double { value }
+    func valuize(u: Double) -> Double { u }
+}

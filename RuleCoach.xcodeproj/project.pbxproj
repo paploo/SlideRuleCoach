@@ -26,6 +26,7 @@
 		4AFE2D5024BC0CF500AF8187 /* ProblemHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFE2D4F24BC0CF500AF8187 /* ProblemHistoryView.swift */; };
 		4AFE2D5224BC116E00AF8187 /* StartExamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFE2D5124BC116E00AF8187 /* StartExamView.swift */; };
 		4AFE2D5424BC20BE00AF8187 /* ProblemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFE2D5324BC20BE00AF8187 /* ProblemView.swift */; };
+		4AFE2D5624BD398600AF8187 /* NumberFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFE2D5524BD398600AF8187 /* NumberFormatter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		4AFE2D4F24BC0CF500AF8187 /* ProblemHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemHistoryView.swift; sourceTree = "<group>"; };
 		4AFE2D5124BC116E00AF8187 /* StartExamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartExamView.swift; sourceTree = "<group>"; };
 		4AFE2D5324BC20BE00AF8187 /* ProblemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemView.swift; sourceTree = "<group>"; };
+		4AFE2D5524BD398600AF8187 /* NumberFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberFormatter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +169,7 @@
 				4A59077A24B2775B003FFBB2 /* ExamRegistry.swift */,
 				4A59077C24B297B5003FFBB2 /* Exam.swift */,
 				4A59077E24B297CB003FFBB2 /* Problem.swift */,
+				4AFE2D5524BD398600AF8187 /* NumberFormatter.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -331,6 +334,7 @@
 				4A59074A24B161BB003FFBB2 /* AppDelegate.swift in Sources */,
 				4A59078B24B2CE32003FFBB2 /* ExamView.swift in Sources */,
 				4A59077F24B297CB003FFBB2 /* Problem.swift in Sources */,
+				4AFE2D5624BD398600AF8187 /* NumberFormatter.swift in Sources */,
 				4AFE2D5224BC116E00AF8187 /* StartExamView.swift in Sources */,
 				4A59078724B2CCFC003FFBB2 /* ExamRegistryFactory.swift in Sources */,
 				4A59077D24B297B5003FFBB2 /* Exam.swift in Sources */,
