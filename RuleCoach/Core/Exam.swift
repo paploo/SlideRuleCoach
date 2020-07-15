@@ -30,15 +30,20 @@ extension ExamDefinition: Equatable, Hashable {
 struct Exam {
     var definition: ExamDefinition
     var problemDifficulty: ProblemDifficulty
-    var maxProblemCount: Int = 20
+    var maxProblemCount: Int
     
     var workedProblems: [WorkedProblem] = []
     
     var currentProblem: Problem
     
-    init(_ definition: ExamDefinition, difficulty: ProblemDifficulty) {
+    init(
+        _ definition: ExamDefinition,
+        difficulty: ProblemDifficulty,
+        maxProblemCount: Int = 20
+    ) {
         self.definition = definition
         self.problemDifficulty = difficulty
+        self.maxProblemCount = maxProblemCount
         
         currentProblem = definition.problemGenerator.generateProblem(
             difficulty: problemDifficulty

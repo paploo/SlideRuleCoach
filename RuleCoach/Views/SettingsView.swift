@@ -12,6 +12,12 @@ struct SettingsView: View {
     
     @EnvironmentObject var userSettings: UserSettings
     
+    var examLengths: [Int] {
+        var set: Set<Int> = [10, 20, 30, 40, 50]
+        set.insert(userSettings.examLength)
+        return set.sorted()
+    }
+    
     var body: some View {
         Form {
             
@@ -19,6 +25,15 @@ struct SettingsView: View {
                 
                 Toggle(isOn: $userSettings.showNotesField) {
                     Text("Show Notes Field")
+                }
+                
+                VStack(alignment: .leading) {
+                    Text("Exam Length")
+                    Picker("", selection: $userSettings.examLength) {
+                        ForEach(examLengths, id: \.self) { len in
+                            Text(len.description).tag(len)
+                        }
+                        }.pickerStyle(SegmentedPickerStyle())
                 }
                 
             }

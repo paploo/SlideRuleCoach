@@ -10,7 +10,10 @@ import SwiftUI
 
 struct StartExamView : View {
     
+    @EnvironmentObject var userSettings: UserSettings
+    
     var examDefinition: ExamDefinition
+    
     @Binding var currentExam: Exam?
     
     @State var selectedDifficulty: ProblemDifficulty = .normal
@@ -57,7 +60,8 @@ struct StartExamView : View {
                     Button(action: {
                         self.currentExam = Exam(
                             self.examDefinition,
-                            difficulty: self.selectedDifficulty
+                            difficulty: self.selectedDifficulty,
+                            maxProblemCount: self.userSettings.examLength
                         )
                     }) {
                         Text("Start Exam")
