@@ -39,6 +39,12 @@ class UserSettings: ObservableObject {
         
         print("showNotesField init to \(showNotesField)")
         print("examLength init to \(examLength)")
+        
+        if examLength <= 0 {
+            //defaults.set(20, forKey: Key.examLength.rawValue)
+            self.examLength = 20
+            print("reset illegal examLength to \(examLength)")
+        }
     }
     
 }
