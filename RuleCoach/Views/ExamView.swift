@@ -10,6 +10,8 @@ import SwiftUI
 
 struct ExamView: View {
     
+    @EnvironmentObject var userSettings: UserSettings
+    
     //This is the exam definition selected for the view.
     var selectedExamDefinition: ExamDefinition
     
@@ -28,18 +30,10 @@ struct ExamView: View {
         VStack(alignment: .leading) {
             if currentExam.wrappedValue == nil || (currentExam.wrappedValue?.definition != selectedExamDefinition){
                 StartExamView(examDefinition: selectedExamDefinition, currentExam: currentExam)
+                    .environmentObject(self.userSettings)
             } else {
-                TabView {
-                    ProblemView(exam: Binding(currentExam)!).tabItem {
-                        Image(systemName: "square.and.pencil").imageScale(.large)
-                        Text("Problem")
-                    }
-                    
-                    ProblemHistoryView(exam: Binding(currentExam)!).tabItem {
-                        Image(systemName: "clock").imageScale(.large)
-                        Text("History")
-                    }
-                }.animation(nil)
+                InProgressExamView(exam: Binding(currentExam)!)
+                    .environmentObject(self.userSettings)
             }
         }
         .navigationBarTitle(Text(selectedExamDefinition.name), displayMode: .inline)
@@ -79,6 +73,6 @@ struct ExamView_Previews: PreviewProvider {
                     selectedExamDefinition: TestExamFactory.definition(name: "Test Exam 2", expectedAnswer: 100.0),
                     currentExam: .constant(exam))
             }
-        }
+        }.environmentObject(UserSettings())
     }
 }

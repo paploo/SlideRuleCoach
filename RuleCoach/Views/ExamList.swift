@@ -10,21 +10,19 @@ import SwiftUI
 
 struct ExamList: View {
     
+    @EnvironmentObject var userSettings: UserSettings
+    
     @State var examRegistry: ExamRegistry
     
     //@State var currentExamDefinition: ExamDefinition? = nil
     @State var currentExam: Exam? = nil
     
     @State var showSheet: Bool = false
-    @State var selectedSheetItem: MainNavItem = .about
-    
-    enum MainNavItem {
-        case settings, about
-    }
+    @State var selectedSheetItem: MainSheetView.SheetContents = .about
     
     private var settingsButton: some View {
         Button(action: {
-            self.selectedSheetItem = MainNavItem.settings
+            self.selectedSheetItem = MainSheetView.SheetContents.settings
             self.showSheet.toggle()
         } ) {
             Image(systemName: "gear")
@@ -34,34 +32,21 @@ struct ExamList: View {
     
     private var aboutButton: some View {
         Button(action: {
-            self.selectedSheetItem = MainNavItem.about
+            self.selectedSheetItem = MainSheetView.SheetContents.about
             self.showSheet.toggle()
         } ) {
             Image(systemName: "info.circle")
                 .imageScale(.large)
         }
     }
-
     
-    private var sheetContents: some View {
-        switch self.selectedSheetItem {
-        case .settings:
-            return Text("Settings")
-        case .about:
-            return Text("About")
-        }
-    }
-    
-    //TODO: Maybe just make this go to the exam definition;
-    //let that class lazily create the exam for the definition if
-    //none exists already (removing an old one if it isn't right)
     private func examRow(_ examDefinition: ExamDefinition) -> some View {
         HStack {
             NavigationLink(
                 destination: ExamView(
                     selectedExamDefinition: examDefinition,
                     currentExam: $currentExam
-                )
+                ).environmentObject(self.userSettings)
             ) {
                 VStack(alignment: .leading) {
                     Text(examDefinition.name)
@@ -94,11 +79,34 @@ struct ExamList: View {
             .navigationBarTitle(Text("Exams"))
             .navigationBarItems(leading: aboutButton, trailing: settingsButton)
             .sheet(isPresented: $showSheet) {
-                //TODO: Make this do something.
-                self.sheetContents
+                MainSheetView(selectedSheetItem: self.$selectedSheetItem)
+                    .environmentObject(self.userSettings)
             }
         }
         .navigationViewStyle(StackNavigationViewStyle())
+    }
+    
+}
+
+struct MainSheetView: View {
+    
+    @EnvironmentObject var settings: UserSettings
+    
+    @Binding var selectedSheetItem: SheetContents
+    
+    enum SheetContents {
+        case settings, about
+    }
+    
+    var body: some View {
+        Group {
+            if selectedSheetItem == .settings {
+                SettingsView()
+            }
+            if selectedSheetItem == .about {
+                AboutView()
+            }
+        }
     }
     
 }

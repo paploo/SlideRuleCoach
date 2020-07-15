@@ -10,54 +10,59 @@ import SwiftUI
 
 struct ProblemView : View {
     
+    @EnvironmentObject var userSettings: UserSettings
+    
     var exam: Binding<Exam>
     
     @State var submittedAnswer: Double? = nil
     
+    @State var notes: String? = nil
+    
+    var nonOptionalNotesBinding: Binding<String> {
+        Binding(
+            get: {
+                self.notes ?? ""
+            },
+            set: { s in
+                self.notes = s
+            }
+        )
+    }
+    
     func submitAnswer() {
         exam.wrappedValue.submitAnswer(submittedAnswer: submittedAnswer ?? 0.0)
         submittedAnswer = nil
+        notes = nil
     }
     
     var body: some View {
-        Form {
+        VStack {
             
-            Section(header: Text("Problem \((exam.wrappedValue.problemCount()+1).description) of \(exam.wrappedValue.maxProblemCount.description)")) {
-                if(exam.currentProblem.displayType.wrappedValue == .singleLine) {
-                    SimpleProblemView(problem: exam.currentProblem)
+            Group {
+                if(exam.wrappedValue.isCompleted()) {
+                    ExamCompleteProblemDetail(problem: exam.currentProblem)
                 }
-                if(exam.currentProblem.displayType.wrappedValue == .fractional) {
+                if(exam.currentProblem.displayType.wrappedValue == .singleLine && !exam.wrappedValue.isCompleted()) {
+                    SimpleProblemDetail(problem: exam.currentProblem)
+                }
+                if(exam.currentProblem.displayType.wrappedValue == .fractional && !exam.wrappedValue.isCompleted()) {
                     FractionProblemDetail(problem: exam.currentProblem)
                 }
-            
-            
+            }
+            .frame(height: 100.0)
             
             HStack {
                 TextField(
                     "Answer",
                     value: $submittedAnswer,
-                    formatter: NumberFormatter.decimalFormatter(),
-                    onEditingChanged: { flag in
-                        print("EDIT \(flag)")
-                    },
-                    onCommit: {
-                        print("COMMIT")
-                        //self.submitAnswer()
-                    }
+                    formatter: NumberFormatter.decimalFormatter()
                 )
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .keyboardType(.numbersAndPunctuation)
-//                    .padding(5.0)
-//                    .overlay(
-//                        RoundedRectangle(cornerRadius: 10.0)
-//                        .stroke(lineWidth: 1.0)
-//                        .foregroundColor(.gray)
-//                    )
-            
-            
-                if(submittedAnswer == nil) {
+         
+                if(submittedAnswer == nil || exam.wrappedValue.isCompleted()) {
                     Button(action: {
-                        print("click")
+                        //Do nothing
                     }) {
                         Image(systemName: "arrow.up.circle.fill")
                             .imageScale(.large)
@@ -72,13 +77,19 @@ struct ProblemView : View {
                     }
                 }
             }
+            
+            if(userSettings.showNotesField) {
+                TextField("Notes", text: nonOptionalNotesBinding)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .keyboardType(.numbersAndPunctuation)
             }
+        
         }
     }
     
 }
 
-struct SimpleProblemView: View {
+struct SimpleProblemDetail: View {
     
     var problem: Binding<Problem>
     
@@ -107,6 +118,21 @@ struct FractionProblemDetail: View {
     
 }
 
+struct ExamCompleteProblemDetail: View {
+    
+    var problem: Binding<Problem>
+    
+    var body: some View {
+        HStack {
+            Image(systemName: "hexagon.fill")
+                .foregroundColor(.yellow)
+            Text("Exam completed!")
+                .bold()
+        }
+    }
+    
+}
+
 extension Text {
     func monospaced() -> Text {
         font(.system(.body, design: .monospaced))
@@ -117,10 +143,16 @@ struct ProblemView_Previews: PreviewProvider {
     static var previews: some View {
         let exam = Exam(TestExamFactory.defaultDefinition(), difficulty: .normal)
         
+        var completedExam = exam
+        completedExam.maxProblemCount = 1
+        completedExam.submitAnswer(submittedAnswer: 3.14)
+        
         return Group {
             ProblemView(exam: .constant(exam))
             
-            SimpleProblemView(problem: .constant(Problem(
+            ProblemView(exam: .constant(completedExam))
+            
+            SimpleProblemDetail(problem: .constant(Problem(
                 expectedAnswer: 3.14,
                 questionText: "31 x 2",
                 scaleParameterizer: UnityScaleParameterizer()
@@ -132,6 +164,6 @@ struct ProblemView_Previews: PreviewProvider {
                 questionDenominatorText: "88 x 22",
                 scaleParameterizer: UnityScaleParameterizer()
             )))
-        }
+        }.environmentObject(UserSettings())
     }
 }

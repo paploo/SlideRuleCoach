@@ -19,9 +19,11 @@ struct StartExamView : View {
         Form {
             //Text(currentExam.wrappedValue.debugDescription)
             Section {
-                Text("Exam").bold()
-                Spacer()
-                Text(examDefinition.name)
+                HStack {
+                    Text("Exam").bold()
+                    Spacer()
+                    Text(examDefinition.name)
+                }
             }
             
             Section {
