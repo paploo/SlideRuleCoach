@@ -29,11 +29,13 @@ struct SettingsView: View {
                 
                 VStack(alignment: .leading) {
                     Text("Exam Length")
-                    Picker("", selection: $userSettings.examLength) {
+                    Picker("Exam Length", selection: $userSettings.examLength) {
                         ForEach(examLengths, id: \.self) { len in
                             Text(len.description).tag(len)
                         }
-                        }.pickerStyle(SegmentedPickerStyle())
+                    }
+                    .pickerStyle(SegmentedPickerStyle())
+                    .labelsHidden()
                 }
                 
             }

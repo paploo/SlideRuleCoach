@@ -18,7 +18,7 @@ protocol ProblemGenerator {
 }
 
 enum ProblemDifficulty: String, CaseIterable {
-    case introductory = "Introductory"
+    case introductory = "Intro"
     case easy = "Easy"
     case normal = "Normal"
     case advanced = "Advanced"

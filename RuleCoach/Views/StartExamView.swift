@@ -37,9 +37,9 @@ struct StartExamView : View {
                             Text(d.rawValue).tag(d)
                         }
                     }
-                    .padding()
-                    .pickerStyle(WheelPickerStyle())
+                    .pickerStyle(SegmentedPickerStyle())
                     .labelsHidden()
+                    
                 }
             }
                 
