@@ -12,17 +12,17 @@ struct InProgressExamView: View {
     
     @EnvironmentObject var userSettings: UserSettings
     
-    var exam: Binding<Exam>
+    @Binding var exam: Exam
     
     var problemHeader: some View {
         var labelText = ""
-        if exam.wrappedValue.isCompleted() {
-            let count = exam.wrappedValue.problemCount()
+        if exam.isCompleted() {
+            let count = exam.problemCount()
             labelText = "Completed \(count) Problems"
         } else {
             //We offset by 1, because the currrent problem is not in the worked problems
-            let currProblemNumber = exam.wrappedValue.problemCount() + 1
-            let maxProblemNumber = exam.maxProblemCount.wrappedValue
+            let currProblemNumber = exam.problemCount() + 1
+            let maxProblemNumber = exam.maxProblemCount
             labelText = "Problem \(currProblemNumber) of \(maxProblemNumber)"
         }
         return HStack {
@@ -55,7 +55,7 @@ struct InProgressExamView: View {
         Form {
             
             Section(header: problemHeader) {
-                ProblemView(exam: exam)
+                ProblemView(exam: $exam)
                     .environmentObject(userSettings)
             }
             
@@ -64,7 +64,7 @@ struct InProgressExamView: View {
             }
             
             Section(header: historyHeader) {
-                ProblemHistoryView(exam: exam)
+                ProblemHistoryView(exam: $exam)
             }
             
         }.listStyle(GroupedListStyle())

@@ -14,7 +14,6 @@ struct ExamList: View {
     
     @State var examRegistry: ExamRegistry
     
-    //@State var currentExamDefinition: ExamDefinition? = nil
     @State var currentExam: Exam? = nil
     
     @State var showSheet: Bool = false
@@ -40,6 +39,7 @@ struct ExamList: View {
         }
     }
     
+    //TODO: Should probably ectract into it a view class.
     private func examRow(_ examDefinition: ExamDefinition) -> some View {
         HStack {
             NavigationLink(

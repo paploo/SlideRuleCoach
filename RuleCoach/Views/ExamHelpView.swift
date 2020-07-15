@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct ExamHelpView : View {
+    
     var examDefinition: ExamDefinition
     
     var infoHeader: some View {

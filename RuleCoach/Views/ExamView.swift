@@ -16,7 +16,7 @@ struct ExamView: View {
     var selectedExamDefinition: ExamDefinition
     
     //This is a binding to the current exam.
-    var currentExam: Binding<Exam?>
+    @Binding var currentExam: Exam?
     
     @State var showSheet: Bool = false
 
@@ -28,11 +28,11 @@ struct ExamView: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            if currentExam.wrappedValue == nil || (currentExam.wrappedValue?.definition != selectedExamDefinition){
-                StartExamView(examDefinition: selectedExamDefinition, currentExam: currentExam)
+            if currentExam == nil || (currentExam?.definition != selectedExamDefinition){
+                StartExamView(examDefinition: selectedExamDefinition, currentExam: $currentExam)
                     .environmentObject(self.userSettings)
             } else {
-                InProgressExamView(exam: Binding(currentExam)!)
+                InProgressExamView(exam: Binding($currentExam)!)
                     .environmentObject(self.userSettings)
             }
         }

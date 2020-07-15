@@ -10,16 +10,16 @@ import SwiftUI
 
 struct ProblemHistoryView : View {
     
-    var exam: Binding<Exam>
+    @Binding var exam: Exam
     
     var workedProblemCount: Int {
-        exam.workedProblems.wrappedValue.count
+        exam.workedProblems.count
     }
     
     var body: some View {
         List {
             
-            if self.exam.workedProblems.wrappedValue.isEmpty {
+            if self.exam.workedProblems.isEmpty {
                 HStack {
                     Image(systemName: "exclamationmark.circle")
                         .foregroundColor(.gray)
@@ -30,7 +30,7 @@ struct ProblemHistoryView : View {
             
             ForEach(0..<workedProblemCount, id: \.self) { index in
                 WorkedProblemView(
-                    workedProblem: self.exam.workedProblems[(self.workedProblemCount-1) - index]
+                    workedProblem: self.$exam.workedProblems[(self.workedProblemCount-1) - index]
                 )
             }
             

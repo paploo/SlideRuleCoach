@@ -11,7 +11,7 @@ import SwiftUI
 struct StartExamView : View {
     
     var examDefinition: ExamDefinition
-    var currentExam: Binding<Exam?>
+    @Binding var currentExam: Exam?
     
     @State var selectedDifficulty: ProblemDifficulty = .normal
     
@@ -42,12 +42,12 @@ struct StartExamView : View {
                 
             Section {
             
-                if(currentExam.wrappedValue != nil) {
+                if(currentExam != nil) {
                     HStack {
                         Image(systemName: "exclamationmark.triangle.fill")
                             .imageScale(.large)
                             .foregroundColor(.yellow)
-                        Text("Test in Progress (\(currentExam.wrappedValue!.definition.name)) will be stopped.")
+                        Text("Test in Progress (\(currentExam!.definition.name)) will be stopped.")
                     }
                 }
                 
@@ -55,7 +55,7 @@ struct StartExamView : View {
                     Spacer()
                     
                     Button(action: {
-                        self.currentExam.wrappedValue = Exam(
+                        self.currentExam = Exam(
                             self.examDefinition,
                             difficulty: self.selectedDifficulty
                         )

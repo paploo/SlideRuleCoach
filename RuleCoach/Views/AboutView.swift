@@ -12,18 +12,6 @@ struct AboutView: View {
     
     let websiteUrl: URL = URL(string: "https://github.com/paploo/SlideRuleCoach")!
     
-//    var image: Image {
-//        guard
-//            let url = Bundle.main.url(forResource: "FullSizeIcon", withExtension: "png"),
-//            let imageSource = CGImageSourceCreateWithURL(url as NSURL, nil),
-//            let cgimage = CGImageSourceCreateImageAtIndex(imageSource, 0, nil),
-//            let image = Image(cgimage, scale: 2, label: Text("RuleCoachIcon"))
-//        else {
-//            fatalError("Couldn't find image")
-//        }
-//        return image
-//    }
-    
     var body: some View {
         VStack {
 
@@ -55,6 +43,7 @@ struct AboutView_Previews: PreviewProvider {
 }
 
 
+//TODO: Put in a common helper!
 extension Image {
     static func fromBundle(_ baseName: String, ext: String = "png") -> Image {
         if

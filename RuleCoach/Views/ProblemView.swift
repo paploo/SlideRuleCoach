@@ -12,7 +12,7 @@ struct ProblemView : View {
     
     @EnvironmentObject var userSettings: UserSettings
     
-    var exam: Binding<Exam>
+    @Binding var exam: Exam
     
     @State var submittedAnswer: Double? = nil
     
@@ -30,7 +30,7 @@ struct ProblemView : View {
     }
     
     func submitAnswer() {
-        exam.wrappedValue.submitAnswer(submittedAnswer: submittedAnswer ?? 0.0)
+        exam.submitAnswer(submittedAnswer: submittedAnswer ?? 0.0)
         submittedAnswer = nil
         notes = nil
     }
@@ -39,14 +39,14 @@ struct ProblemView : View {
         VStack {
             
             Group {
-                if(exam.wrappedValue.isCompleted()) {
-                    ExamCompleteProblemDetail(problem: exam.currentProblem)
+                if(exam.isCompleted()) {
+                    ExamCompleteProblemDetail(problem: $exam.currentProblem)
                 }
-                if(exam.currentProblem.displayType.wrappedValue == .singleLine && !exam.wrappedValue.isCompleted()) {
-                    SimpleProblemDetail(problem: exam.currentProblem)
+                if(exam.currentProblem.displayType == .singleLine && !exam.isCompleted()) {
+                    SimpleProblemDetail(problem: $exam.currentProblem)
                 }
-                if(exam.currentProblem.displayType.wrappedValue == .fractional && !exam.wrappedValue.isCompleted()) {
-                    FractionProblemDetail(problem: exam.currentProblem)
+                if(exam.currentProblem.displayType == .fractional && !exam.isCompleted()) {
+                    FractionProblemDetail(problem: $exam.currentProblem)
                 }
             }
             .frame(height: 100.0)
@@ -60,7 +60,7 @@ struct ProblemView : View {
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .keyboardType(.numbersAndPunctuation)
          
-                if(submittedAnswer == nil || exam.wrappedValue.isCompleted()) {
+                if(submittedAnswer == nil || exam.isCompleted()) {
                     Button(action: {
                         //Do nothing
                     }) {
@@ -91,10 +91,10 @@ struct ProblemView : View {
 
 struct SimpleProblemDetail: View {
     
-    var problem: Binding<Problem>
+    @Binding var problem: Problem
     
     var body: some View {
-        Text(problem.questionText.wrappedValue ?? "Missing Question Text")
+        Text(problem.questionText ?? "Missing Question Text")
         .monospaced()
     }
     
@@ -102,16 +102,16 @@ struct SimpleProblemDetail: View {
 
 struct FractionProblemDetail: View {
     
-    var problem: Binding<Problem>
+    @Binding var problem: Problem
     
     var body: some View {
         VStack {
-            Text(self.problem.questionNumeratorText.wrappedValue ?? "Missing Question Text")
+            Text(self.problem.questionNumeratorText ?? "Missing Question Text")
                 .monospaced()
             Image(systemName: "square.fill")
                 .resizable()
                 .frame(height: 2.0)
-            Text(self.problem.questionDenominatorText.wrappedValue ?? "Missing Question Text")
+            Text(self.problem.questionDenominatorText ?? "Missing Question Text")
                 .monospaced()
         }.fixedSize()
     }
@@ -120,7 +120,7 @@ struct FractionProblemDetail: View {
 
 struct ExamCompleteProblemDetail: View {
     
-    var problem: Binding<Problem>
+    @Binding var problem: Problem
     
     var body: some View {
         HStack {
