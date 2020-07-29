@@ -22,6 +22,10 @@
 		4A59078524B2AADD003FFBB2 /* ExamList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A59078424B2AADD003FFBB2 /* ExamList.swift */; };
 		4A59078724B2CCFC003FFBB2 /* ExamRegistryFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A59078624B2CCFC003FFBB2 /* ExamRegistryFactory.swift */; };
 		4A59078B24B2CE32003FFBB2 /* ExamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A59078A24B2CE32003FFBB2 /* ExamView.swift */; };
+		4AAEEFFD24CE89AC00FA1462 /* ScaleParameterizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AAEEFFC24CE89AC00FA1462 /* ScaleParameterizer.swift */; };
+		4AAEEFFF24D0DD3D00FA1462 /* ProblemrResultStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AAEEFFE24D0DD3D00FA1462 /* ProblemrResultStats.swift */; };
+		4AAEF00224D12BAA00FA1462 /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AAEF00124D12BAA00FA1462 /* ArrayExtensions.swift */; };
+		4AAEF00424D13D3900FA1462 /* Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AAEF00324D13D3900FA1462 /* Random.swift */; };
 		4AFE2D4E24BC056C00AF8187 /* ExamHelpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFE2D4D24BC056C00AF8187 /* ExamHelpView.swift */; };
 		4AFE2D5024BC0CF500AF8187 /* ProblemHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFE2D4F24BC0CF500AF8187 /* ProblemHistoryView.swift */; };
 		4AFE2D5224BC116E00AF8187 /* StartExamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFE2D5124BC116E00AF8187 /* StartExamView.swift */; };
@@ -73,6 +77,10 @@
 		4A59078424B2AADD003FFBB2 /* ExamList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamList.swift; sourceTree = "<group>"; };
 		4A59078624B2CCFC003FFBB2 /* ExamRegistryFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamRegistryFactory.swift; sourceTree = "<group>"; };
 		4A59078A24B2CE32003FFBB2 /* ExamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamView.swift; sourceTree = "<group>"; };
+		4AAEEFFC24CE89AC00FA1462 /* ScaleParameterizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleParameterizer.swift; sourceTree = "<group>"; };
+		4AAEEFFE24D0DD3D00FA1462 /* ProblemrResultStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemrResultStats.swift; sourceTree = "<group>"; };
+		4AAEF00124D12BAA00FA1462 /* ArrayExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtensions.swift; sourceTree = "<group>"; };
+		4AAEF00324D13D3900FA1462 /* Random.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Random.swift; sourceTree = "<group>"; };
 		4AFE2D4D24BC056C00AF8187 /* ExamHelpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamHelpView.swift; sourceTree = "<group>"; };
 		4AFE2D4F24BC0CF500AF8187 /* ProblemHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemHistoryView.swift; sourceTree = "<group>"; };
 		4AFE2D5124BC116E00AF8187 /* StartExamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartExamView.swift; sourceTree = "<group>"; };
@@ -143,6 +151,7 @@
 				4AFE2D5B24BEA3C700AF8187 /* Resources */,
 				4A59078324B2AABE003FFBB2 /* Views */,
 				4A59075124B161BC003FFBB2 /* Preview Content */,
+				4AAEF00024D12B8200FA1462 /* Util */,
 				4A59077924B26895003FFBB2 /* Core */,
 				4A59078024B2A414003FFBB2 /* Exams */,
 			);
@@ -182,6 +191,8 @@
 				4A59077C24B297B5003FFBB2 /* Exam.swift */,
 				4A59077E24B297CB003FFBB2 /* Problem.swift */,
 				4AFE2D5524BD398600AF8187 /* NumberFormatter.swift */,
+				4AAEEFFC24CE89AC00FA1462 /* ScaleParameterizer.swift */,
+				4AAEEFFE24D0DD3D00FA1462 /* ProblemrResultStats.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -209,6 +220,15 @@
 				4AFE2D4F24BC0CF500AF8187 /* ProblemHistoryView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		4AAEF00024D12B8200FA1462 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				4AAEF00124D12BAA00FA1462 /* ArrayExtensions.swift */,
+				4AAEF00324D13D3900FA1462 /* Random.swift */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 		4AFE2D5B24BEA3C700AF8187 /* Resources */ = {
@@ -356,6 +376,7 @@
 				4AFE2D5A24BEA2DD00AF8187 /* AboutView.swift in Sources */,
 				4AFE2D5F24BEB11B00AF8187 /* SettingsView.swift in Sources */,
 				4A59078524B2AADD003FFBB2 /* ExamList.swift in Sources */,
+				4AAEF00224D12BAA00FA1462 /* ArrayExtensions.swift in Sources */,
 				4A59078224B2A43F003FFBB2 /* TestExam.swift in Sources */,
 				4A59074A24B161BB003FFBB2 /* AppDelegate.swift in Sources */,
 				4AFE2D5824BE8D4D00AF8187 /* InProgressExamView.swift in Sources */,
@@ -363,12 +384,15 @@
 				4AFE2D6124BEB55C00AF8187 /* UserSettings.swift in Sources */,
 				4A59077F24B297CB003FFBB2 /* Problem.swift in Sources */,
 				4AFE2D5624BD398600AF8187 /* NumberFormatter.swift in Sources */,
+				4AAEEFFF24D0DD3D00FA1462 /* ProblemrResultStats.swift in Sources */,
 				4AFE2D5224BC116E00AF8187 /* StartExamView.swift in Sources */,
 				4A59078724B2CCFC003FFBB2 /* ExamRegistryFactory.swift in Sources */,
 				4A59077D24B297B5003FFBB2 /* Exam.swift in Sources */,
 				4A59077B24B2775B003FFBB2 /* ExamRegistry.swift in Sources */,
 				4AFE2D5024BC0CF500AF8187 /* ProblemHistoryView.swift in Sources */,
 				4A59074C24B161BB003FFBB2 /* SceneDelegate.swift in Sources */,
+				4AAEF00424D13D3900FA1462 /* Random.swift in Sources */,
+				4AAEEFFD24CE89AC00FA1462 /* ScaleParameterizer.swift in Sources */,
 				4A59074E24B161BB003FFBB2 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

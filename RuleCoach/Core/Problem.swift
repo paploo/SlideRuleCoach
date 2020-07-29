@@ -53,12 +53,11 @@ struct Problem {
     }
 }
 
-protocol ScaleParameterizer {
-    func parameterize(value: Double) -> Double
-    func valuize(u: Double) -> Double
-}
-
-class UnityScaleParameterizer: ScaleParameterizer {
-    func parameterize(value: Double) -> Double { value }
-    func valuize(u: Double) -> Double { u }
+extension ProblemDifficulty {
+    
+    func randomValue() -> Double {
+        //TODO: Depending on the diffculty, return a different number by scaling into various orders of magnitude.
+        return 0;
+    }
+    
 }

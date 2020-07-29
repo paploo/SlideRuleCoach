@@ -10,8 +10,6 @@ import Foundation
 
 extension NumberFormatter {
     
-    //static let notANumberSymbol: String = "N/A"
-    
     static let notANumber: String = "N/A"
     static let bars: String = "--"
     
