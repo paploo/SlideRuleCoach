@@ -34,22 +34,11 @@ class TestExamProblemGenerator: ProblemGenerator {
         self.expectedAnswer = expectedAnswer
     }
     
-    //TODO: Put in a library of these?
-    class DirectScaleParameterizer: ScaleParameterizer {
-        func parameterize(value: Double) -> Double {
-            value
-        }
-        
-        func valuize(u: Double) -> Double {
-            u
-        }
-    }
-    
     func generateProblem(difficulty: ProblemDifficulty) -> Problem {
         .init(
             expectedAnswer: getAndIncrAnswer(),
             questionText: "What is the answer for difficulty \(difficulty)",
-            scaleParameterizer: DirectScaleParameterizer()
+            scaleParameterizer: Log10ScaleParameterizer()
         )
     }
     

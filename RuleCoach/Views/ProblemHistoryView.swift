@@ -41,26 +41,58 @@ struct ProblemHistoryView : View {
 
 struct WorkedProblemView : View {
     
-    var workedProblem: Binding<WorkedProblem>
+    @Binding var workedProblem: WorkedProblem
     
-    func formElem<V: View>(_ label: String, body: () -> V) -> some View {
-        HStack {
-            Text(label).bold()
-            Spacer()
-            body()
-        }
+    func expected() -> String? {
+        NumberFormatter.decimalFormatter(sigFigs: 5).string(from: workedProblem.resultStats().answerStat.expected
+        )
+    }
+    
+    func submitted() -> String? {
+        NumberFormatter.decimalFormatter(sigFigs: 5).string(from: workedProblem.resultStats().answerStat.given
+        )
+    }
+    
+    func error() -> String? {
+        NumberFormatter.percentageFormatter().string(
+            from: workedProblem.resultStats().answerStat.error()
+        )
+    }
+    
+    func delta() -> String? {
+        NumberFormatter.fixnumFormatter(places: 4).string(
+            from: workedProblem.resultStats().parametereizedAnswerStat.delta()
+        )
     }
     
     var body: some View {
+        
         VStack {
-            formElem("Expected") {
-                Text(workedProblem.problem.expectedAnswer.wrappedValue.description)
-                
+            
+            HStack {
+                Text("Submitted").bold()
+                Spacer()
+                Text(submitted() ?? "--")
             }
             
-            formElem("Submitted") {
-                Text(workedProblem.submittedAnswer.wrappedValue.description)
+            HStack {
+                Text("Expected").bold()
+                Spacer()
+                Text(expected() ?? "--")
             }
+            
+            HStack {
+                Text("Error").bold()
+                Spacer()
+                Text(error() ?? "--")
+            }
+            
+            HStack {
+                Text("𝝙𝘶").bold()
+                Spacer()
+                Text(delta() ?? "--")
+            }
+            
         }
     }
     
@@ -71,12 +103,12 @@ struct ProblemHistoryView_Previews: PreviewProvider {
         let newExam = Exam(TestExamFactory.defaultDefinition(), difficulty: .easy)
         
         var exam = newExam //Copy
-        exam.submitAnswer(submittedAnswer: 2e99)
-        exam.submitAnswer(submittedAnswer: 3.14)
+        exam.submitAnswer(submittedAnswer: 11880)
+        exam.submitAnswer(submittedAnswer: 2.131)
         
         let workedProblem = WorkedProblem(
             problem: exam.currentProblem,
-            submittedAnswer: 3.214
+            submittedAnswer: 28.214000000001
         )
         
         return Group {

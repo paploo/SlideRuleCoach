@@ -27,7 +27,7 @@ extension NumberFormatter {
         f.notANumberSymbol = notANumber
         f.nilSymbol = bars
         f.usesSignificantDigits = true
-        f.maximumSignificantDigits = 2
+        f.maximumSignificantDigits = 3
         return f
     }
     
@@ -51,8 +51,9 @@ extension NumberFormatter {
         return f
     }
     
-    //let x: Double? = decimalFormatter().number(from: "133.24")
-    //let s: String? = decimalFormatter().string(from: 133.24)
+    func string(from double: Double) -> String? {
+        string(from: NSNumber(value: double))
+    }
     
 }
 
