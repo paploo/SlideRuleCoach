@@ -65,15 +65,15 @@ class MultiplicationExamProblemGenerator: ProblemGenerator {
     private func value(difficulty: ProblemDifficulty) -> Double {
         switch difficulty {
         case .introductory:
-            return scaleParameterizer.random(in: 0.0 ..< 1.0)
+            return scaleParameterizer.randomScaleValue(inU: 0.0 ..< 1.0)
         case .easy:
-            return scaleParameterizer.random(in: 0.0 ..< 2.0)
+            return scaleParameterizer.randomScaleValue(inU: 0.0 ..< 2.0)
         case .normal:
-            return scaleParameterizer.random(in: -2.0 ..< 2.0)
+            return scaleParameterizer.randomScaleValue(inU: -2.0 ..< 2.0)
         case .advanced:
-            return scaleParameterizer.random(in: -3.0 ..< 3.0)
+            return scaleParameterizer.randomScaleValue(inU: -3.0 ..< 3.0)
         case .master:
-            return scaleParameterizer.random(in: -6.0 ..< 6.0)
+            return scaleParameterizer.randomScaleValue(inU: -6.0 ..< 6.0)
         }
     }
 
