@@ -60,7 +60,7 @@ struct InProgressExamView: View {
             }
             
             Section(header: statsHeader) {
-               Text("TODO")
+                ProblemStatsView(exam: $exam)
             }
             
             Section(header: historyHeader) {

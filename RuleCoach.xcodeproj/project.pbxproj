@@ -26,6 +26,7 @@
 		4AAEEFFF24D0DD3D00FA1462 /* ProblemrResultStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AAEEFFE24D0DD3D00FA1462 /* ProblemrResultStats.swift */; };
 		4AAEF00224D12BAA00FA1462 /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AAEF00124D12BAA00FA1462 /* ArrayExtensions.swift */; };
 		4AAEF00424D13D3900FA1462 /* Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AAEF00324D13D3900FA1462 /* Random.swift */; };
+		4AD91BAB24ECDA14005F1898 /* ProblemStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD91BAA24ECDA14005F1898 /* ProblemStatsView.swift */; };
 		4AFE2D4E24BC056C00AF8187 /* ExamHelpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFE2D4D24BC056C00AF8187 /* ExamHelpView.swift */; };
 		4AFE2D5024BC0CF500AF8187 /* ProblemHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFE2D4F24BC0CF500AF8187 /* ProblemHistoryView.swift */; };
 		4AFE2D5224BC116E00AF8187 /* StartExamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFE2D5124BC116E00AF8187 /* StartExamView.swift */; };
@@ -81,6 +82,7 @@
 		4AAEEFFE24D0DD3D00FA1462 /* ProblemrResultStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemrResultStats.swift; sourceTree = "<group>"; };
 		4AAEF00124D12BAA00FA1462 /* ArrayExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtensions.swift; sourceTree = "<group>"; };
 		4AAEF00324D13D3900FA1462 /* Random.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Random.swift; sourceTree = "<group>"; };
+		4AD91BAA24ECDA14005F1898 /* ProblemStatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemStatsView.swift; sourceTree = "<group>"; };
 		4AFE2D4D24BC056C00AF8187 /* ExamHelpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamHelpView.swift; sourceTree = "<group>"; };
 		4AFE2D4F24BC0CF500AF8187 /* ProblemHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemHistoryView.swift; sourceTree = "<group>"; };
 		4AFE2D5124BC116E00AF8187 /* StartExamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartExamView.swift; sourceTree = "<group>"; };
@@ -217,6 +219,7 @@
 				4AFE2D5124BC116E00AF8187 /* StartExamView.swift */,
 				4AFE2D5724BE8D4D00AF8187 /* InProgressExamView.swift */,
 				4AFE2D5324BC20BE00AF8187 /* ProblemView.swift */,
+				4AD91BAA24ECDA14005F1898 /* ProblemStatsView.swift */,
 				4AFE2D4F24BC0CF500AF8187 /* ProblemHistoryView.swift */,
 			);
 			path = Views;
@@ -391,6 +394,7 @@
 				4A59077B24B2775B003FFBB2 /* ExamRegistry.swift in Sources */,
 				4AFE2D5024BC0CF500AF8187 /* ProblemHistoryView.swift in Sources */,
 				4A59074C24B161BB003FFBB2 /* SceneDelegate.swift in Sources */,
+				4AD91BAB24ECDA14005F1898 /* ProblemStatsView.swift in Sources */,
 				4AAEF00424D13D3900FA1462 /* Random.swift in Sources */,
 				4AAEEFFD24CE89AC00FA1462 /* ScaleParameterizer.swift in Sources */,
 				4A59074E24B161BB003FFBB2 /* ContentView.swift in Sources */,

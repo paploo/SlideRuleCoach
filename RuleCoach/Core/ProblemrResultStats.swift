@@ -52,11 +52,11 @@ extension WorkedProblem {
 extension Exam {
     
     func averageAnswerError() -> Double {
-        return workedProblems.map { $0.resultStats().answerStat.error() }.average()
+        return workedProblems.map { $0.resultStats().answerStat.error() }.map { abs($0) }.average()
     }
     
     func averageParameterizedAnswerDelta() -> Double {
-        return workedProblems.map { $0.resultStats().parametereizedAnswerStat.delta() }.average()
+        return workedProblems.map { $0.resultStats().parametereizedAnswerStat.delta() }.map { abs($0) }.average()
     }
     
 }
