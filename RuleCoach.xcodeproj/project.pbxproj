@@ -23,7 +23,7 @@
 		4A59078724B2CCFC003FFBB2 /* ExamRegistryFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A59078624B2CCFC003FFBB2 /* ExamRegistryFactory.swift */; };
 		4A59078B24B2CE32003FFBB2 /* ExamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A59078A24B2CE32003FFBB2 /* ExamView.swift */; };
 		4AAEEFFD24CE89AC00FA1462 /* ScaleParameterizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AAEEFFC24CE89AC00FA1462 /* ScaleParameterizer.swift */; };
-		4AAEEFFF24D0DD3D00FA1462 /* ProblemrResultStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AAEEFFE24D0DD3D00FA1462 /* ProblemrResultStats.swift */; };
+		4AAEEFFF24D0DD3D00FA1462 /* ProblemResultStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AAEEFFE24D0DD3D00FA1462 /* ProblemResultStats.swift */; };
 		4AAEF00224D12BAA00FA1462 /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AAEF00124D12BAA00FA1462 /* ArrayExtensions.swift */; };
 		4AAEF00424D13D3900FA1462 /* Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AAEF00324D13D3900FA1462 /* Random.swift */; };
 		4AD91BAB24ECDA14005F1898 /* ProblemStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD91BAA24ECDA14005F1898 /* ProblemStatsView.swift */; };
@@ -79,7 +79,7 @@
 		4A59078624B2CCFC003FFBB2 /* ExamRegistryFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamRegistryFactory.swift; sourceTree = "<group>"; };
 		4A59078A24B2CE32003FFBB2 /* ExamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamView.swift; sourceTree = "<group>"; };
 		4AAEEFFC24CE89AC00FA1462 /* ScaleParameterizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleParameterizer.swift; sourceTree = "<group>"; };
-		4AAEEFFE24D0DD3D00FA1462 /* ProblemrResultStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemrResultStats.swift; sourceTree = "<group>"; };
+		4AAEEFFE24D0DD3D00FA1462 /* ProblemResultStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemResultStats.swift; sourceTree = "<group>"; };
 		4AAEF00124D12BAA00FA1462 /* ArrayExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtensions.swift; sourceTree = "<group>"; };
 		4AAEF00324D13D3900FA1462 /* Random.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Random.swift; sourceTree = "<group>"; };
 		4AD91BAA24ECDA14005F1898 /* ProblemStatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemStatsView.swift; sourceTree = "<group>"; };
@@ -194,7 +194,7 @@
 				4A59077E24B297CB003FFBB2 /* Problem.swift */,
 				4AFE2D5524BD398600AF8187 /* NumberFormatter.swift */,
 				4AAEEFFC24CE89AC00FA1462 /* ScaleParameterizer.swift */,
-				4AAEEFFE24D0DD3D00FA1462 /* ProblemrResultStats.swift */,
+				4AAEEFFE24D0DD3D00FA1462 /* ProblemResultStats.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -387,7 +387,7 @@
 				4AFE2D6124BEB55C00AF8187 /* UserSettings.swift in Sources */,
 				4A59077F24B297CB003FFBB2 /* Problem.swift in Sources */,
 				4AFE2D5624BD398600AF8187 /* NumberFormatter.swift in Sources */,
-				4AAEEFFF24D0DD3D00FA1462 /* ProblemrResultStats.swift in Sources */,
+				4AAEEFFF24D0DD3D00FA1462 /* ProblemResultStats.swift in Sources */,
 				4AFE2D5224BC116E00AF8187 /* StartExamView.swift in Sources */,
 				4A59078724B2CCFC003FFBB2 /* ExamRegistryFactory.swift in Sources */,
 				4A59077D24B297B5003FFBB2 /* Exam.swift in Sources */,
