@@ -87,7 +87,7 @@ class LambdaFormatter<T: AnyObject>: Formatter {
     func object(from string: String?) -> T? {
         if let s = string {
             var obj: AnyObject? = nil
-            getObjectValue(&obj, for: s, errorDescription: nil)
+            let _ = getObjectValue(&obj, for: s, errorDescription: nil)
             return obj as? T
         } else {
             return nil
