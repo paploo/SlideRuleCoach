@@ -78,9 +78,3 @@ class MultiplicationExamProblemGenerator: ProblemGenerator {
     }
 
 }
-
-extension ScaleParameterizer {
-    func random(in range: Range<Double>) -> Double {
-        valuize(u: Double.random(in: range))
-    }
-}

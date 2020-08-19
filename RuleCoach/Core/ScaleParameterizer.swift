@@ -13,6 +13,12 @@ protocol ScaleParameterizer {
     func valuize(u: Double) -> Double
 }
 
+extension ScaleParameterizer {
+    func random(in range: Range<Double>) -> Double {
+        valuize(u: Double.random(in: range))
+    }
+}
+
 class UnityScaleParameterizer: ScaleParameterizer {
     func parameterize(value: Double) -> Double { value }
     func valuize(u: Double) -> Double { u }
