@@ -47,7 +47,7 @@ struct ExamView: View {
 struct ExamView_Previews: PreviewProvider {
     
     static var previews: some View {
-        let examDef = TestExamFactory.definition(name: "Test Exam", expectedAnswer: 10.0)
+        let examDef = ExamDefinition.testExam(name: "Test Exam", expectedAnswer: 10.0)
         let exam = Exam(
             examDef,
             difficulty: .easy
@@ -70,7 +70,7 @@ struct ExamView_Previews: PreviewProvider {
             
             NavigationView {
                 ExamView(
-                    selectedExamDefinition: TestExamFactory.definition(name: "Test Exam 2", expectedAnswer: 100.0),
+                    selectedExamDefinition: ExamDefinition.testExam(name: "Test Exam 2", expectedAnswer: 100.0),
                     currentExam: .constant(exam))
             }
         }.environmentObject(UserSettings())

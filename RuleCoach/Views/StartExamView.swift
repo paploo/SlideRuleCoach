@@ -82,15 +82,15 @@ struct StartExamView_Previews: PreviewProvider {
         Group {
         
             StartExamView(
-                examDefinition: TestExamFactory.defaultDefinition(),
+                examDefinition: ExamDefinition.testExam(),
                 currentExam: .constant(nil)
             )
             
             StartExamView(
-                examDefinition: TestExamFactory.defaultDefinition(),
+                examDefinition: ExamDefinition.testExam(),
                 currentExam: .constant(
                     Exam(
-                        TestExamFactory.defaultDefinition(),
+                        ExamDefinition.testExam(),
                         difficulty: .easy
                     )
                 )

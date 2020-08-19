@@ -74,7 +74,7 @@ struct InProgressExamView: View {
 
 struct InProgressExamView_Previews: PreviewProvider {
     static var previews: some View {
-        let exam = Exam(TestExamFactory.defaultDefinition(), difficulty: .normal)
+        let exam = Exam(ExamDefinition.testExam(), difficulty: .normal)
         
         return InProgressExamView(exam: .constant(exam))
             .environmentObject(UserSettings())

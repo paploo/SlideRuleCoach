@@ -21,16 +21,6 @@ extension NumberFormatter {
         return f
     }
     
-    static func percentageFormatter() -> NumberFormatter {
-        let f = NumberFormatter()
-        f.numberStyle = .percent
-        f.notANumberSymbol = notANumber
-        f.nilSymbol = bars
-        f.usesSignificantDigits = true
-        f.maximumSignificantDigits = 3
-        return f
-    }
-    
     static func decimalFormatter(sigFigs: Int) -> NumberFormatter {
         let f = NumberFormatter()
         f.numberStyle = .decimal
@@ -38,6 +28,16 @@ extension NumberFormatter {
         f.nilSymbol = bars
         f.usesSignificantDigits = true
         f.maximumSignificantDigits = sigFigs
+        return f
+    }
+    
+    static func percentageFormatter() -> NumberFormatter {
+        let f = NumberFormatter()
+        f.numberStyle = .percent
+        f.notANumberSymbol = notANumber
+        f.nilSymbol = bars
+        f.usesSignificantDigits = true
+        f.maximumSignificantDigits = 3
         return f
     }
     
@@ -51,8 +51,61 @@ extension NumberFormatter {
         return f
     }
     
+    //TODO: Figure out why this doesn't work with TextField elements.
+    static func generalFormatter(sigFigs: Int) -> NumberFormatter {
+        return LambdaNumberFormatter(
+            encoder: {n in String.init(format: "%0.\(sigFigs)g", n.doubleValue)},
+            decoder: {s in
+                if let d = Double(s) {
+                    print(s)
+                    print(d)
+                    return NSNumber(value: d)
+                } else {
+                    return nil
+                }
+            }
+        )
+    }
+    
     func string(from double: Double) -> String? {
         string(from: NSNumber(value: double))
+    }
+    
+}
+
+class LambdaNumberFormatter: NumberFormatter {
+
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
+    
+    override init() {
+        super.init()
+    }
+    
+    init(encoder: @escaping (NSNumber) -> String?, decoder: @escaping (String) -> NSNumber?) {
+        super.init()
+        self.encoder = encoder
+        self.decoder = decoder
+    }
+    
+    var encoder: ((NSNumber) -> String?)? = nil
+    var decoder: ((String) -> NSNumber?)? = nil
+    
+    override func number(from: String) -> NSNumber? {
+        if let dec = decoder {
+            return dec(from)
+        } else {
+            return nil
+        }
+    }
+    
+    override func string(from: NSNumber) -> String? {
+        if let enc = encoder {
+            return enc(from)
+        } else {
+            return nil
+        }
     }
     
 }

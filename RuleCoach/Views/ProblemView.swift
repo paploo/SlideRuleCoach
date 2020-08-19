@@ -141,7 +141,7 @@ extension Text {
 
 struct ProblemView_Previews: PreviewProvider {
     static var previews: some View {
-        let exam = Exam(TestExamFactory.defaultDefinition(), difficulty: .normal)
+        let exam = Exam(ExamDefinition.testExam(), difficulty: .normal)
         
         var completedExam = exam
         completedExam.maxProblemCount = 1

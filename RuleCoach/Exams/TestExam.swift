@@ -8,9 +8,9 @@
 
 import Foundation
 
-class TestExamFactory {
+extension ExamDefinition {
     
-    static func definition(name: String, expectedAnswer: Double) -> ExamDefinition {
+    static func testExam(name: String = "Default Definition", expectedAnswer: Double = 1.0) -> ExamDefinition {
         .init(
             id: "TEST-\(expectedAnswer.description)",
             name: name,
@@ -18,10 +18,6 @@ class TestExamFactory {
             infoText: "Problems in this test require doing nothing and everything, because this is just a test.",
             problemGenerator: TestExamProblemGenerator(expectedAnswer: expectedAnswer)
         )
-    }
-    
-    static func defaultDefinition() -> ExamDefinition {
-        definition(name: "Default Definition", expectedAnswer: 1.0)
     }
     
 }

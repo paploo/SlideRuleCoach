@@ -11,6 +11,7 @@ import Foundation
 extension ExamRegistry {
     
     static let testRegistry = ExamRegistry(examGroups: [
+        ExamGroup.basicArithmeticGroup,
         ExamGroup.testGroup
     ])
     
@@ -18,12 +19,20 @@ extension ExamRegistry {
 
 extension ExamGroup {
     
+    static let basicArithmeticGroup = ExamGroup(
+        id: "BASIC_ARITHMETIC",
+        name: "Basic Arithmetic",
+        examDefinitions: [
+            ExamDefinition.multiplicationExam()
+        ]
+    )
+    
     static let testGroup = ExamGroup(
         id: "TEST",
         name: "Test Group",
         examDefinitions: [
-            TestExamFactory.definition(name: "Alpha", expectedAnswer: 10.0),
-            TestExamFactory.definition(name: "Beta", expectedAnswer: 100.0)
+            ExamDefinition.testExam(name: "Alpha", expectedAnswer: 10.0),
+            ExamDefinition.testExam(name: "Beta", expectedAnswer: 100.0)
         ]
     )
     

@@ -52,12 +52,3 @@ struct Problem {
         self.scaleParameterizer = scaleParameterizer
     }
 }
-
-extension ProblemDifficulty {
-    
-    func randomValue() -> Double {
-        //TODO: Depending on the diffculty, return a different number by scaling into various orders of magnitude.
-        return 0;
-    }
-    
-}

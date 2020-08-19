@@ -27,6 +27,7 @@
 		4AAEF00224D12BAA00FA1462 /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AAEF00124D12BAA00FA1462 /* ArrayExtensions.swift */; };
 		4AAEF00424D13D3900FA1462 /* Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AAEF00324D13D3900FA1462 /* Random.swift */; };
 		4AD91BAB24ECDA14005F1898 /* ProblemStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD91BAA24ECDA14005F1898 /* ProblemStatsView.swift */; };
+		4AD91BAD24ECE504005F1898 /* MultiplicationExam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD91BAC24ECE504005F1898 /* MultiplicationExam.swift */; };
 		4AFE2D4E24BC056C00AF8187 /* ExamHelpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFE2D4D24BC056C00AF8187 /* ExamHelpView.swift */; };
 		4AFE2D5024BC0CF500AF8187 /* ProblemHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFE2D4F24BC0CF500AF8187 /* ProblemHistoryView.swift */; };
 		4AFE2D5224BC116E00AF8187 /* StartExamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFE2D5124BC116E00AF8187 /* StartExamView.swift */; };
@@ -83,6 +84,7 @@
 		4AAEF00124D12BAA00FA1462 /* ArrayExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtensions.swift; sourceTree = "<group>"; };
 		4AAEF00324D13D3900FA1462 /* Random.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Random.swift; sourceTree = "<group>"; };
 		4AD91BAA24ECDA14005F1898 /* ProblemStatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemStatsView.swift; sourceTree = "<group>"; };
+		4AD91BAC24ECE504005F1898 /* MultiplicationExam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiplicationExam.swift; sourceTree = "<group>"; };
 		4AFE2D4D24BC056C00AF8187 /* ExamHelpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamHelpView.swift; sourceTree = "<group>"; };
 		4AFE2D4F24BC0CF500AF8187 /* ProblemHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemHistoryView.swift; sourceTree = "<group>"; };
 		4AFE2D5124BC116E00AF8187 /* StartExamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartExamView.swift; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 			children = (
 				4A59078624B2CCFC003FFBB2 /* ExamRegistryFactory.swift */,
 				4A59078124B2A43F003FFBB2 /* TestExam.swift */,
+				4AD91BAC24ECE504005F1898 /* MultiplicationExam.swift */,
 			);
 			path = Exams;
 			sourceTree = "<group>";
@@ -380,6 +383,7 @@
 				4AFE2D5F24BEB11B00AF8187 /* SettingsView.swift in Sources */,
 				4A59078524B2AADD003FFBB2 /* ExamList.swift in Sources */,
 				4AAEF00224D12BAA00FA1462 /* ArrayExtensions.swift in Sources */,
+				4AD91BAD24ECE504005F1898 /* MultiplicationExam.swift in Sources */,
 				4A59078224B2A43F003FFBB2 /* TestExam.swift in Sources */,
 				4A59074A24B161BB003FFBB2 /* AppDelegate.swift in Sources */,
 				4AFE2D5824BE8D4D00AF8187 /* InProgressExamView.swift in Sources */,

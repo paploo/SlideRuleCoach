@@ -45,7 +45,7 @@ struct ProblemStatsView: View {
 
 struct ProblemStatsView_Previews: PreviewProvider {
     static var previews: some View {
-        let newExam = Exam(TestExamFactory.defaultDefinition(), difficulty: .easy)
+        let newExam = Exam(ExamDefinition.testExam(), difficulty: .easy)
         
         var exam = newExam //Copy
         exam.submitAnswer(submittedAnswer: 11880)

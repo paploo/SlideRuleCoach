@@ -77,7 +77,7 @@ struct ExamHelpView : View {
 
 struct ExamHelpView_Previews: PreviewProvider {
     static var previews: some View {
-        ExamHelpView(examDefinition: TestExamFactory.defaultDefinition())
+        ExamHelpView(examDefinition: ExamDefinition.testExam())
     }
 }
 

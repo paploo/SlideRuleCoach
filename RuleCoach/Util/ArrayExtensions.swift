@@ -24,6 +24,18 @@ extension Array where Element: BinaryFloatingPoint {
     }
 }
 
+extension Array where Element: BinaryInteger {
+    func product() -> Element {
+        return reduce(1, *)
+    }
+}
+
+extension Array where Element: BinaryFloatingPoint {
+    func product() -> Element {
+        return reduce(1.0, *)
+    }
+}
+
 extension Array where Element: Numeric {
     func sum() -> Element {
         return reduce(.zero, +)
