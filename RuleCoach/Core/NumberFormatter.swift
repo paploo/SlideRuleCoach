@@ -54,7 +54,10 @@ extension NumberFormatter {
     //TODO: Figure out why this doesn't work with TextField elements.
     static func generalFormatter(sigFigs: Int) -> NumberFormatter {
         return LambdaNumberFormatter(
-            encoder: {n in String.init(format: "%0.\(sigFigs)g", n.doubleValue)},
+            encoder: {n in
+                //TODO: depending on the size, we may want to format differently.
+                String.init(format: "%0.\(sigFigs)g", n.doubleValue)
+            },
             decoder: {s in
                 if let d = Double(s) {
                     print(s)

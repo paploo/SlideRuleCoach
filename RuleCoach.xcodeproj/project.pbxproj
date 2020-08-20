@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A349F5D24EE41350016A026 /* ProblemGeneratorTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A349F5C24EE41350016A026 /* ProblemGeneratorTools.swift */; };
 		4A59074A24B161BB003FFBB2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A59074924B161BB003FFBB2 /* AppDelegate.swift */; };
 		4A59074C24B161BB003FFBB2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A59074B24B161BB003FFBB2 /* SceneDelegate.swift */; };
 		4A59074E24B161BB003FFBB2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A59074D24B161BB003FFBB2 /* ContentView.swift */; };
@@ -58,6 +59,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4A349F5C24EE41350016A026 /* ProblemGeneratorTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemGeneratorTools.swift; sourceTree = "<group>"; };
 		4A59074624B161BB003FFBB2 /* RuleCoach.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RuleCoach.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A59074924B161BB003FFBB2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4A59074B24B161BB003FFBB2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 				4A59078624B2CCFC003FFBB2 /* ExamRegistryFactory.swift */,
 				4A59078124B2A43F003FFBB2 /* TestExam.swift */,
 				4AD91BAC24ECE504005F1898 /* MultiplicationExam.swift */,
+				4A349F5C24EE41350016A026 /* ProblemGeneratorTools.swift */,
 			);
 			path = Exams;
 			sourceTree = "<group>";
@@ -380,6 +383,7 @@
 				4AFE2D5424BC20BE00AF8187 /* ProblemView.swift in Sources */,
 				4AFE2D4E24BC056C00AF8187 /* ExamHelpView.swift in Sources */,
 				4AFE2D5A24BEA2DD00AF8187 /* AboutView.swift in Sources */,
+				4A349F5D24EE41350016A026 /* ProblemGeneratorTools.swift in Sources */,
 				4AFE2D5F24BEB11B00AF8187 /* SettingsView.swift in Sources */,
 				4A59078524B2AADD003FFBB2 /* ExamList.swift in Sources */,
 				4AAEF00224D12BAA00FA1462 /* ArrayExtensions.swift in Sources */,

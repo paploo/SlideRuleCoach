@@ -36,7 +36,7 @@ class MultiplicationExamProblemGenerator: ProblemGenerator {
     }
     
     private func questionText(values: [Double]) -> String {
-        values.map { NumberFormatter.generalFormatter(sigFigs: 4).string(from: $0)! }.joined(separator: " × ")
+        values.joinWithFormatter(separator: MathSymbols.times.padded(with: " "))
     }
     
     private func expectedAnswer(values: [Double]) -> Double {
