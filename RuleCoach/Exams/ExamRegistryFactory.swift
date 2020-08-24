@@ -12,7 +12,9 @@ extension ExamRegistry {
     
     static let testRegistry = ExamRegistry(examGroups: [
         ExamGroup.basicArithmeticGroup,
-        ExamGroup.testGroup
+        ExamGroup.squaresCubesAndRoots,
+        ExamGroup.exponentsAndLogs,
+        ExamGroup.trigonometry
     ])
     
 }
@@ -24,7 +26,43 @@ extension ExamGroup {
         name: "Basic Arithmetic",
         examDefinitions: [
             ExamDefinition.multiplicationExam(),
-            ExamDefinition.inversionExam()
+            ExamDefinition.inversionExam(),
+            ExamDefinition.compoundFractionsExam()
+        ]
+    )
+    
+    static let squaresCubesAndRoots = ExamGroup(
+        id: "SQUARES_CUBES_AND_ROOTS",
+        name: "Squares, Cubes, and Roots",
+        examDefinitions: [
+            //Squares
+            //Square Roots
+            //Cubes
+            //Cube Roots
+        ]
+    )
+    
+    static let exponentsAndLogs = ExamGroup(
+        id: "EXPONENTS_AND_LOGS",
+        name: "Exponents & Logs",
+        examDefinitions: [
+            // Common Exponent (10^x)
+            // Common Logs (Log10(x))
+            // Natural Log [[new]]
+            // Exponents (of arbitrary base)
+            // Logarithms (of arbitrary base)
+        ]
+    )
+    
+    static let trigonometry = ExamGroup(
+        id: "TRIG",
+        name: "Trigonometric Functions",
+        examDefinitions: [
+            // Angle Conversion (to/from rads)
+            // Arc Minute Conversion (to/from arc minutes)
+            // Basic Trig Functions (sin/cos/tan)
+            // Basic Inverse Trig Functions (arcsin/arcos/arctan)
+            // Inverted Trug Functions (sec/csc/cot) [[new]]
         ]
     )
     
