@@ -23,7 +23,8 @@ extension ExamGroup {
         id: "BASIC_ARITHMETIC",
         name: "Basic Arithmetic",
         examDefinitions: [
-            ExamDefinition.multiplicationExam()
+            ExamDefinition.multiplicationExam(),
+            ExamDefinition.inversionExam()
         ]
     )
     

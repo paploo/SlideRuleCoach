@@ -41,7 +41,15 @@ extension Array where Element: BinaryFloatingPoint {
      * Simplify building sets of numbers joined by a separator.
      */
     func joinWithFormatter(separator: String, numberFormatter: NumberFormatter = NumberFormatter.questionTextFormatter) -> String {
-        map { numberFormatter.string(from: Double($0)) ?? "--" }.joined(separator: separator)
+        map { Double($0).formatted(with: numberFormatter) }.joined(separator: separator)
+    }
+    
+}
+
+extension Double {
+    
+    func formatted(with numberFormatter: NumberFormatter = NumberFormatter.questionTextFormatter) -> String {
+        numberFormatter.string(from: self) ?? "--"
     }
     
 }
