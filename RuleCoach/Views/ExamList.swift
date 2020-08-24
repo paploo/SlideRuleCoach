@@ -54,7 +54,10 @@ struct ExamList: View {
                         .font(.caption)
                         .foregroundColor(.gray)
                 }
+                .layoutPriority(1.0) //Makes sure the VStack is rendered to its full width before drawing the stopwatch. TODO: Maybe should really be using a geometry object?
+                
                 Spacer()
+                
                 if(examDefinition == currentExam?.definition) {
                     Image(systemName: "stopwatch")
                         .foregroundColor(.blue)
@@ -113,6 +116,12 @@ struct MainSheetView: View {
 
 struct ExamList_Previews: PreviewProvider {
     static var previews: some View {
-        ExamList(examRegistry: ExamRegistry.testRegistry)
+        Group {
+            ExamList(examRegistry: ExamRegistry.testRegistry)
+                .environmentObject(UserSettings())
+            
+            ExamList(examRegistry: ExamRegistry.examRegistry)
+                .environmentObject(UserSettings())
+        }
     }
 }

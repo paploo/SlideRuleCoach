@@ -27,27 +27,19 @@ class MultiplicationExamProblemGenerator: ProblemGenerator {
     private let scaleParameterizer: ScaleParameterizer = Log10ScaleParameterizer()
 
     func generateProblem(difficulty: ProblemDifficulty) -> Problem {
-        let values = generateValues(difficulty: difficulty)
+        let values = generateTermValues(difficulty: difficulty)
         return Problem(
-            expectedAnswer: expectedAnswer(values: values),
-            questionText: questionText(values: values),
+            expectedAnswer: values.product(),
+            questionText: values.joinWithFormatter(separator: MathSymbols.times.padded(with: " ")),
             scaleParameterizer: scaleParameterizer
         )
     }
     
-    private func questionText(values: [Double]) -> String {
-        values.joinWithFormatter(separator: MathSymbols.times.padded(with: " "))
+    private func generateTermValues(difficulty: ProblemDifficulty) -> [Double] {
+        (0 ..< termCount(difficulty: difficulty)).map { _ in value(difficulty: difficulty) }
     }
     
-    private func expectedAnswer(values: [Double]) -> Double {
-        values.product()
-    }
-    
-    private func generateValues(difficulty: ProblemDifficulty) -> [Double] {
-        (0 ..< length(difficulty: difficulty)).map { _ in value(difficulty: difficulty) }
-    }
-    
-    private func length(difficulty: ProblemDifficulty) -> Int {
+    private func termCount(difficulty: ProblemDifficulty) -> Int {
         switch difficulty {
         case .introductory:
             return 2

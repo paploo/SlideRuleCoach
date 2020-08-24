@@ -33,15 +33,71 @@ class CompoundFractionsExamGenearator: ProblemGenerator {
     private let multiplicationExamProblemGenerator: MultiplicationExamProblemGenerator = MultiplicationExamProblemGenerator()
     
     func generateProblem(difficulty: ProblemDifficulty) -> Problem {
-        let numeratorProb = multiplicationExamProblemGenerator.generateProblem(difficulty: difficulty)
-        let denominatorProb = multiplicationExamProblemGenerator.generateProblem(difficulty: difficulty)
+        let (numCount, denomCount) = termCount(difficulty: difficulty)
+        let numeratorTerms = generateTermValues(termCount: numCount, difficulty: difficulty)
+        let denominatorTerms = generateTermValues(termCount: denomCount, difficulty: difficulty)
         
         return Problem(
-            expectedAnswer: numeratorProb.expectedAnswer / denominatorProb.expectedAnswer,
-            questionNumeratorText: numeratorProb.questionText ?? "--",
-            questionDenominatorText: denominatorProb.questionText ?? "--",
+            expectedAnswer: numeratorTerms.product() / denominatorTerms.product(),
+            questionNumeratorText: numeratorTerms.joinWithFormatter(separator: MathSymbols.times.padded(with: " ")),
+            questionDenominatorText: denominatorTerms.joinWithFormatter(separator: MathSymbols.times.padded(with: " ")),
             scaleParameterizer: scaleParameterizer
         )
+        
+    }
+    
+    private func generateTermValues(termCount: Int, difficulty: ProblemDifficulty) -> [Double] {
+        (0 ..< termCount).map { _ in value(difficulty: difficulty) }
+    }
+    
+    private func termCount(difficulty: ProblemDifficulty) -> (Int, Int) {
+        switch difficulty {
+        case .introductory:
+            return (2,2)
+        case .easy:
+            return safeTermCount(minTerms: 2, maxTerms: 4)
+        case .normal:
+            return safeTermCount(minTerms: 2, maxTerms: 4)
+        case .advanced:
+            return (Int.random(in: 2 ... 4), Int.random(in: 2 ... 4))
+        case .master:
+            return (Int.random(in: 2 ... 4), Int.random(in: 2 ... 4))
+        }
+    }
+    
+    /**
+     * Generate numerator and denominator terms in the range and separated by no more than the max delta.
+     *
+     * The classic procedure requires the numerator and denominator term counts
+     * to be within one of eachother. But we also want to not have the min
+     * or max for either be too big. So we compensate.
+     */
+    private func safeTermCount(minTerms: Int, maxTerms: Int) -> (Int, Int) {
+        let a = Int.random(in: minTerms ... maxTerms)
+        
+        switch a {
+        case minTerms:
+            return (a, Int.random(in: a ... a+1))
+        case maxTerms:
+            return (a, Int.random(in: a-1 ... a))
+        default:
+            return (a, Int.random(in: a-1 ... a+1))
+        }
+    }
+    
+    private func value(difficulty: ProblemDifficulty) -> Double {
+        switch difficulty {
+        case .introductory:
+            return scaleParameterizer.randomScaleValue(inU: 0.0 ..< 1.0)
+        case .easy:
+            return scaleParameterizer.randomScaleValue(inU: 0.0 ..< 1.0)
+        case .normal:
+            return scaleParameterizer.randomScaleValue(inU: -2.0 ..< 2.0)
+        case .advanced:
+            return scaleParameterizer.randomScaleValue(inU: -3.0 ..< 3.0)
+        case .master:
+            return scaleParameterizer.randomScaleValue(inU: -6.0 ..< 6.0)
+        }
     }
     
 }

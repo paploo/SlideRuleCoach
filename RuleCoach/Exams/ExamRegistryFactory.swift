@@ -10,11 +10,15 @@ import Foundation
 
 extension ExamRegistry {
     
-    static let testRegistry = ExamRegistry(examGroups: [
+    static let examRegistry = ExamRegistry(examGroups: [
         ExamGroup.basicArithmeticGroup,
         ExamGroup.squaresCubesAndRoots,
         ExamGroup.exponentsAndLogs,
         ExamGroup.trigonometry
+    ])
+    
+    static let testRegistry = ExamRegistry(examGroups: [
+        ExamGroup.testGroup
     ])
     
 }

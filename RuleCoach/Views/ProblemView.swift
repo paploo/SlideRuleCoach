@@ -38,18 +38,22 @@ struct ProblemView : View {
     var body: some View {
         VStack {
             
-            Group {
-                if(exam.isCompleted()) {
-                    ExamCompleteProblemDetail(problem: $exam.currentProblem)
+            GeometryReader { geo in
+                ScrollView(.horizontal, showsIndicators: false) {
+                    Group {
+                        if(self.exam.isCompleted()) {
+                            ExamCompleteProblemDetail(problem: self.$exam.currentProblem)
+                        }
+                        if(self.exam.currentProblem.displayType == .singleLine &&         !self.exam.isCompleted()) {
+                            SimpleProblemDetail(problem: self.$exam.currentProblem)
+                        }
+                        if(self.exam.currentProblem.displayType == .fractional &&         !self.exam.isCompleted()) {
+                            FractionProblemDetail(problem: self.$exam.currentProblem)
+                        }
+                    }
+                    .frame(minWidth: geo.size.width, alignment: .center)
                 }
-                if(exam.currentProblem.displayType == .singleLine && !exam.isCompleted()) {
-                    SimpleProblemDetail(problem: $exam.currentProblem)
-                }
-                if(exam.currentProblem.displayType == .fractional && !exam.isCompleted()) {
-                    FractionProblemDetail(problem: $exam.currentProblem)
-                }
-            }
-            .frame(height: 100.0)
+            }.frame(height: 100.0)
             
             HStack {
                 TextField(
