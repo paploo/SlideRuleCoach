@@ -39,7 +39,7 @@ extension ExamGroup {
         id: "SQUARES_CUBES_AND_ROOTS",
         name: "Squares, Cubes, and Roots",
         examDefinitions: [
-            //Squares
+            ExamDefinition.squaresExam()
             //Square Roots
             //Cubes
             //Cube Roots

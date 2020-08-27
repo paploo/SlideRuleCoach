@@ -59,3 +59,27 @@ class ReverseLog10ScaleParameterizer: ScaleParameterizer {
     func parameterize(value: Double) -> Double { 1 - log10(value) }
     func valuize(u: Double) -> Double { pow(10, 1-u) }
 }
+
+/**
+ * Scale Parameterizer for answer read off of the A/B scale.
+ */
+class SquareScaleParameterizer: ScaleParameterizer {
+    func parameterize(value: Double) -> Double { log10(value) / 2.0 }
+    func valuize(u: Double) -> Double { pow(10, 2.0*u) }
+}
+
+/**
+ * Scale Parameterizer for answer read off of the K scale.
+ */
+class CubeScaleParameterizer: ScaleParameterizer {
+    func parameterize(value: Double) -> Double { log10(value) / 3.0 }
+    func valuize(u: Double) -> Double { pow(10, 3.0*u) }
+}
+
+/**
+ * Scale Parameterizer for answer read off of the sqrt scale.
+ */
+class SqrtScaleParameterizer: ScaleParameterizer {
+    func parameterize(value: Double) -> Double { log10(value) / 0.5 }
+    func valuize(u: Double) -> Double { pow(10, 5.0*u) }
+}

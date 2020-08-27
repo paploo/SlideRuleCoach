@@ -35,7 +35,7 @@ struct Problem {
     var questionNumeratorText: String? = nil
     var questionDenominatorText: String? = nil
     var expectedAnswer: Double
-    var scaleParameterizer: ScaleParameterizer //Put here to allow for mixed problem exams.
+    var scaleParameterizer: ScaleParameterizer //The *answer's* scale parameterizer; Put here to allow for mixed problem exams.
     
     init(expectedAnswer: Double, questionText: String, scaleParameterizer: ScaleParameterizer) {
         self.displayType = .singleLine
