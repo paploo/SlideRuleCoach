@@ -1,5 +1,5 @@
 //
-//  CubesExam.swift
+//  CubeRootsExam.swift
 //  RuleCoach
 //
 //  Created by Jeff Reinecke on 8/29/20.
@@ -10,33 +10,34 @@ import Foundation
 
 extension ExamDefinition {
     
-    static func cubesExam() -> ExamDefinition {
-        .init(id: "CUBES",
-              name: "Cubes",
-              descriptionText: "Cubes",
+    static func cubeRoots() -> ExamDefinition {
+        .init(id: "CUBE_ROOTS",
+              name: "Cube Roots",
+              descriptionText: "Cube roots",
               infoText: """
-Find the value on the D scale, and read its cube off of the K scale.
-If there is a coefficient, record the answer and multiply normally.
+Find the value on the K scale and read off the cube root on the D scale.
+If there is a coefficient, slide the index of C over the root found on D, and multiply normally.
 """,
-              problemGenerator: CubesExamProblemGenerator()
+              problemGenerator: SquareRootsProblemGenerator()
         )
     }
     
 }
 
-class CubesExamProblemGenerator: ProblemGenerator {
+class CubeRootsProblemGenerator {
     
-    private let inScaleParameterizer: ScaleParameterizer = Log10ScaleParameterizer()
-    private let outScaleParameterizer: ScaleParameterizer = CubeScaleParameterizer()
+    //We use the K scale to lookup on the D scale.
+    private let inScaleParameterizer: ScaleParameterizer = CubeScaleParameterizer()
+    private let outScaleParameterizer: ScaleParameterizer = Log10ScaleParameterizer()
     
-    private let exponentValue: Double = 3.0
-    private let exponentText: String = MathSymbols.cube
+    private let exponentValue: Double = 1.0/3.0
+    private let exponentText: String = MathSymbols.cuberoot
     
     func generateProblem(difficulty: ProblemDifficulty) -> Problem {
         let baseValue = generateBase(difficulty: difficulty)
         return Problem(
             expectedAnswer: pow(baseValue, exponentValue),
-            questionText: "\(baseValue.formatted())\(exponentText)",
+            questionText: "\(exponentText)\(baseValue.formatted())",
             scaleParameterizer: outScaleParameterizer
         )
     }

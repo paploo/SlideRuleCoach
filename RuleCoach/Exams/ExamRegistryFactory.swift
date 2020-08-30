@@ -41,8 +41,8 @@ extension ExamGroup {
         examDefinitions: [
             ExamDefinition.squaresExam(),
             ExamDefinition.squareRoots(),
-            ExamDefinition.cubesExam()
-            //Cube Roots
+            ExamDefinition.cubesExam(),
+            ExamDefinition.cubeRoots()
         ]
     )
     
