@@ -40,7 +40,7 @@ extension ExamGroup {
         name: "Squares, Cubes, and Roots",
         examDefinitions: [
             ExamDefinition.squaresExam(),
-            //Square Roots
+            ExamDefinition.squareRoots(),
             ExamDefinition.cubesExam()
             //Cube Roots
         ]

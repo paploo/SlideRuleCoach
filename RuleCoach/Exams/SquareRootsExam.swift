@@ -1,46 +1,47 @@
 //
-//  SquaresExam.swift
+//  SqrtExam.swift
 //  RuleCoach
 //
-//  Created by Jeff Reinecke on 8/26/20.
+//  Created by Jeff Reinecke on 8/29/20.
 //  Copyright © 2020 Jeff Reinecke. All rights reserved.
 //
 
 import Foundation
 
-
 extension ExamDefinition {
     
-    static func squaresExam() -> ExamDefinition {
-        .init(id: "SQUARES",
-              name: "Squares",
-              descriptionText: "Squares, sometimes multiplied by a coefficient.",
+    static func squareRoots() -> ExamDefinition {
+        .init(id: "SQRT",
+              name: "Square Roots",
+              descriptionText: "Square roots, sometimes multiplied by a coefficient",
               infoText: """
-Find the value on the C scale, and read the square off of the B or A scale.
-If there is a coefficient, slide the index of C over the base value on D, then read the answer on A over the coefficient on B.
+Find the value on the A scale, and read off the square root on the D scale.
+If there is a coefficient, slide the index of C over the found root on D, and multiply normally.
 
 Alternative Method:
-If you have a square-root scale, then find the value on the square-root scale and read off the answer from the D scale.
-If there is a coefficient, slide the index of the C scale over the square found on the D scale and multiply normally.
+If you hae a square root scale, then find the value on the D scale and read off the answer from the root scale.
+If there is a coefficient, write down the value of the root and multiply normaly.
 
-Note that the 𝝙𝘶 values with the alternative method will be half what they should be because of the effective use of your square-root scale as a large D scale, and your C/D scales as large B/A scales.
+Note that the 𝝙𝘶 values with the alternative method will be twice what they should be because of the effective use of your D scale
+a small square-root scale.
 """,
-              problemGenerator: SquaresExamProblemGenerator()
+              problemGenerator: SquareRootsProblemGenerator()
         )
     }
     
 }
 
-class SquaresExamProblemGenerator: ProblemGenerator {
+class SquareRootsProblemGenerator: ProblemGenerator {
     
     //Generate coefs like they were on the C scale.
     private let coefScaleParameterizer: ScaleParameterizer = Log10ScaleParameterizer()
     
-    private let inScaleParameterizer: ScaleParameterizer = Log10ScaleParameterizer()
-    private let outScaleParameterizer: ScaleParameterizer = SquareScaleParameterizer()
+    //We use the A scale to lookup on the D scale.
+    private let inScaleParameterizer: ScaleParameterizer = SquareScaleParameterizer()
+    private let outScaleParameterizer: ScaleParameterizer = Log10ScaleParameterizer()
     
-    private let exponentValue: Double = 2.0
-    private let exponentText: String = MathSymbols.square
+    private let exponentValue: Double = 0.5
+    private let exponentText: String = MathSymbols.sqrt
     
     func generateProblem(difficulty: ProblemDifficulty) -> Problem {
         let baseValue = generateBase(difficulty: difficulty)
@@ -53,7 +54,7 @@ class SquaresExamProblemGenerator: ProblemGenerator {
     }
     
     private func questionText(baseValue: Double, coefValue: Double?) -> String {
-        let baseText = "\(baseValue.formatted())\(exponentText)"
+        let baseText = "\(exponentText)\(baseValue.formatted())"
         if let coef = coefValue {
             return "\(coef.formatted()) \(MathSymbols.times) \(baseText)"
         } else {
