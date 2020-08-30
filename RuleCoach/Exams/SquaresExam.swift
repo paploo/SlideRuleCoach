@@ -42,17 +42,42 @@ class SquaresExamProblemGenerator: ProblemGenerator {
     
     func generateProblem(difficulty: ProblemDifficulty) -> Problem {
         let baseValue = generateBase(difficulty: difficulty)
+        let coefValue = generateCoefficient(difficulty: difficulty)
         return Problem(
-            expectedAnswer: pow(baseValue, exponentValue),
-            questionText: "\(baseValue.formatted())\(exponentText)",
+            expectedAnswer: pow(baseValue, exponentValue) * (coefValue ?? 1.0),
+            questionText: questionText(baseValue: baseValue, coefValue: coefValue),
             scaleParameterizer: squareScaleParameterizer
         )
+    }
+    
+    private func questionText(baseValue: Double, coefValue: Double?) -> String {
+        let baseText = "\(baseValue.formatted())\(exponentText)"
+        if let coef = coefValue {
+            return "\(coef.formatted()) \(MathSymbols.times) \(baseText)"
+        } else {
+            return baseText
+        }
+    }
+    
+    private func generateCoefficient(difficulty: ProblemDifficulty) -> Double? {
+        switch difficulty {
+        case .introductory:
+            return nil
+        case .easy:
+            return cScaleParameterizer.randomScaleValue(inU: 0.0 ..< 1.0)
+        case .normal:
+            return cScaleParameterizer.randomScaleValue(inU: -1.0 ..< 2.0)
+        case .advanced:
+            return cScaleParameterizer.randomScaleValue(inU: -2.0 ..< 2.0)
+        case .master:
+            return cScaleParameterizer.randomScaleValue(inU: -4.0 ..< 4.0)
+        }
     }
     
     private func generateBase(difficulty: ProblemDifficulty) -> Double {
         switch difficulty {
         case .introductory:
-            return Double(Int.random(in: 1 ... 10))
+            return cScaleParameterizer.randomScaleValue(inU: 0.0 ..< 1.0)
         case .easy:
             return cScaleParameterizer.randomScaleValue(inU: 0.0 ..< 1.0)
         case .normal:
