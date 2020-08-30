@@ -18,7 +18,7 @@ extension ExamDefinition {
               infoText: """
 Standard Method:
 Find the value on the C scale, and read the square off of the B or A scale.
-If there is a coefficient, slide the index of C over the base value on D, then read the answer on A over thecoefficient on B.
+If there is a coefficient, slide the index of C over the base value on D, then read the answer on A over the coefficient on B.
 
 Alternative Method:
 If you have a square-root scale, then find the value on the square-root scale and read off the answer from the D scale.
@@ -34,8 +34,8 @@ Note that the 𝝙𝘶 values with the alternative method will be half what they
 
 class SquaresExamProblemGenerator: ProblemGenerator {
     
-    private let cScaleParameterizer: ScaleParameterizer = Log10ScaleParameterizer()
-    private let squareScaleParameterizer: ScaleParameterizer = SquareScaleParameterizer()
+    private let inScaleParameterizer: ScaleParameterizer = Log10ScaleParameterizer()
+    private let outScaleParameterizer: ScaleParameterizer = SquareScaleParameterizer()
     
     private let exponentValue: Double = 2.0
     private let exponentText: String = MathSymbols.square
@@ -46,7 +46,7 @@ class SquaresExamProblemGenerator: ProblemGenerator {
         return Problem(
             expectedAnswer: pow(baseValue, exponentValue) * (coefValue ?? 1.0),
             questionText: questionText(baseValue: baseValue, coefValue: coefValue),
-            scaleParameterizer: squareScaleParameterizer
+            scaleParameterizer: outScaleParameterizer
         )
     }
     
@@ -64,28 +64,28 @@ class SquaresExamProblemGenerator: ProblemGenerator {
         case .introductory:
             return nil
         case .easy:
-            return cScaleParameterizer.randomScaleValue(inU: 0.0 ..< 1.0)
+            return inScaleParameterizer.randomScaleValue(inU: 0.0 ..< 1.0)
         case .normal:
-            return cScaleParameterizer.randomScaleValue(inU: -1.0 ..< 2.0)
+            return inScaleParameterizer.randomScaleValue(inU: -1.0 ..< 2.0)
         case .advanced:
-            return cScaleParameterizer.randomScaleValue(inU: -2.0 ..< 2.0)
+            return inScaleParameterizer.randomScaleValue(inU: -2.0 ..< 2.0)
         case .master:
-            return cScaleParameterizer.randomScaleValue(inU: -4.0 ..< 4.0)
+            return inScaleParameterizer.randomScaleValue(inU: -4.0 ..< 4.0)
         }
     }
     
     private func generateBase(difficulty: ProblemDifficulty) -> Double {
         switch difficulty {
         case .introductory:
-            return cScaleParameterizer.randomScaleValue(inU: 0.0 ..< 1.0)
+            return inScaleParameterizer.randomScaleValue(inU: 0.0 ..< 1.0)
         case .easy:
-            return cScaleParameterizer.randomScaleValue(inU: 0.0 ..< 1.0)
+            return inScaleParameterizer.randomScaleValue(inU: 0.0 ..< 1.0)
         case .normal:
-            return cScaleParameterizer.randomScaleValue(inU: -1.0 ..< 2.0)
+            return inScaleParameterizer.randomScaleValue(inU: -1.0 ..< 2.0)
         case .advanced:
-            return cScaleParameterizer.randomScaleValue(inU: -2.0 ..< 2.0)
+            return inScaleParameterizer.randomScaleValue(inU: -2.0 ..< 2.0)
         case .master:
-            return cScaleParameterizer.randomScaleValue(inU: -4.0 ..< 4.0)
+            return inScaleParameterizer.randomScaleValue(inU: -4.0 ..< 4.0)
         }
     }
     

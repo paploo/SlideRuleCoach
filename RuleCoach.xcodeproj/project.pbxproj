@@ -23,6 +23,7 @@
 		4A59078524B2AADD003FFBB2 /* ExamList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A59078424B2AADD003FFBB2 /* ExamList.swift */; };
 		4A59078724B2CCFC003FFBB2 /* ExamRegistryFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A59078624B2CCFC003FFBB2 /* ExamRegistryFactory.swift */; };
 		4A59078B24B2CE32003FFBB2 /* ExamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A59078A24B2CE32003FFBB2 /* ExamView.swift */; };
+		4AA239F024FB642A00DB1A38 /* CubesExam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA239EF24FB642A00DB1A38 /* CubesExam.swift */; };
 		4AAC734824F372B0009E1C74 /* InversionExam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AAC734724F372B0009E1C74 /* InversionExam.swift */; };
 		4AAC734A24F37D47009E1C74 /* CompoundFractionsExam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AAC734924F37D47009E1C74 /* CompoundFractionsExam.swift */; };
 		4AAC734C24F76E85009E1C74 /* PowersProblemGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AAC734B24F76E85009E1C74 /* PowersProblemGenerator.swift */; };
@@ -86,6 +87,7 @@
 		4A59078424B2AADD003FFBB2 /* ExamList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamList.swift; sourceTree = "<group>"; };
 		4A59078624B2CCFC003FFBB2 /* ExamRegistryFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamRegistryFactory.swift; sourceTree = "<group>"; };
 		4A59078A24B2CE32003FFBB2 /* ExamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamView.swift; sourceTree = "<group>"; };
+		4AA239EF24FB642A00DB1A38 /* CubesExam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CubesExam.swift; sourceTree = "<group>"; };
 		4AAC734724F372B0009E1C74 /* InversionExam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InversionExam.swift; sourceTree = "<group>"; };
 		4AAC734924F37D47009E1C74 /* CompoundFractionsExam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompoundFractionsExam.swift; sourceTree = "<group>"; };
 		4AAC734B24F76E85009E1C74 /* PowersProblemGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowersProblemGenerator.swift; sourceTree = "<group>"; };
@@ -224,6 +226,7 @@
 				4AAC734724F372B0009E1C74 /* InversionExam.swift */,
 				4AAC734924F37D47009E1C74 /* CompoundFractionsExam.swift */,
 				4AAC734F24F77C93009E1C74 /* SquaresExam.swift */,
+				4AA239EF24FB642A00DB1A38 /* CubesExam.swift */,
 			);
 			path = Exams;
 			sourceTree = "<group>";
@@ -402,6 +405,7 @@
 				4AFE2D5F24BEB11B00AF8187 /* SettingsView.swift in Sources */,
 				4A59078524B2AADD003FFBB2 /* ExamList.swift in Sources */,
 				4AAEF00224D12BAA00FA1462 /* ArrayExtensions.swift in Sources */,
+				4AA239F024FB642A00DB1A38 /* CubesExam.swift in Sources */,
 				4AAC734C24F76E85009E1C74 /* PowersProblemGenerator.swift in Sources */,
 				4AD91BAD24ECE504005F1898 /* MultiplicationExam.swift in Sources */,
 				4A59078224B2A43F003FFBB2 /* TestExam.swift in Sources */,
