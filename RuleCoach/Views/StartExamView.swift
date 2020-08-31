@@ -20,7 +20,6 @@ struct StartExamView : View {
     
     var body: some View {
         Form {
-            //Text(currentExam.wrappedValue.debugDescription)
             Section {
                 HStack {
                     Text("Exam").bold()

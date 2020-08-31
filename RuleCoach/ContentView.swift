@@ -15,8 +15,6 @@ struct ContentView: View {
     var examDefinition: ExamDefinition
     
     var body: some View {
-        //ExamList(examRegistry: ExamRegistry.testRegistry)
-        
         NavigationView {
             NavigationLink(destination:
                     Text("asdf")

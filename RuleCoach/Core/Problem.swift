@@ -41,10 +41,4 @@ struct Problem {
         self.expectedAnswer = expectedAnswer
         self.scaleParameterizer = scaleParameterizer
     }
-    
-//    init(expectedAnswer: Double, questionNumeratorText: String, questionDenominatorText: String, scaleParameterizer: ScaleParameterizer) {
-//        self.questionText = .fractional(numerator: questionNumeratorText, denominator: questionDenominatorText)
-//        self.expectedAnswer = expectedAnswer
-//        self.scaleParameterizer = scaleParameterizer
-//    }
 }
