@@ -69,6 +69,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4A27A46224FCC1F300DA04F7 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		4A27A46324FCC22200DA04F7 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		4A349F5C24EE41350016A026 /* ProblemGeneratorTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemGeneratorTools.swift; sourceTree = "<group>"; };
 		4A59074624B161BB003FFBB2 /* RuleCoach.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RuleCoach.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A59074924B161BB003FFBB2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -147,6 +149,8 @@
 		4A59073D24B161BB003FFBB2 = {
 			isa = PBXGroup;
 			children = (
+				4A27A46324FCC22200DA04F7 /* LICENSE.txt */,
+				4A27A46224FCC1F300DA04F7 /* README.md */,
 				4A59074824B161BB003FFBB2 /* RuleCoach */,
 				4A59075F24B161BC003FFBB2 /* RuleCoachTests */,
 				4A59076A24B161BC003FFBB2 /* RuleCoachUITests */,
