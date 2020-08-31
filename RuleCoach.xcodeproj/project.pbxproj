@@ -26,6 +26,8 @@
 		4AA239F024FB642A00DB1A38 /* CubesExam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA239EF24FB642A00DB1A38 /* CubesExam.swift */; };
 		4AA239F224FB689B00DB1A38 /* SquareRootsExam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA239F124FB689B00DB1A38 /* SquareRootsExam.swift */; };
 		4AA239F424FB6D4900DB1A38 /* CubeRootsExam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA239F324FB6D4900DB1A38 /* CubeRootsExam.swift */; };
+		4AA239F624FC9EB800DB1A38 /* CommonLogsExam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA239F524FC9EB800DB1A38 /* CommonLogsExam.swift */; };
+		4AA239F824FC9ED400DB1A38 /* CommonExponentsExam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA239F724FC9ED400DB1A38 /* CommonExponentsExam.swift */; };
 		4AAC734824F372B0009E1C74 /* InversionExam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AAC734724F372B0009E1C74 /* InversionExam.swift */; };
 		4AAC734A24F37D47009E1C74 /* CompoundFractionsExam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AAC734924F37D47009E1C74 /* CompoundFractionsExam.swift */; };
 		4AAC734C24F76E85009E1C74 /* PowersProblemGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AAC734B24F76E85009E1C74 /* PowersProblemGenerator.swift */; };
@@ -92,6 +94,8 @@
 		4AA239EF24FB642A00DB1A38 /* CubesExam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CubesExam.swift; sourceTree = "<group>"; };
 		4AA239F124FB689B00DB1A38 /* SquareRootsExam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareRootsExam.swift; sourceTree = "<group>"; };
 		4AA239F324FB6D4900DB1A38 /* CubeRootsExam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CubeRootsExam.swift; sourceTree = "<group>"; };
+		4AA239F524FC9EB800DB1A38 /* CommonLogsExam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonLogsExam.swift; sourceTree = "<group>"; };
+		4AA239F724FC9ED400DB1A38 /* CommonExponentsExam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonExponentsExam.swift; sourceTree = "<group>"; };
 		4AAC734724F372B0009E1C74 /* InversionExam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InversionExam.swift; sourceTree = "<group>"; };
 		4AAC734924F37D47009E1C74 /* CompoundFractionsExam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompoundFractionsExam.swift; sourceTree = "<group>"; };
 		4AAC734B24F76E85009E1C74 /* PowersProblemGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowersProblemGenerator.swift; sourceTree = "<group>"; };
@@ -233,6 +237,8 @@
 				4AA239F124FB689B00DB1A38 /* SquareRootsExam.swift */,
 				4AA239EF24FB642A00DB1A38 /* CubesExam.swift */,
 				4AA239F324FB6D4900DB1A38 /* CubeRootsExam.swift */,
+				4AA239F724FC9ED400DB1A38 /* CommonExponentsExam.swift */,
+				4AA239F524FC9EB800DB1A38 /* CommonLogsExam.swift */,
 			);
 			path = Exams;
 			sourceTree = "<group>";
@@ -437,7 +443,9 @@
 				4AAEEFFD24CE89AC00FA1462 /* ScaleParameterizer.swift in Sources */,
 				4A59074E24B161BB003FFBB2 /* ContentView.swift in Sources */,
 				4AAC734E24F77364009E1C74 /* Math.swift in Sources */,
+				4AA239F824FC9ED400DB1A38 /* CommonExponentsExam.swift in Sources */,
 				4AA239F424FB6D4900DB1A38 /* CubeRootsExam.swift in Sources */,
+				4AA239F624FC9EB800DB1A38 /* CommonLogsExam.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

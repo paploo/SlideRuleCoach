@@ -18,13 +18,13 @@ extension ExamDefinition {
 Find the value on the K scale and read off the cube root on the D scale.
 If there is a coefficient, slide the index of C over the root found on D, and multiply normally.
 """,
-              problemGenerator: SquareRootsProblemGenerator()
+              problemGenerator: CubeRootsProblemGenerator()
         )
     }
     
 }
 
-class CubeRootsProblemGenerator {
+class CubeRootsProblemGenerator: ProblemGenerator {
     
     //We use the K scale to lookup on the D scale.
     private let inScaleParameterizer: ScaleParameterizer = CubeScaleParameterizer()
