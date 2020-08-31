@@ -37,12 +37,13 @@ class CommonExponentsProblemGenerator: ProblemGenerator {
     private let outScaleParameterizer: ScaleParameterizer = Log10ScaleParameterizer()
     
     private let baseValue = 10.0
+    private let baseText = "10"
     
     func generateProblem(difficulty: ProblemDifficulty) -> Problem {
         let exponentValue = generateExponent(difficulty: difficulty)
         return Problem(
-            expectedAnswer: pow(10.0, exponentValue),
-            questionText: MathSymbols.function(MathSymbols.pow, "10", exponentValue.formatted()),
+            expectedAnswer: pow(baseValue, exponentValue),
+            questionText: .exponential(baseLine: baseText, exponent: exponentValue.formatted()),
             scaleParameterizer: outScaleParameterizer
         )
     }

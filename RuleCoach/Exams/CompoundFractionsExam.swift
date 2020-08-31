@@ -39,8 +39,10 @@ class CompoundFractionsExamGenearator: ProblemGenerator {
         
         return Problem(
             expectedAnswer: numeratorTerms.product() / denominatorTerms.product(),
-            questionNumeratorText: numeratorTerms.joinWithFormatter(separator: MathSymbols.times.padded(with: " ")),
-            questionDenominatorText: denominatorTerms.joinWithFormatter(separator: MathSymbols.times.padded(with: " ")),
+            questionText: .fractional(
+                numerator: numeratorTerms.joinWithFormatter(separator: MathSymbols.times.padded(with: " ")),
+                denominator: denominatorTerms.joinWithFormatter(separator: MathSymbols.times.padded(with: " "))
+            ),
             scaleParameterizer: scaleParameterizer
         )
         

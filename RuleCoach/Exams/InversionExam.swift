@@ -30,8 +30,7 @@ class InversionExamProblemGenerator: ProblemGenerator {
         let denom = denominator(difficulty: difficulty)
         return Problem(
             expectedAnswer: 1.0 / denom,
-            questionNumeratorText:"1",
-            questionDenominatorText: denom.formatted(),
+            questionText: .fractional(numerator: "1", denominator: denom.formatted()),
             scaleParameterizer: scaleParameterizer
         )
     }

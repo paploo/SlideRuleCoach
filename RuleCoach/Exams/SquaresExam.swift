@@ -47,7 +47,7 @@ class SquaresExamProblemGenerator: ProblemGenerator {
         let coefValue = generateCoefficient(difficulty: difficulty)
         return Problem(
             expectedAnswer: pow(baseValue, exponentValue) * (coefValue ?? 1.0),
-            questionText: questionText(baseValue: baseValue, coefValue: coefValue),
+            questionText: .singleLine(questionText(baseValue: baseValue, coefValue: coefValue)),
             scaleParameterizer: outScaleParameterizer
         )
     }

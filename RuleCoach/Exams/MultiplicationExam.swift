@@ -30,7 +30,7 @@ class MultiplicationExamProblemGenerator: ProblemGenerator {
         let values = generateTermValues(difficulty: difficulty)
         return Problem(
             expectedAnswer: values.product(),
-            questionText: values.joinWithFormatter(separator: MathSymbols.times.padded(with: " ")),
+            questionText: .singleLine(values.joinWithFormatter(separator: MathSymbols.times.padded(with: " "))),
             scaleParameterizer: scaleParameterizer
         )
     }

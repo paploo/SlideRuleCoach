@@ -25,30 +25,26 @@ enum ProblemDifficulty: String, CaseIterable {
     case master = "Master"
 }
 
-enum ProblemDisplayType {
-    case singleLine, fractional
+enum QuestionText {
+    case singleLine(_ text: String)
+    case fractional(numerator: String, denominator: String)
+    case exponential(baseLine: String, exponent: String)
 }
 
 struct Problem {
-    var displayType: ProblemDisplayType
-    var questionText: String? = nil
-    var questionNumeratorText: String? = nil
-    var questionDenominatorText: String? = nil
+    var questionText: QuestionText
     var expectedAnswer: Double
     var scaleParameterizer: ScaleParameterizer //The *answer's* scale parameterizer; Put here to allow for mixed problem exams.
     
-    init(expectedAnswer: Double, questionText: String, scaleParameterizer: ScaleParameterizer) {
-        self.displayType = .singleLine
+    init(expectedAnswer: Double, questionText: QuestionText, scaleParameterizer: ScaleParameterizer) {
         self.questionText = questionText
         self.expectedAnswer = expectedAnswer
         self.scaleParameterizer = scaleParameterizer
     }
     
-    init(expectedAnswer: Double, questionNumeratorText: String, questionDenominatorText: String, scaleParameterizer: ScaleParameterizer) {
-        self.displayType = .fractional
-        self.questionNumeratorText = questionNumeratorText
-        self.questionDenominatorText = questionDenominatorText
-        self.expectedAnswer = expectedAnswer
-        self.scaleParameterizer = scaleParameterizer
-    }
+//    init(expectedAnswer: Double, questionNumeratorText: String, questionDenominatorText: String, scaleParameterizer: ScaleParameterizer) {
+//        self.questionText = .fractional(numerator: questionNumeratorText, denominator: questionDenominatorText)
+//        self.expectedAnswer = expectedAnswer
+//        self.scaleParameterizer = scaleParameterizer
+//    }
 }

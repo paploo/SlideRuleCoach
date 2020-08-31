@@ -37,7 +37,7 @@ class CubeRootsProblemGenerator: ProblemGenerator {
         let baseValue = generateBase(difficulty: difficulty)
         return Problem(
             expectedAnswer: pow(baseValue, exponentValue),
-            questionText: "\(exponentText)\(baseValue.formatted())",
+            questionText: .singleLine("\(exponentText)\(baseValue.formatted())"),
             scaleParameterizer: outScaleParameterizer
         )
     }

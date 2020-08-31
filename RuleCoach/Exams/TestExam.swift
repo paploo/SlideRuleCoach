@@ -33,7 +33,7 @@ class TestExamProblemGenerator: ProblemGenerator {
     func generateProblem(difficulty: ProblemDifficulty) -> Problem {
         .init(
             expectedAnswer: getAndIncrAnswer(),
-            questionText: "What is the answer for difficulty \(difficulty)",
+            questionText: .singleLine("What is the answer for difficulty \(difficulty)"),
             scaleParameterizer: Log10ScaleParameterizer()
         )
     }

@@ -36,7 +36,7 @@ class CubesExamProblemGenerator: ProblemGenerator {
         let baseValue = generateBase(difficulty: difficulty)
         return Problem(
             expectedAnswer: pow(baseValue, exponentValue),
-            questionText: "\(baseValue.formatted())\(exponentText)",
+            questionText: .singleLine("\(baseValue.formatted())\(exponentText)"),
             scaleParameterizer: outScaleParameterizer
         )
     }

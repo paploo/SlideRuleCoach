@@ -41,14 +41,10 @@ struct ProblemView : View {
             GeometryReader { geo in
                 ScrollView(.horizontal, showsIndicators: false) {
                     Group {
-                        if(self.exam.isCompleted()) {
+                        if self.exam.isCompleted() {
                             ExamCompleteProblemDetail(problem: self.$exam.currentProblem)
-                        }
-                        if(self.exam.currentProblem.displayType == .singleLine &&         !self.exam.isCompleted()) {
-                            SimpleProblemDetail(problem: self.$exam.currentProblem)
-                        }
-                        if(self.exam.currentProblem.displayType == .fractional &&         !self.exam.isCompleted()) {
-                            FractionProblemDetail(problem: self.$exam.currentProblem)
+                        } else {
+                            questionTextView(questionText: self.exam.currentProblem.questionText)
                         }
                     }
                     .frame(minWidth: geo.size.width, alignment: .center)
@@ -93,31 +89,61 @@ struct ProblemView : View {
     
 }
 
+//TODO: In Xcode 12 inline switch statements are supposedly supported, with no AnyView shenanigans needed: https://stackoverflow.com/questions/56736466/alternative-to-switch-statement-in-swiftui-viewbuilder-block
+func questionTextView(questionText: QuestionText) -> AnyView {
+    print("questionText: \(questionText)")
+    switch(questionText) {
+    case .singleLine(let text):
+        return AnyView(SimpleProblemDetail(questionText: .constant(text)))
+    case .fractional(let num, let denom):
+        return AnyView(FractionProblemDetail(questionNumeratorText: .constant(num), questionDenominatorText: .constant(denom)))
+    case .exponential(let base, let exp):
+        return AnyView(ExponentialProblemDetail(questionBaseLineText: .constant(base), questionExponentText: .constant(exp)))
+    }
+}
+
 struct SimpleProblemDetail: View {
     
-    @Binding var problem: Problem
+    @Binding var questionText: String
     
     var body: some View {
-        Text(problem.questionText ?? "Missing Question Text")
-        .monospaced()
+        Text(questionText)
+            .monospaced()
     }
     
 }
 
 struct FractionProblemDetail: View {
     
-    @Binding var problem: Problem
+    @Binding var questionNumeratorText: String
+    @Binding var questionDenominatorText: String
     
     var body: some View {
         VStack {
-            Text(self.problem.questionNumeratorText ?? "Missing Question Text")
+            Text(questionNumeratorText)
                 .monospaced()
             Image(systemName: "square.fill")
                 .resizable()
                 .frame(height: 2.0)
-            Text(self.problem.questionDenominatorText ?? "Missing Question Text")
+            Text(questionDenominatorText)
                 .monospaced()
         }.fixedSize()
+    }
+    
+}
+
+struct ExponentialProblemDetail: View {
+    
+    @Binding var questionBaseLineText: String
+    @Binding var questionExponentText: String
+    
+    var body: some View {
+        Text(questionBaseLineText)
+            .monospaced()
+            + Text(" ") +
+        Text(questionExponentText)
+            .monospacedSmall()
+            .baselineOffset(6.0)
     }
     
 }
@@ -141,6 +167,10 @@ extension Text {
     func monospaced() -> Text {
         font(.system(.body, design: .monospaced))
     }
+    
+    func monospacedSmall() -> Text {
+        font(.system(.footnote, design: .monospaced))
+    }
 }
 
 struct ProblemView_Previews: PreviewProvider {
@@ -156,18 +186,17 @@ struct ProblemView_Previews: PreviewProvider {
             
             ProblemView(exam: .constant(completedExam))
             
-            SimpleProblemDetail(problem: .constant(Problem(
-                expectedAnswer: 3.14,
-                questionText: "31 x 2",
-                scaleParameterizer: UnityScaleParameterizer()
-            )))
+            SimpleProblemDetail(questionText: .constant("31 x 2"))
+
+            FractionProblemDetail(
+                questionNumeratorText: .constant("31 x 2"),
+                questionDenominatorText: .constant("88 x 22")
+            )
             
-            FractionProblemDetail(problem: .constant(Problem(
-                expectedAnswer: 3.14,
-                questionNumeratorText: "31 x 2",
-                questionDenominatorText: "88 x 22",
-                scaleParameterizer: UnityScaleParameterizer()
-            )))
+            ExponentialProblemDetail(
+                questionBaseLineText: .constant("1.2 x 34.101"),
+                questionExponentText: .constant("22.30")
+            )
         }.environmentObject(UserSettings())
     }
 }
