@@ -234,15 +234,9 @@
 				4A349F5C24EE41350016A026 /* ProblemGeneratorTools.swift */,
 				4AAC734B24F76E85009E1C74 /* PowersProblemGenerator.swift */,
 				4A59078124B2A43F003FFBB2 /* TestExam.swift */,
-				4AD91BAC24ECE504005F1898 /* MultiplicationExam.swift */,
-				4AAC734724F372B0009E1C74 /* InversionExam.swift */,
-				4AAC734924F37D47009E1C74 /* CompoundFractionsExam.swift */,
-				4AAC734F24F77C93009E1C74 /* SquaresExam.swift */,
-				4AA239F124FB689B00DB1A38 /* SquareRootsExam.swift */,
-				4AA239EF24FB642A00DB1A38 /* CubesExam.swift */,
-				4AA239F324FB6D4900DB1A38 /* CubeRootsExam.swift */,
-				4AA239F724FC9ED400DB1A38 /* CommonExponentsExam.swift */,
-				4AA239F524FC9EB800DB1A38 /* CommonLogsExam.swift */,
+				4AB0A0832500B88000EA9638 /* BasicArithmetic */,
+				4AB0A0842500B8B400EA9638 /* SquaresAndCubes */,
+				4AB0A0852500B8DA00EA9638 /* ExponentsAndLogs */,
 			);
 			path = Exams;
 			sourceTree = "<group>";
@@ -272,6 +266,36 @@
 				4AAC734D24F77364009E1C74 /* Math.swift */,
 			);
 			path = Util;
+			sourceTree = "<group>";
+		};
+		4AB0A0832500B88000EA9638 /* BasicArithmetic */ = {
+			isa = PBXGroup;
+			children = (
+				4AD91BAC24ECE504005F1898 /* MultiplicationExam.swift */,
+				4AAC734724F372B0009E1C74 /* InversionExam.swift */,
+				4AAC734924F37D47009E1C74 /* CompoundFractionsExam.swift */,
+			);
+			path = BasicArithmetic;
+			sourceTree = "<group>";
+		};
+		4AB0A0842500B8B400EA9638 /* SquaresAndCubes */ = {
+			isa = PBXGroup;
+			children = (
+				4AAC734F24F77C93009E1C74 /* SquaresExam.swift */,
+				4AA239F124FB689B00DB1A38 /* SquareRootsExam.swift */,
+				4AA239EF24FB642A00DB1A38 /* CubesExam.swift */,
+				4AA239F324FB6D4900DB1A38 /* CubeRootsExam.swift */,
+			);
+			path = SquaresAndCubes;
+			sourceTree = "<group>";
+		};
+		4AB0A0852500B8DA00EA9638 /* ExponentsAndLogs */ = {
+			isa = PBXGroup;
+			children = (
+				4AA239F724FC9ED400DB1A38 /* CommonExponentsExam.swift */,
+				4AA239F524FC9EB800DB1A38 /* CommonLogsExam.swift */,
+			);
+			path = ExponentsAndLogs;
 			sourceTree = "<group>";
 		};
 		4AFE2D5B24BEA3C700AF8187 /* Resources */ = {
