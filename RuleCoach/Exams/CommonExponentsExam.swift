@@ -11,22 +11,22 @@ import Foundation
 extension ExamDefinition {
     
     static func commonExponents() -> ExamDefinition {
-                .init(id: "COMMON_EXP",
-                      name: "Base-10 Exponents",
-                      descriptionText: "Values raised to the power of ten.",
-                      infoText: """
+        .init(id: "COMMON_EXP",
+        name: "Common Exponents",
+        descriptionText: "Exponents of ten",
+        infoText: """
 Split the exponent into the integer and fractional components.
 
-If the exponent is positive:
+If the integer part is positive:
 Place the cursor over fractional component on the L scale, read the value of the mantissa on the D-scale.
 Multiply the mantissa by the power of ten given by the integer part.
 
-If the exponent is negative:
+If the integer part is negative:
 Place the cursor over the fractional component on the L scale, read the value of the mantissa on the DI scale.
 Multiply the mantissa by the power of ten given by the integer part.
 """,
-                      problemGenerator: CommonExponentsProblemGenerator()
-                )
+        problemGenerator: CommonExponentsProblemGenerator()
+        )
     }
     
 }
@@ -53,13 +53,13 @@ class CommonExponentsProblemGenerator: ProblemGenerator {
         case .introductory:
             return inScaleParameterizer.randomScaleValue(inU: 0.0 ..< 1.0)
         case .easy:
-            return inScaleParameterizer.randomScaleValue(inU: 0.0 ..< 2.0)
-        case .normal:
-            return inScaleParameterizer.randomScaleValue(inU: -1.0 ..< 2.0)
-        case .advanced:
             return inScaleParameterizer.randomScaleValue(inU: -2.0 ..< 2.0)
-        case .master:
+        case .normal:
             return inScaleParameterizer.randomScaleValue(inU: -3.0 ..< 3.0)
+        case .advanced:
+            return inScaleParameterizer.randomScaleValue(inU: -4.0 ..< 4.0)
+        case .master:
+            return inScaleParameterizer.randomScaleValue(inU: -6.0 ..< 6.0)
         }
     }
     

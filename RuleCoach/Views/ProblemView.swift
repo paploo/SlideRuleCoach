@@ -91,7 +91,6 @@ struct ProblemView : View {
 
 //TODO: In Xcode 12 inline switch statements are supposedly supported, with no AnyView shenanigans needed: https://stackoverflow.com/questions/56736466/alternative-to-switch-statement-in-swiftui-viewbuilder-block
 func questionTextView(questionText: QuestionText) -> AnyView {
-    print("questionText: \(questionText)")
     switch(questionText) {
     case .singleLine(let text):
         return AnyView(SimpleProblemDetail(questionText: .constant(text)))

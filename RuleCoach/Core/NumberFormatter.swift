@@ -60,8 +60,6 @@ extension NumberFormatter {
             },
             decoder: {s in
                 if let d = Double(s) {
-                    print(s)
-                    print(d)
                     return NSNumber(value: d)
                 } else {
                     return nil
