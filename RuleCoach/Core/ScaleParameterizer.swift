@@ -83,3 +83,34 @@ class SqrtScaleParameterizer: ScaleParameterizer {
     func parameterize(value: Double) -> Double { log10(value) / 0.5 }
     func valuize(u: Double) -> Double { pow(10, 5.0*u) }
 }
+
+/**
+ * Scale Parameterizer for the answer read off the LL scale.
+ *
+ * The zero-point corresponds with the location of e on the LL scale,
+ * with values greater than e as positive offsets.
+ *
+ * Note that the LL scale and LL/ scales are separately parameterized:
+ * - LL is used when the value is greater than 1
+ * - LL/ is used when the value is less than 1
+ * In each case, they parameterize the full value space onto u = -∞ to +∞, so
+ * the inverse mapping (via `valuize`) must be specified to resolve.
+ *
+ */
+class LogLogScaleParameterizer: ScaleParameterizer {
+    func parameterize(value: Double) -> Double { log10(log(value)) }
+    func valuize(u: Double) -> Double { exp(pow(10, u)) }
+}
+
+/**
+ * Scale Parameterizer for the answer read off the LL/ scale.
+ *
+ * The zero-point corresponds with the location of 1/e on the LL scale.
+ * Since this scale runs in reverse, values less than 1/e have positive offsets.
+ *
+ * See note on `LogLogScaleParameterizer` about parameterization.
+ */
+class InvertedLogLogScaleParameterizer: ScaleParameterizer {
+    func parameterize(value: Double) -> Double { log10(-log(value)) } //equivalent to log10(log(1.0/value))
+    func valuize(u: Double) -> Double { exp(-pow(10, u)) } //equivalent to 1.0/exp(pow(10, u))
+}

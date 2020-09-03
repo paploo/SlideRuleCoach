@@ -12,9 +12,9 @@ extension ExamDefinition {
     
     static func commonExponents() -> ExamDefinition {
         .init(id: "COMMON_EXP",
-        name: "Common Exponents",
-        descriptionText: "Exponents of ten",
-        infoText: """
+              name: "Common Exponents",
+              descriptionText: "Exponents of ten",
+              infoText: """
 Split the exponent into the integer and fractional components.
 
 If the integer part is positive:
@@ -25,7 +25,7 @@ If the integer part is negative:
 Place the cursor over the fractional component on the L scale, read the value of the mantissa on the DI scale.
 Multiply the mantissa by the power of ten given by the integer part.
 """,
-        problemGenerator: CommonExponentsProblemGenerator()
+              problemGenerator: CommonExponentsProblemGenerator()
         )
     }
     
