@@ -14,3 +14,11 @@ extension Double {
     static var e: Double = Darwin.M_E
     
 }
+
+extension Bool {
+    
+    func signDoubleValue() -> Double {
+        self ? 1.0 : -1.0
+    }
+    
+}

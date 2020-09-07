@@ -51,7 +51,8 @@ extension ExamGroup {
         name: "Exponents & Logs",
         examDefinitions: [
             ExamDefinition.commonExponents(),
-            ExamDefinition.commonLog()
+            ExamDefinition.commonLog(),
+            ExamDefinition.naturalExponents()
             // Natural Exp [[new]] -- Straight LL
             // Natural Log [[new]] - Straight LL
             // Exponents (of arbitrary base)
