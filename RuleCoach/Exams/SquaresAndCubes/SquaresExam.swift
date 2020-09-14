@@ -12,10 +12,11 @@ import Foundation
 extension ExamDefinition {
     
     static func squaresExam() -> ExamDefinition {
-        .init(id: "SQUARES",
-              name: "Squares",
-              descriptionText: "Squares, sometimes multiplied by a coefficient.",
-              infoText: """
+        .init(
+            id: "SQUARES",
+            name: "Squares",
+            descriptionText: "Squares, sometimes multiplied by a coefficient.",
+            infoText: """
 Find the value on the C scale, and read the square off of the B or A scale.
 If there is a coefficient, slide the index of C over the base value on D, then read the answer on A over the coefficient on B.
 
@@ -25,7 +26,7 @@ If there is a coefficient, slide the index of the C scale over the square found 
 
 Note that the 𝝙𝘶 values with the alternative method will be half what they should be because of the effective use of your square-root scale as a large D scale, and your C/D scales as large B/A scales.
 """,
-              problemGenerator: SquaresExamProblemGenerator()
+            problemGenerator: SquaresExamProblemGenerator()
         )
     }
     

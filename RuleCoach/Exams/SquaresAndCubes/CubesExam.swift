@@ -11,14 +11,15 @@ import Foundation
 extension ExamDefinition {
     
     static func cubesExam() -> ExamDefinition {
-        .init(id: "CUBES",
-              name: "Cubes",
-              descriptionText: "Cubes",
-              infoText: """
+        .init(
+            id: "CUBES",
+            name: "Cubes",
+            descriptionText: "Cubes",
+            infoText: """
 Find the value on the D scale, and read its cube off of the K scale.
 If there is a coefficient, record the answer and multiply normally.
 """,
-              problemGenerator: CubesExamProblemGenerator()
+            problemGenerator: CubesExamProblemGenerator()
         )
     }
     

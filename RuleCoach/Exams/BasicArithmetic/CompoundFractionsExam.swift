@@ -11,16 +11,17 @@ import Foundation
 extension ExamDefinition {
     
     static func compoundFractionsExam() -> ExamDefinition {
-        .init(id: "COMPOUND_FRACTIONS",
-              name: "Compound Fractions",
-              descriptionText: "Fractions of multiple numerator/denominator terms",
-              infoText: """
+        .init(
+            id: "COMPOUND_FRACTIONS",
+            name: "Compound Fractions",
+            descriptionText: "Fractions of multiple numerator/denominator terms",
+            infoText: """
 Slide the first denominator value on C over the first numerator value on D; move the cursor over the next numerator on C.
 
 If there are no denominators, read answer on D, otherwise slide denominator on C under the cursor;
 If there are more numerators, read the answer on D under the index on C, otherwise repeat cursor move.
 """,
-              problemGenerator: CompoundFractionsExamGenearator()
+            problemGenerator: CompoundFractionsExamGenearator()
         )
     }
     

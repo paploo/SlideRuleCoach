@@ -11,10 +11,11 @@ import Foundation
 extension ExamDefinition {
     
     static func squareRoots() -> ExamDefinition {
-        .init(id: "SQRT",
-              name: "Square Roots",
-              descriptionText: "Square roots, sometimes multiplied by a coefficient",
-              infoText: """
+        .init(
+            id: "SQRT",
+            name: "Square Roots",
+            descriptionText: "Square roots, sometimes multiplied by a coefficient",
+            infoText: """
 Find the value on the A scale, and read off the square root on the D scale.
 If there is a coefficient, slide the index of C over the found root on D, and multiply normally.
 
@@ -25,7 +26,7 @@ If there is a coefficient, write down the value of the root and multiply normaly
 Note that the 𝝙𝘶 values with the alternative method will be twice what they should be because of the effective use of your D scale
 a small square-root scale.
 """,
-              problemGenerator: SquareRootsProblemGenerator()
+            problemGenerator: SquareRootsProblemGenerator()
         )
     }
     

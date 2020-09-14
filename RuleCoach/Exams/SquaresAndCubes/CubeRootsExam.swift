@@ -11,14 +11,15 @@ import Foundation
 extension ExamDefinition {
     
     static func cubeRoots() -> ExamDefinition {
-        .init(id: "CUBE_ROOTS",
-              name: "Cube Roots",
-              descriptionText: "Cube roots",
-              infoText: """
+        .init(
+            id: "CUBE_ROOTS",
+            name: "Cube Roots",
+            descriptionText: "Cube roots",
+            infoText: """
 Find the value on the K scale and read off the cube root on the D scale.
 If there is a coefficient, slide the index of C over the root found on D, and multiply normally.
 """,
-              problemGenerator: CubeRootsProblemGenerator()
+            problemGenerator: CubeRootsProblemGenerator()
         )
     }
     

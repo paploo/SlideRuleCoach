@@ -11,10 +11,11 @@ import Foundation
 extension ExamDefinition {
     
     static func commonLogs() -> ExamDefinition {
-        .init(id: "COMMON_LOG",
-              name: "Common Logs",
-              descriptionText: "Log Base-10",
-              infoText: """
+        .init(
+            id: "COMMON_LOG",
+            name: "Common Logs",
+            descriptionText: "Log Base-10",
+            infoText: """
 If the value is greater than one:
 Move the decimal to the left (i.e. repeatedly divide by 10) until the value is between one and ten.
 Place the cursor over the value on the D scale, and read the fractional part of the logarithm on the L scale.
@@ -25,7 +26,7 @@ Move the decimal to the right (i.e. repeadelty multiply by 10) until the value i
 Place the cursor over the value on the CI scale, and read the fractional part of the logarithm on the L scale.
 Add to it the integer part, determined as one less than the number of places that the decimal was moved to the right.
 """,
-              problemGenerator: CommonLogsProblemGenerator()
+            problemGenerator: CommonLogsProblemGenerator()
         )
     }
     

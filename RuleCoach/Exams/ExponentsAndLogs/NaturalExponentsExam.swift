@@ -11,10 +11,11 @@ import Foundation
 extension ExamDefinition {
     
     static func naturalExponents() -> ExamDefinition {
-        .init(id: "NATURAL_EXP",
-              name: "Natural Exponents",
-              descriptionText: "Exponents of \(MathSymbols.e)",
-              infoText: """
+        .init(
+            id: "NATURAL_EXP",
+            name: "Natural Exponents",
+            descriptionText: "Exponents of \(MathSymbols.e)",
+            infoText: """
 For exponents greater than zero:
 Place the cursor over the exponent value on the D scale (moving the decimal point as necessary).
 Find the correct LL scale for the for the exponent value and read the value from under the cursor.
@@ -25,7 +26,7 @@ Find the correct LL/ scale for the for the exponent value and read the value fro
 
 Note that a small number of slide rules have a decedal LL scale, and thus the procedure for natural exponents requires use of the cahnge-of-base procedure tested in the exponents of arbitrary base exam.
 """,
-              problemGenerator: NaturalExponentsProblemGenerator()
+            problemGenerator: NaturalExponentsProblemGenerator()
         )
     }
     

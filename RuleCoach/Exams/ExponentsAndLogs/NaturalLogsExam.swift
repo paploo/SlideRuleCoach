@@ -11,10 +11,11 @@ import Foundation
 extension ExamDefinition {
     
     static func naturalLogs() -> ExamDefinition {
-        .init(id: "NATURAL_LOG",
-              name: "Natural Logs",
-              descriptionText: "Log Base \(MathSymbols.e)",
-              infoText: """
+        .init(
+            id: "NATURAL_LOG",
+            name: "Natural Logs",
+            descriptionText: "Log Base \(MathSymbols.e)",
+            infoText: """
 If the value is greater than 1:
 Place the cursor over the value on the appropriate LL scale.
 Read the answer off the D scale, moving the decimal as is appropriate for the LL scale used.
@@ -23,7 +24,7 @@ If the value is less than 1:
 Place the cursor over the value on the appropriate LL/ scale.
 Read the answer off the D scale, moving the decimal as is appropriate for the LL/ scale used.
 """,
-              problemGenerator: NaturalLogsProblemGenerator()
+            problemGenerator: NaturalLogsProblemGenerator()
         )
     }
     
