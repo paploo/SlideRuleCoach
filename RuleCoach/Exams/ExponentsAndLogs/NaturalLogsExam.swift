@@ -40,9 +40,6 @@ class NaturalLogsProblemGenerator: ProblemGenerator {
         let isPositiveValue = chooseIfValuePositive(difficulty: difficulty)
         let inScaleParamterizer: ScaleParameterizer = isPositiveValue ? LogLogScaleParameterizer() : InvertedLogLogScaleParameterizer()
         let value = generateValue(difficulty: difficulty, inScaleParameterizer: inScaleParamterizer)
-        print("isPositiveValue = \(isPositiveValue)")
-        print("value = \(value)")
-        print("expectedAnswer = \(log(value))")
         return Problem(
             expectedAnswer: log(value),
             questionText: .singleLine(MathSymbols.function(functionText, value.formatted())),
