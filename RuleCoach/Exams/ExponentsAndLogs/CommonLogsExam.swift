@@ -10,7 +10,7 @@ import Foundation
 
 extension ExamDefinition {
     
-    static func commonLog() -> ExamDefinition {
+    static func commonLogs() -> ExamDefinition {
         .init(id: "COMMON_LOG",
               name: "Common Logs",
               descriptionText: "Log Base-10",

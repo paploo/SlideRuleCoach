@@ -37,6 +37,7 @@
 		4AAEEFFF24D0DD3D00FA1462 /* ProblemResultStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AAEEFFE24D0DD3D00FA1462 /* ProblemResultStats.swift */; };
 		4AAEF00224D12BAA00FA1462 /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AAEF00124D12BAA00FA1462 /* ArrayExtensions.swift */; };
 		4AAEF00424D13D3900FA1462 /* Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AAEF00324D13D3900FA1462 /* Random.swift */; };
+		4ABFDF93250F2CC10090EE76 /* NaturalLogsExam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABFDF92250F2CC10090EE76 /* NaturalLogsExam.swift */; };
 		4AD91BAB24ECDA14005F1898 /* ProblemStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD91BAA24ECDA14005F1898 /* ProblemStatsView.swift */; };
 		4AD91BAD24ECE504005F1898 /* MultiplicationExam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD91BAC24ECE504005F1898 /* MultiplicationExam.swift */; };
 		4AFE2D4E24BC056C00AF8187 /* ExamHelpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFE2D4D24BC056C00AF8187 /* ExamHelpView.swift */; };
@@ -108,6 +109,7 @@
 		4AAEEFFE24D0DD3D00FA1462 /* ProblemResultStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemResultStats.swift; sourceTree = "<group>"; };
 		4AAEF00124D12BAA00FA1462 /* ArrayExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtensions.swift; sourceTree = "<group>"; };
 		4AAEF00324D13D3900FA1462 /* Random.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Random.swift; sourceTree = "<group>"; };
+		4ABFDF92250F2CC10090EE76 /* NaturalLogsExam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaturalLogsExam.swift; sourceTree = "<group>"; };
 		4AD91BAA24ECDA14005F1898 /* ProblemStatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemStatsView.swift; sourceTree = "<group>"; };
 		4AD91BAC24ECE504005F1898 /* MultiplicationExam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiplicationExam.swift; sourceTree = "<group>"; };
 		4AFE2D4D24BC056C00AF8187 /* ExamHelpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamHelpView.swift; sourceTree = "<group>"; };
@@ -297,6 +299,7 @@
 				4AA239F724FC9ED400DB1A38 /* CommonExponentsExam.swift */,
 				4AA239F524FC9EB800DB1A38 /* CommonLogsExam.swift */,
 				4AFFA2B32500BB1F00DC9699 /* NaturalExponentsExam.swift */,
+				4ABFDF92250F2CC10090EE76 /* NaturalLogsExam.swift */,
 			);
 			path = ExponentsAndLogs;
 			sourceTree = "<group>";
@@ -448,6 +451,7 @@
 				4AFE2D5F24BEB11B00AF8187 /* SettingsView.swift in Sources */,
 				4A59078524B2AADD003FFBB2 /* ExamList.swift in Sources */,
 				4AAEF00224D12BAA00FA1462 /* ArrayExtensions.swift in Sources */,
+				4ABFDF93250F2CC10090EE76 /* NaturalLogsExam.swift in Sources */,
 				4AA239F024FB642A00DB1A38 /* CubesExam.swift in Sources */,
 				4AAC734C24F76E85009E1C74 /* PowersProblemGenerator.swift in Sources */,
 				4AD91BAD24ECE504005F1898 /* MultiplicationExam.swift in Sources */,
