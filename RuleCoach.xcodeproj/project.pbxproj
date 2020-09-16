@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4A349F5D24EE41350016A026 /* ProblemGeneratorTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A349F5C24EE41350016A026 /* ProblemGeneratorTools.swift */; };
+		4A3FA4A92511DA1200141BEE /* ArbitraryLogsExam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3FA4A82511DA1200141BEE /* ArbitraryLogsExam.swift */; };
 		4A59074A24B161BB003FFBB2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A59074924B161BB003FFBB2 /* AppDelegate.swift */; };
 		4A59074C24B161BB003FFBB2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A59074B24B161BB003FFBB2 /* SceneDelegate.swift */; };
 		4A59074E24B161BB003FFBB2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A59074D24B161BB003FFBB2 /* ContentView.swift */; };
@@ -75,6 +76,7 @@
 		4A27A46224FCC1F300DA04F7 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		4A27A46324FCC22200DA04F7 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		4A349F5C24EE41350016A026 /* ProblemGeneratorTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemGeneratorTools.swift; sourceTree = "<group>"; };
+		4A3FA4A82511DA1200141BEE /* ArbitraryLogsExam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArbitraryLogsExam.swift; sourceTree = "<group>"; };
 		4A59074624B161BB003FFBB2 /* RuleCoach.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RuleCoach.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A59074924B161BB003FFBB2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4A59074B24B161BB003FFBB2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -303,6 +305,7 @@
 				4AFFA2B32500BB1F00DC9699 /* NaturalExponentsExam.swift */,
 				4ABFDF92250F2CC10090EE76 /* NaturalLogsExam.swift */,
 				4ABFDF94250F33C10090EE76 /* ArbitraryExponentsExam.swift */,
+				4A3FA4A82511DA1200141BEE /* ArbitraryLogsExam.swift */,
 			);
 			path = ExponentsAndLogs;
 			sourceTree = "<group>";
@@ -465,6 +468,7 @@
 				4AAC734824F372B0009E1C74 /* InversionExam.swift in Sources */,
 				4A59078B24B2CE32003FFBB2 /* ExamView.swift in Sources */,
 				4AFE2D6124BEB55C00AF8187 /* UserSettings.swift in Sources */,
+				4A3FA4A92511DA1200141BEE /* ArbitraryLogsExam.swift in Sources */,
 				4A59077F24B297CB003FFBB2 /* Problem.swift in Sources */,
 				4AAC735024F77C93009E1C74 /* SquaresExam.swift in Sources */,
 				4AFE2D5624BD398600AF8187 /* NumberFormatter.swift in Sources */,

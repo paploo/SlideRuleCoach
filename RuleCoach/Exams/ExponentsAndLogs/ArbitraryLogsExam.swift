@@ -1,8 +1,8 @@
 //
-//  ArbitraryExponentsExam.swift
+//  ArbitraryLogsExam.swift
 //  RuleCoach
 //
-//  Created by Jeff Reinecke on 9/13/20.
+//  Created by Jeff Reinecke on 9/15/20.
 //  Copyright © 2020 Jeff Reinecke. All rights reserved.
 //
 
@@ -10,30 +10,32 @@ import Foundation
 
 extension ExamDefinition {
     
-    static func arbitraryExponents() -> ExamDefinition {
+    static func arbitraryLogs() -> ExamDefinition {
         .init(
-            id: "ARBITRARY_EXPONENTS",
-            name: "Exponentials",
-            descriptionText: "Exponents of an arbitrary base",
+            id: "ARBITRARY_LOGS",
+            name: "Logarithms",
+            descriptionText: "Logarithms of an arbitrary base",
             infoText: """
 Find the base on the LL scale (or LL/, if less than 1).
 Use the cursor to align the index on C with base on the LL scale.
 
-If the exponent is positive:
-Read the exponent on the C scale, and the answer on the corresponding LL scale.
+If the argument is greater than 1:
+Read the argument on the corresponding LL scale, and the answer on the C scale.
+Adjust the decimal place according to the coresponding LL scale.
 
-If the exponent is negative:
-Read the exponent on the C scale, and the on the corresponding opposing LL scale.
+If the exponent is less than 1:
+Read the argument on the opposing LL scale, and the answer on the C scale.
+Adjust the decimal place according to the coresponding LL scale.
 
 Note that to determine the the correcet LL or LL/ scale to choose from, it can be helpful to picture them as two continuous scales, mentally "wrapping around" an extra long rule (with repeated C/D scales).
 """,
-            problemGenerator: ArbitraryExponentsProblemGenerator()
+            problemGenerator: ArbitraryLogsProblemGenerator()
         )
     }
     
 }
 
-class ArbitraryExponentsProblemGenerator: ProblemGenerator {
+class ArbitraryLogsProblemGenerator: ProblemGenerator {
     
     func generateProblem(difficulty: ProblemDifficulty) -> Problem {
         //First, we make sure the base is within the acceptable range.
@@ -41,17 +43,17 @@ class ArbitraryExponentsProblemGenerator: ProblemGenerator {
         let inScaleParameterizer: ScaleParameterizer = isBaseGreaterThanOne ? LogLogScaleParameterizer() : InvertedLogLogScaleParameterizer()
         let base = generateValue(difficulty: difficulty, scaleParameterizer: inScaleParameterizer)
         
-        //Then we make sure the *answer* is within the acceptable range.
-        let isAnswerGreaterThanOne = chooseIfGreaterThanOne(difficulty: difficulty)
-        let outScaleParameterizer: ScaleParameterizer = isAnswerGreaterThanOne ? LogLogScaleParameterizer() : InvertedLogLogScaleParameterizer()
-        let answer = generateValue(difficulty: difficulty, scaleParameterizer: outScaleParameterizer)
+        //Then we make sure the argument is within the acceptable range.
+        let isArgumentGreaterThanOne = chooseIfGreaterThanOne(difficulty: difficulty)
+        let outScaleParameterizer: ScaleParameterizer = isArgumentGreaterThanOne ? LogLogScaleParameterizer() : InvertedLogLogScaleParameterizer()
+        let argument = generateValue(difficulty: difficulty, scaleParameterizer: outScaleParameterizer)
         
         //And then we back-calculate the exponent that gives us the answer.
-        let exponent = log(answer) / log(base)
+        let exponent = log(argument) / log(base)
         
         return Problem(
-            expectedAnswer: answer,
-            questionText: .exponential(baseLine: base.formatted(), exponent: exponent.formatted()),
+            expectedAnswer: exponent,
+            questionText: .logarithmic(base: base.formatted(), argument: argument.formatted()),
             scaleParameterizer: outScaleParameterizer
         )
     }

@@ -29,6 +29,7 @@ enum QuestionText {
     case singleLine(_ text: String)
     case fractional(numerator: String, denominator: String)
     case exponential(baseLine: String, exponent: String)
+    case logarithmic(base: String, argument: String)
 }
 
 struct Problem {

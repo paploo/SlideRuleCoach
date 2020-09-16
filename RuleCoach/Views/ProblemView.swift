@@ -98,6 +98,8 @@ func questionTextView(questionText: QuestionText) -> AnyView {
         return AnyView(FractionProblemDetail(questionNumeratorText: .constant(num), questionDenominatorText: .constant(denom)))
     case .exponential(let base, let exp):
         return AnyView(ExponentialProblemDetail(questionBaseLineText: .constant(base), questionExponentText: .constant(exp)))
+    case .logarithmic(let base, let arg):
+        return AnyView(LogarithmicProblemDetail(questionBaseText: .constant(base), questionArgumentText: .constant(arg)))
     }
 }
 
@@ -139,10 +141,27 @@ struct ExponentialProblemDetail: View {
     var body: some View {
         Text(questionBaseLineText)
             .monospaced()
-            + Text(" ") +
+            
+        + Text(" ") +
+            
         Text(questionExponentText)
             .monospacedSmall()
             .baselineOffset(6.0)
+    }
+    
+}
+
+struct LogarithmicProblemDetail: View {
+    
+    @Binding var questionBaseText: String
+    @Binding var questionArgumentText: String
+    
+    var body: some View {
+        Text(MathSymbols.log)
+            + Text(questionBaseText).monospacedSmall().baselineOffset(-6.0)
+            + Text(MathSymbols.leftParen)
+            + Text(questionArgumentText).monospaced()
+            + Text(MathSymbols.rightParen)
     }
     
 }
@@ -195,6 +214,11 @@ struct ProblemView_Previews: PreviewProvider {
             ExponentialProblemDetail(
                 questionBaseLineText: .constant("1.2 x 34.101"),
                 questionExponentText: .constant("22.30")
+            )
+            
+            LogarithmicProblemDetail(
+                questionBaseText: .constant("34.101"),
+                questionArgumentText: .constant("22.30")
             )
         }.environmentObject(UserSettings())
     }

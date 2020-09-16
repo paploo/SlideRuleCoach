@@ -54,8 +54,8 @@ extension ExamGroup {
             ExamDefinition.commonLogs(),
             ExamDefinition.naturalExponents(),
             ExamDefinition.naturalLogs(),
-            ExamDefinition.arbitraryExponents()
-            // Logarithms (of arbitrary base)
+            ExamDefinition.arbitraryExponents(),
+            ExamDefinition.arbitraryLogs() //This is too hard as is. Omit for now.
         ]
     )
     
