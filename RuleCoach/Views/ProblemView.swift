@@ -44,7 +44,7 @@ struct ProblemView : View {
                         if self.exam.isCompleted() {
                             ExamCompleteProblemDetail(problem: self.$exam.currentProblem)
                         } else {
-                            questionTextView(questionText: self.exam.currentProblem.questionText)
+                            ProblemDetail(questionText: self.$exam.currentProblem.questionText)
                         }
                     }
                     .frame(minWidth: geo.size.width, alignment: .center)
@@ -89,18 +89,23 @@ struct ProblemView : View {
     
 }
 
-//TODO: In Xcode 12 inline switch statements are supposedly supported, with no AnyView shenanigans needed: https://stackoverflow.com/questions/56736466/alternative-to-switch-statement-in-swiftui-viewbuilder-block
-func questionTextView(questionText: QuestionText) -> AnyView {
-    switch(questionText) {
-    case .singleLine(let text):
-        return AnyView(SimpleProblemDetail(questionText: .constant(text)))
-    case .fractional(let num, let denom):
-        return AnyView(FractionProblemDetail(questionNumeratorText: .constant(num), questionDenominatorText: .constant(denom)))
-    case .exponential(let base, let exp):
-        return AnyView(ExponentialProblemDetail(questionBaseLineText: .constant(base), questionExponentText: .constant(exp)))
-    case .logarithmic(let base, let arg):
-        return AnyView(LogarithmicProblemDetail(questionBaseText: .constant(base), questionArgumentText: .constant(arg)))
+struct ProblemDetail: View {
+    
+    @Binding var questionText: QuestionText
+    
+    var body: some View {
+        switch(questionText) {
+        case .singleLine(let text):
+            SimpleProblemDetail(questionText: .constant(text))
+        case .fractional(let num, let denom):
+            FractionProblemDetail(questionNumeratorText: .constant(num), questionDenominatorText: .constant(denom))
+        case .exponential(let base, let exp):
+            ExponentialProblemDetail(questionBaseLineText: .constant(base), questionExponentText: .constant(exp))
+        case .logarithmic(let base, let arg):
+            LogarithmicProblemDetail(questionBaseText: .constant(base), questionArgumentText: .constant(arg))
+        }
     }
+    
 }
 
 struct SimpleProblemDetail: View {
