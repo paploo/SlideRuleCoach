@@ -55,7 +55,10 @@ struct ProblemView : View {
                 TextField(
                     "Answer",
                     value: $submittedAnswer,
-                    formatter: NumberFormatter.decimalFormatter()
+                    //formatter: NumberFormatter.decimalFormatter()
+                    //formatter: NumberFormatter.generalFormatter(sigFigs: 5)
+                    //formatter: LambdaFormatters.number(sigFigs: 5)
+                    formatter: TypedNumberFormatter()
                 )
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .keyboardType(.numbersAndPunctuation)
