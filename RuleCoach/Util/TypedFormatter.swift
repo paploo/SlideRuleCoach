@@ -23,10 +23,20 @@ class TypedFormatter<T: AnyObject>: Formatter {
         super.init(coder: coder)
     }
     
+    /// Root method for converting a nullable object of type `T` into a nullable `String`.
+    ///
+    /// Subclasses **must** override this method.
+    /// - Parameter obj: An object of type `T` to format as a string, or possibly `nil`
+    /// - Returns: The formatted string, or `nil` if appropriate.
     func string(from obj: T?) -> String? {
         fatalError("Missing Implementation")
     }
     
+    /// Root method for parsing a `String` into an object of type `T`.
+    ///
+    /// Subclasses **must** override this method.
+    /// - Parameter string: A string to format into an object of type `T`, or `nil` if parsing fails.
+    /// - Returns: An instance of type `T`, or `nil` if parsing fails.
     func object(from string: String?) -> T? {
         fatalError("Missing Implementation")
     }
@@ -40,18 +50,55 @@ class TypedFormatter<T: AnyObject>: Formatter {
     }
     
     override func getObjectValue(_ obj: AutoreleasingUnsafeMutablePointer<AnyObject?>?, for string: String, errorDescription error: AutoreleasingUnsafeMutablePointer<NSString?>?) -> Bool {
-        obj?.pointee = object(from: string) as AnyObject?
+        obj?.pointee = object(from: string)
         return true
     }
     
 }
 
+/// Instance of TypedFormatter that may be instantiated for injected with lambdas for the implementation.
+class LambdaFormatter<T: AnyObject>: TypedFormatter<T> {
+    
+    init(encoder: @escaping (T?) -> String?, decoder: @escaping (String?) -> T?) {
+        super.init()
+        self.encoder = encoder
+        self.decoder = decoder
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
+    
+    var encoder: ((T?) -> String?)? = nil
+    
+    var decoder: ((String?) -> T?)? = nil
+    
+    override func string(from obj: T?) -> String? {
+        if let enc = encoder {
+            return enc(obj)
+        } else {
+            return nil
+        }
+    }
+    
+    override func object(from string: String?) -> T? {
+        if let dec = decoder {
+            return dec(string)
+        } else {
+            return nil
+        }
+    }
+    
+}
+
+/**
+ * Example TypedFormatter that consumes and produces NSNumber instances wrapping doubles.
+ */
 class TypedNumberFormatter: TypedFormatter<NSNumber> {
     
     var sigFigs: Int = 5
     
     override func string(from obj: NSNumber?) -> String? {
-        print("string from \(String(describing: obj))")
         if let n = obj {
             return String.init(format: "%0.\(sigFigs)g", n.doubleValue)
         } else {
@@ -60,7 +107,6 @@ class TypedNumberFormatter: TypedFormatter<NSNumber> {
     }
     
     override func object(from string: String?) -> NSNumber? {
-        print("object from \(String(describing: string))")
         if let s = string,
            let d = Double(s) {
             return NSNumber(value: d)
@@ -72,73 +118,8 @@ class TypedNumberFormatter: TypedFormatter<NSNumber> {
 }
 
 /**
- * Formatter that bridges from the NSFormatter interface to a type-safe functional interface.
+ * Example constructors of LambdaFormatters.
  */
-class LambdaFormatter<T: AnyObject>: Formatter {
-    
-    override init() {
-        super.init()
-    }
-    
-    init(encoder: @escaping (T?) -> String?, decoder: @escaping (String) -> T?) {
-        super.init()
-        self.encoder = encoder
-        self.decoder = decoder
-    }
-
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-    }
-    
-    var encoder: ((T?) -> String?)? = nil
-    
-    var decoder: ((String) -> T?)? = nil
-    
-    func string(from obj: T?) -> String? {
-        string(for: obj)
-    }
-    
-    func object(from string: String?) -> T? {
-        if let s = string {
-            var obj: AnyObject? = nil
-            let _ = getObjectValue(&obj, for: s, errorDescription: nil)
-            return obj as? T
-        } else {
-            return nil
-        }
-    }
-    
-    override func string(for obj: Any?) -> String? {
-        if let o = obj as? T {
-            return encode(o)
-        } else {
-            return nil
-        }
-    }
-    
-    override func getObjectValue(_ obj: AutoreleasingUnsafeMutablePointer<AnyObject?>?, for string: String, errorDescription error: AutoreleasingUnsafeMutablePointer<NSString?>?) -> Bool {
-        obj?.pointee = decode(string) as AnyObject?
-        return true
-    }
-    
-    private func encode(_ obj: T?) -> String? {
-        if let enc = encoder {
-            return enc(obj)
-        } else {
-           return  nil
-        }
-    }
-    
-    private func decode(_ string: String) -> T? {
-        if let dec = decoder {
-            return dec(string)
-        } else {
-            return nil
-        }
-    }
-    
-}
-
 struct LambdaFormatters {
     
     static func number(sigFigs: Int) -> LambdaFormatter<NSNumber> {
@@ -151,8 +132,8 @@ struct LambdaFormatters {
                 }
             },
             decoder: { str in
-                print("decoder[sigFigs: \(sigFigs)](\(str))")
-                if let d = Double(str) {
+                if let s = str,
+                   let d = Double(s) {
                     return NSNumber(value: d)
                 } else {
                     return nil
