@@ -41,24 +41,23 @@ struct ExamList: View {
     
     //TODO: Should probably ectract into it a view class.
     private func examRow(_ examDefinition: ExamDefinition) -> some View {
-        HStack {
-            NavigationLink(
-                destination: ExamView(
-                    selectedExamDefinition: examDefinition,
-                    currentExam: $currentExam
-                ).environmentObject(self.userSettings)
-            ) {
+        NavigationLink(
+            destination: ExamView(
+                selectedExamDefinition: examDefinition,
+                currentExam: $currentExam
+            ).environmentObject(self.userSettings)
+        ) {
+            HStack {
                 VStack(alignment: .leading) {
                     Text(examDefinition.name)
                     Text(examDefinition.descriptionText)
                         .font(.caption)
                         .foregroundColor(.gray)
                 }
-                .layoutPriority(1.0) //Makes sure the VStack is rendered to its full width before drawing the stopwatch. TODO: Maybe should really be using a geometry object?
-                
-                Spacer()
                 
                 if(examDefinition == currentExam?.definition) {
+                    Spacer()
+                    
                     Image(systemName: "stopwatch")
                         .foregroundColor(.blue)
                 }

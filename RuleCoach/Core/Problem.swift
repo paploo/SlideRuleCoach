@@ -21,7 +21,7 @@ enum ProblemDifficulty: String, CaseIterable {
     case introductory = "Intro"
     case easy = "Easy"
     case normal = "Normal"
-    case advanced = "Advanced"
+    case advanced = "Expert"
     case master = "Master"
 }
 

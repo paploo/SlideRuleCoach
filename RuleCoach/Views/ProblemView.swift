@@ -47,7 +47,7 @@ struct ProblemView : View {
                             ProblemDetail(questionText: self.$exam.currentProblem.questionText)
                         }
                     }
-                    .frame(minWidth: geo.size.width, alignment: .center)
+                    .frame(minWidth: geo.size.width, minHeight: 100.0, alignment: .center)
                 }
             }.frame(height: 100.0)
             
