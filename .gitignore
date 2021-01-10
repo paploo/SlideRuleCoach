@@ -1,3 +1,12 @@
+# OS X
 .DS_Store
-SlideRuleCoach.xcodeproj/project.xcworkspace
-SlideRuleCoach.xcodeproj/xcuserdata
+
+# Vim
+*.sw[a-z]
+
+# Build Generated
+build/
+DerivedData/
+
+# Xcode
+xcuserdata/
