@@ -14,7 +14,7 @@ extension ExamRegistry {
         ExamGroup.basicArithmeticGroup,
         ExamGroup.squaresCubesAndRoots,
         ExamGroup.exponentsAndLogs,
-        ExamGroup.trigonometry
+        // ExamGroup.trigonometry
     ])
     
     static let testRegistry = ExamRegistry(examGroups: [

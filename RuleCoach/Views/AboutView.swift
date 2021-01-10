@@ -12,6 +12,8 @@ struct AboutView: View {
     
     let websiteUrl: URL = URL(string: "https://github.com/paploo/SlideRuleCoach")!
     
+    let copyrightYear: String = "2021"
+    
     var body: some View {
         VStack {
 
@@ -22,7 +24,7 @@ struct AboutView: View {
             
             Text("RuleCoach")
                 .font(.largeTitle)
-            Text("©2020 Jeff Reinecke")
+            Text("©\(copyrightYear) Jeff Reinecke")
                 .font(.subheadline)
             Text(websiteUrl.absoluteString)
                 .font(.subheadline)
