@@ -74,6 +74,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4A21AB5D27F8DC4A0054C4AA /* RuleCoach.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RuleCoach.entitlements; sourceTree = "<group>"; };
 		4A27A46224FCC1F300DA04F7 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		4A27A46324FCC22200DA04F7 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		4A349F5C24EE41350016A026 /* ProblemGeneratorTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemGeneratorTools.swift; sourceTree = "<group>"; };
@@ -181,6 +182,7 @@
 		4A59074824B161BB003FFBB2 /* RuleCoach */ = {
 			isa = PBXGroup;
 			children = (
+				4A21AB5D27F8DC4A0054C4AA /* RuleCoach.entitlements */,
 				4A59074924B161BB003FFBB2 /* AppDelegate.swift */,
 				4A59074B24B161BB003FFBB2 /* SceneDelegate.swift */,
 				4A59074D24B161BB003FFBB2 /* ContentView.swift */,
@@ -660,8 +662,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = RuleCoach/RuleCoach.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2.0;
+				CURRENT_PROJECT_VERSION = 2.0.1;
 				DEVELOPMENT_ASSET_PATHS = "RuleCoach/Preview\\ Content";
 				DEVELOPMENT_TEAM = UF2MLXZYSE;
 				ENABLE_PREVIEWS = YES;
@@ -671,9 +674,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0;
+				MARKETING_VERSION = 2.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = RuleCoach;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -683,8 +687,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = RuleCoach/RuleCoach.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2.0;
+				CURRENT_PROJECT_VERSION = 2.0.1;
 				DEVELOPMENT_ASSET_PATHS = "RuleCoach/Preview\\ Content";
 				DEVELOPMENT_TEAM = UF2MLXZYSE;
 				ENABLE_PREVIEWS = YES;
@@ -694,9 +699,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0;
+				MARKETING_VERSION = 2.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = RuleCoach;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
