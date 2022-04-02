@@ -14,6 +14,10 @@ struct ProblemView : View {
     
     @Binding var exam: Exam
     
+    //iOS 15 broke the TextField with formatter, so I have to bind to a simple String directly as a workaround.
+    //This only is useful since I never populate the value, but only react to it on submit.
+    @State var rawSubmittedAnswer: String = ""
+    
     @State var submittedAnswer: Double? = nil
     
     @State var notes: String? = nil
@@ -30,7 +34,14 @@ struct ProblemView : View {
     }
     
     func submitAnswer() {
-        exam.submitAnswer(submittedAnswer: submittedAnswer ?? 0.0)
+        print("rawSubmittedAnswer = \(rawSubmittedAnswer)")
+        let numericAnswer = NumberFormatter.generalFormatter(sigFigs: 4).number(from: rawSubmittedAnswer)?.doubleValue
+        print("numericAnswer = \(String(describing: numericAnswer))")
+        
+        //exam.submitAnswer(submittedAnswer: submittedAnswer ?? 0.0)
+        exam.submitAnswer(submittedAnswer: numericAnswer ?? 0.0)
+        
+        rawSubmittedAnswer = ""
         submittedAnswer = nil
         notes = nil
     }
@@ -51,39 +62,63 @@ struct ProblemView : View {
                 }
             }.frame(height: 100.0)
             
-            HStack {
-                TextField(
-                    "Answer",
-                    value: $submittedAnswer,
-                    formatter: NumberFormatter.generalFormatter(sigFigs: 4)
-                )
+// TODO: iOS 15 broke ths easy way of doing this; put back later if this gets fixed:
+//            TextField(
+//                "Answer",
+//                value: $submittedAnswer,
+//                formatter: NumberFormatter.generalFormatter(sigFigs: 4)
+//            )
+//                .textFieldStyle(RoundedBorderTextFieldStyle())
+//                .keyboardType(.numbersAndPunctuation)
+            
+            if #available(iOS 15, *) {
+                TextField("Answer", text: $rawSubmittedAnswer)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .keyboardType(.numbersAndPunctuation)
-         
-                if(submittedAnswer == nil || exam.isCompleted()) {
-                    Button(action: {
-                        //Do nothing
-                    }) {
-                        Image(systemName: "arrow.up.circle.fill")
-                            .imageScale(.large)
-                            .foregroundColor(.gray)
+                    .onSubmit {
+                        //When a user has notes, we need to be able to move between them!
+                        if !userSettings.showNotesField {
+                            self.submitAnswer()
+                        }
                     }
-                } else {
-                    Button(action: {
-                        self.submitAnswer()
-                    }) {
-                        Image(systemName: "arrow.up.circle.fill")
-                            .imageScale(.large)
-                    }
+            } else {
+                TextField("Answer", text: $rawSubmittedAnswer)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .keyboardType(.numbersAndPunctuation)
+            }
+        }
+        
+        if(exam.isCompleted()) {
+            Button(action: {
+                //Do nothing
+            }) {
+                HStack {
+                    Text("Submit Answer")
+                        .foregroundColor(.gray)
+                    Spacer()
+                    Image(systemName: "arrow.up.circle.fill")
+                        .imageScale(.large)
+                        .foregroundColor(.gray)
                 }
             }
-            
-            if(userSettings.showNotesField) {
-                TextField("Notes", text: nonOptionalNotesBinding)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .keyboardType(.numbersAndPunctuation)
+        } else {
+            Button(action: {
+                self.submitAnswer()
+            }) {
+                HStack {
+                    Text("Submit Answer")
+                    Spacer()
+                    Image(systemName: "arrow.up.circle.fill")
+                        .imageScale(.large)
+                }
             }
+        }
         
+        
+        if(userSettings.showNotesField) {
+            TextField("Notes Area", text: nonOptionalNotesBinding)
+//                .textFieldStyle(RoundedBorderTextFieldStyle())
+//                .keyboardType(.numbersAndPunctuation)
         }
     }
     
